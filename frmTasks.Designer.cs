@@ -70,14 +70,13 @@ namespace MachineProject3_TMS
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ExitDashboardButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuTasks.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelResults.SuspendLayout();
@@ -203,7 +202,7 @@ namespace MachineProject3_TMS
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(16, 35);
+            this.lblTitle.Location = new System.Drawing.Point(17, 24);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(390, 65);
             this.lblTitle.TabIndex = 5;
@@ -211,18 +210,18 @@ namespace MachineProject3_TMS
             // 
             // panelMain
             // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(38)))));
+            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panelMain.Controls.Add(this.panelResults);
             this.panelMain.Controls.Add(this.panelInputs);
-            this.panelMain.Location = new System.Drawing.Point(0, 112);
+            this.panelMain.Location = new System.Drawing.Point(0, 92);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(20);
-            this.panelMain.Size = new System.Drawing.Size(1159, 560);
+            this.panelMain.Size = new System.Drawing.Size(1159, 580);
             this.panelMain.TabIndex = 6;
             // 
             // panelResults
             // 
-            this.panelResults.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.panelResults.Controls.Add(this.button6);
             this.panelResults.Controls.Add(this.statusStripTasks);
             this.panelResults.Controls.Add(this.button5);
@@ -231,21 +230,19 @@ namespace MachineProject3_TMS
             this.panelResults.Controls.Add(this.label6);
             this.panelResults.Controls.Add(this.textBox2);
             this.panelResults.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelResults.Location = new System.Drawing.Point(399, 20);
+            this.panelResults.Location = new System.Drawing.Point(403, 20);
             this.panelResults.Name = "panelResults";
-            this.panelResults.Size = new System.Drawing.Size(740, 520);
+            this.panelResults.Size = new System.Drawing.Size(736, 540);
             this.panelResults.TabIndex = 0;
             // 
             // statusStripTasks
             // 
             this.statusStripTasks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3,
-            this.toolStripStatusLabel4});
-            this.statusStripTasks.Location = new System.Drawing.Point(0, 498);
+            this.toolStripStatusLabel2});
+            this.statusStripTasks.Location = new System.Drawing.Point(0, 518);
             this.statusStripTasks.Name = "statusStripTasks";
-            this.statusStripTasks.Size = new System.Drawing.Size(740, 22);
+            this.statusStripTasks.Size = new System.Drawing.Size(736, 22);
             this.statusStripTasks.TabIndex = 1;
             this.statusStripTasks.Text = "statusStripTasks";
             // 
@@ -261,7 +258,7 @@ namespace MachineProject3_TMS
             // 
             // lblSearchHeader
             // 
-            this.lblSearchHeader.BackColor = System.Drawing.Color.MidnightBlue;
+            this.lblSearchHeader.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblSearchHeader.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchHeader.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblSearchHeader.Location = new System.Drawing.Point(0, 0);
@@ -278,14 +275,16 @@ namespace MachineProject3_TMS
             this.dgvTasks.AllowUserToOrderColumns = true;
             this.dgvTasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dgvTasks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvTasks.Location = new System.Drawing.Point(0, 114);
+            this.dgvTasks.BackgroundColor = System.Drawing.Color.DimGray;
+            this.dgvTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTasks.Location = new System.Drawing.Point(8, 124);
             this.dgvTasks.Name = "dgvTasks";
-            this.dgvTasks.Size = new System.Drawing.Size(740, 381);
+            this.dgvTasks.Size = new System.Drawing.Size(719, 381);
             this.dgvTasks.TabIndex = 3;
             // 
             // panelInputs
             // 
-            this.panelInputs.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelInputs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.panelInputs.Controls.Add(this.button4);
             this.panelInputs.Controls.Add(this.button3);
             this.panelInputs.Controls.Add(this.button2);
@@ -311,12 +310,15 @@ namespace MachineProject3_TMS
             this.panelInputs.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelInputs.Location = new System.Drawing.Point(20, 20);
             this.panelInputs.Name = "panelInputs";
-            this.panelInputs.Size = new System.Drawing.Size(373, 520);
+            this.panelInputs.Size = new System.Drawing.Size(377, 540);
             this.panelInputs.TabIndex = 0;
             // 
             // comboBox2
             // 
+            this.comboBox2.BackColor = System.Drawing.Color.Gray;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox2.ForeColor = System.Drawing.Color.White;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Low",
@@ -329,7 +331,10 @@ namespace MachineProject3_TMS
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.Gray;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Pending",
@@ -352,7 +357,10 @@ namespace MachineProject3_TMS
             // 
             // txtDescription
             // 
+            this.txtDescription.BackColor = System.Drawing.Color.Gray;
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.ForeColor = System.Drawing.Color.White;
             this.txtDescription.Location = new System.Drawing.Point(16, 148);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(343, 29);
@@ -362,7 +370,7 @@ namespace MachineProject3_TMS
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.ForeColor = System.Drawing.Color.Silver;
             this.label3.Location = new System.Drawing.Point(245, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 21);
@@ -373,7 +381,7 @@ namespace MachineProject3_TMS
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(136, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 21);
@@ -384,7 +392,7 @@ namespace MachineProject3_TMS
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(12, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 21);
@@ -395,7 +403,7 @@ namespace MachineProject3_TMS
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblDescription.ForeColor = System.Drawing.Color.Silver;
             this.lblDescription.Location = new System.Drawing.Point(12, 124);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(89, 21);
@@ -404,7 +412,10 @@ namespace MachineProject3_TMS
             // 
             // txtTaskTitle
             // 
+            this.txtTaskTitle.BackColor = System.Drawing.Color.Gray;
+            this.txtTaskTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaskTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaskTitle.ForeColor = System.Drawing.Color.White;
             this.txtTaskTitle.Location = new System.Drawing.Point(163, 92);
             this.txtTaskTitle.Name = "txtTaskTitle";
             this.txtTaskTitle.Size = new System.Drawing.Size(196, 29);
@@ -414,7 +425,7 @@ namespace MachineProject3_TMS
             // 
             this.lblTaskTitle.AutoSize = true;
             this.lblTaskTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaskTitle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTaskTitle.ForeColor = System.Drawing.Color.Silver;
             this.lblTaskTitle.Location = new System.Drawing.Point(159, 68);
             this.lblTaskTitle.Name = "lblTaskTitle";
             this.lblTaskTitle.Size = new System.Drawing.Size(72, 21);
@@ -423,18 +434,21 @@ namespace MachineProject3_TMS
             // 
             // txtTaskID
             // 
+            this.txtTaskID.BackColor = System.Drawing.Color.Gray;
+            this.txtTaskID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaskID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaskID.ForeColor = System.Drawing.Color.White;
             this.txtTaskID.Location = new System.Drawing.Point(16, 92);
             this.txtTaskID.Name = "txtTaskID";
             this.txtTaskID.ReadOnly = true;
-            this.txtTaskID.Size = new System.Drawing.Size(136, 29);
+            this.txtTaskID.Size = new System.Drawing.Size(141, 29);
             this.txtTaskID.TabIndex = 3;
             // 
             // lblTaskID
             // 
             this.lblTaskID.AutoSize = true;
             this.lblTaskID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaskID.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTaskID.ForeColor = System.Drawing.Color.Silver;
             this.lblTaskID.Location = new System.Drawing.Point(12, 68);
             this.lblTaskID.Name = "lblTaskID";
             this.lblTaskID.Size = new System.Drawing.Size(58, 21);
@@ -443,7 +457,7 @@ namespace MachineProject3_TMS
             // 
             // lblPanelTaskDetails
             // 
-            this.lblPanelTaskDetails.BackColor = System.Drawing.Color.MidnightBlue;
+            this.lblPanelTaskDetails.BackColor = System.Drawing.Color.DodgerBlue;
             this.lblPanelTaskDetails.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPanelTaskDetails.Location = new System.Drawing.Point(0, 0);
             this.lblPanelTaskDetails.Name = "lblPanelTaskDetails";
@@ -456,7 +470,7 @@ namespace MachineProject3_TMS
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.ForeColor = System.Drawing.Color.Silver;
             this.label4.Location = new System.Drawing.Point(12, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 21);
@@ -465,7 +479,10 @@ namespace MachineProject3_TMS
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.Gray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(16, 256);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(195, 29);
@@ -475,7 +492,7 @@ namespace MachineProject3_TMS
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.ForeColor = System.Drawing.Color.Silver;
             this.label5.Location = new System.Drawing.Point(215, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 21);
@@ -484,7 +501,10 @@ namespace MachineProject3_TMS
             // 
             // comboBox3
             // 
+            this.comboBox3.BackColor = System.Drawing.Color.Gray;
+            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBox3.ForeColor = System.Drawing.Color.White;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "Low",
@@ -499,7 +519,7 @@ namespace MachineProject3_TMS
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.ForeColor = System.Drawing.Color.Silver;
             this.label6.Location = new System.Drawing.Point(13, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 21);
@@ -508,11 +528,33 @@ namespace MachineProject3_TMS
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.Gray;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
             this.textBox2.Location = new System.Drawing.Point(17, 78);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(196, 29);
             this.textBox2.TabIndex = 3;
+            // 
+            // ExitDashboardButton
+            // 
+            this.ExitDashboardButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExitDashboardButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ExitDashboardButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.ExitDashboardButton.FlatAppearance.BorderSize = 0;
+            this.ExitDashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitDashboardButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitDashboardButton.ForeColor = System.Drawing.Color.White;
+            this.ExitDashboardButton.Image = global::MachineProject3_TMS.Properties.Resources.home;
+            this.ExitDashboardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ExitDashboardButton.Location = new System.Drawing.Point(1019, 35);
+            this.ExitDashboardButton.Name = "ExitDashboardButton";
+            this.ExitDashboardButton.Size = new System.Drawing.Size(119, 46);
+            this.ExitDashboardButton.TabIndex = 7;
+            this.ExitDashboardButton.Text = "Home";
+            this.ExitDashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExitDashboardButton.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
@@ -525,7 +567,7 @@ namespace MachineProject3_TMS
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.button6.Location = new System.Drawing.Point(384, 53);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(168, 54);
+            this.button6.Size = new System.Drawing.Size(168, 65);
             this.button6.TabIndex = 9;
             this.button6.Text = "SEARCH";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -542,7 +584,7 @@ namespace MachineProject3_TMS
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.button5.Location = new System.Drawing.Point(558, 53);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(168, 54);
+            this.button5.Size = new System.Drawing.Size(168, 65);
             this.button5.TabIndex = 7;
             this.button5.Text = "REFRESH";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -612,24 +654,13 @@ namespace MachineProject3_TMS
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel3.Text = "toolStripStatusLabel3";
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
-            // 
             // FrmTasks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1159, 671);
+            this.Controls.Add(this.ExitDashboardButton);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.menuTasks);
@@ -702,7 +733,6 @@ namespace MachineProject3_TMS
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.Button ExitDashboardButton;
     }
 }
