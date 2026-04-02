@@ -21,7 +21,7 @@ namespace MachineProject3_TMS
             // 
             // FrmAbout
             // 
-            this.ClientSize = new System.Drawing.Size(382, 333);
+            this.ClientSize = new System.Drawing.Size(614, 333);
             this.Name = "FrmAbout";
             this.ResumeLayout(false);
 
