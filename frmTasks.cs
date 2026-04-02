@@ -9,7 +9,5 @@ namespace MachineProject3_TMS
         {
             InitializeComponent();
         }
-
-       
     }
 }

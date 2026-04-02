@@ -246,6 +246,7 @@
     <None Include="media_resources\add.png" />
     <None Include="media_resources\update.png" />
     <None Include="media_resources\close.png" />
+    <None Include="media_resources\refresh.png" />
     <Content Include="tms.ico" />
   </ItemGroup>
   <ItemGroup>
