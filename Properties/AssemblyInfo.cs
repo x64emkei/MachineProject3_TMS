@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MachineProject3_TMS")]
+[assembly: AssemblyTitle("Ordenes_Baarde_Tumbaga_MP3")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("MachineProject3_TMS")]
-[assembly: AssemblyCopyright("Copyright ©  2026")]
+[assembly: AssemblyCopyright("Copyright ©  2026 emkei_x64 and friends (BAARDE, TUMBAGA)")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

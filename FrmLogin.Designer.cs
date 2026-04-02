@@ -33,10 +33,7 @@
             this.ForgotPasswordLabel = new System.Windows.Forms.Label();
             this.ShowPassLoginButtonLabel = new System.Windows.Forms.Label();
             this.SystemTitleLabel = new System.Windows.Forms.Label();
-            this.CreateAcctButton = new System.Windows.Forms.Button();
-            this.ClearButton = new System.Windows.Forms.Button();
             this.MainExitButton = new System.Windows.Forms.Button();
-            this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.UsernameTextBox = new System.Windows.Forms.TextBox();
             this.CreateAcctGuideLabel = new System.Windows.Forms.Label();
@@ -45,7 +42,6 @@
             this.LoginLabel = new System.Windows.Forms.Label();
             this.CreateAcctPanel = new System.Windows.Forms.Panel();
             this.ConfirmPasswordLabel = new System.Windows.Forms.Label();
-            this.CreateAccountPanelButton = new System.Windows.Forms.Button();
             this.PasswordInputLabel = new System.Windows.Forms.Label();
             this.AcctUsernameLabel = new System.Windows.Forms.Label();
             this.ClosePanel1Button = new System.Windows.Forms.Button();
@@ -64,15 +60,19 @@
             this.NewPasswordLabel = new System.Windows.Forms.Label();
             this.ConfirmNewPasswordTextBox = new System.Windows.Forms.TextBox();
             this.NewPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.CheckUserButton = new System.Windows.Forms.Button();
             this.ClosePanel2Button = new System.Windows.Forms.Button();
-            this.ChangePasswordButton = new System.Windows.Forms.Button();
             this.AccountUsernameCheckLabel = new System.Windows.Forms.Label();
             this.EmailCheckLabel = new System.Windows.Forms.Label();
             this.AccountRecoveryTitleLabel = new System.Windows.Forms.Label();
             this.EmailCheckTextBox = new System.Windows.Forms.TextBox();
             this.AccountUsernameCheckTextBox = new System.Windows.Forms.TextBox();
+            this.CheckUserButton = new System.Windows.Forms.Button();
+            this.ChangePasswordButton = new System.Windows.Forms.Button();
+            this.CreateAccountPanelButton = new System.Windows.Forms.Button();
             this.LoginImage = new System.Windows.Forms.PictureBox();
+            this.CreateAcctButton = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
+            this.LoginButton = new System.Windows.Forms.Button();
             this.LoginPanel.SuspendLayout();
             this.CreateAcctPanel.SuspendLayout();
             this.AccountRecoveryPanel.SuspendLayout();
@@ -137,46 +137,6 @@
             this.SystemTitleLabel.Text = "Task Management System";
             this.SystemTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CreateAcctButton
-            // 
-            this.CreateAcctButton.BackColor = System.Drawing.Color.MediumPurple;
-            this.CreateAcctButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CreateAcctButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CreateAcctButton.FlatAppearance.BorderSize = 0;
-            this.CreateAcctButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateAcctButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateAcctButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CreateAcctButton.Image = global::MachineProject3_TMS.Properties.Resources.new_account;
-            this.CreateAcctButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CreateAcctButton.Location = new System.Drawing.Point(21, 325);
-            this.CreateAcctButton.Name = "CreateAcctButton";
-            this.CreateAcctButton.Size = new System.Drawing.Size(209, 54);
-            this.CreateAcctButton.TabIndex = 5;
-            this.CreateAcctButton.Text = "Create account";
-            this.CreateAcctButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.CreateAcctButton.UseVisualStyleBackColor = false;
-            this.CreateAcctButton.Click += new System.EventHandler(this.CreateAcctButton_Click);
-            // 
-            // ClearButton
-            // 
-            this.ClearButton.BackColor = System.Drawing.Color.DarkViolet;
-            this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClearButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ClearButton.FlatAppearance.BorderSize = 0;
-            this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ClearButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.ClearButton.Image = global::MachineProject3_TMS.Properties.Resources.clear;
-            this.ClearButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ClearButton.Location = new System.Drawing.Point(22, 209);
-            this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(82, 47);
-            this.ClearButton.TabIndex = 5;
-            this.ClearButton.Text = "Clear";
-            this.ClearButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ClearButton.UseVisualStyleBackColor = false;
-            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
-            // 
             // MainExitButton
             // 
             this.MainExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -191,26 +151,6 @@
             this.MainExitButton.Text = "Exit";
             this.MainExitButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MainExitButton.UseVisualStyleBackColor = true;
-            // 
-            // LoginButton
-            // 
-            this.LoginButton.BackColor = System.Drawing.Color.DarkViolet;
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.LoginButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LoginButton.Image = global::MachineProject3_TMS.Properties.Resources.logingray;
-            this.LoginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LoginButton.Location = new System.Drawing.Point(110, 209);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(120, 47);
-            this.LoginButton.TabIndex = 5;
-            this.LoginButton.Text = "Log-in";
-            this.LoginButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // PasswordTextBox
             // 
@@ -313,25 +253,6 @@
             this.ConfirmPasswordLabel.Size = new System.Drawing.Size(133, 21);
             this.ConfirmPasswordLabel.TabIndex = 4;
             this.ConfirmPasswordLabel.Text = "Confirm Password";
-            // 
-            // CreateAccountPanelButton
-            // 
-            this.CreateAccountPanelButton.BackColor = System.Drawing.Color.Gray;
-            this.CreateAccountPanelButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CreateAccountPanelButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CreateAccountPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateAccountPanelButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateAccountPanelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CreateAccountPanelButton.Image = global::MachineProject3_TMS.Properties.Resources.new_account;
-            this.CreateAccountPanelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CreateAccountPanelButton.Location = new System.Drawing.Point(24, 251);
-            this.CreateAccountPanelButton.Name = "CreateAccountPanelButton";
-            this.CreateAccountPanelButton.Size = new System.Drawing.Size(318, 42);
-            this.CreateAccountPanelButton.TabIndex = 5;
-            this.CreateAccountPanelButton.Text = "Create account";
-            this.CreateAccountPanelButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.CreateAccountPanelButton.UseVisualStyleBackColor = false;
-            this.CreateAccountPanelButton.Click += new System.EventHandler(this.CreateAccountPanelButton_Click);
             // 
             // PasswordInputLabel
             // 
@@ -534,25 +455,6 @@
             this.NewPasswordTextBox.TabIndex = 9;
             this.NewPasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // CheckUserButton
-            // 
-            this.CheckUserButton.BackColor = System.Drawing.Color.Gray;
-            this.CheckUserButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CheckUserButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CheckUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CheckUserButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckUserButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CheckUserButton.Image = global::MachineProject3_TMS.Properties.Resources.check;
-            this.CheckUserButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CheckUserButton.Location = new System.Drawing.Point(24, 179);
-            this.CheckUserButton.Name = "CheckUserButton";
-            this.CheckUserButton.Size = new System.Drawing.Size(124, 42);
-            this.CheckUserButton.TabIndex = 5;
-            this.CheckUserButton.Text = "Check";
-            this.CheckUserButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.CheckUserButton.UseVisualStyleBackColor = false;
-            this.CheckUserButton.Click += new System.EventHandler(this.CheckUserButton_Click);
-            // 
             // ClosePanel2Button
             // 
             this.ClosePanel2Button.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -568,25 +470,6 @@
             this.ClosePanel2Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ClosePanel2Button.UseVisualStyleBackColor = true;
             this.ClosePanel2Button.Click += new System.EventHandler(this.ClosePanel2Button_Click);
-            // 
-            // ChangePasswordButton
-            // 
-            this.ChangePasswordButton.BackColor = System.Drawing.Color.Gray;
-            this.ChangePasswordButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChangePasswordButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ChangePasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ChangePasswordButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangePasswordButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ChangePasswordButton.Image = global::MachineProject3_TMS.Properties.Resources.new_account;
-            this.ChangePasswordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChangePasswordButton.Location = new System.Drawing.Point(154, 179);
-            this.ChangePasswordButton.Name = "ChangePasswordButton";
-            this.ChangePasswordButton.Size = new System.Drawing.Size(188, 42);
-            this.ChangePasswordButton.TabIndex = 5;
-            this.ChangePasswordButton.Text = "Change password";
-            this.ChangePasswordButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ChangePasswordButton.UseVisualStyleBackColor = false;
-            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
             // 
             // AccountUsernameCheckLabel
             // 
@@ -636,6 +519,66 @@
             this.AccountUsernameCheckTextBox.Size = new System.Drawing.Size(156, 27);
             this.AccountUsernameCheckTextBox.TabIndex = 4;
             // 
+            // CheckUserButton
+            // 
+            this.CheckUserButton.BackColor = System.Drawing.Color.Gray;
+            this.CheckUserButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckUserButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CheckUserButton.FlatAppearance.BorderSize = 0;
+            this.CheckUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CheckUserButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckUserButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CheckUserButton.Image = global::MachineProject3_TMS.Properties.Resources.check;
+            this.CheckUserButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CheckUserButton.Location = new System.Drawing.Point(24, 179);
+            this.CheckUserButton.Name = "CheckUserButton";
+            this.CheckUserButton.Size = new System.Drawing.Size(124, 42);
+            this.CheckUserButton.TabIndex = 5;
+            this.CheckUserButton.Text = "Check";
+            this.CheckUserButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.CheckUserButton.UseVisualStyleBackColor = false;
+            this.CheckUserButton.Click += new System.EventHandler(this.CheckUserButton_Click);
+            // 
+            // ChangePasswordButton
+            // 
+            this.ChangePasswordButton.BackColor = System.Drawing.Color.Gray;
+            this.ChangePasswordButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChangePasswordButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ChangePasswordButton.FlatAppearance.BorderSize = 0;
+            this.ChangePasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChangePasswordButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePasswordButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ChangePasswordButton.Image = global::MachineProject3_TMS.Properties.Resources.new_account;
+            this.ChangePasswordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ChangePasswordButton.Location = new System.Drawing.Point(154, 179);
+            this.ChangePasswordButton.Name = "ChangePasswordButton";
+            this.ChangePasswordButton.Size = new System.Drawing.Size(188, 42);
+            this.ChangePasswordButton.TabIndex = 5;
+            this.ChangePasswordButton.Text = "Change password";
+            this.ChangePasswordButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ChangePasswordButton.UseVisualStyleBackColor = false;
+            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
+            // 
+            // CreateAccountPanelButton
+            // 
+            this.CreateAccountPanelButton.BackColor = System.Drawing.Color.Gray;
+            this.CreateAccountPanelButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CreateAccountPanelButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CreateAccountPanelButton.FlatAppearance.BorderSize = 0;
+            this.CreateAccountPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CreateAccountPanelButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateAccountPanelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CreateAccountPanelButton.Image = global::MachineProject3_TMS.Properties.Resources.new_account;
+            this.CreateAccountPanelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CreateAccountPanelButton.Location = new System.Drawing.Point(24, 251);
+            this.CreateAccountPanelButton.Name = "CreateAccountPanelButton";
+            this.CreateAccountPanelButton.Size = new System.Drawing.Size(318, 42);
+            this.CreateAccountPanelButton.TabIndex = 5;
+            this.CreateAccountPanelButton.Text = "Create account";
+            this.CreateAccountPanelButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.CreateAccountPanelButton.UseVisualStyleBackColor = false;
+            this.CreateAccountPanelButton.Click += new System.EventHandler(this.CreateAccountPanelButton_Click);
+            // 
             // LoginImage
             // 
             this.LoginImage.Image = global::MachineProject3_TMS.Properties.Resources.cover;
@@ -645,14 +588,74 @@
             this.LoginImage.TabIndex = 1;
             this.LoginImage.TabStop = false;
             // 
+            // CreateAcctButton
+            // 
+            this.CreateAcctButton.BackColor = System.Drawing.Color.MediumPurple;
+            this.CreateAcctButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CreateAcctButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CreateAcctButton.FlatAppearance.BorderSize = 0;
+            this.CreateAcctButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CreateAcctButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateAcctButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CreateAcctButton.Image = global::MachineProject3_TMS.Properties.Resources.new_account;
+            this.CreateAcctButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CreateAcctButton.Location = new System.Drawing.Point(21, 325);
+            this.CreateAcctButton.Name = "CreateAcctButton";
+            this.CreateAcctButton.Size = new System.Drawing.Size(209, 54);
+            this.CreateAcctButton.TabIndex = 5;
+            this.CreateAcctButton.Text = "Create account";
+            this.CreateAcctButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.CreateAcctButton.UseVisualStyleBackColor = false;
+            this.CreateAcctButton.Click += new System.EventHandler(this.CreateAcctButton_Click);
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.BackColor = System.Drawing.Color.DarkViolet;
+            this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ClearButton.FlatAppearance.BorderSize = 0;
+            this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearButton.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ClearButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.ClearButton.Image = global::MachineProject3_TMS.Properties.Resources.clear;
+            this.ClearButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ClearButton.Location = new System.Drawing.Point(22, 209);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(82, 47);
+            this.ClearButton.TabIndex = 5;
+            this.ClearButton.Text = "Clear";
+            this.ClearButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ClearButton.UseVisualStyleBackColor = false;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.BackColor = System.Drawing.Color.DarkViolet;
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LoginButton.FlatAppearance.BorderSize = 0;
+            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.LoginButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LoginButton.Image = global::MachineProject3_TMS.Properties.Resources.logingray;
+            this.LoginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LoginButton.Location = new System.Drawing.Point(110, 209);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(120, 47);
+            this.LoginButton.TabIndex = 5;
+            this.LoginButton.Text = "Log-in";
+            this.LoginButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.LoginButton.UseVisualStyleBackColor = false;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(664, 471);
-            this.Controls.Add(this.AccountRecoveryPanel);
             this.Controls.Add(this.CreateAcctPanel);
+            this.Controls.Add(this.AccountRecoveryPanel);
             this.Controls.Add(this.LoginImage);
             this.Controls.Add(this.LoginPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
