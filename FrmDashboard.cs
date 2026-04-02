@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace MachineProject3_TMS
 {
-    public partial class entry_login : Form
+    public partial class FrmDashboard : Form
     {
-        public entry_login()
+        public FrmDashboard()
         {
             InitializeComponent();
+            // Initializes the dashboard form and its components.
         }
     }
 }

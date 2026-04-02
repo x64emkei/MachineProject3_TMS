@@ -16,7 +16,7 @@ namespace MachineProject3_TMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new entry_login());
+            Application.Run(new FrmLogin());
         }
     }
 }
