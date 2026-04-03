@@ -45,18 +45,30 @@ namespace MachineProject3_TMS
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelResults = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.statusStripTasks = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button5 = new System.Windows.Forms.Button();
             this.lblSearchHeader = new System.Windows.Forms.Label();
             this.dgvTasks = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelInputs = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.txtTaskTitle = new System.Windows.Forms.TextBox();
@@ -64,19 +76,7 @@ namespace MachineProject3_TMS
             this.txtTaskID = new System.Windows.Forms.TextBox();
             this.lblTaskID = new System.Windows.Forms.Label();
             this.lblPanelTaskDetails = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.ExitDashboardButton = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuTasks.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelResults.SuspendLayout();
@@ -87,6 +87,7 @@ namespace MachineProject3_TMS
             // 
             // menuTasks
             // 
+            this.menuTasks.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuTasks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.recordToolStripMenuItem,
@@ -94,7 +95,7 @@ namespace MachineProject3_TMS
             this.helpToolStripMenuItem});
             this.menuTasks.Location = new System.Drawing.Point(0, 0);
             this.menuTasks.Name = "menuTasks";
-            this.menuTasks.Size = new System.Drawing.Size(1159, 24);
+            this.menuTasks.Size = new System.Drawing.Size(1159, 25);
             this.menuTasks.TabIndex = 0;
             this.menuTasks.Text = "menuTasks";
             // 
@@ -106,39 +107,39 @@ namespace MachineProject3_TMS
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // returnToDashboardToolStripMenuItem
             // 
             this.returnToDashboardToolStripMenuItem.Name = "returnToDashboardToolStripMenuItem";
             this.returnToDashboardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.returnToDashboardToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.returnToDashboardToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.returnToDashboardToolStripMenuItem.Text = "Return to Dashboard";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.logoutToolStripMenuItem.Text = "Log-out";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(240, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // recordToolStripMenuItem
             // 
             this.recordToolStripMenuItem.Name = "recordToolStripMenuItem";
-            this.recordToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.recordToolStripMenuItem.Size = new System.Drawing.Size(62, 21);
             this.recordToolStripMenuItem.Text = "&Record";
             // 
             // refreshToolStripMenuItem
@@ -150,33 +151,33 @@ namespace MachineProject3_TMS
             this.reportsToolStripMenuItem});
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.refreshToolStripMenuItem.Text = "&View";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(238, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(256, 22);
             this.toolStripMenuItem3.Text = "Refresh/View All Tasks";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(235, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(253, 6);
             // 
             // categoryManagementToolStripMenuItem
             // 
             this.categoryManagementToolStripMenuItem.Name = "categoryManagementToolStripMenuItem";
             this.categoryManagementToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-            this.categoryManagementToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.categoryManagementToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.categoryManagementToolStripMenuItem.Text = "Category Management";
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
             this.reportsToolStripMenuItem.Text = "Reports";
             // 
             // helpToolStripMenuItem
@@ -184,14 +185,14 @@ namespace MachineProject3_TMS
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             // 
             // lblTitle
@@ -200,13 +201,16 @@ namespace MachineProject3_TMS
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(17, 24);
+            this.lblTitle.Location = new System.Drawing.Point(9, 22);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(390, 65);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "Task Management";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelMain
             // 
@@ -235,6 +239,23 @@ namespace MachineProject3_TMS
             this.panelResults.Size = new System.Drawing.Size(736, 540);
             this.panelResults.TabIndex = 0;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.DimGray;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button6.Image = global::MachineProject3_TMS.Properties.Resources.search;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button6.Location = new System.Drawing.Point(385, 59);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(168, 51);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "SEARCH";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
             // statusStripTasks
             // 
             this.statusStripTasks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -255,6 +276,23 @@ namespace MachineProject3_TMS
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button5.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button5.Location = new System.Drawing.Point(559, 59);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(168, 51);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "REFRESH";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // lblSearchHeader
             // 
@@ -281,6 +319,28 @@ namespace MachineProject3_TMS
             this.dgvTasks.Name = "dgvTasks";
             this.dgvTasks.Size = new System.Drawing.Size(719, 381);
             this.dgvTasks.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Silver;
+            this.label6.Location = new System.Drawing.Point(4, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 21);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Search";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Gray;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(8, 81);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(208, 29);
+            this.textBox2.TabIndex = 3;
             // 
             // panelInputs
             // 
@@ -312,6 +372,86 @@ namespace MachineProject3_TMS
             this.panelInputs.Name = "panelInputs";
             this.panelInputs.Size = new System.Drawing.Size(377, 540);
             this.panelInputs.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DimGray;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::MachineProject3_TMS.Properties.Resources.clear;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button4.Location = new System.Drawing.Point(191, 425);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(168, 90);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "CLEAR";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Firebrick;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::MachineProject3_TMS.Properties.Resources.delete;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button3.Location = new System.Drawing.Point(17, 425);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(168, 90);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "DELETE";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::MachineProject3_TMS.Properties.Resources.update;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button2.Location = new System.Drawing.Point(191, 329);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(168, 90);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "UPDATE";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SeaGreen;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::MachineProject3_TMS.Properties.Resources.add;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button1.Location = new System.Drawing.Point(17, 329);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 90);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "ADD";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.Color.Gray;
+            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBox3.ForeColor = System.Drawing.Color.White;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "High"});
+            this.comboBox3.Location = new System.Drawing.Point(219, 256);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(140, 29);
+            this.comboBox3.TabIndex = 5;
             // 
             // comboBox2
             // 
@@ -355,6 +495,17 @@ namespace MachineProject3_TMS
             this.dateTimePicker1.Size = new System.Drawing.Size(116, 25);
             this.dateTimePicker1.TabIndex = 4;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Gray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(16, 256);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(195, 29);
+            this.textBox1.TabIndex = 3;
+            // 
             // txtDescription
             // 
             this.txtDescription.BackColor = System.Drawing.Color.Gray;
@@ -377,6 +528,17 @@ namespace MachineProject3_TMS
             this.label3.TabIndex = 2;
             this.label3.Text = "Status";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Silver;
+            this.label5.Location = new System.Drawing.Point(215, 232);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 21);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Category";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -387,6 +549,17 @@ namespace MachineProject3_TMS
             this.label2.Size = new System.Drawing.Size(61, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Priority";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.Location = new System.Drawing.Point(12, 232);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 21);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Assigned To";
             // 
             // label1
             // 
@@ -466,193 +639,24 @@ namespace MachineProject3_TMS
             this.lblPanelTaskDetails.Text = "Task Details";
             this.lblPanelTaskDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(12, 232);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Assigned To";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Gray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(16, 256);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 29);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(215, 232);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 21);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Priority";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.Gray;
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.comboBox3.ForeColor = System.Drawing.Color.White;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Low",
-            "Medium",
-            "High"});
-            this.comboBox3.Location = new System.Drawing.Point(219, 256);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(140, 29);
-            this.comboBox3.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(13, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 21);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Search";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Gray;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(17, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 29);
-            this.textBox2.TabIndex = 3;
-            // 
             // ExitDashboardButton
             // 
             this.ExitDashboardButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ExitDashboardButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ExitDashboardButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.ExitDashboardButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.ExitDashboardButton.FlatAppearance.BorderSize = 0;
             this.ExitDashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitDashboardButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitDashboardButton.ForeColor = System.Drawing.Color.White;
             this.ExitDashboardButton.Image = global::MachineProject3_TMS.Properties.Resources.home;
             this.ExitDashboardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ExitDashboardButton.Location = new System.Drawing.Point(1019, 35);
+            this.ExitDashboardButton.Location = new System.Drawing.Point(1005, 36);
             this.ExitDashboardButton.Name = "ExitDashboardButton";
-            this.ExitDashboardButton.Size = new System.Drawing.Size(119, 46);
+            this.ExitDashboardButton.Size = new System.Drawing.Size(134, 46);
             this.ExitDashboardButton.TabIndex = 7;
-            this.ExitDashboardButton.Text = "Home";
+            this.ExitDashboardButton.Text = "Dashboard";
             this.ExitDashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ExitDashboardButton.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.DimGray;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Image = global::MachineProject3_TMS.Properties.Resources.search;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button6.Location = new System.Drawing.Point(384, 53);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(168, 65);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "SEARCH";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button5.Location = new System.Drawing.Point(558, 53);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(168, 65);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "REFRESH";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.DimGray;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::MachineProject3_TMS.Properties.Resources.clear;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button4.Location = new System.Drawing.Point(191, 417);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 65);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "CLEAR";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Firebrick;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::MachineProject3_TMS.Properties.Resources.delete;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button3.Location = new System.Drawing.Point(17, 417);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 65);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "DELETE";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::MachineProject3_TMS.Properties.Resources.update;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button2.Location = new System.Drawing.Point(191, 346);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 65);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "UPDATE";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SeaGreen;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::MachineProject3_TMS.Properties.Resources.add;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button1.Location = new System.Drawing.Point(17, 346);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 65);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "ADD";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // FrmTasks
             // 
@@ -662,8 +666,8 @@ namespace MachineProject3_TMS
             this.ClientSize = new System.Drawing.Size(1159, 671);
             this.Controls.Add(this.ExitDashboardButton);
             this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.menuTasks);
+            this.Controls.Add(this.lblTitle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuTasks;
             this.Name = "FrmTasks";

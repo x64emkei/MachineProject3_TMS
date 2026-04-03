@@ -183,6 +183,16 @@ namespace MachineProject3_TMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo_C_sharp_svg {
+            get {
+                object obj = ResourceManager.GetObject("Logo_C_sharp.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout {
             get {
                 object obj = ResourceManager.GetObject("logout", resourceCulture);
@@ -206,6 +216,16 @@ namespace MachineProject3_TMS.Properties {
         internal static System.Drawing.Bitmap person {
             get {
                 object obj = ResourceManager.GetObject("person", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngimg_com___mysql_PNG37 {
+            get {
+                object obj = ResourceManager.GetObject("pngimg.com - mysql_PNG37", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

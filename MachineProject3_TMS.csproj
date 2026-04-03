@@ -248,6 +248,8 @@
     <None Include="media_resources\close.png" />
     <None Include="media_resources\refresh.png" />
     <None Include="media_resources\home.png" />
+    <None Include="media_resources\Logo_C_sharp.svg.png" />
+    <None Include="media_resources\pngimg.com - mysql_PNG37.png" />
     <Content Include="tms.ico" />
   </ItemGroup>
   <ItemGroup>
