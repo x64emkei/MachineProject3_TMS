@@ -87,9 +87,9 @@ namespace MachineProject3_TMS
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 15F);
-            this.label2.Location = new System.Drawing.Point(52, 149);
+            this.label2.Location = new System.Drawing.Point(116, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 33);
+            this.label2.Size = new System.Drawing.Size(197, 33);
             this.label2.TabIndex = 0;
             this.label2.Text = "Developed by";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
