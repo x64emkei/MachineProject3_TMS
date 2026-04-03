@@ -42,57 +42,57 @@ namespace MachineProject3_TMS
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.panelResults = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.MainTitleLabel = new System.Windows.Forms.Label();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.TaskDirectoryPanel = new System.Windows.Forms.Panel();
+            this.SearchDirectoryButton = new System.Windows.Forms.Button();
             this.statusStripTasks = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.lblSearchHeader = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.dgvTasks = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panelInputs = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtTaskTitle = new System.Windows.Forms.TextBox();
-            this.lblTaskTitle = new System.Windows.Forms.Label();
-            this.txtTaskID = new System.Windows.Forms.TextBox();
-            this.lblTaskID = new System.Windows.Forms.Label();
-            this.lblPanelTaskDetails = new System.Windows.Forms.Label();
+            this.TaskDirectoryStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DatabaseStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
+            this.TaskDirectoryLabel = new System.Windows.Forms.Label();
+            this.FilterByComboBox = new System.Windows.Forms.ComboBox();
+            this.TaskDirectoryDataGridView = new System.Windows.Forms.DataGridView();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.FilterByLabel = new System.Windows.Forms.Label();
+            this.TaskEditorPanel = new System.Windows.Forms.Panel();
+            this.ClearEditorButton = new System.Windows.Forms.Button();
+            this.DeleteEditorButton = new System.Windows.Forms.Button();
+            this.UpdateEditorButton = new System.Windows.Forms.Button();
+            this.AddEditorButton = new System.Windows.Forms.Button();
+            this.CategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.PriorityComboBox = new System.Windows.Forms.ComboBox();
+            this.StatusComboBox = new System.Windows.Forms.ComboBox();
+            this.DueDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.AssignedToTextBox = new System.Windows.Forms.TextBox();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.StatusLabel = new System.Windows.Forms.Label();
+            this.CategoryLabel = new System.Windows.Forms.Label();
+            this.PriorityLabel = new System.Windows.Forms.Label();
+            this.AssignedToLabel = new System.Windows.Forms.Label();
+            this.DueDateLabel = new System.Windows.Forms.Label();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.TaskTitleTextBox = new System.Windows.Forms.TextBox();
+            this.TaskTitleLabel = new System.Windows.Forms.Label();
+            this.TaskIDTextBox = new System.Windows.Forms.TextBox();
+            this.TaskIDLabel = new System.Windows.Forms.Label();
+            this.TaskEditorTitleLabel = new System.Windows.Forms.Label();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.TotalTasksCounterLabel = new System.Windows.Forms.Label();
+            this.PendingTasksCounterLabel = new System.Windows.Forms.Label();
+            this.CompletedTasksCounterLabel = new System.Windows.Forms.Label();
+            this.CompletedLabel = new System.Windows.Forms.Label();
+            this.PendingLabel = new System.Windows.Forms.Label();
+            this.TotalLabel = new System.Windows.Forms.Label();
+            this.EditorStatusMessageLabel = new System.Windows.Forms.Label();
             this.menuTasks.SuspendLayout();
-            this.panelMain.SuspendLayout();
-            this.panelResults.SuspendLayout();
+            this.MainPanel.SuspendLayout();
+            this.TaskDirectoryPanel.SuspendLayout();
             this.statusStripTasks.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).BeginInit();
-            this.panelInputs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).BeginInit();
+            this.TaskEditorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,497 +206,499 @@ namespace MachineProject3_TMS
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             // 
-            // lblTitle
+            // MainTitleLabel
             // 
-            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MainTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(68, 25);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(390, 65);
-            this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "Task Management";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MainTitleLabel.AutoSize = true;
+            this.MainTitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.MainTitleLabel.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainTitleLabel.ForeColor = System.Drawing.Color.White;
+            this.MainTitleLabel.Location = new System.Drawing.Point(68, 25);
+            this.MainTitleLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.MainTitleLabel.Name = "MainTitleLabel";
+            this.MainTitleLabel.Size = new System.Drawing.Size(390, 65);
+            this.MainTitleLabel.TabIndex = 5;
+            this.MainTitleLabel.Text = "Task Management";
+            this.MainTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panelMain
+            // MainPanel
             // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panelMain.Controls.Add(this.panelResults);
-            this.panelMain.Controls.Add(this.panelInputs);
-            this.panelMain.Location = new System.Drawing.Point(0, 92);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Padding = new System.Windows.Forms.Padding(20);
-            this.panelMain.Size = new System.Drawing.Size(1263, 606);
-            this.panelMain.TabIndex = 6;
+            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.MainPanel.Controls.Add(this.TaskDirectoryPanel);
+            this.MainPanel.Controls.Add(this.TaskEditorPanel);
+            this.MainPanel.Location = new System.Drawing.Point(0, 92);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Padding = new System.Windows.Forms.Padding(20);
+            this.MainPanel.Size = new System.Drawing.Size(1263, 606);
+            this.MainPanel.TabIndex = 6;
             // 
-            // panelResults
+            // TaskDirectoryPanel
             // 
-            this.panelResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.panelResults.Controls.Add(this.label13);
-            this.panelResults.Controls.Add(this.label12);
-            this.panelResults.Controls.Add(this.label11);
-            this.panelResults.Controls.Add(this.label10);
-            this.panelResults.Controls.Add(this.label9);
-            this.panelResults.Controls.Add(this.label8);
-            this.panelResults.Controls.Add(this.button6);
-            this.panelResults.Controls.Add(this.statusStripTasks);
-            this.panelResults.Controls.Add(this.button5);
-            this.panelResults.Controls.Add(this.lblSearchHeader);
-            this.panelResults.Controls.Add(this.comboBox4);
-            this.panelResults.Controls.Add(this.dgvTasks);
-            this.panelResults.Controls.Add(this.label6);
-            this.panelResults.Controls.Add(this.textBox2);
-            this.panelResults.Controls.Add(this.label7);
-            this.panelResults.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelResults.Location = new System.Drawing.Point(405, 20);
-            this.panelResults.Name = "panelResults";
-            this.panelResults.Size = new System.Drawing.Size(838, 566);
-            this.panelResults.TabIndex = 0;
+            this.TaskDirectoryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.TaskDirectoryPanel.Controls.Add(this.TotalLabel);
+            this.TaskDirectoryPanel.Controls.Add(this.PendingLabel);
+            this.TaskDirectoryPanel.Controls.Add(this.CompletedLabel);
+            this.TaskDirectoryPanel.Controls.Add(this.CompletedTasksCounterLabel);
+            this.TaskDirectoryPanel.Controls.Add(this.PendingTasksCounterLabel);
+            this.TaskDirectoryPanel.Controls.Add(this.TotalTasksCounterLabel);
+            this.TaskDirectoryPanel.Controls.Add(this.FilterByLabel);
+            this.TaskDirectoryPanel.Controls.Add(this.SearchDirectoryButton);
+            this.TaskDirectoryPanel.Controls.Add(this.RefreshDirectoryButton);
+            this.TaskDirectoryPanel.Controls.Add(this.TaskDirectoryLabel);
+            this.TaskDirectoryPanel.Controls.Add(this.FilterByComboBox);
+            this.TaskDirectoryPanel.Controls.Add(this.TaskDirectoryDataGridView);
+            this.TaskDirectoryPanel.Controls.Add(this.SearchLabel);
+            this.TaskDirectoryPanel.Controls.Add(this.SearchTextBox);
+            this.TaskDirectoryPanel.Controls.Add(this.statusStripTasks);
+            this.TaskDirectoryPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.TaskDirectoryPanel.Location = new System.Drawing.Point(405, 20);
+            this.TaskDirectoryPanel.Name = "TaskDirectoryPanel";
+            this.TaskDirectoryPanel.Size = new System.Drawing.Size(838, 566);
+            this.TaskDirectoryPanel.TabIndex = 0;
             // 
-            // button6
+            // SearchDirectoryButton
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Image = global::MachineProject3_TMS.Properties.Resources.search;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button6.Location = new System.Drawing.Point(13, 359);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(164, 51);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "SEARCH";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button6.UseVisualStyleBackColor = false;
+            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
+            this.SearchDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
+            this.SearchDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.SearchDirectoryButton.Location = new System.Drawing.Point(13, 424);
+            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
+            this.SearchDirectoryButton.Size = new System.Drawing.Size(164, 51);
+            this.SearchDirectoryButton.TabIndex = 9;
+            this.SearchDirectoryButton.Text = "SEARCH";
+            this.SearchDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
             // 
             // statusStripTasks
             // 
             this.statusStripTasks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.TaskDirectoryStatusMessage,
+            this.DatabaseStatusMessage});
             this.statusStripTasks.Location = new System.Drawing.Point(0, 544);
             this.statusStripTasks.Name = "statusStripTasks";
             this.statusStripTasks.Size = new System.Drawing.Size(838, 22);
             this.statusStripTasks.TabIndex = 1;
             this.statusStripTasks.Text = "statusStripTasks";
             // 
-            // toolStripStatusLabel1
+            // TaskDirectoryStatusMessage
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            this.TaskDirectoryStatusMessage.Name = "TaskDirectoryStatusMessage";
+            this.TaskDirectoryStatusMessage.Size = new System.Drawing.Size(0, 17);
             // 
-            // toolStripStatusLabel2
+            // DatabaseStatusMessage
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            this.DatabaseStatusMessage.Name = "DatabaseStatusMessage";
+            this.DatabaseStatusMessage.Size = new System.Drawing.Size(0, 17);
             // 
-            // button5
+            // RefreshDirectoryButton
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button5.Location = new System.Drawing.Point(13, 481);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(164, 51);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "REFRESH";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button5.UseVisualStyleBackColor = false;
+            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
+            this.RefreshDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RefreshDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
+            this.RefreshDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.RefreshDirectoryButton.Location = new System.Drawing.Point(13, 481);
+            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
+            this.RefreshDirectoryButton.Size = new System.Drawing.Size(164, 51);
+            this.RefreshDirectoryButton.TabIndex = 7;
+            this.RefreshDirectoryButton.Text = "REFRESH";
+            this.RefreshDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
             // 
-            // lblSearchHeader
+            // TaskDirectoryLabel
             // 
-            this.lblSearchHeader.BackColor = System.Drawing.Color.DodgerBlue;
-            this.lblSearchHeader.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchHeader.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSearchHeader.Location = new System.Drawing.Point(0, 0);
-            this.lblSearchHeader.Name = "lblSearchHeader";
-            this.lblSearchHeader.Size = new System.Drawing.Size(838, 44);
-            this.lblSearchHeader.TabIndex = 0;
-            this.lblSearchHeader.Text = "Task Viewer";
-            this.lblSearchHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TaskDirectoryLabel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.TaskDirectoryLabel.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskDirectoryLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TaskDirectoryLabel.Location = new System.Drawing.Point(0, 0);
+            this.TaskDirectoryLabel.Name = "TaskDirectoryLabel";
+            this.TaskDirectoryLabel.Size = new System.Drawing.Size(838, 44);
+            this.TaskDirectoryLabel.TabIndex = 0;
+            this.TaskDirectoryLabel.Text = "Task Directory";
+            this.TaskDirectoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox4
+            // FilterByComboBox
             // 
-            this.comboBox4.BackColor = System.Drawing.Color.Gray;
-            this.comboBox4.CausesValidation = false;
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.comboBox4.ForeColor = System.Drawing.Color.White;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.FilterByComboBox.BackColor = System.Drawing.Color.Gray;
+            this.FilterByComboBox.CausesValidation = false;
+            this.FilterByComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FilterByComboBox.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.FilterByComboBox.ForeColor = System.Drawing.Color.White;
+            this.FilterByComboBox.FormattingEnabled = true;
+            this.FilterByComboBox.Items.AddRange(new object[] {
             "Low",
             "Medium",
             "High"});
-            this.comboBox4.Location = new System.Drawing.Point(13, 446);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(164, 29);
-            this.comboBox4.TabIndex = 5;
+            this.FilterByComboBox.Location = new System.Drawing.Point(13, 383);
+            this.FilterByComboBox.Name = "FilterByComboBox";
+            this.FilterByComboBox.Size = new System.Drawing.Size(164, 29);
+            this.FilterByComboBox.TabIndex = 5;
             // 
-            // dgvTasks
+            // TaskDirectoryDataGridView
             // 
-            this.dgvTasks.AllowUserToAddRows = false;
-            this.dgvTasks.AllowUserToDeleteRows = false;
-            this.dgvTasks.AllowUserToOrderColumns = true;
-            this.dgvTasks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
-            this.dgvTasks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvTasks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dgvTasks.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTasks.Location = new System.Drawing.Point(188, 57);
-            this.dgvTasks.Name = "dgvTasks";
-            this.dgvTasks.Size = new System.Drawing.Size(637, 475);
-            this.dgvTasks.TabIndex = 3;
+            this.TaskDirectoryDataGridView.AllowUserToAddRows = false;
+            this.TaskDirectoryDataGridView.AllowUserToDeleteRows = false;
+            this.TaskDirectoryDataGridView.AllowUserToOrderColumns = true;
+            this.TaskDirectoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.TaskDirectoryDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.TaskDirectoryDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TaskDirectoryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TaskDirectoryDataGridView.Location = new System.Drawing.Point(188, 57);
+            this.TaskDirectoryDataGridView.Name = "TaskDirectoryDataGridView";
+            this.TaskDirectoryDataGridView.Size = new System.Drawing.Size(637, 475);
+            this.TaskDirectoryDataGridView.TabIndex = 3;
             // 
-            // label6
+            // SearchLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(9, 300);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 21);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Search";
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchLabel.ForeColor = System.Drawing.Color.Silver;
+            this.SearchLabel.Location = new System.Drawing.Point(9, 300);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(57, 21);
+            this.SearchLabel.TabIndex = 2;
+            this.SearchLabel.Text = "Search";
             // 
-            // textBox2
+            // SearchTextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gray;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.CausesValidation = false;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(13, 324);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 29);
-            this.textBox2.TabIndex = 3;
+            this.SearchTextBox.BackColor = System.Drawing.Color.Gray;
+            this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchTextBox.CausesValidation = false;
+            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTextBox.ForeColor = System.Drawing.Color.White;
+            this.SearchTextBox.Location = new System.Drawing.Point(13, 324);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(164, 29);
+            this.SearchTextBox.TabIndex = 3;
             // 
-            // label7
+            // FilterByLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(9, 422);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 21);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Filter By";
+            this.FilterByLabel.AutoSize = true;
+            this.FilterByLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FilterByLabel.ForeColor = System.Drawing.Color.Silver;
+            this.FilterByLabel.Location = new System.Drawing.Point(9, 359);
+            this.FilterByLabel.Name = "FilterByLabel";
+            this.FilterByLabel.Size = new System.Drawing.Size(66, 21);
+            this.FilterByLabel.TabIndex = 2;
+            this.FilterByLabel.Text = "Filter By";
             // 
-            // panelInputs
+            // TaskEditorPanel
             // 
-            this.panelInputs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.panelInputs.Controls.Add(this.label14);
-            this.panelInputs.Controls.Add(this.button4);
-            this.panelInputs.Controls.Add(this.button3);
-            this.panelInputs.Controls.Add(this.button2);
-            this.panelInputs.Controls.Add(this.button1);
-            this.panelInputs.Controls.Add(this.comboBox3);
-            this.panelInputs.Controls.Add(this.comboBox2);
-            this.panelInputs.Controls.Add(this.comboBox1);
-            this.panelInputs.Controls.Add(this.dateTimePicker1);
-            this.panelInputs.Controls.Add(this.textBox1);
-            this.panelInputs.Controls.Add(this.txtDescription);
-            this.panelInputs.Controls.Add(this.label3);
-            this.panelInputs.Controls.Add(this.label5);
-            this.panelInputs.Controls.Add(this.label2);
-            this.panelInputs.Controls.Add(this.label4);
-            this.panelInputs.Controls.Add(this.label1);
-            this.panelInputs.Controls.Add(this.lblDescription);
-            this.panelInputs.Controls.Add(this.txtTaskTitle);
-            this.panelInputs.Controls.Add(this.lblTaskTitle);
-            this.panelInputs.Controls.Add(this.txtTaskID);
-            this.panelInputs.Controls.Add(this.lblTaskID);
-            this.panelInputs.Controls.Add(this.lblPanelTaskDetails);
-            this.panelInputs.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelInputs.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelInputs.Location = new System.Drawing.Point(20, 20);
-            this.panelInputs.Name = "panelInputs";
-            this.panelInputs.Size = new System.Drawing.Size(377, 566);
-            this.panelInputs.TabIndex = 0;
+            this.TaskEditorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.TaskEditorPanel.Controls.Add(this.EditorStatusMessageLabel);
+            this.TaskEditorPanel.Controls.Add(this.ClearEditorButton);
+            this.TaskEditorPanel.Controls.Add(this.DeleteEditorButton);
+            this.TaskEditorPanel.Controls.Add(this.UpdateEditorButton);
+            this.TaskEditorPanel.Controls.Add(this.AddEditorButton);
+            this.TaskEditorPanel.Controls.Add(this.CategoryComboBox);
+            this.TaskEditorPanel.Controls.Add(this.PriorityComboBox);
+            this.TaskEditorPanel.Controls.Add(this.StatusComboBox);
+            this.TaskEditorPanel.Controls.Add(this.DueDatePicker);
+            this.TaskEditorPanel.Controls.Add(this.AssignedToTextBox);
+            this.TaskEditorPanel.Controls.Add(this.DescriptionTextBox);
+            this.TaskEditorPanel.Controls.Add(this.TaskTitleTextBox);
+            this.TaskEditorPanel.Controls.Add(this.TaskIDTextBox);
+            this.TaskEditorPanel.Controls.Add(this.StatusLabel);
+            this.TaskEditorPanel.Controls.Add(this.CategoryLabel);
+            this.TaskEditorPanel.Controls.Add(this.PriorityLabel);
+            this.TaskEditorPanel.Controls.Add(this.AssignedToLabel);
+            this.TaskEditorPanel.Controls.Add(this.DueDateLabel);
+            this.TaskEditorPanel.Controls.Add(this.DescriptionLabel);
+            this.TaskEditorPanel.Controls.Add(this.TaskTitleLabel);
+            this.TaskEditorPanel.Controls.Add(this.TaskIDLabel);
+            this.TaskEditorPanel.Controls.Add(this.TaskEditorTitleLabel);
+            this.TaskEditorPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TaskEditorPanel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TaskEditorPanel.Location = new System.Drawing.Point(20, 20);
+            this.TaskEditorPanel.Name = "TaskEditorPanel";
+            this.TaskEditorPanel.Size = new System.Drawing.Size(377, 566);
+            this.TaskEditorPanel.TabIndex = 0;
             // 
-            // button4
+            // ClearEditorButton
             // 
-            this.button4.BackColor = System.Drawing.Color.DimGray;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::MachineProject3_TMS.Properties.Resources.clear;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button4.Location = new System.Drawing.Point(191, 458);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 90);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "CLEAR";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button4.UseVisualStyleBackColor = false;
+            this.ClearEditorButton.BackColor = System.Drawing.Color.DimGray;
+            this.ClearEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearEditorButton.FlatAppearance.BorderSize = 0;
+            this.ClearEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.clear;
+            this.ClearEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ClearEditorButton.Location = new System.Drawing.Point(191, 458);
+            this.ClearEditorButton.Name = "ClearEditorButton";
+            this.ClearEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.ClearEditorButton.TabIndex = 9;
+            this.ClearEditorButton.Text = "CLEAR";
+            this.ClearEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ClearEditorButton.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // DeleteEditorButton
             // 
-            this.button3.BackColor = System.Drawing.Color.Firebrick;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::MachineProject3_TMS.Properties.Resources.delete;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button3.Location = new System.Drawing.Point(17, 458);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(168, 90);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "DELETE";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.DeleteEditorButton.BackColor = System.Drawing.Color.Firebrick;
+            this.DeleteEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteEditorButton.FlatAppearance.BorderSize = 0;
+            this.DeleteEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.delete;
+            this.DeleteEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.DeleteEditorButton.Location = new System.Drawing.Point(17, 458);
+            this.DeleteEditorButton.Name = "DeleteEditorButton";
+            this.DeleteEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.DeleteEditorButton.TabIndex = 8;
+            this.DeleteEditorButton.Text = "DELETE";
+            this.DeleteEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.DeleteEditorButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // UpdateEditorButton
             // 
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::MachineProject3_TMS.Properties.Resources.update;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button2.Location = new System.Drawing.Point(191, 362);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 90);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "UPDATE";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.UpdateEditorButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.UpdateEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateEditorButton.FlatAppearance.BorderSize = 0;
+            this.UpdateEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.update;
+            this.UpdateEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.UpdateEditorButton.Location = new System.Drawing.Point(191, 362);
+            this.UpdateEditorButton.Name = "UpdateEditorButton";
+            this.UpdateEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.UpdateEditorButton.TabIndex = 7;
+            this.UpdateEditorButton.Text = "UPDATE";
+            this.UpdateEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.UpdateEditorButton.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // AddEditorButton
             // 
-            this.button1.BackColor = System.Drawing.Color.SeaGreen;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::MachineProject3_TMS.Properties.Resources.add;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button1.Location = new System.Drawing.Point(17, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 90);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "ADD";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.AddEditorButton.BackColor = System.Drawing.Color.SeaGreen;
+            this.AddEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddEditorButton.FlatAppearance.BorderSize = 0;
+            this.AddEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.add;
+            this.AddEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.AddEditorButton.Location = new System.Drawing.Point(17, 362);
+            this.AddEditorButton.Name = "AddEditorButton";
+            this.AddEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.AddEditorButton.TabIndex = 6;
+            this.AddEditorButton.Text = "ADD";
+            this.AddEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.AddEditorButton.UseVisualStyleBackColor = false;
             // 
-            // comboBox3
+            // CategoryComboBox
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.Gray;
-            this.comboBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.comboBox3.ForeColor = System.Drawing.Color.White;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.CategoryComboBox.BackColor = System.Drawing.Color.Gray;
+            this.CategoryComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CategoryComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CategoryComboBox.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.CategoryComboBox.ForeColor = System.Drawing.Color.White;
+            this.CategoryComboBox.FormattingEnabled = true;
+            this.CategoryComboBox.Items.AddRange(new object[] {
             "Low",
             "Medium",
             "High"});
-            this.comboBox3.Location = new System.Drawing.Point(219, 275);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(140, 29);
-            this.comboBox3.TabIndex = 5;
+            this.CategoryComboBox.Location = new System.Drawing.Point(219, 275);
+            this.CategoryComboBox.Name = "CategoryComboBox";
+            this.CategoryComboBox.Size = new System.Drawing.Size(140, 29);
+            this.CategoryComboBox.TabIndex = 5;
             // 
-            // comboBox2
+            // PriorityComboBox
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.Gray;
-            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.PriorityComboBox.BackColor = System.Drawing.Color.Gray;
+            this.PriorityComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PriorityComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PriorityComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.PriorityComboBox.ForeColor = System.Drawing.Color.White;
+            this.PriorityComboBox.FormattingEnabled = true;
+            this.PriorityComboBox.Items.AddRange(new object[] {
             "Low",
             "Medium",
             "High"});
-            this.comboBox2.Location = new System.Drawing.Point(140, 223);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(103, 25);
-            this.comboBox2.TabIndex = 5;
+            this.PriorityComboBox.Location = new System.Drawing.Point(140, 223);
+            this.PriorityComboBox.Name = "PriorityComboBox";
+            this.PriorityComboBox.Size = new System.Drawing.Size(103, 25);
+            this.PriorityComboBox.TabIndex = 5;
             // 
-            // comboBox1
+            // StatusComboBox
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.Gray;
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.StatusComboBox.BackColor = System.Drawing.Color.Gray;
+            this.StatusComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StatusComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StatusComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.StatusComboBox.ForeColor = System.Drawing.Color.White;
+            this.StatusComboBox.FormattingEnabled = true;
+            this.StatusComboBox.Items.AddRange(new object[] {
             "Pending",
             "In Progress",
             "Completed"});
-            this.comboBox1.Location = new System.Drawing.Point(249, 223);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(110, 25);
-            this.comboBox1.TabIndex = 5;
+            this.StatusComboBox.Location = new System.Drawing.Point(249, 223);
+            this.StatusComboBox.Name = "StatusComboBox";
+            this.StatusComboBox.Size = new System.Drawing.Size(110, 25);
+            this.StatusComboBox.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // DueDatePicker
             // 
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(16, 223);
-            this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(116, 25);
-            this.dateTimePicker1.TabIndex = 4;
+            this.DueDatePicker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DueDatePicker.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.DueDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DueDatePicker.Location = new System.Drawing.Point(16, 223);
+            this.DueDatePicker.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.DueDatePicker.Name = "DueDatePicker";
+            this.DueDatePicker.Size = new System.Drawing.Size(116, 25);
+            this.DueDatePicker.TabIndex = 4;
             // 
-            // textBox1
+            // AssignedToTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(16, 275);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 29);
-            this.textBox1.TabIndex = 3;
+            this.AssignedToTextBox.BackColor = System.Drawing.Color.Gray;
+            this.AssignedToTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AssignedToTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssignedToTextBox.ForeColor = System.Drawing.Color.White;
+            this.AssignedToTextBox.Location = new System.Drawing.Point(16, 275);
+            this.AssignedToTextBox.Name = "AssignedToTextBox";
+            this.AssignedToTextBox.Size = new System.Drawing.Size(195, 29);
+            this.AssignedToTextBox.TabIndex = 3;
             // 
-            // txtDescription
+            // DescriptionTextBox
             // 
-            this.txtDescription.BackColor = System.Drawing.Color.Gray;
-            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.ForeColor = System.Drawing.Color.White;
-            this.txtDescription.Location = new System.Drawing.Point(16, 148);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(343, 29);
-            this.txtDescription.TabIndex = 3;
+            this.DescriptionTextBox.BackColor = System.Drawing.Color.Gray;
+            this.DescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DescriptionTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionTextBox.ForeColor = System.Drawing.Color.White;
+            this.DescriptionTextBox.Location = new System.Drawing.Point(16, 148);
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(343, 29);
+            this.DescriptionTextBox.TabIndex = 3;
             // 
-            // label3
+            // StatusLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(245, 199);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Status";
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel.ForeColor = System.Drawing.Color.Silver;
+            this.StatusLabel.Location = new System.Drawing.Point(245, 199);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(52, 21);
+            this.StatusLabel.TabIndex = 2;
+            this.StatusLabel.Text = "Status";
             // 
-            // label5
+            // CategoryLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(215, 251);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 21);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Category";
+            this.CategoryLabel.AutoSize = true;
+            this.CategoryLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryLabel.ForeColor = System.Drawing.Color.Silver;
+            this.CategoryLabel.Location = new System.Drawing.Point(215, 251);
+            this.CategoryLabel.Name = "CategoryLabel";
+            this.CategoryLabel.Size = new System.Drawing.Size(73, 21);
+            this.CategoryLabel.TabIndex = 2;
+            this.CategoryLabel.Text = "Category";
             // 
-            // label2
+            // PriorityLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(136, 199);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Priority";
+            this.PriorityLabel.AutoSize = true;
+            this.PriorityLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriorityLabel.ForeColor = System.Drawing.Color.Silver;
+            this.PriorityLabel.Location = new System.Drawing.Point(136, 199);
+            this.PriorityLabel.Name = "PriorityLabel";
+            this.PriorityLabel.Size = new System.Drawing.Size(61, 21);
+            this.PriorityLabel.TabIndex = 2;
+            this.PriorityLabel.Text = "Priority";
             // 
-            // label4
+            // AssignedToLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(12, 251);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Assigned To";
+            this.AssignedToLabel.AutoSize = true;
+            this.AssignedToLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AssignedToLabel.ForeColor = System.Drawing.Color.Silver;
+            this.AssignedToLabel.Location = new System.Drawing.Point(12, 251);
+            this.AssignedToLabel.Name = "AssignedToLabel";
+            this.AssignedToLabel.Size = new System.Drawing.Size(92, 21);
+            this.AssignedToLabel.TabIndex = 2;
+            this.AssignedToLabel.Text = "Assigned To";
             // 
-            // label1
+            // DueDateLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(12, 199);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Due Date";
+            this.DueDateLabel.AutoSize = true;
+            this.DueDateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DueDateLabel.ForeColor = System.Drawing.Color.Silver;
+            this.DueDateLabel.Location = new System.Drawing.Point(12, 199);
+            this.DueDateLabel.Name = "DueDateLabel";
+            this.DueDateLabel.Size = new System.Drawing.Size(74, 21);
+            this.DueDateLabel.TabIndex = 2;
+            this.DueDateLabel.Text = "Due Date";
             // 
-            // lblDescription
+            // DescriptionLabel
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.ForeColor = System.Drawing.Color.Silver;
-            this.lblDescription.Location = new System.Drawing.Point(12, 124);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(89, 21);
-            this.lblDescription.TabIndex = 2;
-            this.lblDescription.Text = "Description";
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionLabel.ForeColor = System.Drawing.Color.Silver;
+            this.DescriptionLabel.Location = new System.Drawing.Point(12, 124);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(89, 21);
+            this.DescriptionLabel.TabIndex = 2;
+            this.DescriptionLabel.Text = "Description";
             // 
-            // txtTaskTitle
+            // TaskTitleTextBox
             // 
-            this.txtTaskTitle.BackColor = System.Drawing.Color.Gray;
-            this.txtTaskTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTaskTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaskTitle.ForeColor = System.Drawing.Color.White;
-            this.txtTaskTitle.Location = new System.Drawing.Point(163, 92);
-            this.txtTaskTitle.Name = "txtTaskTitle";
-            this.txtTaskTitle.Size = new System.Drawing.Size(196, 29);
-            this.txtTaskTitle.TabIndex = 3;
+            this.TaskTitleTextBox.BackColor = System.Drawing.Color.Gray;
+            this.TaskTitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TaskTitleTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskTitleTextBox.ForeColor = System.Drawing.Color.White;
+            this.TaskTitleTextBox.Location = new System.Drawing.Point(163, 92);
+            this.TaskTitleTextBox.Name = "TaskTitleTextBox";
+            this.TaskTitleTextBox.Size = new System.Drawing.Size(196, 29);
+            this.TaskTitleTextBox.TabIndex = 3;
             // 
-            // lblTaskTitle
+            // TaskTitleLabel
             // 
-            this.lblTaskTitle.AutoSize = true;
-            this.lblTaskTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaskTitle.ForeColor = System.Drawing.Color.Silver;
-            this.lblTaskTitle.Location = new System.Drawing.Point(159, 68);
-            this.lblTaskTitle.Name = "lblTaskTitle";
-            this.lblTaskTitle.Size = new System.Drawing.Size(72, 21);
-            this.lblTaskTitle.TabIndex = 2;
-            this.lblTaskTitle.Text = "Task Title";
+            this.TaskTitleLabel.AutoSize = true;
+            this.TaskTitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskTitleLabel.ForeColor = System.Drawing.Color.Silver;
+            this.TaskTitleLabel.Location = new System.Drawing.Point(159, 68);
+            this.TaskTitleLabel.Name = "TaskTitleLabel";
+            this.TaskTitleLabel.Size = new System.Drawing.Size(72, 21);
+            this.TaskTitleLabel.TabIndex = 2;
+            this.TaskTitleLabel.Text = "Task Title";
             // 
-            // txtTaskID
+            // TaskIDTextBox
             // 
-            this.txtTaskID.BackColor = System.Drawing.Color.Gray;
-            this.txtTaskID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTaskID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaskID.ForeColor = System.Drawing.Color.White;
-            this.txtTaskID.Location = new System.Drawing.Point(16, 92);
-            this.txtTaskID.Name = "txtTaskID";
-            this.txtTaskID.ReadOnly = true;
-            this.txtTaskID.Size = new System.Drawing.Size(141, 29);
-            this.txtTaskID.TabIndex = 3;
+            this.TaskIDTextBox.BackColor = System.Drawing.Color.Gray;
+            this.TaskIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TaskIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskIDTextBox.ForeColor = System.Drawing.Color.White;
+            this.TaskIDTextBox.Location = new System.Drawing.Point(16, 92);
+            this.TaskIDTextBox.Name = "TaskIDTextBox";
+            this.TaskIDTextBox.ReadOnly = true;
+            this.TaskIDTextBox.Size = new System.Drawing.Size(141, 29);
+            this.TaskIDTextBox.TabIndex = 3;
+            this.TaskIDTextBox.TabStop = false;
+            this.TaskIDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblTaskID
+            // TaskIDLabel
             // 
-            this.lblTaskID.AutoSize = true;
-            this.lblTaskID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaskID.ForeColor = System.Drawing.Color.Silver;
-            this.lblTaskID.Location = new System.Drawing.Point(12, 68);
-            this.lblTaskID.Name = "lblTaskID";
-            this.lblTaskID.Size = new System.Drawing.Size(58, 21);
-            this.lblTaskID.TabIndex = 2;
-            this.lblTaskID.Text = "Task ID";
+            this.TaskIDLabel.AutoSize = true;
+            this.TaskIDLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskIDLabel.ForeColor = System.Drawing.Color.Silver;
+            this.TaskIDLabel.Location = new System.Drawing.Point(12, 68);
+            this.TaskIDLabel.Name = "TaskIDLabel";
+            this.TaskIDLabel.Size = new System.Drawing.Size(58, 21);
+            this.TaskIDLabel.TabIndex = 2;
+            this.TaskIDLabel.Text = "Task ID";
             // 
-            // lblPanelTaskDetails
+            // TaskEditorTitleLabel
             // 
-            this.lblPanelTaskDetails.BackColor = System.Drawing.Color.DodgerBlue;
-            this.lblPanelTaskDetails.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPanelTaskDetails.Location = new System.Drawing.Point(0, 0);
-            this.lblPanelTaskDetails.Name = "lblPanelTaskDetails";
-            this.lblPanelTaskDetails.Size = new System.Drawing.Size(379, 44);
-            this.lblPanelTaskDetails.TabIndex = 0;
-            this.lblPanelTaskDetails.Text = "Task Details";
-            this.lblPanelTaskDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TaskEditorTitleLabel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.TaskEditorTitleLabel.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskEditorTitleLabel.Location = new System.Drawing.Point(0, 0);
+            this.TaskEditorTitleLabel.Name = "TaskEditorTitleLabel";
+            this.TaskEditorTitleLabel.Size = new System.Drawing.Size(379, 44);
+            this.TaskEditorTitleLabel.TabIndex = 0;
+            this.TaskEditorTitleLabel.Text = "Task Editor";
+            this.TaskEditorTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ReturnToDashboardButton
             // 
@@ -720,86 +722,89 @@ namespace MachineProject3_TMS
             this.ProgramLogoPictureBox.TabIndex = 7;
             this.ProgramLogoPictureBox.TabStop = false;
             // 
-            // label8
+            // TotalTasksCounterLabel
             // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label8.Location = new System.Drawing.Point(13, 57);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(164, 64);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "--";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.TotalTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TotalTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTasksCounterLabel.ForeColor = System.Drawing.Color.MediumPurple;
+            this.TotalTasksCounterLabel.Location = new System.Drawing.Point(13, 57);
+            this.TotalTasksCounterLabel.Name = "TotalTasksCounterLabel";
+            this.TotalTasksCounterLabel.Size = new System.Drawing.Size(164, 64);
+            this.TotalTasksCounterLabel.TabIndex = 10;
+            this.TotalTasksCounterLabel.Text = "--";
+            this.TotalTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label9
+            // PendingTasksCounterLabel
             // 
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Crimson;
-            this.label9.Location = new System.Drawing.Point(13, 128);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 64);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "--";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.PendingTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PendingTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PendingTasksCounterLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.PendingTasksCounterLabel.Location = new System.Drawing.Point(13, 128);
+            this.PendingTasksCounterLabel.Name = "PendingTasksCounterLabel";
+            this.PendingTasksCounterLabel.Size = new System.Drawing.Size(164, 64);
+            this.PendingTasksCounterLabel.TabIndex = 10;
+            this.PendingTasksCounterLabel.Text = "--";
+            this.PendingTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label10
+            // CompletedTasksCounterLabel
             // 
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label10.Location = new System.Drawing.Point(13, 199);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(164, 64);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "--";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.CompletedTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.CompletedTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompletedTasksCounterLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.CompletedTasksCounterLabel.Location = new System.Drawing.Point(13, 199);
+            this.CompletedTasksCounterLabel.Name = "CompletedTasksCounterLabel";
+            this.CompletedTasksCounterLabel.Size = new System.Drawing.Size(164, 64);
+            this.CompletedTasksCounterLabel.TabIndex = 10;
+            this.CompletedTasksCounterLabel.Text = "--";
+            this.CompletedTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label11
+            // CompletedLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
-            this.label11.ForeColor = System.Drawing.Color.Silver;
-            this.label11.Location = new System.Drawing.Point(17, 242);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 15);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "COMPLETED";
+            this.CompletedLabel.AutoSize = true;
+            this.CompletedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.CompletedLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.CompletedLabel.ForeColor = System.Drawing.Color.Silver;
+            this.CompletedLabel.Location = new System.Drawing.Point(17, 242);
+            this.CompletedLabel.Name = "CompletedLabel";
+            this.CompletedLabel.Size = new System.Drawing.Size(72, 15);
+            this.CompletedLabel.TabIndex = 2;
+            this.CompletedLabel.Text = "COMPLETED";
             // 
-            // label12
+            // PendingLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
-            this.label12.ForeColor = System.Drawing.Color.Silver;
-            this.label12.Location = new System.Drawing.Point(17, 172);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 15);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "PENDING";
+            this.PendingLabel.AutoSize = true;
+            this.PendingLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PendingLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.PendingLabel.ForeColor = System.Drawing.Color.Silver;
+            this.PendingLabel.Location = new System.Drawing.Point(17, 172);
+            this.PendingLabel.Name = "PendingLabel";
+            this.PendingLabel.Size = new System.Drawing.Size(57, 15);
+            this.PendingLabel.TabIndex = 2;
+            this.PendingLabel.Text = "PENDING";
             // 
-            // label13
+            // TotalLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
-            this.label13.ForeColor = System.Drawing.Color.Silver;
-            this.label13.Location = new System.Drawing.Point(18, 99);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(39, 15);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "TOTAL";
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TotalLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.TotalLabel.ForeColor = System.Drawing.Color.Silver;
+            this.TotalLabel.Location = new System.Drawing.Point(18, 99);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(74, 15);
+            this.TotalLabel.TabIndex = 2;
+            this.TotalLabel.Text = "TOTAL TASKS";
             // 
-            // label14
+            // EditorStatusMessageLabel
             // 
-            this.label14.CausesValidation = false;
-            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(17, 324);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(342, 29);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "--";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorStatusMessageLabel.CausesValidation = false;
+            this.EditorStatusMessageLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditorStatusMessageLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditorStatusMessageLabel.Location = new System.Drawing.Point(17, 324);
+            this.EditorStatusMessageLabel.Name = "EditorStatusMessageLabel";
+            this.EditorStatusMessageLabel.Size = new System.Drawing.Size(342, 29);
+            this.EditorStatusMessageLabel.TabIndex = 10;
+            this.EditorStatusMessageLabel.Text = "--";
+            this.EditorStatusMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmTasksManagement
             // 
@@ -809,23 +814,23 @@ namespace MachineProject3_TMS
             this.ClientSize = new System.Drawing.Size(1263, 696);
             this.Controls.Add(this.ReturnToDashboardButton);
             this.Controls.Add(this.ProgramLogoPictureBox);
-            this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.menuTasks);
-            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.MainTitleLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuTasks;
             this.Name = "FrmTasksManagement";
             this.Text = "Tasks";
             this.menuTasks.ResumeLayout(false);
             this.menuTasks.PerformLayout();
-            this.panelMain.ResumeLayout(false);
-            this.panelResults.ResumeLayout(false);
-            this.panelResults.PerformLayout();
+            this.MainPanel.ResumeLayout(false);
+            this.TaskDirectoryPanel.ResumeLayout(false);
+            this.TaskDirectoryPanel.PerformLayout();
             this.statusStripTasks.ResumeLayout(false);
             this.statusStripTasks.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).EndInit();
-            this.panelInputs.ResumeLayout(false);
-            this.panelInputs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).EndInit();
+            this.TaskEditorPanel.ResumeLayout(false);
+            this.TaskEditorPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -835,22 +840,22 @@ namespace MachineProject3_TMS
         #endregion
 
         private System.Windows.Forms.MenuStrip menuTasks;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Panel panelResults;
-        private System.Windows.Forms.Panel panelInputs;
+        private System.Windows.Forms.Label MainTitleLabel;
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Panel TaskDirectoryPanel;
+        private System.Windows.Forms.Panel TaskEditorPanel;
         private System.Windows.Forms.StatusStrip statusStripTasks;
-        private System.Windows.Forms.Label lblSearchHeader;
-        private System.Windows.Forms.Label lblPanelTaskDetails;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.TextBox txtTaskTitle;
-        private System.Windows.Forms.Label lblTaskTitle;
-        private System.Windows.Forms.TextBox txtTaskID;
-        private System.Windows.Forms.Label lblTaskID;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.DataGridView dgvTasks;
+        private System.Windows.Forms.Label TaskDirectoryLabel;
+        private System.Windows.Forms.Label TaskEditorTitleLabel;
+        private System.Windows.Forms.TextBox DescriptionTextBox;
+        private System.Windows.Forms.Label DescriptionLabel;
+        private System.Windows.Forms.TextBox TaskTitleTextBox;
+        private System.Windows.Forms.Label TaskTitleLabel;
+        private System.Windows.Forms.TextBox TaskIDTextBox;
+        private System.Windows.Forms.Label TaskIDLabel;
+        private System.Windows.Forms.ToolStripStatusLabel TaskDirectoryStatusMessage;
+        private System.Windows.Forms.ToolStripStatusLabel DatabaseStatusMessage;
+        private System.Windows.Forms.DataGridView TaskDirectoryDataGridView;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnToDashboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
@@ -864,34 +869,34 @@ namespace MachineProject3_TMS
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox PriorityComboBox;
+        private System.Windows.Forms.ComboBox StatusComboBox;
+        private System.Windows.Forms.DateTimePicker DueDatePicker;
+        private System.Windows.Forms.Label StatusLabel;
+        private System.Windows.Forms.Label PriorityLabel;
+        private System.Windows.Forms.Label DueDateLabel;
+        private System.Windows.Forms.Button ClearEditorButton;
+        private System.Windows.Forms.Button DeleteEditorButton;
+        private System.Windows.Forms.Button UpdateEditorButton;
+        private System.Windows.Forms.Button AddEditorButton;
+        private System.Windows.Forms.ComboBox CategoryComboBox;
+        private System.Windows.Forms.TextBox AssignedToTextBox;
+        private System.Windows.Forms.Label CategoryLabel;
+        private System.Windows.Forms.Label AssignedToLabel;
+        private System.Windows.Forms.Button SearchDirectoryButton;
+        private System.Windows.Forms.Button RefreshDirectoryButton;
+        private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.ComboBox FilterByComboBox;
+        private System.Windows.Forms.Label FilterByLabel;
         private System.Windows.Forms.Button ReturnToDashboardButton;
         private System.Windows.Forms.PictureBox ProgramLogoPictureBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label CompletedTasksCounterLabel;
+        private System.Windows.Forms.Label PendingTasksCounterLabel;
+        private System.Windows.Forms.Label TotalTasksCounterLabel;
+        private System.Windows.Forms.Label TotalLabel;
+        private System.Windows.Forms.Label PendingLabel;
+        private System.Windows.Forms.Label CompletedLabel;
+        private System.Windows.Forms.Label EditorStatusMessageLabel;
     }
 }
