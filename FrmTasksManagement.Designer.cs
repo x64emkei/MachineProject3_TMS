@@ -1,6 +1,6 @@
 namespace MachineProject3_TMS
 {
-    partial class FrmTasks
+    partial class FrmTasksManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -27,7 +27,7 @@ namespace MachineProject3_TMS
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTasks));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTasksManagement));
             this.menuTasks = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToDashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,9 +51,11 @@ namespace MachineProject3_TMS
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.button5 = new System.Windows.Forms.Button();
             this.lblSearchHeader = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.dgvTasks = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelInputs = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -76,10 +78,15 @@ namespace MachineProject3_TMS
             this.txtTaskID = new System.Windows.Forms.TextBox();
             this.lblTaskID = new System.Windows.Forms.Label();
             this.lblPanelTaskDetails = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.menuTasks.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelResults.SuspendLayout();
@@ -230,6 +237,12 @@ namespace MachineProject3_TMS
             // panelResults
             // 
             this.panelResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.panelResults.Controls.Add(this.label13);
+            this.panelResults.Controls.Add(this.label12);
+            this.panelResults.Controls.Add(this.label11);
+            this.panelResults.Controls.Add(this.label10);
+            this.panelResults.Controls.Add(this.label9);
+            this.panelResults.Controls.Add(this.label8);
             this.panelResults.Controls.Add(this.button6);
             this.panelResults.Controls.Add(this.statusStripTasks);
             this.panelResults.Controls.Add(this.button5);
@@ -248,13 +261,14 @@ namespace MachineProject3_TMS
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button6.Image = global::MachineProject3_TMS.Properties.Resources.search;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button6.Location = new System.Drawing.Point(13, 116);
+            this.button6.Location = new System.Drawing.Point(13, 359);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(164, 51);
             this.button6.TabIndex = 9;
@@ -286,13 +300,14 @@ namespace MachineProject3_TMS
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button5.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button5.Location = new System.Drawing.Point(13, 234);
+            this.button5.Location = new System.Drawing.Point(13, 481);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(164, 51);
             this.button5.TabIndex = 7;
@@ -311,6 +326,23 @@ namespace MachineProject3_TMS
             this.lblSearchHeader.TabIndex = 0;
             this.lblSearchHeader.Text = "Task Viewer";
             this.lblSearchHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.Color.Gray;
+            this.comboBox4.CausesValidation = false;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBox4.ForeColor = System.Drawing.Color.White;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "High"});
+            this.comboBox4.Location = new System.Drawing.Point(13, 446);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(164, 29);
+            this.comboBox4.TabIndex = 5;
             // 
             // dgvTasks
             // 
@@ -331,7 +363,7 @@ namespace MachineProject3_TMS
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(9, 57);
+            this.label6.Location = new System.Drawing.Point(9, 300);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 21);
             this.label6.TabIndex = 2;
@@ -341,16 +373,29 @@ namespace MachineProject3_TMS
             // 
             this.textBox2.BackColor = System.Drawing.Color.Gray;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.CausesValidation = false;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(13, 81);
+            this.textBox2.Location = new System.Drawing.Point(13, 324);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 29);
             this.textBox2.TabIndex = 3;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Silver;
+            this.label7.Location = new System.Drawing.Point(9, 422);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 21);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Filter By";
+            // 
             // panelInputs
             // 
             this.panelInputs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.panelInputs.Controls.Add(this.label14);
             this.panelInputs.Controls.Add(this.button4);
             this.panelInputs.Controls.Add(this.button3);
             this.panelInputs.Controls.Add(this.button2);
@@ -382,6 +427,7 @@ namespace MachineProject3_TMS
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DimGray;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -398,6 +444,7 @@ namespace MachineProject3_TMS
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Firebrick;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -414,6 +461,7 @@ namespace MachineProject3_TMS
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -430,6 +478,7 @@ namespace MachineProject3_TMS
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.SeaGreen;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -446,6 +495,7 @@ namespace MachineProject3_TMS
             // comboBox3
             // 
             this.comboBox3.BackColor = System.Drawing.Color.Gray;
+            this.comboBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.comboBox3.ForeColor = System.Drawing.Color.White;
@@ -462,6 +512,7 @@ namespace MachineProject3_TMS
             // comboBox2
             // 
             this.comboBox2.BackColor = System.Drawing.Color.Gray;
+            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBox2.ForeColor = System.Drawing.Color.White;
@@ -478,6 +529,7 @@ namespace MachineProject3_TMS
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.Gray;
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBox1.ForeColor = System.Drawing.Color.White;
@@ -493,6 +545,7 @@ namespace MachineProject3_TMS
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(16, 223);
@@ -645,33 +698,6 @@ namespace MachineProject3_TMS
             this.lblPanelTaskDetails.Text = "Task Details";
             this.lblPanelTaskDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(9, 175);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 21);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Category";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.Color.Gray;
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.comboBox4.ForeColor = System.Drawing.Color.White;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Low",
-            "Medium",
-            "High"});
-            this.comboBox4.Location = new System.Drawing.Point(13, 199);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(164, 29);
-            this.comboBox4.TabIndex = 5;
-            // 
             // ReturnToDashboardButton
             // 
             this.ReturnToDashboardButton.BackColor = System.Drawing.Color.Transparent;
@@ -694,7 +720,88 @@ namespace MachineProject3_TMS
             this.ProgramLogoPictureBox.TabIndex = 7;
             this.ProgramLogoPictureBox.TabStop = false;
             // 
-            // FrmTasks
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.MediumPurple;
+            this.label8.Location = new System.Drawing.Point(13, 57);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(164, 64);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "--";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Crimson;
+            this.label9.Location = new System.Drawing.Point(13, 128);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(164, 64);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "--";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label10.Location = new System.Drawing.Point(13, 199);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(164, 64);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "--";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.label11.ForeColor = System.Drawing.Color.Silver;
+            this.label11.Location = new System.Drawing.Point(17, 242);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 15);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "COMPLETED";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.label12.ForeColor = System.Drawing.Color.Silver;
+            this.label12.Location = new System.Drawing.Point(17, 172);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 15);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "PENDING";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.label13.ForeColor = System.Drawing.Color.Silver;
+            this.label13.Location = new System.Drawing.Point(18, 99);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 15);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "TOTAL";
+            // 
+            // label14
+            // 
+            this.label14.CausesValidation = false;
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(17, 324);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(342, 29);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "--";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FrmTasksManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -707,7 +814,7 @@ namespace MachineProject3_TMS
             this.Controls.Add(this.lblTitle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuTasks;
-            this.Name = "FrmTasks";
+            this.Name = "FrmTasksManagement";
             this.Text = "Tasks";
             this.menuTasks.ResumeLayout(false);
             this.menuTasks.PerformLayout();
@@ -779,5 +886,12 @@ namespace MachineProject3_TMS
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button ReturnToDashboardButton;
         private System.Windows.Forms.PictureBox ProgramLogoPictureBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -41,7 +41,7 @@ namespace MachineProject3_TMS
 
         private void TaskManagementButton_Click(object sender, EventArgs e)
         {
-            var f = new FrmTasks();
+            var f = new FrmTasksManagement();
             f.FormClosed += (s, ev) => this.Show();
             f.Show();
             this.Hide();

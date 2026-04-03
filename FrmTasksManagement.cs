@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace MachineProject3_TMS
 {
-    public partial class FrmTasks : Form
+    public partial class FrmTasksManagement : Form
     {
-        public FrmTasks()
+        public FrmTasksManagement()
         {
             InitializeComponent();
         }

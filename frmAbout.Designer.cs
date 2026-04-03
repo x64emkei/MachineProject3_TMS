@@ -29,19 +29,20 @@ namespace MachineProject3_TMS
             this.CourseLabel = new System.Windows.Forms.Label();
             this.ProfessorLabel = new System.Windows.Forms.Label();
             this.PrimaryDetailsLabel = new System.Windows.Forms.Panel();
+            this.MySQLPictureBox = new System.Windows.Forms.PictureBox();
+            this.CSharpPictureBox = new System.Windows.Forms.PictureBox();
             this.TechStackLogo = new System.Windows.Forms.Label();
             this.MP3Label = new System.Windows.Forms.Label();
             this.ProgramTitleLabel = new System.Windows.Forms.Label();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.MySQLPictureBox = new System.Windows.Forms.PictureBox();
-            this.CSharpPictureBox = new System.Windows.Forms.PictureBox();
+            this.ProgramDescriptionLabel = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.SecondaryDetailsPanel.SuspendLayout();
             this.PrimaryDetailsLabel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MySQLPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CSharpPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // AboutDashboardLabel
@@ -175,12 +176,33 @@ namespace MachineProject3_TMS
             this.PrimaryDetailsLabel.Controls.Add(this.TechStackLogo);
             this.PrimaryDetailsLabel.Controls.Add(this.MP3Label);
             this.PrimaryDetailsLabel.Controls.Add(this.ProgramTitleLabel);
+            this.PrimaryDetailsLabel.Controls.Add(this.ProgramDescriptionLabel);
             this.PrimaryDetailsLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.PrimaryDetailsLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.PrimaryDetailsLabel.Location = new System.Drawing.Point(20, 20);
             this.PrimaryDetailsLabel.Name = "PrimaryDetailsLabel";
             this.PrimaryDetailsLabel.Size = new System.Drawing.Size(431, 381);
             this.PrimaryDetailsLabel.TabIndex = 5;
+            // 
+            // MySQLPictureBox
+            // 
+            this.MySQLPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.pngimg_com___mysql_PNG37;
+            this.MySQLPictureBox.Location = new System.Drawing.Point(218, 285);
+            this.MySQLPictureBox.Name = "MySQLPictureBox";
+            this.MySQLPictureBox.Size = new System.Drawing.Size(79, 74);
+            this.MySQLPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MySQLPictureBox.TabIndex = 2;
+            this.MySQLPictureBox.TabStop = false;
+            // 
+            // CSharpPictureBox
+            // 
+            this.CSharpPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.Logo_C_sharp_svg;
+            this.CSharpPictureBox.Location = new System.Drawing.Point(131, 285);
+            this.CSharpPictureBox.Name = "CSharpPictureBox";
+            this.CSharpPictureBox.Size = new System.Drawing.Size(81, 74);
+            this.CSharpPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CSharpPictureBox.TabIndex = 2;
+            this.CSharpPictureBox.TabStop = false;
             // 
             // TechStackLogo
             // 
@@ -207,10 +229,10 @@ namespace MachineProject3_TMS
             // ProgramTitleLabel
             // 
             this.ProgramTitleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ProgramTitleLabel.Font = new System.Drawing.Font("Segoe UI Light", 32F);
+            this.ProgramTitleLabel.Font = new System.Drawing.Font("Segoe UI Light", 22F);
             this.ProgramTitleLabel.Location = new System.Drawing.Point(32, 36);
             this.ProgramTitleLabel.Name = "ProgramTitleLabel";
-            this.ProgramTitleLabel.Size = new System.Drawing.Size(366, 122);
+            this.ProgramTitleLabel.Size = new System.Drawing.Size(366, 61);
             this.ProgramTitleLabel.TabIndex = 0;
             this.ProgramTitleLabel.Text = "Task Management System";
             this.ProgramTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,25 +259,18 @@ namespace MachineProject3_TMS
             this.ProgramLogoPictureBox.TabIndex = 2;
             this.ProgramLogoPictureBox.TabStop = false;
             // 
-            // MySQLPictureBox
+            // ProgramDescriptionLabel
             // 
-            this.MySQLPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.pngimg_com___mysql_PNG37;
-            this.MySQLPictureBox.Location = new System.Drawing.Point(218, 285);
-            this.MySQLPictureBox.Name = "MySQLPictureBox";
-            this.MySQLPictureBox.Size = new System.Drawing.Size(79, 74);
-            this.MySQLPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.MySQLPictureBox.TabIndex = 2;
-            this.MySQLPictureBox.TabStop = false;
-            // 
-            // CSharpPictureBox
-            // 
-            this.CSharpPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.Logo_C_sharp_svg;
-            this.CSharpPictureBox.Location = new System.Drawing.Point(131, 285);
-            this.CSharpPictureBox.Name = "CSharpPictureBox";
-            this.CSharpPictureBox.Size = new System.Drawing.Size(81, 74);
-            this.CSharpPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CSharpPictureBox.TabIndex = 2;
-            this.CSharpPictureBox.TabStop = false;
+            this.ProgramDescriptionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ProgramDescriptionLabel.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.ProgramDescriptionLabel.Location = new System.Drawing.Point(17, 67);
+            this.ProgramDescriptionLabel.Name = "ProgramDescriptionLabel";
+            this.ProgramDescriptionLabel.Size = new System.Drawing.Size(391, 151);
+            this.ProgramDescriptionLabel.TabIndex = 0;
+            this.ProgramDescriptionLabel.Text = "Built using C# (Windows Forms) and a MySQL database. \r\nIt features a sleek, dark-" +
+    "mode \"Metro UI\" and is built to help users efficiently organize, track, and repo" +
+    "rt on their workloads.";
+            this.ProgramDescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmAbout
             // 
@@ -275,9 +290,9 @@ namespace MachineProject3_TMS
             this.SecondaryDetailsPanel.ResumeLayout(false);
             this.PrimaryDetailsLabel.ResumeLayout(false);
             this.PrimaryDetailsLabel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MySQLPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CSharpPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +318,6 @@ namespace MachineProject3_TMS
         private System.Windows.Forms.Label ProfessorLabel;
         private System.Windows.Forms.Label SecondaryLabel;
         private System.Windows.Forms.PictureBox ProgramLogoPictureBox;
+        private System.Windows.Forms.Label ProgramDescriptionLabel;
     }
 }
