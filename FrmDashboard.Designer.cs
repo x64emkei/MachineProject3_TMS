@@ -33,11 +33,6 @@
             this.DashboardLabel = new System.Windows.Forms.Label();
             this.DashboardPanel = new System.Windows.Forms.Panel();
             this.SelectLabel = new System.Windows.Forms.Label();
-            this.LogoutSystemButton = new System.Windows.Forms.Button();
-            this.AboutButton = new System.Windows.Forms.Button();
-            this.CategoriesButton = new System.Windows.Forms.Button();
-            this.ReportTaskButton = new System.Windows.Forms.Button();
-            this.TaskManagementButton = new System.Windows.Forms.Button();
             this.DashboardMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogoutSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,11 +50,17 @@
             this.DbConnectionStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.DbConnectionProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.DashboardButtonsToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.ExitDashboardButton = new System.Windows.Forms.Button();
             this.AboutUserButton = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.LogoutSystemButton = new System.Windows.Forms.Button();
+            this.AboutButton = new System.Windows.Forms.Button();
+            this.CategoriesButton = new System.Windows.Forms.Button();
+            this.ReportTaskButton = new System.Windows.Forms.Button();
+            this.TaskManagementButton = new System.Windows.Forms.Button();
             this.DashboardPanel.SuspendLayout();
             this.DashboardMenuStrip.SuspendLayout();
             this.DashboardStatusBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // WelcomeLabel
@@ -84,7 +85,7 @@
             this.DashboardLabel.AutoSize = true;
             this.DashboardLabel.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardLabel.ForeColor = System.Drawing.Color.White;
-            this.DashboardLabel.Location = new System.Drawing.Point(4, 26);
+            this.DashboardLabel.Location = new System.Drawing.Point(73, 30);
             this.DashboardLabel.Name = "DashboardLabel";
             this.DashboardLabel.Size = new System.Drawing.Size(249, 65);
             this.DashboardLabel.TabIndex = 2;
@@ -121,118 +122,6 @@
             this.SelectLabel.TabIndex = 1;
             this.SelectLabel.Text = "Select an option to continue...";
             this.SelectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // LogoutSystemButton
-            // 
-            this.LogoutSystemButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LogoutSystemButton.AutoSize = true;
-            this.LogoutSystemButton.BackColor = System.Drawing.Color.DimGray;
-            this.LogoutSystemButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoutSystemButton.FlatAppearance.BorderSize = 0;
-            this.LogoutSystemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogoutSystemButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutSystemButton.ForeColor = System.Drawing.Color.White;
-            this.LogoutSystemButton.Image = global::MachineProject3_TMS.Properties.Resources.logout;
-            this.LogoutSystemButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.LogoutSystemButton.Location = new System.Drawing.Point(772, 260);
-            this.LogoutSystemButton.Name = "LogoutSystemButton";
-            this.LogoutSystemButton.Padding = new System.Windows.Forms.Padding(5);
-            this.LogoutSystemButton.Size = new System.Drawing.Size(218, 91);
-            this.LogoutSystemButton.TabIndex = 0;
-            this.LogoutSystemButton.Text = "Logout";
-            this.LogoutSystemButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.DashboardButtonsToolTip.SetToolTip(this.LogoutSystemButton, "Securely log out of the current session and return to the login screen");
-            this.LogoutSystemButton.UseVisualStyleBackColor = false;
-            // 
-            // AboutButton
-            // 
-            this.AboutButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AboutButton.AutoSize = true;
-            this.AboutButton.BackColor = System.Drawing.Color.BlueViolet;
-            this.AboutButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AboutButton.FlatAppearance.BorderSize = 0;
-            this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AboutButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AboutButton.ForeColor = System.Drawing.Color.White;
-            this.AboutButton.Image = global::MachineProject3_TMS.Properties.Resources.about;
-            this.AboutButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.AboutButton.Location = new System.Drawing.Point(772, 85);
-            this.AboutButton.Name = "AboutButton";
-            this.AboutButton.Padding = new System.Windows.Forms.Padding(5);
-            this.AboutButton.Size = new System.Drawing.Size(218, 169);
-            this.AboutButton.TabIndex = 0;
-            this.AboutButton.Text = "About";
-            this.AboutButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.DashboardButtonsToolTip.SetToolTip(this.AboutButton, "View system information, course details, and developer credits.");
-            this.AboutButton.UseVisualStyleBackColor = false;
-            // 
-            // CategoriesButton
-            // 
-            this.CategoriesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CategoriesButton.AutoSize = true;
-            this.CategoriesButton.BackColor = System.Drawing.Color.SeaGreen;
-            this.CategoriesButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CategoriesButton.FlatAppearance.BorderSize = 0;
-            this.CategoriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CategoriesButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoriesButton.ForeColor = System.Drawing.Color.White;
-            this.CategoriesButton.Image = global::MachineProject3_TMS.Properties.Resources.category;
-            this.CategoriesButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.CategoriesButton.Location = new System.Drawing.Point(370, 85);
-            this.CategoriesButton.Name = "CategoriesButton";
-            this.CategoriesButton.Padding = new System.Windows.Forms.Padding(5);
-            this.CategoriesButton.Size = new System.Drawing.Size(396, 138);
-            this.CategoriesButton.TabIndex = 0;
-            this.CategoriesButton.Text = "Categories";
-            this.CategoriesButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.DashboardButtonsToolTip.SetToolTip(this.CategoriesButton, "Organize your tasks by creating, editing, and managing custom task categories.");
-            this.CategoriesButton.UseVisualStyleBackColor = false;
-            // 
-            // ReportTaskButton
-            // 
-            this.ReportTaskButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ReportTaskButton.AutoSize = true;
-            this.ReportTaskButton.BackColor = System.Drawing.Color.DarkOrange;
-            this.ReportTaskButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ReportTaskButton.FlatAppearance.BorderSize = 0;
-            this.ReportTaskButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReportTaskButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportTaskButton.ForeColor = System.Drawing.Color.White;
-            this.ReportTaskButton.Image = global::MachineProject3_TMS.Properties.Resources.report;
-            this.ReportTaskButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.ReportTaskButton.Location = new System.Drawing.Point(370, 229);
-            this.ReportTaskButton.Name = "ReportTaskButton";
-            this.ReportTaskButton.Padding = new System.Windows.Forms.Padding(5);
-            this.ReportTaskButton.Size = new System.Drawing.Size(396, 122);
-            this.ReportTaskButton.TabIndex = 0;
-            this.ReportTaskButton.Text = "Reports and Tasks";
-            this.ReportTaskButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.DashboardButtonsToolTip.SetToolTip(this.ReportTaskButton, "Generate filtered views of your tasks to monitor pending, completed, and overdue " +
-        "work.");
-            this.ReportTaskButton.UseVisualStyleBackColor = false;
-            // 
-            // TaskManagementButton
-            // 
-            this.TaskManagementButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TaskManagementButton.AutoSize = true;
-            this.TaskManagementButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.TaskManagementButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TaskManagementButton.FlatAppearance.BorderSize = 0;
-            this.TaskManagementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TaskManagementButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskManagementButton.ForeColor = System.Drawing.Color.White;
-            this.TaskManagementButton.Image = global::MachineProject3_TMS.Properties.Resources.task;
-            this.TaskManagementButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.TaskManagementButton.Location = new System.Drawing.Point(84, 85);
-            this.TaskManagementButton.Name = "TaskManagementButton";
-            this.TaskManagementButton.Padding = new System.Windows.Forms.Padding(5);
-            this.TaskManagementButton.Size = new System.Drawing.Size(280, 266);
-            this.TaskManagementButton.TabIndex = 0;
-            this.TaskManagementButton.Text = "Task Management";
-            this.TaskManagementButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.DashboardButtonsToolTip.SetToolTip(this.TaskManagementButton, "Open the Task Management module to create, update, delete, and track your daily a" +
-        "ssignments.");
-            this.TaskManagementButton.UseVisualStyleBackColor = false;
             // 
             // DashboardMenuStrip
             // 
@@ -375,25 +264,6 @@
             this.DbConnectionProgressBar.Name = "DbConnectionProgressBar";
             this.DbConnectionProgressBar.Size = new System.Drawing.Size(100, 16);
             // 
-            // ExitDashboardButton
-            // 
-            this.ExitDashboardButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExitDashboardButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ExitDashboardButton.BackColor = System.Drawing.Color.DarkViolet;
-            this.ExitDashboardButton.FlatAppearance.BorderSize = 0;
-            this.ExitDashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitDashboardButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitDashboardButton.ForeColor = System.Drawing.Color.White;
-            this.ExitDashboardButton.Image = global::MachineProject3_TMS.Properties.Resources.close;
-            this.ExitDashboardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ExitDashboardButton.Location = new System.Drawing.Point(964, 44);
-            this.ExitDashboardButton.Name = "ExitDashboardButton";
-            this.ExitDashboardButton.Size = new System.Drawing.Size(91, 37);
-            this.ExitDashboardButton.TabIndex = 4;
-            this.ExitDashboardButton.Text = "Exit";
-            this.ExitDashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExitDashboardButton.UseVisualStyleBackColor = false;
-            // 
             // AboutUserButton
             // 
             this.AboutUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -404,12 +274,134 @@
             this.AboutUserButton.ForeColor = System.Drawing.Color.White;
             this.AboutUserButton.Image = global::MachineProject3_TMS.Properties.Resources.person;
             this.AboutUserButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AboutUserButton.Location = new System.Drawing.Point(699, 44);
+            this.AboutUserButton.Location = new System.Drawing.Point(796, 44);
             this.AboutUserButton.Name = "AboutUserButton";
             this.AboutUserButton.Size = new System.Drawing.Size(259, 37);
             this.AboutUserButton.TabIndex = 4;
             this.AboutUserButton.Text = "User";
             this.AboutUserButton.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MachineProject3_TMS.Properties.Resources.logo;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 39);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(64, 52);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
+            // LogoutSystemButton
+            // 
+            this.LogoutSystemButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LogoutSystemButton.AutoSize = true;
+            this.LogoutSystemButton.BackColor = System.Drawing.Color.DimGray;
+            this.LogoutSystemButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoutSystemButton.FlatAppearance.BorderSize = 0;
+            this.LogoutSystemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogoutSystemButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutSystemButton.ForeColor = System.Drawing.Color.White;
+            this.LogoutSystemButton.Image = global::MachineProject3_TMS.Properties.Resources.logout;
+            this.LogoutSystemButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LogoutSystemButton.Location = new System.Drawing.Point(772, 260);
+            this.LogoutSystemButton.Name = "LogoutSystemButton";
+            this.LogoutSystemButton.Padding = new System.Windows.Forms.Padding(5);
+            this.LogoutSystemButton.Size = new System.Drawing.Size(218, 91);
+            this.LogoutSystemButton.TabIndex = 0;
+            this.LogoutSystemButton.Text = "Logout";
+            this.LogoutSystemButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.DashboardButtonsToolTip.SetToolTip(this.LogoutSystemButton, "Securely log out of the current session and return to the login screen");
+            this.LogoutSystemButton.UseVisualStyleBackColor = false;
+            // 
+            // AboutButton
+            // 
+            this.AboutButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AboutButton.AutoSize = true;
+            this.AboutButton.BackColor = System.Drawing.Color.BlueViolet;
+            this.AboutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AboutButton.FlatAppearance.BorderSize = 0;
+            this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AboutButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutButton.ForeColor = System.Drawing.Color.White;
+            this.AboutButton.Image = global::MachineProject3_TMS.Properties.Resources.about;
+            this.AboutButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.AboutButton.Location = new System.Drawing.Point(772, 85);
+            this.AboutButton.Name = "AboutButton";
+            this.AboutButton.Padding = new System.Windows.Forms.Padding(5);
+            this.AboutButton.Size = new System.Drawing.Size(218, 169);
+            this.AboutButton.TabIndex = 0;
+            this.AboutButton.Text = "About";
+            this.AboutButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.DashboardButtonsToolTip.SetToolTip(this.AboutButton, "View system information, course details, and developer credits.");
+            this.AboutButton.UseVisualStyleBackColor = false;
+            // 
+            // CategoriesButton
+            // 
+            this.CategoriesButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CategoriesButton.AutoSize = true;
+            this.CategoriesButton.BackColor = System.Drawing.Color.SeaGreen;
+            this.CategoriesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CategoriesButton.FlatAppearance.BorderSize = 0;
+            this.CategoriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CategoriesButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoriesButton.ForeColor = System.Drawing.Color.White;
+            this.CategoriesButton.Image = global::MachineProject3_TMS.Properties.Resources.category;
+            this.CategoriesButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.CategoriesButton.Location = new System.Drawing.Point(370, 85);
+            this.CategoriesButton.Name = "CategoriesButton";
+            this.CategoriesButton.Padding = new System.Windows.Forms.Padding(5);
+            this.CategoriesButton.Size = new System.Drawing.Size(396, 138);
+            this.CategoriesButton.TabIndex = 0;
+            this.CategoriesButton.Text = "Categories";
+            this.CategoriesButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.DashboardButtonsToolTip.SetToolTip(this.CategoriesButton, "Organize your tasks by creating, editing, and managing custom task categories.");
+            this.CategoriesButton.UseVisualStyleBackColor = false;
+            // 
+            // ReportTaskButton
+            // 
+            this.ReportTaskButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ReportTaskButton.AutoSize = true;
+            this.ReportTaskButton.BackColor = System.Drawing.Color.DarkOrange;
+            this.ReportTaskButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReportTaskButton.FlatAppearance.BorderSize = 0;
+            this.ReportTaskButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReportTaskButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportTaskButton.ForeColor = System.Drawing.Color.White;
+            this.ReportTaskButton.Image = global::MachineProject3_TMS.Properties.Resources.reports;
+            this.ReportTaskButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ReportTaskButton.Location = new System.Drawing.Point(370, 229);
+            this.ReportTaskButton.Name = "ReportTaskButton";
+            this.ReportTaskButton.Padding = new System.Windows.Forms.Padding(5);
+            this.ReportTaskButton.Size = new System.Drawing.Size(396, 122);
+            this.ReportTaskButton.TabIndex = 0;
+            this.ReportTaskButton.Text = "Reports and Tasks";
+            this.ReportTaskButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.DashboardButtonsToolTip.SetToolTip(this.ReportTaskButton, "Generate filtered views of your tasks to monitor pending, completed, and overdue " +
+        "work.");
+            this.ReportTaskButton.UseVisualStyleBackColor = false;
+            // 
+            // TaskManagementButton
+            // 
+            this.TaskManagementButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TaskManagementButton.AutoSize = true;
+            this.TaskManagementButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.TaskManagementButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TaskManagementButton.FlatAppearance.BorderSize = 0;
+            this.TaskManagementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TaskManagementButton.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskManagementButton.ForeColor = System.Drawing.Color.White;
+            this.TaskManagementButton.Image = global::MachineProject3_TMS.Properties.Resources.task;
+            this.TaskManagementButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.TaskManagementButton.Location = new System.Drawing.Point(84, 85);
+            this.TaskManagementButton.Name = "TaskManagementButton";
+            this.TaskManagementButton.Padding = new System.Windows.Forms.Padding(5);
+            this.TaskManagementButton.Size = new System.Drawing.Size(280, 266);
+            this.TaskManagementButton.TabIndex = 0;
+            this.TaskManagementButton.Text = "Task Management";
+            this.TaskManagementButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.DashboardButtonsToolTip.SetToolTip(this.TaskManagementButton, "Open the Task Management module to create, update, delete, and track your daily a" +
+        "ssignments.");
+            this.TaskManagementButton.UseVisualStyleBackColor = false;
             // 
             // FrmDashboard
             // 
@@ -417,10 +409,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(1074, 539);
-            this.Controls.Add(this.DashboardStatusBar);
-            this.Controls.Add(this.ExitDashboardButton);
-            this.Controls.Add(this.AboutUserButton);
             this.Controls.Add(this.DashboardMenuStrip);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.DashboardStatusBar);
+            this.Controls.Add(this.AboutUserButton);
             this.Controls.Add(this.DashboardLabel);
             this.Controls.Add(this.DashboardPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -435,6 +427,7 @@
             this.DashboardMenuStrip.PerformLayout();
             this.DashboardStatusBar.ResumeLayout(false);
             this.DashboardStatusBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,7 +446,6 @@
         private System.Windows.Forms.StatusStrip DashboardStatusBar;
         private System.Windows.Forms.ToolStripStatusLabel DbConnectionStatusLabel;
         private System.Windows.Forms.ToolStripProgressBar DbConnectionProgressBar;
-        private System.Windows.Forms.Button ExitDashboardButton;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LogoutSystemToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
@@ -469,5 +461,6 @@
         private System.Windows.Forms.ToolTip DashboardButtonsToolTip;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label SelectLabel;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

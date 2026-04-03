@@ -140,12 +140,6 @@
     <Compile Include="FrmReports.Designer.cs">
       <DependentUpon>FrmReports.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTasks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTasks.Designer.cs">
-      <DependentUpon>FrmTasks.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,9 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReports.resx">
       <DependentUpon>FrmReports.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTasks.resx">
-      <DependentUpon>FrmTasks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
@@ -250,6 +241,8 @@
     <None Include="media_resources\home.png" />
     <None Include="media_resources\Logo_C_sharp.svg.png" />
     <None Include="media_resources\pngimg.com - mysql_PNG37.png" />
+    <None Include="media_resources\arrow_back.png" />
+    <None Include="media_resources\reports.png" />
     <Content Include="tms.ico" />
   </ItemGroup>
   <ItemGroup>
