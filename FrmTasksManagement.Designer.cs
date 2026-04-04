@@ -45,53 +45,53 @@ namespace MachineProject3_TMS
             this.MainTitleLabel = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.TaskDirectoryPanel = new System.Windows.Forms.Panel();
-            this.SearchDirectoryButton = new System.Windows.Forms.Button();
-            this.statusStripTasks = new System.Windows.Forms.StatusStrip();
-            this.TaskDirectoryStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.DatabaseStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
+            this.TotalLabel = new System.Windows.Forms.Label();
+            this.PendingLabel = new System.Windows.Forms.Label();
+            this.CompletedLabel = new System.Windows.Forms.Label();
+            this.CompletedTasksCounterLabel = new System.Windows.Forms.Label();
+            this.PendingTasksCounterLabel = new System.Windows.Forms.Label();
+            this.TotalTasksCounterLabel = new System.Windows.Forms.Label();
+            this.FilterByLabel = new System.Windows.Forms.Label();
             this.TaskDirectoryLabel = new System.Windows.Forms.Label();
             this.FilterByComboBox = new System.Windows.Forms.ComboBox();
             this.TaskDirectoryDataGridView = new System.Windows.Forms.DataGridView();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.FilterByLabel = new System.Windows.Forms.Label();
+            this.statusStripTasks = new System.Windows.Forms.StatusStrip();
+            this.TaskDirectoryStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DatabaseStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.TaskEditorPanel = new System.Windows.Forms.Panel();
-            this.ClearEditorButton = new System.Windows.Forms.Button();
-            this.DeleteEditorButton = new System.Windows.Forms.Button();
-            this.UpdateEditorButton = new System.Windows.Forms.Button();
-            this.AddEditorButton = new System.Windows.Forms.Button();
+            this.EditorStatusMessageLabel = new System.Windows.Forms.Label();
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.PriorityComboBox = new System.Windows.Forms.ComboBox();
             this.StatusComboBox = new System.Windows.Forms.ComboBox();
             this.DueDatePicker = new System.Windows.Forms.DateTimePicker();
             this.AssignedToTextBox = new System.Windows.Forms.TextBox();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.TaskTitleTextBox = new System.Windows.Forms.TextBox();
+            this.TaskIDTextBox = new System.Windows.Forms.TextBox();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.PriorityLabel = new System.Windows.Forms.Label();
             this.AssignedToLabel = new System.Windows.Forms.Label();
             this.DueDateLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
-            this.TaskTitleTextBox = new System.Windows.Forms.TextBox();
             this.TaskTitleLabel = new System.Windows.Forms.Label();
-            this.TaskIDTextBox = new System.Windows.Forms.TextBox();
             this.TaskIDLabel = new System.Windows.Forms.Label();
             this.TaskEditorTitleLabel = new System.Windows.Forms.Label();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.TotalTasksCounterLabel = new System.Windows.Forms.Label();
-            this.PendingTasksCounterLabel = new System.Windows.Forms.Label();
-            this.CompletedTasksCounterLabel = new System.Windows.Forms.Label();
-            this.CompletedLabel = new System.Windows.Forms.Label();
-            this.PendingLabel = new System.Windows.Forms.Label();
-            this.TotalLabel = new System.Windows.Forms.Label();
-            this.EditorStatusMessageLabel = new System.Windows.Forms.Label();
+            this.SearchDirectoryButton = new System.Windows.Forms.Button();
+            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
+            this.ClearEditorButton = new System.Windows.Forms.Button();
+            this.DeleteEditorButton = new System.Windows.Forms.Button();
+            this.UpdateEditorButton = new System.Windows.Forms.Button();
+            this.AddEditorButton = new System.Windows.Forms.Button();
             this.menuTasks.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.TaskDirectoryPanel.SuspendLayout();
-            this.statusStripTasks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).BeginInit();
+            this.statusStripTasks.SuspendLayout();
             this.TaskEditorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -106,7 +106,7 @@ namespace MachineProject3_TMS
             this.helpToolStripMenuItem});
             this.menuTasks.Location = new System.Drawing.Point(0, 0);
             this.menuTasks.Name = "menuTasks";
-            this.menuTasks.Size = new System.Drawing.Size(1263, 25);
+            this.menuTasks.Size = new System.Drawing.Size(1264, 25);
             this.menuTasks.TabIndex = 0;
             this.menuTasks.Text = "menuTasks";
             // 
@@ -258,62 +258,88 @@ namespace MachineProject3_TMS
             this.TaskDirectoryPanel.Size = new System.Drawing.Size(838, 566);
             this.TaskDirectoryPanel.TabIndex = 0;
             // 
-            // SearchDirectoryButton
+            // TotalLabel
             // 
-            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
-            this.SearchDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
-            this.SearchDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.SearchDirectoryButton.Location = new System.Drawing.Point(13, 424);
-            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
-            this.SearchDirectoryButton.Size = new System.Drawing.Size(164, 51);
-            this.SearchDirectoryButton.TabIndex = 9;
-            this.SearchDirectoryButton.Text = "SEARCH";
-            this.SearchDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TotalLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.TotalLabel.ForeColor = System.Drawing.Color.Silver;
+            this.TotalLabel.Location = new System.Drawing.Point(18, 99);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(74, 15);
+            this.TotalLabel.TabIndex = 2;
+            this.TotalLabel.Text = "TOTAL TASKS";
             // 
-            // statusStripTasks
+            // PendingLabel
             // 
-            this.statusStripTasks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TaskDirectoryStatusMessage,
-            this.DatabaseStatusMessage});
-            this.statusStripTasks.Location = new System.Drawing.Point(0, 544);
-            this.statusStripTasks.Name = "statusStripTasks";
-            this.statusStripTasks.Size = new System.Drawing.Size(838, 22);
-            this.statusStripTasks.TabIndex = 1;
-            this.statusStripTasks.Text = "statusStripTasks";
+            this.PendingLabel.AutoSize = true;
+            this.PendingLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PendingLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.PendingLabel.ForeColor = System.Drawing.Color.Silver;
+            this.PendingLabel.Location = new System.Drawing.Point(17, 172);
+            this.PendingLabel.Name = "PendingLabel";
+            this.PendingLabel.Size = new System.Drawing.Size(57, 15);
+            this.PendingLabel.TabIndex = 2;
+            this.PendingLabel.Text = "PENDING";
             // 
-            // TaskDirectoryStatusMessage
+            // CompletedLabel
             // 
-            this.TaskDirectoryStatusMessage.Name = "TaskDirectoryStatusMessage";
-            this.TaskDirectoryStatusMessage.Size = new System.Drawing.Size(0, 17);
+            this.CompletedLabel.AutoSize = true;
+            this.CompletedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.CompletedLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.CompletedLabel.ForeColor = System.Drawing.Color.Silver;
+            this.CompletedLabel.Location = new System.Drawing.Point(17, 242);
+            this.CompletedLabel.Name = "CompletedLabel";
+            this.CompletedLabel.Size = new System.Drawing.Size(72, 15);
+            this.CompletedLabel.TabIndex = 2;
+            this.CompletedLabel.Text = "COMPLETED";
             // 
-            // DatabaseStatusMessage
+            // CompletedTasksCounterLabel
             // 
-            this.DatabaseStatusMessage.Name = "DatabaseStatusMessage";
-            this.DatabaseStatusMessage.Size = new System.Drawing.Size(0, 17);
+            this.CompletedTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.CompletedTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompletedTasksCounterLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.CompletedTasksCounterLabel.Location = new System.Drawing.Point(13, 199);
+            this.CompletedTasksCounterLabel.Name = "CompletedTasksCounterLabel";
+            this.CompletedTasksCounterLabel.Size = new System.Drawing.Size(164, 64);
+            this.CompletedTasksCounterLabel.TabIndex = 10;
+            this.CompletedTasksCounterLabel.Text = "--";
+            this.CompletedTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // RefreshDirectoryButton
+            // PendingTasksCounterLabel
             // 
-            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
-            this.RefreshDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RefreshDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
-            this.RefreshDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.RefreshDirectoryButton.Location = new System.Drawing.Point(13, 481);
-            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
-            this.RefreshDirectoryButton.Size = new System.Drawing.Size(164, 51);
-            this.RefreshDirectoryButton.TabIndex = 7;
-            this.RefreshDirectoryButton.Text = "REFRESH";
-            this.RefreshDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
+            this.PendingTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PendingTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PendingTasksCounterLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.PendingTasksCounterLabel.Location = new System.Drawing.Point(13, 128);
+            this.PendingTasksCounterLabel.Name = "PendingTasksCounterLabel";
+            this.PendingTasksCounterLabel.Size = new System.Drawing.Size(164, 64);
+            this.PendingTasksCounterLabel.TabIndex = 10;
+            this.PendingTasksCounterLabel.Text = "--";
+            this.PendingTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // TotalTasksCounterLabel
+            // 
+            this.TotalTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TotalTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTasksCounterLabel.ForeColor = System.Drawing.Color.MediumPurple;
+            this.TotalTasksCounterLabel.Location = new System.Drawing.Point(13, 57);
+            this.TotalTasksCounterLabel.Name = "TotalTasksCounterLabel";
+            this.TotalTasksCounterLabel.Size = new System.Drawing.Size(164, 64);
+            this.TotalTasksCounterLabel.TabIndex = 10;
+            this.TotalTasksCounterLabel.Text = "--";
+            this.TotalTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // FilterByLabel
+            // 
+            this.FilterByLabel.AutoSize = true;
+            this.FilterByLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FilterByLabel.ForeColor = System.Drawing.Color.Silver;
+            this.FilterByLabel.Location = new System.Drawing.Point(9, 359);
+            this.FilterByLabel.Name = "FilterByLabel";
+            this.FilterByLabel.Size = new System.Drawing.Size(66, 21);
+            this.FilterByLabel.TabIndex = 2;
+            this.FilterByLabel.Text = "Filter By";
             // 
             // TaskDirectoryLabel
             // 
@@ -381,16 +407,26 @@ namespace MachineProject3_TMS
             this.SearchTextBox.Size = new System.Drawing.Size(164, 29);
             this.SearchTextBox.TabIndex = 3;
             // 
-            // FilterByLabel
+            // statusStripTasks
             // 
-            this.FilterByLabel.AutoSize = true;
-            this.FilterByLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FilterByLabel.ForeColor = System.Drawing.Color.Silver;
-            this.FilterByLabel.Location = new System.Drawing.Point(9, 359);
-            this.FilterByLabel.Name = "FilterByLabel";
-            this.FilterByLabel.Size = new System.Drawing.Size(66, 21);
-            this.FilterByLabel.TabIndex = 2;
-            this.FilterByLabel.Text = "Filter By";
+            this.statusStripTasks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TaskDirectoryStatusMessage,
+            this.DatabaseStatusMessage});
+            this.statusStripTasks.Location = new System.Drawing.Point(0, 544);
+            this.statusStripTasks.Name = "statusStripTasks";
+            this.statusStripTasks.Size = new System.Drawing.Size(838, 22);
+            this.statusStripTasks.TabIndex = 1;
+            this.statusStripTasks.Text = "statusStripTasks";
+            // 
+            // TaskDirectoryStatusMessage
+            // 
+            this.TaskDirectoryStatusMessage.Name = "TaskDirectoryStatusMessage";
+            this.TaskDirectoryStatusMessage.Size = new System.Drawing.Size(0, 17);
+            // 
+            // DatabaseStatusMessage
+            // 
+            this.DatabaseStatusMessage.Name = "DatabaseStatusMessage";
+            this.DatabaseStatusMessage.Size = new System.Drawing.Size(0, 17);
             // 
             // TaskEditorPanel
             // 
@@ -424,73 +460,17 @@ namespace MachineProject3_TMS
             this.TaskEditorPanel.Size = new System.Drawing.Size(377, 566);
             this.TaskEditorPanel.TabIndex = 0;
             // 
-            // ClearEditorButton
+            // EditorStatusMessageLabel
             // 
-            this.ClearEditorButton.BackColor = System.Drawing.Color.DimGray;
-            this.ClearEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClearEditorButton.FlatAppearance.BorderSize = 0;
-            this.ClearEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClearEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.clear;
-            this.ClearEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.ClearEditorButton.Location = new System.Drawing.Point(191, 458);
-            this.ClearEditorButton.Name = "ClearEditorButton";
-            this.ClearEditorButton.Size = new System.Drawing.Size(168, 90);
-            this.ClearEditorButton.TabIndex = 9;
-            this.ClearEditorButton.Text = "CLEAR";
-            this.ClearEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ClearEditorButton.UseVisualStyleBackColor = false;
-            // 
-            // DeleteEditorButton
-            // 
-            this.DeleteEditorButton.BackColor = System.Drawing.Color.Firebrick;
-            this.DeleteEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteEditorButton.FlatAppearance.BorderSize = 0;
-            this.DeleteEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.delete;
-            this.DeleteEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.DeleteEditorButton.Location = new System.Drawing.Point(17, 458);
-            this.DeleteEditorButton.Name = "DeleteEditorButton";
-            this.DeleteEditorButton.Size = new System.Drawing.Size(168, 90);
-            this.DeleteEditorButton.TabIndex = 8;
-            this.DeleteEditorButton.Text = "DELETE";
-            this.DeleteEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.DeleteEditorButton.UseVisualStyleBackColor = false;
-            // 
-            // UpdateEditorButton
-            // 
-            this.UpdateEditorButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.UpdateEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UpdateEditorButton.FlatAppearance.BorderSize = 0;
-            this.UpdateEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.update;
-            this.UpdateEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.UpdateEditorButton.Location = new System.Drawing.Point(191, 362);
-            this.UpdateEditorButton.Name = "UpdateEditorButton";
-            this.UpdateEditorButton.Size = new System.Drawing.Size(168, 90);
-            this.UpdateEditorButton.TabIndex = 7;
-            this.UpdateEditorButton.Text = "UPDATE";
-            this.UpdateEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.UpdateEditorButton.UseVisualStyleBackColor = false;
-            // 
-            // AddEditorButton
-            // 
-            this.AddEditorButton.BackColor = System.Drawing.Color.SeaGreen;
-            this.AddEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddEditorButton.FlatAppearance.BorderSize = 0;
-            this.AddEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.add;
-            this.AddEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.AddEditorButton.Location = new System.Drawing.Point(17, 362);
-            this.AddEditorButton.Name = "AddEditorButton";
-            this.AddEditorButton.Size = new System.Drawing.Size(168, 90);
-            this.AddEditorButton.TabIndex = 6;
-            this.AddEditorButton.Text = "ADD";
-            this.AddEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.AddEditorButton.UseVisualStyleBackColor = false;
+            this.EditorStatusMessageLabel.CausesValidation = false;
+            this.EditorStatusMessageLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditorStatusMessageLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditorStatusMessageLabel.Location = new System.Drawing.Point(17, 324);
+            this.EditorStatusMessageLabel.Name = "EditorStatusMessageLabel";
+            this.EditorStatusMessageLabel.Size = new System.Drawing.Size(342, 29);
+            this.EditorStatusMessageLabel.TabIndex = 10;
+            this.EditorStatusMessageLabel.Text = "--";
+            this.EditorStatusMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CategoryComboBox
             // 
@@ -576,6 +556,31 @@ namespace MachineProject3_TMS
             this.DescriptionTextBox.Size = new System.Drawing.Size(343, 29);
             this.DescriptionTextBox.TabIndex = 3;
             // 
+            // TaskTitleTextBox
+            // 
+            this.TaskTitleTextBox.BackColor = System.Drawing.Color.Gray;
+            this.TaskTitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TaskTitleTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskTitleTextBox.ForeColor = System.Drawing.Color.White;
+            this.TaskTitleTextBox.Location = new System.Drawing.Point(163, 92);
+            this.TaskTitleTextBox.Name = "TaskTitleTextBox";
+            this.TaskTitleTextBox.Size = new System.Drawing.Size(196, 29);
+            this.TaskTitleTextBox.TabIndex = 3;
+            // 
+            // TaskIDTextBox
+            // 
+            this.TaskIDTextBox.BackColor = System.Drawing.Color.Gray;
+            this.TaskIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TaskIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskIDTextBox.ForeColor = System.Drawing.Color.White;
+            this.TaskIDTextBox.Location = new System.Drawing.Point(16, 92);
+            this.TaskIDTextBox.Name = "TaskIDTextBox";
+            this.TaskIDTextBox.ReadOnly = true;
+            this.TaskIDTextBox.Size = new System.Drawing.Size(141, 29);
+            this.TaskIDTextBox.TabIndex = 3;
+            this.TaskIDTextBox.TabStop = false;
+            this.TaskIDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
@@ -642,17 +647,6 @@ namespace MachineProject3_TMS
             this.DescriptionLabel.TabIndex = 2;
             this.DescriptionLabel.Text = "Description";
             // 
-            // TaskTitleTextBox
-            // 
-            this.TaskTitleTextBox.BackColor = System.Drawing.Color.Gray;
-            this.TaskTitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TaskTitleTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskTitleTextBox.ForeColor = System.Drawing.Color.White;
-            this.TaskTitleTextBox.Location = new System.Drawing.Point(163, 92);
-            this.TaskTitleTextBox.Name = "TaskTitleTextBox";
-            this.TaskTitleTextBox.Size = new System.Drawing.Size(196, 29);
-            this.TaskTitleTextBox.TabIndex = 3;
-            // 
             // TaskTitleLabel
             // 
             this.TaskTitleLabel.AutoSize = true;
@@ -663,20 +657,6 @@ namespace MachineProject3_TMS
             this.TaskTitleLabel.Size = new System.Drawing.Size(72, 21);
             this.TaskTitleLabel.TabIndex = 2;
             this.TaskTitleLabel.Text = "Task Title";
-            // 
-            // TaskIDTextBox
-            // 
-            this.TaskIDTextBox.BackColor = System.Drawing.Color.Gray;
-            this.TaskIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TaskIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskIDTextBox.ForeColor = System.Drawing.Color.White;
-            this.TaskIDTextBox.Location = new System.Drawing.Point(16, 92);
-            this.TaskIDTextBox.Name = "TaskIDTextBox";
-            this.TaskIDTextBox.ReadOnly = true;
-            this.TaskIDTextBox.Size = new System.Drawing.Size(141, 29);
-            this.TaskIDTextBox.TabIndex = 3;
-            this.TaskIDTextBox.TabStop = false;
-            this.TaskIDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TaskIDLabel
             // 
@@ -722,96 +702,116 @@ namespace MachineProject3_TMS
             this.ProgramLogoPictureBox.TabIndex = 7;
             this.ProgramLogoPictureBox.TabStop = false;
             // 
-            // TotalTasksCounterLabel
+            // SearchDirectoryButton
             // 
-            this.TotalTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.TotalTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalTasksCounterLabel.ForeColor = System.Drawing.Color.MediumPurple;
-            this.TotalTasksCounterLabel.Location = new System.Drawing.Point(13, 57);
-            this.TotalTasksCounterLabel.Name = "TotalTasksCounterLabel";
-            this.TotalTasksCounterLabel.Size = new System.Drawing.Size(164, 64);
-            this.TotalTasksCounterLabel.TabIndex = 10;
-            this.TotalTasksCounterLabel.Text = "--";
-            this.TotalTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
+            this.SearchDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
+            this.SearchDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.SearchDirectoryButton.Location = new System.Drawing.Point(13, 424);
+            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
+            this.SearchDirectoryButton.Size = new System.Drawing.Size(164, 51);
+            this.SearchDirectoryButton.TabIndex = 9;
+            this.SearchDirectoryButton.Text = "SEARCH";
+            this.SearchDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
             // 
-            // PendingTasksCounterLabel
+            // RefreshDirectoryButton
             // 
-            this.PendingTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.PendingTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PendingTasksCounterLabel.ForeColor = System.Drawing.Color.Crimson;
-            this.PendingTasksCounterLabel.Location = new System.Drawing.Point(13, 128);
-            this.PendingTasksCounterLabel.Name = "PendingTasksCounterLabel";
-            this.PendingTasksCounterLabel.Size = new System.Drawing.Size(164, 64);
-            this.PendingTasksCounterLabel.TabIndex = 10;
-            this.PendingTasksCounterLabel.Text = "--";
-            this.PendingTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
+            this.RefreshDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RefreshDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
+            this.RefreshDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.RefreshDirectoryButton.Location = new System.Drawing.Point(13, 481);
+            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
+            this.RefreshDirectoryButton.Size = new System.Drawing.Size(164, 51);
+            this.RefreshDirectoryButton.TabIndex = 7;
+            this.RefreshDirectoryButton.Text = "REFRESH";
+            this.RefreshDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
             // 
-            // CompletedTasksCounterLabel
+            // ClearEditorButton
             // 
-            this.CompletedTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.CompletedTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompletedTasksCounterLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.CompletedTasksCounterLabel.Location = new System.Drawing.Point(13, 199);
-            this.CompletedTasksCounterLabel.Name = "CompletedTasksCounterLabel";
-            this.CompletedTasksCounterLabel.Size = new System.Drawing.Size(164, 64);
-            this.CompletedTasksCounterLabel.TabIndex = 10;
-            this.CompletedTasksCounterLabel.Text = "--";
-            this.CompletedTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ClearEditorButton.BackColor = System.Drawing.Color.DimGray;
+            this.ClearEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearEditorButton.FlatAppearance.BorderSize = 0;
+            this.ClearEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.clear;
+            this.ClearEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ClearEditorButton.Location = new System.Drawing.Point(191, 458);
+            this.ClearEditorButton.Name = "ClearEditorButton";
+            this.ClearEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.ClearEditorButton.TabIndex = 9;
+            this.ClearEditorButton.Text = "CLEAR";
+            this.ClearEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ClearEditorButton.UseVisualStyleBackColor = false;
             // 
-            // CompletedLabel
+            // DeleteEditorButton
             // 
-            this.CompletedLabel.AutoSize = true;
-            this.CompletedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.CompletedLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
-            this.CompletedLabel.ForeColor = System.Drawing.Color.Silver;
-            this.CompletedLabel.Location = new System.Drawing.Point(17, 242);
-            this.CompletedLabel.Name = "CompletedLabel";
-            this.CompletedLabel.Size = new System.Drawing.Size(72, 15);
-            this.CompletedLabel.TabIndex = 2;
-            this.CompletedLabel.Text = "COMPLETED";
+            this.DeleteEditorButton.BackColor = System.Drawing.Color.Firebrick;
+            this.DeleteEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteEditorButton.FlatAppearance.BorderSize = 0;
+            this.DeleteEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.delete;
+            this.DeleteEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.DeleteEditorButton.Location = new System.Drawing.Point(17, 458);
+            this.DeleteEditorButton.Name = "DeleteEditorButton";
+            this.DeleteEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.DeleteEditorButton.TabIndex = 8;
+            this.DeleteEditorButton.Text = "DELETE";
+            this.DeleteEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.DeleteEditorButton.UseVisualStyleBackColor = false;
             // 
-            // PendingLabel
+            // UpdateEditorButton
             // 
-            this.PendingLabel.AutoSize = true;
-            this.PendingLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.PendingLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
-            this.PendingLabel.ForeColor = System.Drawing.Color.Silver;
-            this.PendingLabel.Location = new System.Drawing.Point(17, 172);
-            this.PendingLabel.Name = "PendingLabel";
-            this.PendingLabel.Size = new System.Drawing.Size(57, 15);
-            this.PendingLabel.TabIndex = 2;
-            this.PendingLabel.Text = "PENDING";
+            this.UpdateEditorButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.UpdateEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateEditorButton.FlatAppearance.BorderSize = 0;
+            this.UpdateEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.update;
+            this.UpdateEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.UpdateEditorButton.Location = new System.Drawing.Point(191, 362);
+            this.UpdateEditorButton.Name = "UpdateEditorButton";
+            this.UpdateEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.UpdateEditorButton.TabIndex = 7;
+            this.UpdateEditorButton.Text = "UPDATE";
+            this.UpdateEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.UpdateEditorButton.UseVisualStyleBackColor = false;
             // 
-            // TotalLabel
+            // AddEditorButton
             // 
-            this.TotalLabel.AutoSize = true;
-            this.TotalLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.TotalLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
-            this.TotalLabel.ForeColor = System.Drawing.Color.Silver;
-            this.TotalLabel.Location = new System.Drawing.Point(18, 99);
-            this.TotalLabel.Name = "TotalLabel";
-            this.TotalLabel.Size = new System.Drawing.Size(74, 15);
-            this.TotalLabel.TabIndex = 2;
-            this.TotalLabel.Text = "TOTAL TASKS";
-            // 
-            // EditorStatusMessageLabel
-            // 
-            this.EditorStatusMessageLabel.CausesValidation = false;
-            this.EditorStatusMessageLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditorStatusMessageLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditorStatusMessageLabel.Location = new System.Drawing.Point(17, 324);
-            this.EditorStatusMessageLabel.Name = "EditorStatusMessageLabel";
-            this.EditorStatusMessageLabel.Size = new System.Drawing.Size(342, 29);
-            this.EditorStatusMessageLabel.TabIndex = 10;
-            this.EditorStatusMessageLabel.Text = "--";
-            this.EditorStatusMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AddEditorButton.BackColor = System.Drawing.Color.SeaGreen;
+            this.AddEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddEditorButton.FlatAppearance.BorderSize = 0;
+            this.AddEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.add;
+            this.AddEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.AddEditorButton.Location = new System.Drawing.Point(17, 362);
+            this.AddEditorButton.Name = "AddEditorButton";
+            this.AddEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.AddEditorButton.TabIndex = 6;
+            this.AddEditorButton.Text = "ADD";
+            this.AddEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.AddEditorButton.UseVisualStyleBackColor = false;
             // 
             // FrmTasksManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(1263, 696);
+            this.ClientSize = new System.Drawing.Size(1264, 696);
             this.Controls.Add(this.ReturnToDashboardButton);
             this.Controls.Add(this.ProgramLogoPictureBox);
             this.Controls.Add(this.MainPanel);
@@ -826,9 +826,9 @@ namespace MachineProject3_TMS
             this.MainPanel.ResumeLayout(false);
             this.TaskDirectoryPanel.ResumeLayout(false);
             this.TaskDirectoryPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).EndInit();
             this.statusStripTasks.ResumeLayout(false);
             this.statusStripTasks.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).EndInit();
             this.TaskEditorPanel.ResumeLayout(false);
             this.TaskEditorPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).EndInit();
