@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReports));
             this.TotalLabel = new System.Windows.Forms.Label();
             this.PendingLabel = new System.Windows.Forms.Label();
             this.CompletedLabel = new System.Windows.Forms.Label();
@@ -765,9 +766,10 @@
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.MainTitleLabel);
             this.Controls.Add(this.ReturnToDashboardButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmReports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Task Management System | Reports";
             ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).EndInit();
             this.menuTasks.ResumeLayout(false);
             this.menuTasks.PerformLayout();
