@@ -7,7 +7,7 @@ using System;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     /// <summary>
     /// Encapsulates CRUD operations for Task records.

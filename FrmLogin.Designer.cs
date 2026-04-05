@@ -191,6 +191,7 @@
             this.MainExitButton.Text = "Exit";
             this.MainExitButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MainExitButton.UseVisualStyleBackColor = true;
+            this.MainExitButton.Click += new System.EventHandler(this.MainExitButton_Click);
             // 
             // LoginButton
             // 
@@ -390,6 +391,7 @@
             this.RecoverAcctCloseButton.Text = "Close";
             this.RecoverAcctCloseButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RecoverAcctCloseButton.UseVisualStyleBackColor = true;
+            this.RecoverAcctCloseButton.Click += new System.EventHandler(this.RecoverAcctCloseButton_Click);
             
             // 
             // ChangePasswordButton
@@ -565,6 +567,7 @@
             this.CreateAcctCloseButton.Text = "Close";
             this.CreateAcctCloseButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CreateAcctCloseButton.UseVisualStyleBackColor = true;
+            this.CreateAcctCloseButton.Click += new System.EventHandler(this.CreateAcctCloseButton_Click);
             // 
             // AcctUsernameLabel
             // 

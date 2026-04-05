@@ -8,7 +8,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using System.IO;
 
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     /// <summary>
     /// Handles database connection strings and maintains the current user session.
