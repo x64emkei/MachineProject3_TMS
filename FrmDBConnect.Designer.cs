@@ -39,7 +39,7 @@
             this.SaveConfigCheckBox = new System.Windows.Forms.CheckBox();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.DemoModeCheckBox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ConfigGuideLabel = new System.Windows.Forms.Label();
             BannerPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(BannerPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -154,6 +154,8 @@
             // DemoModeCheckBox
             // 
             this.DemoModeCheckBox.AutoSize = true;
+            this.DemoModeCheckBox.Checked = true;
+            this.DemoModeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DemoModeCheckBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DemoModeCheckBox.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.DemoModeCheckBox.Location = new System.Drawing.Point(239, 199);
@@ -163,16 +165,16 @@
             this.DemoModeCheckBox.Text = "(DEMO) Disable DB connection";
             this.DemoModeCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // ConfigGuideLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(106, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(307, 17);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Configure this according to your database settings.";
+            this.ConfigGuideLabel.AutoSize = true;
+            this.ConfigGuideLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfigGuideLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ConfigGuideLabel.Location = new System.Drawing.Point(106, 78);
+            this.ConfigGuideLabel.Name = "ConfigGuideLabel";
+            this.ConfigGuideLabel.Size = new System.Drawing.Size(307, 17);
+            this.ConfigGuideLabel.TabIndex = 17;
+            this.ConfigGuideLabel.Text = "Configure this according to your database settings.";
             // 
             // FrmDBConnect
             // 
@@ -180,7 +182,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(511, 237);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ConfigGuideLabel);
             this.Controls.Add(this.ReturnToDashboardButton);
             this.Controls.Add(this.DemoModeCheckBox);
             this.Controls.Add(this.SaveConfigCheckBox);
@@ -215,6 +217,6 @@
         private System.Windows.Forms.CheckBox SaveConfigCheckBox;
         private System.Windows.Forms.Button ReturnToDashboardButton;
         private System.Windows.Forms.CheckBox DemoModeCheckBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ConfigGuideLabel;
     }
 }
