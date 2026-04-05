@@ -3,11 +3,10 @@
 // BAARDE, ADRIAN C.
 // TUMBAGA, KURT CEZMER S. 
 
-using MachineProject3_TMS;
 using System;
 using System.Windows.Forms;
 
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     public partial class FrmDashboard : Form
     {

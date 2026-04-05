@@ -3,6 +3,7 @@
 // BAARDE, ADRIAN C.
 // TUMBAGA, KURT CEZMER S. 
 
+using MachineProject3_TMS;
 using System;
 using System.Windows.Forms;
 

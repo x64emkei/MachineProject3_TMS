@@ -3,32 +3,40 @@
 // BAARDE, ADRIAN C.
 // TUMBAGA, KURT CEZMER S. 
 
+using Ordenes_Baarde_Tumbaga_MP3;
 using System;
 using System.Windows.Forms;
 
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        /// Defines the main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Checks the database connection on startup.
-            if (DbConnection.TestConnection())
+            // DB Configuration Route Check
+            bool isDbConfigured = CheckDatabaseConfig();
+
+            if (!isDbConfigured)
             {
-                Application.Run(new FrmLogin());
+                // If false config, redirect to FrmDBConnect first
+                Application.Run(new FrmDBConnect());
             }
             else
             {
-                // Redirects to DB Connect form if connection fails.
-                Application.Run(new FrmDBConnect());
+                // Otherwise load normal login
+                Application.Run(new FrmLogin());
             }
+        }
+
+        static bool CheckDatabaseConfig()
+        {
+            // TODO: Use DbConnection.cs to test if Settings.Default values successfully open a MySqlConnection
+            // Return true if connected, false if failed/not configured.
+            return false; // Forced to FrmDBConnect initially
         }
     }
 }

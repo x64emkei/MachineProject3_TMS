@@ -8,7 +8,7 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     public partial class FrmLogin : Form
     {
@@ -255,10 +255,10 @@ namespace Ordenes_Baarde_Tumbaga_MP3
                 return;
             }
 
-            // Simple custom prompt using Microsoft.VisualBasic equivalent behavior
-            string promptValue = Microsoft.VisualBasic.Interaction.InputBox("Type 'YES' to confirm your password change.", "Confirm Action", "");
+            // Confirm with Yes/No dialog
+            var confirm = MessageBox.Show("Are you sure you want to change your password?", "Confirm Action", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (promptValue == "YES")
+            if (confirm == DialogResult.Yes)
             {
                 try
                 {

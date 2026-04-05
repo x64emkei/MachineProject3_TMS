@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     public partial class FrmTasks : Form
     {
@@ -14,7 +14,7 @@ namespace Ordenes_Baarde_Tumbaga_MP3
             AddEditorButton.Click += AddEditorButton_Click;
             UpdateEditorButton.Click += UpdateEditorButton_Click;
             DeleteEditorButton.Click += DeleteEditorButton_Click;
-            ClearEditorButton.Click += ClearEditorButton_Click;
+            ClearEditorButton.Click += ClearEditorButton_Click; // implemented below
             SearchDirectoryButton.Click += SearchDirectoryButton_Click;
             RefreshDirectoryButton.Click += RefreshDirectoryButton_Click;
 
@@ -33,16 +33,17 @@ namespace Ordenes_Baarde_Tumbaga_MP3
 
         private void LoadCategories()
         {
-            DataTable dt = CategoryFunctions.GetCategories();
+            DataTable dt = CategoryFunctions.GetAllCategories();
+            // Expecting columns: category_id, category_name
             CategoryComboBox.DataSource = dt;
-            CategoryComboBox.DisplayMember = "Category Name";
-            CategoryComboBox.ValueMember = "ID";
+            CategoryComboBox.DisplayMember = "category_name";
+            CategoryComboBox.ValueMember = "category_id";
             CategoryComboBox.SelectedIndex = -1;
         }
 
         private void RefreshGrid()
         {
-            TaskDirectoryDataGridView.DataSource = TaskFunctions.GetTasks();
+            TaskDirectoryDataGridView.DataSource = TaskFunctions.GetAllTasks();
 
             // Hide the raw category ID column if it exists, since we show Category Name
             if (TaskDirectoryDataGridView.Columns.Contains("category_id"))
@@ -83,12 +84,10 @@ namespace Ordenes_Baarde_Tumbaga_MP3
 
             int categoryId = Convert.ToInt32(CategoryComboBox.SelectedValue);
 
-            if (TaskFunctions.AddTask(TaskTitleTextBox.Text, DescriptionTextBox.Text, DueDatePicker.Value, PriorityComboBox.Text, StatusComboBox.Text, AssignedToTextBox.Text, categoryId))
-            {
-                MessageBox.Show("Task Successfully Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                RefreshGrid();
-                ClearFields();
-            }
+            TaskFunctions.AddTask(TaskTitleTextBox.Text, DescriptionTextBox.Text, DueDatePicker.Value, PriorityComboBox.Text, StatusComboBox.Text, AssignedToTextBox.Text, categoryId);
+            MessageBox.Show("Task Successfully Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            RefreshGrid();
+            ClearFields();
         }
 
         private void UpdateEditorButton_Click(object sender, EventArgs e)
@@ -104,12 +103,10 @@ namespace Ordenes_Baarde_Tumbaga_MP3
             int taskId = Convert.ToInt32(TaskIDTextBox.Text);
             int categoryId = Convert.ToInt32(CategoryComboBox.SelectedValue);
 
-            if (TaskFunctions.UpdateTask(taskId, TaskTitleTextBox.Text, DescriptionTextBox.Text, DueDatePicker.Value, PriorityComboBox.Text, StatusComboBox.Text, AssignedToTextBox.Text, categoryId))
-            {
-                MessageBox.Show("Task Successfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                RefreshGrid();
-                ClearFields();
-            }
+            TaskFunctions.UpdateTask(taskId, TaskTitleTextBox.Text, DescriptionTextBox.Text, DueDatePicker.Value, PriorityComboBox.Text, StatusComboBox.Text, AssignedToTextBox.Text, categoryId);
+            MessageBox.Show("Task Successfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            RefreshGrid();
+            ClearFields();
         }
 
         private void DeleteEditorButton_Click(object sender, EventArgs e)
@@ -123,18 +120,21 @@ namespace Ordenes_Baarde_Tumbaga_MP3
             if (MessageBox.Show("Are you sure you want to permanently delete this task?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 int taskId = Convert.ToInt32(TaskIDTextBox.Text);
-                if (TaskFunctions.DeleteTask(taskId))
-                {
-                    MessageBox.Show("Task Deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshGrid();
-                    ClearFields();
-                }
+                TaskFunctions.DeleteTask(taskId);
+                MessageBox.Show("Task Deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RefreshGrid();
+                ClearFields();
             }
         }
 
         private void SearchDirectoryButton_Click(object sender, EventArgs e)
         {
-            TaskDirectoryDataGridView.DataSource = TaskFunctions.SearchTasks(SearchTextBox.Text);
+            TaskDirectoryDataGridView.DataSource = TaskFunctions.GetAllTasks("", SearchTextBox.Text);
+        }
+
+        private void ClearEditorButton_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
 
         private void RefreshDirectoryButton_Click(object sender, EventArgs e)

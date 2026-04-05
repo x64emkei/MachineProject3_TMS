@@ -1,4 +1,4 @@
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     partial class FrmCategories
     {
@@ -36,13 +36,13 @@ namespace Ordenes_Baarde_Tumbaga_MP3
             this.SearchLabel = new System.Windows.Forms.Label();
             this.AddEditorButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.TaskEditorTitleLabel = new System.Windows.Forms.Label();
+            this.CategoryDetailsLabel = new System.Windows.Forms.Label();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.DescriptionLabel = new System.Windows.Forms.Label();
-            this.TaskTitleTextBox = new System.Windows.Forms.TextBox();
+            this.CategoryNameTextBox = new System.Windows.Forms.TextBox();
             this.CategoryIDLabel = new System.Windows.Forms.Label();
-            this.TaskIDTextBox = new System.Windows.Forms.TextBox();
-            this.TaskTitleLabel = new System.Windows.Forms.Label();
+            this.CategoryIDTextBox = new System.Windows.Forms.TextBox();
+            this.CategoryNameLabel = new System.Windows.Forms.Label();
             this.MainTitleLabel = new System.Windows.Forms.Label();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -170,13 +170,13 @@ namespace Ordenes_Baarde_Tumbaga_MP3
             this.CategoryDetailsPanel.Controls.Add(this.SearchLabel);
             this.CategoryDetailsPanel.Controls.Add(this.AddEditorButton);
             this.CategoryDetailsPanel.Controls.Add(this.SearchTextBox);
-            this.CategoryDetailsPanel.Controls.Add(this.TaskEditorTitleLabel);
+            this.CategoryDetailsPanel.Controls.Add(this.CategoryDetailsLabel);
             this.CategoryDetailsPanel.Controls.Add(this.DescriptionTextBox);
             this.CategoryDetailsPanel.Controls.Add(this.DescriptionLabel);
-            this.CategoryDetailsPanel.Controls.Add(this.TaskTitleTextBox);
+            this.CategoryDetailsPanel.Controls.Add(this.CategoryNameTextBox);
             this.CategoryDetailsPanel.Controls.Add(this.CategoryIDLabel);
-            this.CategoryDetailsPanel.Controls.Add(this.TaskIDTextBox);
-            this.CategoryDetailsPanel.Controls.Add(this.TaskTitleLabel);
+            this.CategoryDetailsPanel.Controls.Add(this.CategoryIDTextBox);
+            this.CategoryDetailsPanel.Controls.Add(this.CategoryNameLabel);
             this.CategoryDetailsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.CategoryDetailsPanel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.CategoryDetailsPanel.Location = new System.Drawing.Point(20, 20);
@@ -326,16 +326,16 @@ namespace Ordenes_Baarde_Tumbaga_MP3
             this.SearchTextBox.Size = new System.Drawing.Size(330, 29);
             this.SearchTextBox.TabIndex = 3;
             // 
-            // TaskEditorTitleLabel
+            // CategoryDetailsLabel
             // 
-            this.TaskEditorTitleLabel.BackColor = System.Drawing.Color.SeaGreen;
-            this.TaskEditorTitleLabel.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskEditorTitleLabel.Location = new System.Drawing.Point(0, 0);
-            this.TaskEditorTitleLabel.Name = "TaskEditorTitleLabel";
-            this.TaskEditorTitleLabel.Size = new System.Drawing.Size(360, 44);
-            this.TaskEditorTitleLabel.TabIndex = 0;
-            this.TaskEditorTitleLabel.Text = "Category Details";
-            this.TaskEditorTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CategoryDetailsLabel.BackColor = System.Drawing.Color.SeaGreen;
+            this.CategoryDetailsLabel.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryDetailsLabel.Location = new System.Drawing.Point(0, 0);
+            this.CategoryDetailsLabel.Name = "CategoryDetailsLabel";
+            this.CategoryDetailsLabel.Size = new System.Drawing.Size(360, 44);
+            this.CategoryDetailsLabel.TabIndex = 0;
+            this.CategoryDetailsLabel.Text = "Category Details";
+            this.CategoryDetailsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DescriptionTextBox
             // 
@@ -359,16 +359,16 @@ namespace Ordenes_Baarde_Tumbaga_MP3
             this.DescriptionLabel.TabIndex = 2;
             this.DescriptionLabel.Text = "Description";
             // 
-            // TaskTitleTextBox
+            // CategoryNameTextBox
             // 
-            this.TaskTitleTextBox.BackColor = System.Drawing.Color.Gray;
-            this.TaskTitleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TaskTitleTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskTitleTextBox.ForeColor = System.Drawing.Color.White;
-            this.TaskTitleTextBox.Location = new System.Drawing.Point(165, 88);
-            this.TaskTitleTextBox.Name = "TaskTitleTextBox";
-            this.TaskTitleTextBox.Size = new System.Drawing.Size(183, 29);
-            this.TaskTitleTextBox.TabIndex = 3;
+            this.CategoryNameTextBox.BackColor = System.Drawing.Color.Gray;
+            this.CategoryNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CategoryNameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryNameTextBox.ForeColor = System.Drawing.Color.White;
+            this.CategoryNameTextBox.Location = new System.Drawing.Point(165, 88);
+            this.CategoryNameTextBox.Name = "CategoryNameTextBox";
+            this.CategoryNameTextBox.Size = new System.Drawing.Size(183, 29);
+            this.CategoryNameTextBox.TabIndex = 3;
             // 
             // CategoryIDLabel
             // 
@@ -381,30 +381,30 @@ namespace Ordenes_Baarde_Tumbaga_MP3
             this.CategoryIDLabel.TabIndex = 2;
             this.CategoryIDLabel.Text = "Category ID";
             // 
-            // TaskIDTextBox
+            // CategoryIDTextBox
             // 
-            this.TaskIDTextBox.BackColor = System.Drawing.Color.Gray;
-            this.TaskIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TaskIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskIDTextBox.ForeColor = System.Drawing.Color.White;
-            this.TaskIDTextBox.Location = new System.Drawing.Point(18, 88);
-            this.TaskIDTextBox.Name = "TaskIDTextBox";
-            this.TaskIDTextBox.ReadOnly = true;
-            this.TaskIDTextBox.Size = new System.Drawing.Size(141, 29);
-            this.TaskIDTextBox.TabIndex = 3;
-            this.TaskIDTextBox.TabStop = false;
-            this.TaskIDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CategoryIDTextBox.BackColor = System.Drawing.Color.Gray;
+            this.CategoryIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CategoryIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryIDTextBox.ForeColor = System.Drawing.Color.White;
+            this.CategoryIDTextBox.Location = new System.Drawing.Point(18, 88);
+            this.CategoryIDTextBox.Name = "CategoryIDTextBox";
+            this.CategoryIDTextBox.ReadOnly = true;
+            this.CategoryIDTextBox.Size = new System.Drawing.Size(141, 29);
+            this.CategoryIDTextBox.TabIndex = 3;
+            this.CategoryIDTextBox.TabStop = false;
+            this.CategoryIDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TaskTitleLabel
+            // CategoryNameLabel
             // 
-            this.TaskTitleLabel.AutoSize = true;
-            this.TaskTitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskTitleLabel.ForeColor = System.Drawing.Color.Silver;
-            this.TaskTitleLabel.Location = new System.Drawing.Point(161, 64);
-            this.TaskTitleLabel.Name = "TaskTitleLabel";
-            this.TaskTitleLabel.Size = new System.Drawing.Size(119, 21);
-            this.TaskTitleLabel.TabIndex = 2;
-            this.TaskTitleLabel.Text = "Category Name";
+            this.CategoryNameLabel.AutoSize = true;
+            this.CategoryNameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryNameLabel.ForeColor = System.Drawing.Color.Silver;
+            this.CategoryNameLabel.Location = new System.Drawing.Point(161, 64);
+            this.CategoryNameLabel.Name = "CategoryNameLabel";
+            this.CategoryNameLabel.Size = new System.Drawing.Size(119, 21);
+            this.CategoryNameLabel.TabIndex = 2;
+            this.CategoryNameLabel.Text = "Category Name";
             // 
             // MainTitleLabel
             // 
@@ -648,7 +648,7 @@ namespace Ordenes_Baarde_Tumbaga_MP3
         private System.Windows.Forms.Button RefreshDirectoryButton;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.Label TaskEditorTitleLabel;
+        private System.Windows.Forms.Label CategoryDetailsLabel;
         private System.Windows.Forms.Label DetailStatusMessageLabel;
         private System.Windows.Forms.Button ClearEditorButton;
         private System.Windows.Forms.Button DeleteEditorButton;
@@ -656,10 +656,10 @@ namespace Ordenes_Baarde_Tumbaga_MP3
         private System.Windows.Forms.Button AddEditorButton;
         private System.Windows.Forms.TextBox DescriptionTextBox;
         private System.Windows.Forms.Label DescriptionLabel;
-        private System.Windows.Forms.TextBox TaskTitleTextBox;
+        private System.Windows.Forms.TextBox CategoryNameTextBox;
         private System.Windows.Forms.Label CategoryIDLabel;
-        private System.Windows.Forms.TextBox TaskIDTextBox;
-        private System.Windows.Forms.Label TaskTitleLabel;
+        private System.Windows.Forms.TextBox CategoryIDTextBox;
+        private System.Windows.Forms.Label CategoryNameLabel;
         private System.Windows.Forms.ToolStripMenuItem addCategoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateCategoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteCategoryToolStripMenuItem;

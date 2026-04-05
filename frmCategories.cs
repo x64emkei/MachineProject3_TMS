@@ -3,12 +3,11 @@
 // BAARDE, ADRIAN C.
 // TUMBAGA, KURT CEZMER S. 
 
-using MachineProject3_TMS;
 using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     /// <summary>
     /// Note: Exact UI layout not in PDF 1 page 2 visual layout, but functionally 
@@ -27,8 +26,8 @@ namespace Ordenes_Baarde_Tumbaga_MP3
         /// </summary>
         private void RefreshGrid()
         {
-            // Assuming the datagrid name is CategoryDataGridView per conventions
-            CategoryDataGridView.DataSource = CategoryFunctions.GetAllCategories();
+            // Designer uses CategoryViewerDataGridView for the viewer list
+            CategoryViewerDataGridView.DataSource = CategoryFunctions.GetAllCategories();
             ClearInputFields();
         }
 
@@ -134,6 +133,7 @@ namespace Ordenes_Baarde_Tumbaga_MP3
         {
             if (e.RowIndex >= 0)
             {
+                object CategoryDataGridView = null;
                 DataGridViewRow row = CategoryDataGridView.Rows[e.RowIndex];
                 CategoryIDTextBox.Text = row.Cells["category_id"].Value.ToString();
                 CategoryNameTextBox.Text = row.Cells["category_name"].Value.ToString();

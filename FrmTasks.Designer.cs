@@ -1,4 +1,4 @@
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     partial class FrmTasks
     {
