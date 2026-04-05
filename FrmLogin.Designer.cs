@@ -40,20 +40,6 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.LoginLabel = new System.Windows.Forms.Label();
-            this.CreateAcctPanel = new System.Windows.Forms.Panel();
-            this.ConfirmPasswordLabel = new System.Windows.Forms.Label();
-            this.PasswordInputLabel = new System.Windows.Forms.Label();
-            this.AcctUsernameLabel = new System.Windows.Forms.Label();
-            this.ClosePanel1Button = new System.Windows.Forms.Button();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.EmailLabel = new System.Windows.Forms.Label();
-            this.ShowPasswordButtonLabel = new System.Windows.Forms.Label();
-            this.CreateAccountTitleLabel = new System.Windows.Forms.Label();
-            this.EmailAccountInputTextBox = new System.Windows.Forms.TextBox();
-            this.NameInputTextBox = new System.Windows.Forms.TextBox();
-            this.AcctUsernameInputTextBox = new System.Windows.Forms.TextBox();
-            this.ConfirmPasswordInputTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordInputTextBox = new System.Windows.Forms.TextBox();
             this.AccountRecoveryPanel = new System.Windows.Forms.Panel();
             this.ConfirmNewPasswordLabel = new System.Windows.Forms.Label();
             this.ShowPassARButtonLabel = new System.Windows.Forms.Label();
@@ -66,16 +52,30 @@
             this.AccountRecoveryTitleLabel = new System.Windows.Forms.Label();
             this.EmailCheckTextBox = new System.Windows.Forms.TextBox();
             this.AccountUsernameCheckTextBox = new System.Windows.Forms.TextBox();
+            this.PasswordInputTextBox = new System.Windows.Forms.TextBox();
+            this.ConfirmPasswordInputTextBox = new System.Windows.Forms.TextBox();
+            this.AcctUsernameInputTextBox = new System.Windows.Forms.TextBox();
+            this.NameInputTextBox = new System.Windows.Forms.TextBox();
+            this.EmailAccountInputTextBox = new System.Windows.Forms.TextBox();
+            this.CreateAccountTitleLabel = new System.Windows.Forms.Label();
+            this.ShowPasswordButtonLabel = new System.Windows.Forms.Label();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.ClosePanel1Button = new System.Windows.Forms.Button();
+            this.AcctUsernameLabel = new System.Windows.Forms.Label();
+            this.PasswordInputLabel = new System.Windows.Forms.Label();
+            this.ConfirmPasswordLabel = new System.Windows.Forms.Label();
+            this.CreateAcctPanel = new System.Windows.Forms.Panel();
+            this.CreateAccountPanelButton = new System.Windows.Forms.Button();
             this.CheckUserButton = new System.Windows.Forms.Button();
             this.ChangePasswordButton = new System.Windows.Forms.Button();
-            this.CreateAccountPanelButton = new System.Windows.Forms.Button();
             this.LoginImage = new System.Windows.Forms.PictureBox();
             this.CreateAcctButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginPanel.SuspendLayout();
-            this.CreateAcctPanel.SuspendLayout();
             this.AccountRecoveryPanel.SuspendLayout();
+            this.CreateAcctPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoginImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,165 +220,6 @@
             this.LoginLabel.TabIndex = 1;
             this.LoginLabel.Text = "Login";
             // 
-            // CreateAcctPanel
-            // 
-            this.CreateAcctPanel.BackColor = System.Drawing.Color.White;
-            this.CreateAcctPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.CreateAcctPanel.Controls.Add(this.ConfirmPasswordLabel);
-            this.CreateAcctPanel.Controls.Add(this.CreateAccountPanelButton);
-            this.CreateAcctPanel.Controls.Add(this.PasswordInputLabel);
-            this.CreateAcctPanel.Controls.Add(this.AcctUsernameLabel);
-            this.CreateAcctPanel.Controls.Add(this.ClosePanel1Button);
-            this.CreateAcctPanel.Controls.Add(this.NameLabel);
-            this.CreateAcctPanel.Controls.Add(this.EmailLabel);
-            this.CreateAcctPanel.Controls.Add(this.ShowPasswordButtonLabel);
-            this.CreateAcctPanel.Controls.Add(this.CreateAccountTitleLabel);
-            this.CreateAcctPanel.Controls.Add(this.EmailAccountInputTextBox);
-            this.CreateAcctPanel.Controls.Add(this.NameInputTextBox);
-            this.CreateAcctPanel.Controls.Add(this.AcctUsernameInputTextBox);
-            this.CreateAcctPanel.Controls.Add(this.ConfirmPasswordInputTextBox);
-            this.CreateAcctPanel.Controls.Add(this.PasswordInputTextBox);
-            this.CreateAcctPanel.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateAcctPanel.Location = new System.Drawing.Point(279, 12);
-            this.CreateAcctPanel.Name = "CreateAcctPanel";
-            this.CreateAcctPanel.Size = new System.Drawing.Size(363, 333);
-            this.CreateAcctPanel.TabIndex = 2;
-            this.CreateAcctPanel.Visible = false;
-            // 
-            // ConfirmPasswordLabel
-            // 
-            this.ConfirmPasswordLabel.AutoSize = true;
-            this.ConfirmPasswordLabel.Location = new System.Drawing.Point(182, 162);
-            this.ConfirmPasswordLabel.Name = "ConfirmPasswordLabel";
-            this.ConfirmPasswordLabel.Size = new System.Drawing.Size(133, 21);
-            this.ConfirmPasswordLabel.TabIndex = 4;
-            this.ConfirmPasswordLabel.Text = "Confirm Password";
-            // 
-            // PasswordInputLabel
-            // 
-            this.PasswordInputLabel.AutoSize = true;
-            this.PasswordInputLabel.Location = new System.Drawing.Point(20, 162);
-            this.PasswordInputLabel.Name = "PasswordInputLabel";
-            this.PasswordInputLabel.Size = new System.Drawing.Size(74, 21);
-            this.PasswordInputLabel.TabIndex = 3;
-            this.PasswordInputLabel.Text = "Password";
-            // 
-            // AcctUsernameLabel
-            // 
-            this.AcctUsernameLabel.AutoSize = true;
-            this.AcctUsernameLabel.Location = new System.Drawing.Point(20, 110);
-            this.AcctUsernameLabel.Name = "AcctUsernameLabel";
-            this.AcctUsernameLabel.Size = new System.Drawing.Size(137, 21);
-            this.AcctUsernameLabel.TabIndex = 2;
-            this.AcctUsernameLabel.Text = "Account username";
-            // 
-            // ClosePanel1Button
-            // 
-            this.ClosePanel1Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClosePanel1Button.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClosePanel1Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClosePanel1Button.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClosePanel1Button.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.ClosePanel1Button.Location = new System.Drawing.Point(285, 20);
-            this.ClosePanel1Button.Name = "ClosePanel1Button";
-            this.ClosePanel1Button.Size = new System.Drawing.Size(57, 30);
-            this.ClosePanel1Button.TabIndex = 5;
-            this.ClosePanel1Button.Text = "Close";
-            this.ClosePanel1Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ClosePanel1Button.UseVisualStyleBackColor = true;
-            this.ClosePanel1Button.Click += new System.EventHandler(this.ClosePanel1Button_Click);
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(20, 54);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(51, 21);
-            this.NameLabel.TabIndex = 1;
-            this.NameLabel.Text = "Name";
-            // 
-            // EmailLabel
-            // 
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(182, 109);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(53, 21);
-            this.EmailLabel.TabIndex = 1;
-            this.EmailLabel.Text = "E-mail";
-            // 
-            // ShowPasswordButtonLabel
-            // 
-            this.ShowPasswordButtonLabel.AutoSize = true;
-            this.ShowPasswordButtonLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowPasswordButtonLabel.Location = new System.Drawing.Point(91, 216);
-            this.ShowPasswordButtonLabel.Name = "ShowPasswordButtonLabel";
-            this.ShowPasswordButtonLabel.Size = new System.Drawing.Size(89, 13);
-            this.ShowPasswordButtonLabel.TabIndex = 1;
-            this.ShowPasswordButtonLabel.Text = "Show password";
-            this.ShowPasswordButtonLabel.Click += new System.EventHandler(this.ShowPasswordButtonLabel_Click);
-            // 
-            // CreateAccountTitleLabel
-            // 
-            this.CreateAccountTitleLabel.AutoSize = true;
-            this.CreateAccountTitleLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 18F);
-            this.CreateAccountTitleLabel.Location = new System.Drawing.Point(18, 15);
-            this.CreateAccountTitleLabel.Name = "CreateAccountTitleLabel";
-            this.CreateAccountTitleLabel.Size = new System.Drawing.Size(170, 32);
-            this.CreateAccountTitleLabel.TabIndex = 0;
-            this.CreateAccountTitleLabel.Text = "Create account";
-            // 
-            // EmailAccountInputTextBox
-            // 
-            this.EmailAccountInputTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.EmailAccountInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailAccountInputTextBox.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.EmailAccountInputTextBox.Location = new System.Drawing.Point(186, 133);
-            this.EmailAccountInputTextBox.Name = "EmailAccountInputTextBox";
-            this.EmailAccountInputTextBox.Size = new System.Drawing.Size(156, 27);
-            this.EmailAccountInputTextBox.TabIndex = 4;
-            // 
-            // NameInputTextBox
-            // 
-            this.NameInputTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.NameInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameInputTextBox.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.NameInputTextBox.Location = new System.Drawing.Point(24, 78);
-            this.NameInputTextBox.Name = "NameInputTextBox";
-            this.NameInputTextBox.Size = new System.Drawing.Size(156, 27);
-            this.NameInputTextBox.TabIndex = 4;
-            // 
-            // AcctUsernameInputTextBox
-            // 
-            this.AcctUsernameInputTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.AcctUsernameInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AcctUsernameInputTextBox.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.AcctUsernameInputTextBox.Location = new System.Drawing.Point(24, 133);
-            this.AcctUsernameInputTextBox.Name = "AcctUsernameInputTextBox";
-            this.AcctUsernameInputTextBox.Size = new System.Drawing.Size(156, 27);
-            this.AcctUsernameInputTextBox.TabIndex = 4;
-            // 
-            // ConfirmPasswordInputTextBox
-            // 
-            this.ConfirmPasswordInputTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.ConfirmPasswordInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmPasswordInputTextBox.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.ConfirmPasswordInputTextBox.Location = new System.Drawing.Point(186, 186);
-            this.ConfirmPasswordInputTextBox.Name = "ConfirmPasswordInputTextBox";
-            this.ConfirmPasswordInputTextBox.Size = new System.Drawing.Size(156, 27);
-            this.ConfirmPasswordInputTextBox.TabIndex = 4;
-            this.ConfirmPasswordInputTextBox.UseSystemPasswordChar = true;
-            // 
-            // PasswordInputTextBox
-            // 
-            this.PasswordInputTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.PasswordInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordInputTextBox.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.PasswordInputTextBox.Location = new System.Drawing.Point(24, 186);
-            this.PasswordInputTextBox.Name = "PasswordInputTextBox";
-            this.PasswordInputTextBox.Size = new System.Drawing.Size(156, 27);
-            this.PasswordInputTextBox.TabIndex = 4;
-            this.PasswordInputTextBox.UseSystemPasswordChar = true;
-            // 
             // AccountRecoveryPanel
             // 
             this.AccountRecoveryPanel.BackColor = System.Drawing.Color.White;
@@ -519,6 +360,185 @@
             this.AccountUsernameCheckTextBox.Size = new System.Drawing.Size(156, 27);
             this.AccountUsernameCheckTextBox.TabIndex = 4;
             // 
+            // PasswordInputTextBox
+            // 
+            this.PasswordInputTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.PasswordInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordInputTextBox.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.PasswordInputTextBox.Location = new System.Drawing.Point(24, 186);
+            this.PasswordInputTextBox.Name = "PasswordInputTextBox";
+            this.PasswordInputTextBox.Size = new System.Drawing.Size(156, 27);
+            this.PasswordInputTextBox.TabIndex = 4;
+            this.PasswordInputTextBox.UseSystemPasswordChar = true;
+            // 
+            // ConfirmPasswordInputTextBox
+            // 
+            this.ConfirmPasswordInputTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.ConfirmPasswordInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmPasswordInputTextBox.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.ConfirmPasswordInputTextBox.Location = new System.Drawing.Point(186, 186);
+            this.ConfirmPasswordInputTextBox.Name = "ConfirmPasswordInputTextBox";
+            this.ConfirmPasswordInputTextBox.Size = new System.Drawing.Size(156, 27);
+            this.ConfirmPasswordInputTextBox.TabIndex = 4;
+            this.ConfirmPasswordInputTextBox.UseSystemPasswordChar = true;
+            // 
+            // AcctUsernameInputTextBox
+            // 
+            this.AcctUsernameInputTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.AcctUsernameInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AcctUsernameInputTextBox.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.AcctUsernameInputTextBox.Location = new System.Drawing.Point(24, 133);
+            this.AcctUsernameInputTextBox.Name = "AcctUsernameInputTextBox";
+            this.AcctUsernameInputTextBox.Size = new System.Drawing.Size(156, 27);
+            this.AcctUsernameInputTextBox.TabIndex = 4;
+            // 
+            // NameInputTextBox
+            // 
+            this.NameInputTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.NameInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameInputTextBox.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.NameInputTextBox.Location = new System.Drawing.Point(24, 78);
+            this.NameInputTextBox.Name = "NameInputTextBox";
+            this.NameInputTextBox.Size = new System.Drawing.Size(156, 27);
+            this.NameInputTextBox.TabIndex = 4;
+            // 
+            // EmailAccountInputTextBox
+            // 
+            this.EmailAccountInputTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.EmailAccountInputTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailAccountInputTextBox.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.EmailAccountInputTextBox.Location = new System.Drawing.Point(186, 133);
+            this.EmailAccountInputTextBox.Name = "EmailAccountInputTextBox";
+            this.EmailAccountInputTextBox.Size = new System.Drawing.Size(156, 27);
+            this.EmailAccountInputTextBox.TabIndex = 4;
+            // 
+            // CreateAccountTitleLabel
+            // 
+            this.CreateAccountTitleLabel.AutoSize = true;
+            this.CreateAccountTitleLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 18F);
+            this.CreateAccountTitleLabel.Location = new System.Drawing.Point(18, 15);
+            this.CreateAccountTitleLabel.Name = "CreateAccountTitleLabel";
+            this.CreateAccountTitleLabel.Size = new System.Drawing.Size(170, 32);
+            this.CreateAccountTitleLabel.TabIndex = 0;
+            this.CreateAccountTitleLabel.Text = "Create account";
+            // 
+            // ShowPasswordButtonLabel
+            // 
+            this.ShowPasswordButtonLabel.AutoSize = true;
+            this.ShowPasswordButtonLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowPasswordButtonLabel.Location = new System.Drawing.Point(91, 216);
+            this.ShowPasswordButtonLabel.Name = "ShowPasswordButtonLabel";
+            this.ShowPasswordButtonLabel.Size = new System.Drawing.Size(89, 13);
+            this.ShowPasswordButtonLabel.TabIndex = 1;
+            this.ShowPasswordButtonLabel.Text = "Show password";
+            this.ShowPasswordButtonLabel.Click += new System.EventHandler(this.ShowPasswordButtonLabel_Click);
+            // 
+            // EmailLabel
+            // 
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Location = new System.Drawing.Point(182, 109);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(53, 21);
+            this.EmailLabel.TabIndex = 1;
+            this.EmailLabel.Text = "E-mail";
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(20, 54);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(51, 21);
+            this.NameLabel.TabIndex = 1;
+            this.NameLabel.Text = "Name";
+            // 
+            // ClosePanel1Button
+            // 
+            this.ClosePanel1Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClosePanel1Button.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClosePanel1Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClosePanel1Button.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClosePanel1Button.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.ClosePanel1Button.Location = new System.Drawing.Point(285, 20);
+            this.ClosePanel1Button.Name = "ClosePanel1Button";
+            this.ClosePanel1Button.Size = new System.Drawing.Size(57, 30);
+            this.ClosePanel1Button.TabIndex = 5;
+            this.ClosePanel1Button.Text = "Close";
+            this.ClosePanel1Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ClosePanel1Button.UseVisualStyleBackColor = true;
+            this.ClosePanel1Button.Click += new System.EventHandler(this.ClosePanel1Button_Click);
+            // 
+            // AcctUsernameLabel
+            // 
+            this.AcctUsernameLabel.AutoSize = true;
+            this.AcctUsernameLabel.Location = new System.Drawing.Point(20, 110);
+            this.AcctUsernameLabel.Name = "AcctUsernameLabel";
+            this.AcctUsernameLabel.Size = new System.Drawing.Size(137, 21);
+            this.AcctUsernameLabel.TabIndex = 2;
+            this.AcctUsernameLabel.Text = "Account username";
+            // 
+            // PasswordInputLabel
+            // 
+            this.PasswordInputLabel.AutoSize = true;
+            this.PasswordInputLabel.Location = new System.Drawing.Point(20, 162);
+            this.PasswordInputLabel.Name = "PasswordInputLabel";
+            this.PasswordInputLabel.Size = new System.Drawing.Size(74, 21);
+            this.PasswordInputLabel.TabIndex = 3;
+            this.PasswordInputLabel.Text = "Password";
+            // 
+            // ConfirmPasswordLabel
+            // 
+            this.ConfirmPasswordLabel.AutoSize = true;
+            this.ConfirmPasswordLabel.Location = new System.Drawing.Point(182, 162);
+            this.ConfirmPasswordLabel.Name = "ConfirmPasswordLabel";
+            this.ConfirmPasswordLabel.Size = new System.Drawing.Size(133, 21);
+            this.ConfirmPasswordLabel.TabIndex = 4;
+            this.ConfirmPasswordLabel.Text = "Confirm Password";
+            // 
+            // CreateAcctPanel
+            // 
+            this.CreateAcctPanel.BackColor = System.Drawing.Color.White;
+            this.CreateAcctPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CreateAcctPanel.Controls.Add(this.ConfirmPasswordLabel);
+            this.CreateAcctPanel.Controls.Add(this.CreateAccountPanelButton);
+            this.CreateAcctPanel.Controls.Add(this.PasswordInputLabel);
+            this.CreateAcctPanel.Controls.Add(this.AcctUsernameLabel);
+            this.CreateAcctPanel.Controls.Add(this.ClosePanel1Button);
+            this.CreateAcctPanel.Controls.Add(this.NameLabel);
+            this.CreateAcctPanel.Controls.Add(this.EmailLabel);
+            this.CreateAcctPanel.Controls.Add(this.ShowPasswordButtonLabel);
+            this.CreateAcctPanel.Controls.Add(this.CreateAccountTitleLabel);
+            this.CreateAcctPanel.Controls.Add(this.EmailAccountInputTextBox);
+            this.CreateAcctPanel.Controls.Add(this.NameInputTextBox);
+            this.CreateAcctPanel.Controls.Add(this.AcctUsernameInputTextBox);
+            this.CreateAcctPanel.Controls.Add(this.ConfirmPasswordInputTextBox);
+            this.CreateAcctPanel.Controls.Add(this.PasswordInputTextBox);
+            this.CreateAcctPanel.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateAcctPanel.Location = new System.Drawing.Point(279, 12);
+            this.CreateAcctPanel.Name = "CreateAcctPanel";
+            this.CreateAcctPanel.Size = new System.Drawing.Size(363, 333);
+            this.CreateAcctPanel.TabIndex = 2;
+            this.CreateAcctPanel.Visible = false;
+            // 
+            // CreateAccountPanelButton
+            // 
+            this.CreateAccountPanelButton.BackColor = System.Drawing.Color.Gray;
+            this.CreateAccountPanelButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CreateAccountPanelButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CreateAccountPanelButton.FlatAppearance.BorderSize = 0;
+            this.CreateAccountPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CreateAccountPanelButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateAccountPanelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CreateAccountPanelButton.Image = global::MachineProject3_TMS.Properties.Resources.new_account;
+            this.CreateAccountPanelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CreateAccountPanelButton.Location = new System.Drawing.Point(24, 251);
+            this.CreateAccountPanelButton.Name = "CreateAccountPanelButton";
+            this.CreateAccountPanelButton.Size = new System.Drawing.Size(318, 42);
+            this.CreateAccountPanelButton.TabIndex = 5;
+            this.CreateAccountPanelButton.Text = "Create account";
+            this.CreateAccountPanelButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.CreateAccountPanelButton.UseVisualStyleBackColor = false;
+            this.CreateAccountPanelButton.Click += new System.EventHandler(this.CreateAccountPanelButton_Click);
+            // 
             // CheckUserButton
             // 
             this.CheckUserButton.BackColor = System.Drawing.Color.Gray;
@@ -558,26 +578,6 @@
             this.ChangePasswordButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.ChangePasswordButton.UseVisualStyleBackColor = false;
             this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
-            // 
-            // CreateAccountPanelButton
-            // 
-            this.CreateAccountPanelButton.BackColor = System.Drawing.Color.Gray;
-            this.CreateAccountPanelButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CreateAccountPanelButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CreateAccountPanelButton.FlatAppearance.BorderSize = 0;
-            this.CreateAccountPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateAccountPanelButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateAccountPanelButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CreateAccountPanelButton.Image = global::MachineProject3_TMS.Properties.Resources.new_account;
-            this.CreateAccountPanelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CreateAccountPanelButton.Location = new System.Drawing.Point(24, 251);
-            this.CreateAccountPanelButton.Name = "CreateAccountPanelButton";
-            this.CreateAccountPanelButton.Size = new System.Drawing.Size(318, 42);
-            this.CreateAccountPanelButton.TabIndex = 5;
-            this.CreateAccountPanelButton.Text = "Create account";
-            this.CreateAccountPanelButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.CreateAccountPanelButton.UseVisualStyleBackColor = false;
-            this.CreateAccountPanelButton.Click += new System.EventHandler(this.CreateAccountPanelButton_Click);
             // 
             // LoginImage
             // 
@@ -666,10 +666,10 @@
             this.Load += new System.EventHandler(this.EntryLogin_Load);
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
-            this.CreateAcctPanel.ResumeLayout(false);
-            this.CreateAcctPanel.PerformLayout();
             this.AccountRecoveryPanel.ResumeLayout(false);
             this.AccountRecoveryPanel.PerformLayout();
+            this.CreateAcctPanel.ResumeLayout(false);
+            this.CreateAcctPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoginImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -690,20 +690,6 @@
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Label CreateAcctGuideLabel;
         private System.Windows.Forms.PictureBox LoginImage;
-        private System.Windows.Forms.Panel CreateAcctPanel;
-        private System.Windows.Forms.Label CreateAccountTitleLabel;
-        private System.Windows.Forms.Label ConfirmPasswordLabel;
-        private System.Windows.Forms.Label PasswordInputLabel;
-        private System.Windows.Forms.Label AcctUsernameLabel;
-        private System.Windows.Forms.Label ShowPasswordButtonLabel;
-        private System.Windows.Forms.TextBox NameInputTextBox;
-        private System.Windows.Forms.TextBox AcctUsernameInputTextBox;
-        private System.Windows.Forms.TextBox ConfirmPasswordInputTextBox;
-        private System.Windows.Forms.TextBox PasswordInputTextBox;
-        private System.Windows.Forms.Label EmailLabel;
-        private System.Windows.Forms.TextBox EmailAccountInputTextBox;
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Button CreateAccountPanelButton;
         private System.Windows.Forms.Label ShowPassLoginButtonLabel;
         private System.Windows.Forms.Label ForgotPasswordLabel;
         private System.Windows.Forms.Panel AccountRecoveryPanel;
@@ -719,8 +705,22 @@
         private System.Windows.Forms.TextBox ConfirmNewPasswordTextBox;
         private System.Windows.Forms.TextBox NewPasswordTextBox;
         private System.Windows.Forms.Button ClosePanel2Button;
-        private System.Windows.Forms.Button ClosePanel1Button;
         private System.Windows.Forms.Label ShowPassARButtonLabel;
+        private System.Windows.Forms.TextBox PasswordInputTextBox;
+        private System.Windows.Forms.TextBox ConfirmPasswordInputTextBox;
+        private System.Windows.Forms.TextBox AcctUsernameInputTextBox;
+        private System.Windows.Forms.TextBox NameInputTextBox;
+        private System.Windows.Forms.TextBox EmailAccountInputTextBox;
+        private System.Windows.Forms.Label CreateAccountTitleLabel;
+        private System.Windows.Forms.Label ShowPasswordButtonLabel;
+        private System.Windows.Forms.Label EmailLabel;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Button ClosePanel1Button;
+        private System.Windows.Forms.Label AcctUsernameLabel;
+        private System.Windows.Forms.Label PasswordInputLabel;
+        private System.Windows.Forms.Button CreateAccountPanelButton;
+        private System.Windows.Forms.Label ConfirmPasswordLabel;
+        private System.Windows.Forms.Panel CreateAcctPanel;
     }
 }
 
