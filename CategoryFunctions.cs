@@ -19,6 +19,11 @@ namespace MachineProject3_TMS
         /// </summary>
         public static DataTable GetAllCategories()
         {
+            if (DbConnection.DemoMode && DbConnection.DemoCategories != null)
+            {
+                return DbConnection.DemoCategories.Copy();
+            }
+
             DataTable dt = new DataTable();
             using (MySqlConnection conn = DbConnection.GetConnection())
             {
