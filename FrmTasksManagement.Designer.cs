@@ -52,6 +52,8 @@ namespace MachineProject3_TMS
             this.PendingTasksCounterLabel = new System.Windows.Forms.Label();
             this.TotalTasksCounterLabel = new System.Windows.Forms.Label();
             this.FilterByLabel = new System.Windows.Forms.Label();
+            this.SearchDirectoryButton = new System.Windows.Forms.Button();
+            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
             this.TaskDirectoryLabel = new System.Windows.Forms.Label();
             this.FilterByComboBox = new System.Windows.Forms.ComboBox();
             this.TaskDirectoryDataGridView = new System.Windows.Forms.DataGridView();
@@ -62,6 +64,10 @@ namespace MachineProject3_TMS
             this.DatabaseStatusMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.TaskEditorPanel = new System.Windows.Forms.Panel();
             this.EditorStatusMessageLabel = new System.Windows.Forms.Label();
+            this.ClearEditorButton = new System.Windows.Forms.Button();
+            this.DeleteEditorButton = new System.Windows.Forms.Button();
+            this.UpdateEditorButton = new System.Windows.Forms.Button();
+            this.AddEditorButton = new System.Windows.Forms.Button();
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.PriorityComboBox = new System.Windows.Forms.ComboBox();
             this.StatusComboBox = new System.Windows.Forms.ComboBox();
@@ -80,13 +86,12 @@ namespace MachineProject3_TMS
             this.TaskIDLabel = new System.Windows.Forms.Label();
             this.TaskEditorTitleLabel = new System.Windows.Forms.Label();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.SearchDirectoryButton = new System.Windows.Forms.Button();
-            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
-            this.ClearEditorButton = new System.Windows.Forms.Button();
-            this.DeleteEditorButton = new System.Windows.Forms.Button();
-            this.UpdateEditorButton = new System.Windows.Forms.Button();
-            this.AddEditorButton = new System.Windows.Forms.Button();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
+            this.addTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTasks.SuspendLayout();
             this.MainPanel.SuspendLayout();
             this.TaskDirectoryPanel.SuspendLayout();
@@ -149,6 +154,11 @@ namespace MachineProject3_TMS
             // 
             // recordToolStripMenuItem
             // 
+            this.recordToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addTaskToolStripMenuItem,
+            this.updateTaskToolStripMenuItem,
+            this.deleteTaskToolStripMenuItem,
+            this.toolStripMenuItem4});
             this.recordToolStripMenuItem.Name = "recordToolStripMenuItem";
             this.recordToolStripMenuItem.Size = new System.Drawing.Size(62, 21);
             this.recordToolStripMenuItem.Text = "&Record";
@@ -194,7 +204,8 @@ namespace MachineProject3_TMS
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.helpToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.helpToolStripMenuItem.Text = "&Help";
@@ -203,7 +214,7 @@ namespace MachineProject3_TMS
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             // 
             // MainTitleLabel
@@ -341,6 +352,42 @@ namespace MachineProject3_TMS
             this.FilterByLabel.TabIndex = 2;
             this.FilterByLabel.Text = "Filter By";
             // 
+            // SearchDirectoryButton
+            // 
+            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
+            this.SearchDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
+            this.SearchDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.SearchDirectoryButton.Location = new System.Drawing.Point(13, 424);
+            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
+            this.SearchDirectoryButton.Size = new System.Drawing.Size(164, 51);
+            this.SearchDirectoryButton.TabIndex = 9;
+            this.SearchDirectoryButton.Text = "SEARCH";
+            this.SearchDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
+            // 
+            // RefreshDirectoryButton
+            // 
+            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
+            this.RefreshDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RefreshDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
+            this.RefreshDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.RefreshDirectoryButton.Location = new System.Drawing.Point(13, 481);
+            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
+            this.RefreshDirectoryButton.Size = new System.Drawing.Size(164, 51);
+            this.RefreshDirectoryButton.TabIndex = 7;
+            this.RefreshDirectoryButton.Text = "REFRESH";
+            this.RefreshDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
+            // 
             // TaskDirectoryLabel
             // 
             this.TaskDirectoryLabel.BackColor = System.Drawing.Color.DodgerBlue;
@@ -471,6 +518,74 @@ namespace MachineProject3_TMS
             this.EditorStatusMessageLabel.TabIndex = 10;
             this.EditorStatusMessageLabel.Text = "--";
             this.EditorStatusMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ClearEditorButton
+            // 
+            this.ClearEditorButton.BackColor = System.Drawing.Color.DimGray;
+            this.ClearEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearEditorButton.FlatAppearance.BorderSize = 0;
+            this.ClearEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.clear;
+            this.ClearEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ClearEditorButton.Location = new System.Drawing.Point(191, 458);
+            this.ClearEditorButton.Name = "ClearEditorButton";
+            this.ClearEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.ClearEditorButton.TabIndex = 9;
+            this.ClearEditorButton.Text = "CLEAR";
+            this.ClearEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ClearEditorButton.UseVisualStyleBackColor = false;
+            // 
+            // DeleteEditorButton
+            // 
+            this.DeleteEditorButton.BackColor = System.Drawing.Color.Firebrick;
+            this.DeleteEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteEditorButton.FlatAppearance.BorderSize = 0;
+            this.DeleteEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.delete;
+            this.DeleteEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.DeleteEditorButton.Location = new System.Drawing.Point(17, 458);
+            this.DeleteEditorButton.Name = "DeleteEditorButton";
+            this.DeleteEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.DeleteEditorButton.TabIndex = 8;
+            this.DeleteEditorButton.Text = "DELETE";
+            this.DeleteEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.DeleteEditorButton.UseVisualStyleBackColor = false;
+            // 
+            // UpdateEditorButton
+            // 
+            this.UpdateEditorButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.UpdateEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateEditorButton.FlatAppearance.BorderSize = 0;
+            this.UpdateEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.update;
+            this.UpdateEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.UpdateEditorButton.Location = new System.Drawing.Point(191, 362);
+            this.UpdateEditorButton.Name = "UpdateEditorButton";
+            this.UpdateEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.UpdateEditorButton.TabIndex = 7;
+            this.UpdateEditorButton.Text = "UPDATE";
+            this.UpdateEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.UpdateEditorButton.UseVisualStyleBackColor = false;
+            // 
+            // AddEditorButton
+            // 
+            this.AddEditorButton.BackColor = System.Drawing.Color.SeaGreen;
+            this.AddEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddEditorButton.FlatAppearance.BorderSize = 0;
+            this.AddEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.add;
+            this.AddEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.AddEditorButton.Location = new System.Drawing.Point(17, 362);
+            this.AddEditorButton.Name = "AddEditorButton";
+            this.AddEditorButton.Size = new System.Drawing.Size(168, 90);
+            this.AddEditorButton.TabIndex = 6;
+            this.AddEditorButton.Text = "ADD";
+            this.AddEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.AddEditorButton.UseVisualStyleBackColor = false;
             // 
             // CategoryComboBox
             // 
@@ -690,110 +805,6 @@ namespace MachineProject3_TMS
             this.ProgramLogoPictureBox.TabIndex = 14;
             this.ProgramLogoPictureBox.TabStop = false;
             // 
-            // SearchDirectoryButton
-            // 
-            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
-            this.SearchDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
-            this.SearchDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.SearchDirectoryButton.Location = new System.Drawing.Point(13, 424);
-            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
-            this.SearchDirectoryButton.Size = new System.Drawing.Size(164, 51);
-            this.SearchDirectoryButton.TabIndex = 9;
-            this.SearchDirectoryButton.Text = "SEARCH";
-            this.SearchDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
-            // 
-            // RefreshDirectoryButton
-            // 
-            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
-            this.RefreshDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RefreshDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
-            this.RefreshDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.RefreshDirectoryButton.Location = new System.Drawing.Point(13, 481);
-            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
-            this.RefreshDirectoryButton.Size = new System.Drawing.Size(164, 51);
-            this.RefreshDirectoryButton.TabIndex = 7;
-            this.RefreshDirectoryButton.Text = "REFRESH";
-            this.RefreshDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
-            // 
-            // ClearEditorButton
-            // 
-            this.ClearEditorButton.BackColor = System.Drawing.Color.DimGray;
-            this.ClearEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClearEditorButton.FlatAppearance.BorderSize = 0;
-            this.ClearEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClearEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.clear;
-            this.ClearEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.ClearEditorButton.Location = new System.Drawing.Point(191, 458);
-            this.ClearEditorButton.Name = "ClearEditorButton";
-            this.ClearEditorButton.Size = new System.Drawing.Size(168, 90);
-            this.ClearEditorButton.TabIndex = 9;
-            this.ClearEditorButton.Text = "CLEAR";
-            this.ClearEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ClearEditorButton.UseVisualStyleBackColor = false;
-            // 
-            // DeleteEditorButton
-            // 
-            this.DeleteEditorButton.BackColor = System.Drawing.Color.Firebrick;
-            this.DeleteEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteEditorButton.FlatAppearance.BorderSize = 0;
-            this.DeleteEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.delete;
-            this.DeleteEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.DeleteEditorButton.Location = new System.Drawing.Point(17, 458);
-            this.DeleteEditorButton.Name = "DeleteEditorButton";
-            this.DeleteEditorButton.Size = new System.Drawing.Size(168, 90);
-            this.DeleteEditorButton.TabIndex = 8;
-            this.DeleteEditorButton.Text = "DELETE";
-            this.DeleteEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.DeleteEditorButton.UseVisualStyleBackColor = false;
-            // 
-            // UpdateEditorButton
-            // 
-            this.UpdateEditorButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.UpdateEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UpdateEditorButton.FlatAppearance.BorderSize = 0;
-            this.UpdateEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.update;
-            this.UpdateEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.UpdateEditorButton.Location = new System.Drawing.Point(191, 362);
-            this.UpdateEditorButton.Name = "UpdateEditorButton";
-            this.UpdateEditorButton.Size = new System.Drawing.Size(168, 90);
-            this.UpdateEditorButton.TabIndex = 7;
-            this.UpdateEditorButton.Text = "UPDATE";
-            this.UpdateEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.UpdateEditorButton.UseVisualStyleBackColor = false;
-            // 
-            // AddEditorButton
-            // 
-            this.AddEditorButton.BackColor = System.Drawing.Color.SeaGreen;
-            this.AddEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddEditorButton.FlatAppearance.BorderSize = 0;
-            this.AddEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddEditorButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.add;
-            this.AddEditorButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.AddEditorButton.Location = new System.Drawing.Point(17, 362);
-            this.AddEditorButton.Name = "AddEditorButton";
-            this.AddEditorButton.Size = new System.Drawing.Size(168, 90);
-            this.AddEditorButton.TabIndex = 6;
-            this.AddEditorButton.Text = "ADD";
-            this.AddEditorButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.AddEditorButton.UseVisualStyleBackColor = false;
-            // 
             // ReturnToDashboardButton
             // 
             this.ReturnToDashboardButton.BackColor = System.Drawing.Color.Transparent;
@@ -805,6 +816,36 @@ namespace MachineProject3_TMS
             this.ReturnToDashboardButton.Size = new System.Drawing.Size(45, 45);
             this.ReturnToDashboardButton.TabIndex = 15;
             this.ReturnToDashboardButton.UseVisualStyleBackColor = false;
+            // 
+            // addTaskToolStripMenuItem
+            // 
+            this.addTaskToolStripMenuItem.Name = "addTaskToolStripMenuItem";
+            this.addTaskToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addTaskToolStripMenuItem.Text = "&Add Task";
+            // 
+            // updateTaskToolStripMenuItem
+            // 
+            this.updateTaskToolStripMenuItem.Name = "updateTaskToolStripMenuItem";
+            this.updateTaskToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateTaskToolStripMenuItem.Text = "&Update Task";
+            // 
+            // deleteTaskToolStripMenuItem
+            // 
+            this.deleteTaskToolStripMenuItem.Name = "deleteTaskToolStripMenuItem";
+            this.deleteTaskToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteTaskToolStripMenuItem.Text = "&Delete Task";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(177, 6);
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem1.Text = "&Help";
             // 
             // FrmTasksManagement
             // 
@@ -898,5 +939,10 @@ namespace MachineProject3_TMS
         private System.Windows.Forms.Label EditorStatusMessageLabel;
         private System.Windows.Forms.PictureBox ProgramLogoPictureBox;
         private System.Windows.Forms.Button ReturnToDashboardButton;
+        private System.Windows.Forms.ToolStripMenuItem addTaskToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateTaskToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteTaskToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
     }
 }

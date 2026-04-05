@@ -57,6 +57,7 @@
             this.DashboardButtonsToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.AboutUserButton = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.DashboardPanel.SuspendLayout();
             this.DashboardMenuStrip.SuspendLayout();
             this.DashboardStatusBar.SuspendLayout();
@@ -70,7 +71,7 @@
             this.WelcomeLabel.BackColor = System.Drawing.Color.Transparent;
             this.WelcomeLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 30F, System.Drawing.FontStyle.Italic);
             this.WelcomeLabel.ForeColor = System.Drawing.Color.White;
-            this.WelcomeLabel.Location = new System.Drawing.Point(75, 21);
+            this.WelcomeLabel.Location = new System.Drawing.Point(75, 29);
             this.WelcomeLabel.Name = "WelcomeLabel";
             this.WelcomeLabel.Size = new System.Drawing.Size(190, 54);
             this.WelcomeLabel.TabIndex = 1;
@@ -85,7 +86,7 @@
             this.DashboardLabel.AutoSize = true;
             this.DashboardLabel.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardLabel.ForeColor = System.Drawing.Color.White;
-            this.DashboardLabel.Location = new System.Drawing.Point(73, 30);
+            this.DashboardLabel.Location = new System.Drawing.Point(73, 26);
             this.DashboardLabel.Name = "DashboardLabel";
             this.DashboardLabel.Size = new System.Drawing.Size(249, 65);
             this.DashboardLabel.TabIndex = 2;
@@ -104,9 +105,9 @@
             this.DashboardPanel.Controls.Add(this.CategoriesButton);
             this.DashboardPanel.Controls.Add(this.ReportTaskButton);
             this.DashboardPanel.Controls.Add(this.TaskManagementButton);
-            this.DashboardPanel.Location = new System.Drawing.Point(0, 98);
+            this.DashboardPanel.Location = new System.Drawing.Point(0, 92);
             this.DashboardPanel.Name = "DashboardPanel";
-            this.DashboardPanel.Size = new System.Drawing.Size(1074, 429);
+            this.DashboardPanel.Size = new System.Drawing.Size(1074, 435);
             this.DashboardPanel.TabIndex = 3;
             // 
             // SelectLabel
@@ -116,7 +117,7 @@
             this.SelectLabel.BackColor = System.Drawing.Color.Transparent;
             this.SelectLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 13F, System.Drawing.FontStyle.Italic);
             this.SelectLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.SelectLabel.Location = new System.Drawing.Point(752, 45);
+            this.SelectLabel.Location = new System.Drawing.Point(752, 53);
             this.SelectLabel.Name = "SelectLabel";
             this.SelectLabel.Size = new System.Drawing.Size(238, 25);
             this.SelectLabel.TabIndex = 1;
@@ -135,7 +136,7 @@
             this.LogoutSystemButton.ForeColor = System.Drawing.Color.White;
             this.LogoutSystemButton.Image = global::MachineProject3_TMS.Properties.Resources.logout;
             this.LogoutSystemButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.LogoutSystemButton.Location = new System.Drawing.Point(772, 260);
+            this.LogoutSystemButton.Location = new System.Drawing.Point(772, 263);
             this.LogoutSystemButton.Name = "LogoutSystemButton";
             this.LogoutSystemButton.Padding = new System.Windows.Forms.Padding(5);
             this.LogoutSystemButton.Size = new System.Drawing.Size(218, 91);
@@ -157,7 +158,7 @@
             this.AboutButton.ForeColor = System.Drawing.Color.White;
             this.AboutButton.Image = global::MachineProject3_TMS.Properties.Resources.about;
             this.AboutButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.AboutButton.Location = new System.Drawing.Point(772, 85);
+            this.AboutButton.Location = new System.Drawing.Point(772, 88);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Padding = new System.Windows.Forms.Padding(5);
             this.AboutButton.Size = new System.Drawing.Size(218, 169);
@@ -179,7 +180,7 @@
             this.CategoriesButton.ForeColor = System.Drawing.Color.White;
             this.CategoriesButton.Image = global::MachineProject3_TMS.Properties.Resources.category;
             this.CategoriesButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.CategoriesButton.Location = new System.Drawing.Point(370, 85);
+            this.CategoriesButton.Location = new System.Drawing.Point(370, 88);
             this.CategoriesButton.Name = "CategoriesButton";
             this.CategoriesButton.Padding = new System.Windows.Forms.Padding(5);
             this.CategoriesButton.Size = new System.Drawing.Size(396, 138);
@@ -201,7 +202,7 @@
             this.ReportTaskButton.ForeColor = System.Drawing.Color.White;
             this.ReportTaskButton.Image = global::MachineProject3_TMS.Properties.Resources.reports;
             this.ReportTaskButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.ReportTaskButton.Location = new System.Drawing.Point(370, 229);
+            this.ReportTaskButton.Location = new System.Drawing.Point(370, 232);
             this.ReportTaskButton.Name = "ReportTaskButton";
             this.ReportTaskButton.Padding = new System.Windows.Forms.Padding(5);
             this.ReportTaskButton.Size = new System.Drawing.Size(396, 122);
@@ -224,7 +225,7 @@
             this.TaskManagementButton.ForeColor = System.Drawing.Color.White;
             this.TaskManagementButton.Image = global::MachineProject3_TMS.Properties.Resources.task;
             this.TaskManagementButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.TaskManagementButton.Location = new System.Drawing.Point(84, 85);
+            this.TaskManagementButton.Location = new System.Drawing.Point(84, 88);
             this.TaskManagementButton.Name = "TaskManagementButton";
             this.TaskManagementButton.Padding = new System.Windows.Forms.Padding(5);
             this.TaskManagementButton.Size = new System.Drawing.Size(280, 266);
@@ -338,7 +339,8 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.helpToolStripMenuItem1});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
@@ -350,7 +352,7 @@
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -396,12 +398,19 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::MachineProject3_TMS.Properties.Resources.logo;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 39);
+            this.pictureBox3.Location = new System.Drawing.Point(22, 34);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(64, 52);
+            this.pictureBox3.Size = new System.Drawing.Size(55, 52);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem1.Text = "&Help";
             // 
             // FrmDashboard
             // 
@@ -462,5 +471,6 @@
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label SelectLabel;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
     }
 }

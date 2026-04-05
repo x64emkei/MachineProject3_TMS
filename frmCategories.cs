@@ -9,5 +9,10 @@ namespace MachineProject3_TMS
         {
             InitializeComponent();
         }
+
+        private void menuTasks_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
