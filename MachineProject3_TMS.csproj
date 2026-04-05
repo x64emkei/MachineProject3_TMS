@@ -252,6 +252,8 @@
     <None Include="media_resources\pngimg.com - mysql_PNG37.png" />
     <None Include="media_resources\arrow_back.png" />
     <None Include="media_resources\reports.png" />
+    <None Include="media_resources\export.png" />
+    <None Include="media_resources\print.png" />
     <Content Include="tms.ico" />
   </ItemGroup>
   <ItemGroup>
