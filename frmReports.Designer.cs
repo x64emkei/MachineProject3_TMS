@@ -45,6 +45,9 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.completedTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendingTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,6 +55,7 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.TaskDirectoryPanel = new System.Windows.Forms.Panel();
             this.statusStripTasks = new System.Windows.Forms.StatusStrip();
@@ -60,38 +64,34 @@
             this.ReportControlPanel = new System.Windows.Forms.Panel();
             this.LowPriorityButton = new System.Windows.Forms.Button();
             this.MediumPriorityButton = new System.Windows.Forms.Button();
-            this.PendingTasksButton = new System.Windows.Forms.Button();
             this.HighPriorityButton = new System.Windows.Forms.Button();
+            this.OverdueTasksButton = new System.Windows.Forms.Button();
+            this.PendingTasksButton = new System.Windows.Forms.Button();
             this.DoneTasksButton = new System.Windows.Forms.Button();
             this.AllTasksButton = new System.Windows.Forms.Button();
+            this.ExportReportButton = new System.Windows.Forms.Button();
+            this.SearchDirectoryButton = new System.Windows.Forms.Button();
+            this.PrintReportButton = new System.Windows.Forms.Button();
+            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.ExportToolsLabel = new System.Windows.Forms.Label();
             this.LiveStatusLabel = new System.Windows.Forms.Label();
             this.EditorStatusMessageLabel = new System.Windows.Forms.Label();
             this.LowPriorityTasksLabel = new System.Windows.Forms.Label();
             this.MediumPriorityTasksLabel = new System.Windows.Forms.Label();
             this.HighPriorityTasksLabel = new System.Windows.Forms.Label();
+            this.OverdueTasksLabel = new System.Windows.Forms.Label();
+            this.OverdueTasksCounterLabel = new System.Windows.Forms.Label();
             this.LowPriorityCounterLabel = new System.Windows.Forms.Label();
             this.MediumTasksCounterLabel = new System.Windows.Forms.Label();
             this.HighPriorityTasksCounterLabel = new System.Windows.Forms.Label();
             this.QuickPriorityLabel = new System.Windows.Forms.Label();
             this.ExportsGuideLabel = new System.Windows.Forms.Label();
             this.FilterByLabel = new System.Windows.Forms.Label();
-            this.ExportReportButton = new System.Windows.Forms.Button();
-            this.SearchDirectoryButton = new System.Windows.Forms.Button();
-            this.PrintReportButton = new System.Windows.Forms.Button();
-            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.TaskEditorTitleLabel = new System.Windows.Forms.Label();
             this.MainTitleLabel = new System.Windows.Forms.Label();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
-            this.OverdueTasksButton = new System.Windows.Forms.Button();
-            this.OverdueTasksCounterLabel = new System.Windows.Forms.Label();
-            this.OverdueTasksLabel = new System.Windows.Forms.Label();
-            this.allTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.completedTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pendingTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).BeginInit();
             this.menuTasks.SuspendLayout();
             this.MainPanel.SuspendLayout();
@@ -194,9 +194,9 @@
             this.TaskDirectoryDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.TaskDirectoryDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TaskDirectoryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TaskDirectoryDataGridView.Location = new System.Drawing.Point(13, 57);
+            this.TaskDirectoryDataGridView.Location = new System.Drawing.Point(15, 53);
             this.TaskDirectoryDataGridView.Name = "TaskDirectoryDataGridView";
-            this.TaskDirectoryDataGridView.Size = new System.Drawing.Size(679, 564);
+            this.TaskDirectoryDataGridView.Size = new System.Drawing.Size(666, 590);
             this.TaskDirectoryDataGridView.TabIndex = 3;
             // 
             // SearchLabel
@@ -220,7 +220,7 @@
             this.helpToolStripMenuItem});
             this.menuTasks.Location = new System.Drawing.Point(0, 0);
             this.menuTasks.Name = "menuTasks";
-            this.menuTasks.Size = new System.Drawing.Size(1124, 25);
+            this.menuTasks.Size = new System.Drawing.Size(1102, 25);
             this.menuTasks.TabIndex = 9;
             this.menuTasks.Text = "menuTasks";
             // 
@@ -270,6 +270,27 @@
             this.recordToolStripMenuItem.Name = "recordToolStripMenuItem";
             this.recordToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
             this.recordToolStripMenuItem.Text = "F&ilter";
+            // 
+            // allTasksToolStripMenuItem
+            // 
+            this.allTasksToolStripMenuItem.Name = "allTasksToolStripMenuItem";
+            this.allTasksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.allTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.allTasksToolStripMenuItem.Text = "A&ll Tasks";
+            // 
+            // completedTasksToolStripMenuItem
+            // 
+            this.completedTasksToolStripMenuItem.Name = "completedTasksToolStripMenuItem";
+            this.completedTasksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.completedTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.completedTasksToolStripMenuItem.Text = "&Completed Tasks";
+            // 
+            // pendingTasksToolStripMenuItem
+            // 
+            this.pendingTasksToolStripMenuItem.Name = "pendingTasksToolStripMenuItem";
+            this.pendingTasksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.pendingTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.pendingTasksToolStripMenuItem.Text = "&Pending Tasks";
             // 
             // refreshToolStripMenuItem
             // 
@@ -322,19 +343,26 @@
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.aboutToolStripMenuItem.Text = "&About";
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.helpToolStripMenuItem1.Text = "&Help";
             // 
             // MainPanel
             // 
-            this.MainPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.MainPanel.Controls.Add(this.TaskDirectoryPanel);
             this.MainPanel.Controls.Add(this.ReportControlPanel);
-            this.MainPanel.Location = new System.Drawing.Point(0, 93);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MainPanel.Location = new System.Drawing.Point(0, 91);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Padding = new System.Windows.Forms.Padding(20);
-            this.MainPanel.Size = new System.Drawing.Size(1126, 724);
+            this.MainPanel.Size = new System.Drawing.Size(1102, 724);
             this.MainPanel.TabIndex = 11;
             // 
             // TaskDirectoryPanel
@@ -344,9 +372,9 @@
             this.TaskDirectoryPanel.Controls.Add(this.TaskDirectoryLabel);
             this.TaskDirectoryPanel.Controls.Add(this.TaskDirectoryDataGridView);
             this.TaskDirectoryPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TaskDirectoryPanel.Location = new System.Drawing.Point(398, 20);
+            this.TaskDirectoryPanel.Location = new System.Drawing.Point(386, 20);
             this.TaskDirectoryPanel.Name = "TaskDirectoryPanel";
-            this.TaskDirectoryPanel.Size = new System.Drawing.Size(708, 684);
+            this.TaskDirectoryPanel.Size = new System.Drawing.Size(696, 684);
             this.TaskDirectoryPanel.TabIndex = 0;
             // 
             // statusStripTasks
@@ -356,7 +384,7 @@
             this.DatabaseStatusMessage});
             this.statusStripTasks.Location = new System.Drawing.Point(0, 662);
             this.statusStripTasks.Name = "statusStripTasks";
-            this.statusStripTasks.Size = new System.Drawing.Size(708, 22);
+            this.statusStripTasks.Size = new System.Drawing.Size(696, 22);
             this.statusStripTasks.TabIndex = 6;
             this.statusStripTasks.Text = "statusStripTasks";
             // 
@@ -440,19 +468,6 @@
             this.MediumPriorityButton.Text = "&MEDIUM";
             this.MediumPriorityButton.UseVisualStyleBackColor = false;
             // 
-            // PendingTasksButton
-            // 
-            this.PendingTasksButton.BackColor = System.Drawing.Color.Goldenrod;
-            this.PendingTasksButton.FlatAppearance.BorderSize = 0;
-            this.PendingTasksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PendingTasksButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PendingTasksButton.Location = new System.Drawing.Point(148, 221);
-            this.PendingTasksButton.Name = "PendingTasksButton";
-            this.PendingTasksButton.Size = new System.Drawing.Size(81, 25);
-            this.PendingTasksButton.TabIndex = 11;
-            this.PendingTasksButton.Text = "&PENDING";
-            this.PendingTasksButton.UseVisualStyleBackColor = false;
-            // 
             // HighPriorityButton
             // 
             this.HighPriorityButton.BackColor = System.Drawing.Color.Firebrick;
@@ -465,6 +480,32 @@
             this.HighPriorityButton.TabIndex = 11;
             this.HighPriorityButton.Text = "&HIGH";
             this.HighPriorityButton.UseVisualStyleBackColor = false;
+            // 
+            // OverdueTasksButton
+            // 
+            this.OverdueTasksButton.BackColor = System.Drawing.Color.Red;
+            this.OverdueTasksButton.FlatAppearance.BorderSize = 0;
+            this.OverdueTasksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OverdueTasksButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OverdueTasksButton.Location = new System.Drawing.Point(235, 221);
+            this.OverdueTasksButton.Name = "OverdueTasksButton";
+            this.OverdueTasksButton.Size = new System.Drawing.Size(96, 25);
+            this.OverdueTasksButton.TabIndex = 11;
+            this.OverdueTasksButton.Text = "OVERDUE";
+            this.OverdueTasksButton.UseVisualStyleBackColor = false;
+            // 
+            // PendingTasksButton
+            // 
+            this.PendingTasksButton.BackColor = System.Drawing.Color.Goldenrod;
+            this.PendingTasksButton.FlatAppearance.BorderSize = 0;
+            this.PendingTasksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PendingTasksButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PendingTasksButton.Location = new System.Drawing.Point(148, 221);
+            this.PendingTasksButton.Name = "PendingTasksButton";
+            this.PendingTasksButton.Size = new System.Drawing.Size(81, 25);
+            this.PendingTasksButton.TabIndex = 11;
+            this.PendingTasksButton.Text = "&PENDING";
+            this.PendingTasksButton.UseVisualStyleBackColor = false;
             // 
             // DoneTasksButton
             // 
@@ -491,6 +532,90 @@
             this.AllTasksButton.TabIndex = 11;
             this.AllTasksButton.Text = "A&LL";
             this.AllTasksButton.UseVisualStyleBackColor = false;
+            // 
+            // ExportReportButton
+            // 
+            this.ExportReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ExportReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExportReportButton.FlatAppearance.BorderSize = 0;
+            this.ExportReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExportReportButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExportReportButton.Image = global::MachineProject3_TMS.Properties.Resources.export;
+            this.ExportReportButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ExportReportButton.Location = new System.Drawing.Point(27, 360);
+            this.ExportReportButton.Name = "ExportReportButton";
+            this.ExportReportButton.Size = new System.Drawing.Size(149, 51);
+            this.ExportReportButton.TabIndex = 9;
+            this.ExportReportButton.Text = "&EXPORT";
+            this.ExportReportButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ExportReportButton.UseVisualStyleBackColor = false;
+            // 
+            // SearchDirectoryButton
+            // 
+            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
+            this.SearchDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
+            this.SearchDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.SearchDirectoryButton.Location = new System.Drawing.Point(27, 137);
+            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
+            this.SearchDirectoryButton.Size = new System.Drawing.Size(149, 51);
+            this.SearchDirectoryButton.TabIndex = 9;
+            this.SearchDirectoryButton.Text = "&SEARCH";
+            this.SearchDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
+            // 
+            // PrintReportButton
+            // 
+            this.PrintReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PrintReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PrintReportButton.FlatAppearance.BorderSize = 0;
+            this.PrintReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintReportButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PrintReportButton.Image = global::MachineProject3_TMS.Properties.Resources.print;
+            this.PrintReportButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.PrintReportButton.Location = new System.Drawing.Point(182, 360);
+            this.PrintReportButton.Name = "PrintReportButton";
+            this.PrintReportButton.Size = new System.Drawing.Size(149, 51);
+            this.PrintReportButton.TabIndex = 7;
+            this.PrintReportButton.Text = "&PRINT";
+            this.PrintReportButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.PrintReportButton.UseVisualStyleBackColor = false;
+            // 
+            // RefreshDirectoryButton
+            // 
+            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
+            this.RefreshDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RefreshDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
+            this.RefreshDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.RefreshDirectoryButton.Location = new System.Drawing.Point(182, 137);
+            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
+            this.RefreshDirectoryButton.Size = new System.Drawing.Size(149, 51);
+            this.RefreshDirectoryButton.TabIndex = 7;
+            this.RefreshDirectoryButton.Text = "&REFRESH";
+            this.RefreshDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchTextBox.CausesValidation = false;
+            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTextBox.ForeColor = System.Drawing.Color.White;
+            this.SearchTextBox.Location = new System.Drawing.Point(27, 102);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(304, 29);
+            this.SearchTextBox.TabIndex = 3;
             // 
             // ExportToolsLabel
             // 
@@ -567,6 +692,30 @@
             this.HighPriorityTasksLabel.TabIndex = 2;
             this.HighPriorityTasksLabel.Text = "HIGH";
             // 
+            // OverdueTasksLabel
+            // 
+            this.OverdueTasksLabel.AutoSize = true;
+            this.OverdueTasksLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.OverdueTasksLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.OverdueTasksLabel.ForeColor = System.Drawing.Color.Silver;
+            this.OverdueTasksLabel.Location = new System.Drawing.Point(240, 554);
+            this.OverdueTasksLabel.Name = "OverdueTasksLabel";
+            this.OverdueTasksLabel.Size = new System.Drawing.Size(58, 15);
+            this.OverdueTasksLabel.TabIndex = 2;
+            this.OverdueTasksLabel.Text = "OVERDUE";
+            // 
+            // OverdueTasksCounterLabel
+            // 
+            this.OverdueTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.OverdueTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OverdueTasksCounterLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.OverdueTasksCounterLabel.Location = new System.Drawing.Point(235, 513);
+            this.OverdueTasksCounterLabel.Name = "OverdueTasksCounterLabel";
+            this.OverdueTasksCounterLabel.Size = new System.Drawing.Size(98, 59);
+            this.OverdueTasksCounterLabel.TabIndex = 10;
+            this.OverdueTasksCounterLabel.Text = "--";
+            this.OverdueTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // LowPriorityCounterLabel
             // 
             this.LowPriorityCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -636,90 +785,6 @@
             this.FilterByLabel.TabIndex = 2;
             this.FilterByLabel.Text = "Quick Status";
             // 
-            // ExportReportButton
-            // 
-            this.ExportReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ExportReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExportReportButton.FlatAppearance.BorderSize = 0;
-            this.ExportReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExportReportButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExportReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ExportReportButton.Image = global::MachineProject3_TMS.Properties.Resources.export;
-            this.ExportReportButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.ExportReportButton.Location = new System.Drawing.Point(27, 360);
-            this.ExportReportButton.Name = "ExportReportButton";
-            this.ExportReportButton.Size = new System.Drawing.Size(149, 51);
-            this.ExportReportButton.TabIndex = 9;
-            this.ExportReportButton.Text = "&EXPORT";
-            this.ExportReportButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ExportReportButton.UseVisualStyleBackColor = false;
-            // 
-            // SearchDirectoryButton
-            // 
-            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
-            this.SearchDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
-            this.SearchDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.SearchDirectoryButton.Location = new System.Drawing.Point(27, 137);
-            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
-            this.SearchDirectoryButton.Size = new System.Drawing.Size(149, 51);
-            this.SearchDirectoryButton.TabIndex = 9;
-            this.SearchDirectoryButton.Text = "&SEARCH";
-            this.SearchDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
-            // 
-            // PrintReportButton
-            // 
-            this.PrintReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.PrintReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PrintReportButton.FlatAppearance.BorderSize = 0;
-            this.PrintReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintReportButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrintReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PrintReportButton.Image = global::MachineProject3_TMS.Properties.Resources.print;
-            this.PrintReportButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.PrintReportButton.Location = new System.Drawing.Point(182, 360);
-            this.PrintReportButton.Name = "PrintReportButton";
-            this.PrintReportButton.Size = new System.Drawing.Size(149, 51);
-            this.PrintReportButton.TabIndex = 7;
-            this.PrintReportButton.Text = "&PRINT";
-            this.PrintReportButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.PrintReportButton.UseVisualStyleBackColor = false;
-            // 
-            // RefreshDirectoryButton
-            // 
-            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
-            this.RefreshDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RefreshDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
-            this.RefreshDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.RefreshDirectoryButton.Location = new System.Drawing.Point(182, 137);
-            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
-            this.RefreshDirectoryButton.Size = new System.Drawing.Size(149, 51);
-            this.RefreshDirectoryButton.TabIndex = 7;
-            this.RefreshDirectoryButton.Text = "&REFRESH";
-            this.RefreshDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
-            // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.BackColor = System.Drawing.Color.Gray;
-            this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchTextBox.CausesValidation = false;
-            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTextBox.ForeColor = System.Drawing.Color.White;
-            this.SearchTextBox.Location = new System.Drawing.Point(27, 102);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(304, 29);
-            this.SearchTextBox.TabIndex = 3;
-            // 
             // TaskEditorTitleLabel
             // 
             this.TaskEditorTitleLabel.BackColor = System.Drawing.Color.Orange;
@@ -733,8 +798,8 @@
             // 
             // MainTitleLabel
             // 
-            this.MainTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.MainTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTitleLabel.AutoSize = true;
             this.MainTitleLabel.BackColor = System.Drawing.Color.Transparent;
@@ -751,9 +816,9 @@
             // ProgramLogoPictureBox
             // 
             this.ProgramLogoPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.logo;
-            this.ProgramLogoPictureBox.Location = new System.Drawing.Point(1059, 35);
+            this.ProgramLogoPictureBox.Location = new System.Drawing.Point(1037, 38);
             this.ProgramLogoPictureBox.Name = "ProgramLogoPictureBox";
-            this.ProgramLogoPictureBox.Size = new System.Drawing.Size(45, 50);
+            this.ProgramLogoPictureBox.Size = new System.Drawing.Size(45, 45);
             this.ProgramLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ProgramLogoPictureBox.TabIndex = 12;
             this.ProgramLogoPictureBox.TabStop = false;
@@ -769,78 +834,14 @@
             this.ReturnToDashboardButton.Size = new System.Drawing.Size(45, 45);
             this.ReturnToDashboardButton.TabIndex = 13;
             this.ReturnToDashboardButton.UseVisualStyleBackColor = false;
-            // 
-            // OverdueTasksButton
-            // 
-            this.OverdueTasksButton.BackColor = System.Drawing.Color.Red;
-            this.OverdueTasksButton.FlatAppearance.BorderSize = 0;
-            this.OverdueTasksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OverdueTasksButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OverdueTasksButton.Location = new System.Drawing.Point(235, 221);
-            this.OverdueTasksButton.Name = "OverdueTasksButton";
-            this.OverdueTasksButton.Size = new System.Drawing.Size(96, 25);
-            this.OverdueTasksButton.TabIndex = 11;
-            this.OverdueTasksButton.Text = "OVERDUE";
-            this.OverdueTasksButton.UseVisualStyleBackColor = false;
-            // 
-            // OverdueTasksCounterLabel
-            // 
-            this.OverdueTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.OverdueTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OverdueTasksCounterLabel.ForeColor = System.Drawing.Color.Crimson;
-            this.OverdueTasksCounterLabel.Location = new System.Drawing.Point(235, 513);
-            this.OverdueTasksCounterLabel.Name = "OverdueTasksCounterLabel";
-            this.OverdueTasksCounterLabel.Size = new System.Drawing.Size(98, 59);
-            this.OverdueTasksCounterLabel.TabIndex = 10;
-            this.OverdueTasksCounterLabel.Text = "--";
-            this.OverdueTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // OverdueTasksLabel
-            // 
-            this.OverdueTasksLabel.AutoSize = true;
-            this.OverdueTasksLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.OverdueTasksLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
-            this.OverdueTasksLabel.ForeColor = System.Drawing.Color.Silver;
-            this.OverdueTasksLabel.Location = new System.Drawing.Point(240, 554);
-            this.OverdueTasksLabel.Name = "OverdueTasksLabel";
-            this.OverdueTasksLabel.Size = new System.Drawing.Size(58, 15);
-            this.OverdueTasksLabel.TabIndex = 2;
-            this.OverdueTasksLabel.Text = "OVERDUE";
-            // 
-            // allTasksToolStripMenuItem
-            // 
-            this.allTasksToolStripMenuItem.Name = "allTasksToolStripMenuItem";
-            this.allTasksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.allTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.allTasksToolStripMenuItem.Text = "A&ll Tasks";
-            // 
-            // completedTasksToolStripMenuItem
-            // 
-            this.completedTasksToolStripMenuItem.Name = "completedTasksToolStripMenuItem";
-            this.completedTasksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.completedTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.completedTasksToolStripMenuItem.Text = "&Completed Tasks";
-            // 
-            // pendingTasksToolStripMenuItem
-            // 
-            this.pendingTasksToolStripMenuItem.Name = "pendingTasksToolStripMenuItem";
-            this.pendingTasksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.pendingTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.pendingTasksToolStripMenuItem.Text = "&Pending Tasks";
-            // 
-            // helpToolStripMenuItem1
-            // 
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.helpToolStripMenuItem1.Text = "&Help";
+            this.ReturnToDashboardButton.Click += new System.EventHandler(this.ReturnToDashboardButton_Click);
             // 
             // FrmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(1124, 815);
+            this.ClientSize = new System.Drawing.Size(1102, 815);
             this.Controls.Add(this.ProgramLogoPictureBox);
             this.Controls.Add(this.menuTasks);
             this.Controls.Add(this.MainPanel);

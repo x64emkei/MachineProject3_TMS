@@ -9,5 +9,10 @@ namespace MachineProject3_TMS
         {
             InitializeComponent();
         }
+
+        private void ReturnToDashboardButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

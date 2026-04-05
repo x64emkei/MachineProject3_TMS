@@ -89,14 +89,14 @@ namespace MachineProject3_TMS
             // 
             // MainPanel
             // 
-            this.MainPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.MainPanel.Controls.Add(this.CategoryViewerPanel);
             this.MainPanel.Controls.Add(this.CategoryDetailsPanel);
-            this.MainPanel.Location = new System.Drawing.Point(0, 90);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MainPanel.Location = new System.Drawing.Point(0, 91);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Padding = new System.Windows.Forms.Padding(20);
-            this.MainPanel.Size = new System.Drawing.Size(1126, 660);
+            this.MainPanel.Size = new System.Drawing.Size(1067, 660);
             this.MainPanel.TabIndex = 16;
             // 
             // CategoryViewerPanel
@@ -108,7 +108,7 @@ namespace MachineProject3_TMS
             this.CategoryViewerPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.CategoryViewerPanel.Location = new System.Drawing.Point(398, 20);
             this.CategoryViewerPanel.Name = "CategoryViewerPanel";
-            this.CategoryViewerPanel.Size = new System.Drawing.Size(708, 620);
+            this.CategoryViewerPanel.Size = new System.Drawing.Size(649, 620);
             this.CategoryViewerPanel.TabIndex = 0;
             // 
             // statusStripTasks
@@ -118,7 +118,7 @@ namespace MachineProject3_TMS
             this.DatabaseStatusMessage});
             this.statusStripTasks.Location = new System.Drawing.Point(0, 598);
             this.statusStripTasks.Name = "statusStripTasks";
-            this.statusStripTasks.Size = new System.Drawing.Size(708, 22);
+            this.statusStripTasks.Size = new System.Drawing.Size(649, 22);
             this.statusStripTasks.TabIndex = 6;
             this.statusStripTasks.Text = "statusStripTasks";
             // 
@@ -149,13 +149,13 @@ namespace MachineProject3_TMS
             this.CategoryViewerDataGridView.AllowUserToAddRows = false;
             this.CategoryViewerDataGridView.AllowUserToDeleteRows = false;
             this.CategoryViewerDataGridView.AllowUserToOrderColumns = true;
-            this.CategoryViewerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.CategoryViewerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CategoryViewerDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.CategoryViewerDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.CategoryViewerDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CategoryViewerDataGridView.Location = new System.Drawing.Point(15, 57);
+            this.CategoryViewerDataGridView.Location = new System.Drawing.Point(11, 58);
             this.CategoryViewerDataGridView.Name = "CategoryViewerDataGridView";
-            this.CategoryViewerDataGridView.Size = new System.Drawing.Size(679, 519);
+            this.CategoryViewerDataGridView.Size = new System.Drawing.Size(627, 524);
             this.CategoryViewerDataGridView.TabIndex = 3;
             // 
             // CategoryDetailsPanel
@@ -316,11 +316,11 @@ namespace MachineProject3_TMS
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.BackColor = System.Drawing.Color.Gray;
+            this.SearchTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SearchTextBox.CausesValidation = false;
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTextBox.ForeColor = System.Drawing.Color.White;
+            this.SearchTextBox.ForeColor = System.Drawing.Color.DimGray;
             this.SearchTextBox.Location = new System.Drawing.Point(18, 240);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(330, 29);
@@ -339,10 +339,10 @@ namespace MachineProject3_TMS
             // 
             // DescriptionTextBox
             // 
-            this.DescriptionTextBox.BackColor = System.Drawing.Color.Gray;
+            this.DescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.DescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DescriptionTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescriptionTextBox.ForeColor = System.Drawing.Color.White;
+            this.DescriptionTextBox.ForeColor = System.Drawing.Color.DimGray;
             this.DescriptionTextBox.Location = new System.Drawing.Point(18, 144);
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(330, 29);
@@ -361,13 +361,13 @@ namespace MachineProject3_TMS
             // 
             // CategoryNameTextBox
             // 
-            this.CategoryNameTextBox.BackColor = System.Drawing.Color.Gray;
+            this.CategoryNameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.CategoryNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CategoryNameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryNameTextBox.ForeColor = System.Drawing.Color.White;
-            this.CategoryNameTextBox.Location = new System.Drawing.Point(165, 88);
+            this.CategoryNameTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.CategoryNameTextBox.Location = new System.Drawing.Point(126, 88);
             this.CategoryNameTextBox.Name = "CategoryNameTextBox";
-            this.CategoryNameTextBox.Size = new System.Drawing.Size(183, 29);
+            this.CategoryNameTextBox.Size = new System.Drawing.Size(222, 29);
             this.CategoryNameTextBox.TabIndex = 3;
             // 
             // CategoryIDLabel
@@ -383,14 +383,14 @@ namespace MachineProject3_TMS
             // 
             // CategoryIDTextBox
             // 
-            this.CategoryIDTextBox.BackColor = System.Drawing.Color.Gray;
+            this.CategoryIDTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.CategoryIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CategoryIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryIDTextBox.ForeColor = System.Drawing.Color.White;
+            this.CategoryIDTextBox.ForeColor = System.Drawing.Color.DimGray;
             this.CategoryIDTextBox.Location = new System.Drawing.Point(18, 88);
             this.CategoryIDTextBox.Name = "CategoryIDTextBox";
             this.CategoryIDTextBox.ReadOnly = true;
-            this.CategoryIDTextBox.Size = new System.Drawing.Size(141, 29);
+            this.CategoryIDTextBox.Size = new System.Drawing.Size(102, 29);
             this.CategoryIDTextBox.TabIndex = 3;
             this.CategoryIDTextBox.TabStop = false;
             this.CategoryIDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -442,9 +442,9 @@ namespace MachineProject3_TMS
             // ProgramLogoPictureBox
             // 
             this.ProgramLogoPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.logo;
-            this.ProgramLogoPictureBox.Location = new System.Drawing.Point(1058, 34);
+            this.ProgramLogoPictureBox.Location = new System.Drawing.Point(1002, 37);
             this.ProgramLogoPictureBox.Name = "ProgramLogoPictureBox";
-            this.ProgramLogoPictureBox.Size = new System.Drawing.Size(45, 50);
+            this.ProgramLogoPictureBox.Size = new System.Drawing.Size(45, 45);
             this.ProgramLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ProgramLogoPictureBox.TabIndex = 17;
             this.ProgramLogoPictureBox.TabStop = false;
@@ -460,6 +460,7 @@ namespace MachineProject3_TMS
             this.ReturnToDashboardButton.Size = new System.Drawing.Size(45, 45);
             this.ReturnToDashboardButton.TabIndex = 18;
             this.ReturnToDashboardButton.UseVisualStyleBackColor = false;
+            this.ReturnToDashboardButton.Click += new System.EventHandler(this.ReturnToDashboardButton_Click);
             // 
             // categoryManagementToolStripMenuItem
             // 
@@ -478,7 +479,7 @@ namespace MachineProject3_TMS
             this.helpToolStripMenuItem});
             this.menuTasks.Location = new System.Drawing.Point(0, 0);
             this.menuTasks.Name = "menuTasks";
-            this.menuTasks.Size = new System.Drawing.Size(1124, 25);
+            this.menuTasks.Size = new System.Drawing.Size(1067, 25);
             this.menuTasks.TabIndex = 14;
             this.menuTasks.Text = "menuTasks";
             // 
@@ -592,7 +593,7 @@ namespace MachineProject3_TMS
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(1124, 751);
+            this.ClientSize = new System.Drawing.Size(1067, 751);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.ProgramLogoPictureBox);
             this.Controls.Add(this.ReturnToDashboardButton);

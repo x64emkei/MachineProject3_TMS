@@ -86,7 +86,18 @@ namespace MachineProject3_TMS
         /// </summary>
         private void ReturnToDashboardButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            // Return to the Dashboard instead of exiting so user can navigate back
+            try
+            {
+                FrmDashboard dashboard = new FrmDashboard();
+                dashboard.Show();
+                this.Hide();
+            }
+            catch (Exception)
+            {
+                // Fallback to exit if something unexpected occurs
+                Application.Exit();
+            }
         }
     }
 }

@@ -25,6 +25,29 @@ namespace MachineProject3_TMS
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
+        #region Task Loading, UI helpers, and status messages
+
+        /// <summary>
+        /// Tries multiple possible column names to retrieve a cell value from a row.
+        /// This allows the UI to work with both friendly headers and raw DB column names.
+        /// </summary>
+        private object TryGetCellValue(DataGridViewRow row, params string[] possibleNames)
+        {
+            foreach (string name in possibleNames)
+            {
+                if (row.DataGridView != null && row.DataGridView.Columns.Contains(name) && row.Cells[name].Value != null)
+                    return row.Cells[name].Value;
+            }
+            // fallback to first non-null cell
+            foreach (DataGridViewCell c in row.Cells)
+            {
+                if (c.Value != null) return c.Value;
+            }
+            return null;
+        }
+
+        #endregion
+
         private void FrmTasks_Load(object sender, EventArgs e)
         {
             LoadCategories();
@@ -43,13 +66,25 @@ namespace MachineProject3_TMS
 
         private void RefreshGrid()
         {
-            TaskDirectoryDataGridView.DataSource = TaskFunctions.GetAllTasks();
+            try
+            {
+                TaskDirectoryDataGridView.DataSource = TaskFunctions.GetAllTasks();
+            }
+            catch (Exception)
+            {
+                // If DB fails, enable demo mode and use demo data
+                DbConnection.EnableDemoMode();
+                TaskDirectoryDataGridView.DataSource = DbConnection.DemoTasks.Copy();
+            }
 
             // Hide the raw category ID column if it exists, since we show Category Name
             if (TaskDirectoryDataGridView.Columns.Contains("category_id"))
             {
                 TaskDirectoryDataGridView.Columns["category_id"].Visible = false;
             }
+
+            // Ensure columns fill the available width
+            TaskDirectoryDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void ClearFields()
@@ -129,7 +164,9 @@ namespace MachineProject3_TMS
 
         private void SearchDirectoryButton_Click(object sender, EventArgs e)
         {
-            TaskDirectoryDataGridView.DataSource = TaskFunctions.GetAllTasks("", SearchTextBox.Text);
+            // Use TaskFunctions filtering to search Title and Assigned To when no field is specified
+            TaskDirectoryDataGridView.DataSource = TaskFunctions.GetAllTasks("", SearchTextBox.Text.Trim());
+            TaskDirectoryStatusMessage.Text = string.IsNullOrWhiteSpace(SearchTextBox.Text) ? "Showing all tasks" : $"Search results for '{SearchTextBox.Text.Trim()}'";
         }
 
         private void ClearEditorButton_Click(object sender, EventArgs e)
@@ -141,6 +178,7 @@ namespace MachineProject3_TMS
         {
             RefreshGrid();
             SearchTextBox.Clear();
+            TaskDirectoryStatusMessage.Text = "Grid refreshed";
         }
 
         private void TaskDirectoryDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -148,21 +186,62 @@ namespace MachineProject3_TMS
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = TaskDirectoryDataGridView.Rows[e.RowIndex];
+                // Use tolerant retrieval for both DB and displayed column headers
+                object idVal = TryGetCellValue(row, "task_id", "Task ID", "task_id ");
+                object titleVal = TryGetCellValue(row, "task_title", "Title");
+                object descVal = TryGetCellValue(row, "description", "Description");
+                object dueVal = TryGetCellValue(row, "due_date", "Due Date");
+                object priorityVal = TryGetCellValue(row, "priority", "Priority");
+                object statusVal = TryGetCellValue(row, "status", "Status");
+                object assignedVal = TryGetCellValue(row, "assigned_to", "Assigned To");
+                object categoryIdVal = TryGetCellValue(row, "category_id", "category_id");
 
-                TaskIDTextBox.Text = row.Cells["Task ID"].Value.ToString();
-                TaskTitleTextBox.Text = row.Cells["Title"].Value.ToString();
-                DescriptionTextBox.Text = row.Cells["Description"].Value.ToString();
+                TaskIDTextBox.Text = idVal?.ToString() ?? "";
+                TaskTitleTextBox.Text = titleVal?.ToString() ?? "";
+                DescriptionTextBox.Text = descVal?.ToString() ?? "";
 
-                if (row.Cells["Due Date"].Value != DBNull.Value)
-                    DueDatePicker.Value = Convert.ToDateTime(row.Cells["Due Date"].Value);
+                if (dueVal != null && dueVal != DBNull.Value)
+                {
+                    DateTime parsed;
+                    if (DateTime.TryParse(dueVal.ToString(), out parsed))
+                        DueDatePicker.Value = parsed;
+                }
 
-                PriorityComboBox.Text = row.Cells["Priority"].Value.ToString();
-                StatusComboBox.Text = row.Cells["Status"].Value.ToString();
-                AssignedToTextBox.Text = row.Cells["Assigned To"].Value.ToString();
+                PriorityComboBox.Text = priorityVal?.ToString() ?? "";
+                StatusComboBox.Text = statusVal?.ToString() ?? "";
+                AssignedToTextBox.Text = assignedVal?.ToString() ?? "";
 
-                // Set ComboBox by ValueMember
-                if (row.Cells["category_id"].Value != DBNull.Value)
-                    CategoryComboBox.SelectedValue = row.Cells["category_id"].Value;
+                // Try to set Category ComboBox by value (category_id) or by category_name
+                if (categoryIdVal != null && categoryIdVal != DBNull.Value)
+                {
+                    int catId;
+                    if (int.TryParse(categoryIdVal.ToString(), out catId))
+                    {
+                        CategoryComboBox.SelectedValue = catId;
+                    }
+                    else
+                    {
+                        // Fallback: try to set by displayed text
+                        CategoryComboBox.SelectedIndex = CategoryComboBox.FindStringExact(categoryIdVal.ToString());
+                    }
+                }
+
+                EditorStatusMessageLabel.Text = $"Selected task: {TaskTitleTextBox.Text}";
+            }
+        }
+
+        private void ReturnToDashboardButton_Click(object sender, EventArgs e)
+        {
+            // Navigate back to the main dashboard. Show the dashboard and close/hide this form.
+            try
+            {
+                FrmDashboard dashboard = new FrmDashboard();
+                dashboard.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unable to open dashboard: {ex.Message}", "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

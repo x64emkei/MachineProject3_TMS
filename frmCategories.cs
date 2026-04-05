@@ -18,6 +18,8 @@ namespace MachineProject3_TMS
         public FrmCategories()
         {
             InitializeComponent();
+            // Wire navigation button if not wired by designer
+            if (ReturnToDashboardButton != null) ReturnToDashboardButton.Click += ReturnToDashboardButton_Click;
             RefreshGrid();
         }
 
@@ -27,8 +29,19 @@ namespace MachineProject3_TMS
         private void RefreshGrid()
         {
             // Designer uses CategoryViewerDataGridView for the viewer list
-            CategoryViewerDataGridView.DataSource = CategoryFunctions.GetAllCategories();
+            try
+            {
+                CategoryViewerDataGridView.DataSource = CategoryFunctions.GetAllCategories();
+            }
+            catch (Exception)
+            {
+                DbConnection.EnableDemoMode();
+                CategoryViewerDataGridView.DataSource = DbConnection.DemoCategories.Copy();
+            }
             ClearInputFields();
+            // Ensure the grid notifies on click
+            CategoryViewerDataGridView.CellClick -= CategoryDataGridView_CellClick;
+            CategoryViewerDataGridView.CellClick += CategoryDataGridView_CellClick;
         }
 
         /// <summary>
@@ -49,6 +62,7 @@ namespace MachineProject3_TMS
             CategoryIDTextBox.Clear();
             CategoryNameTextBox.Clear();
             DescriptionTextBox.Clear();
+            DetailStatusMessageLabel.Text = "";
         }
 
         private void AddCategoryButton_Click(object sender, EventArgs e)
@@ -117,6 +131,7 @@ namespace MachineProject3_TMS
                     MessageBox.Show($"Error deleting category (possibly used in tasks): {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            DetailStatusMessageLabel.Text = "Category deleted.";
         }
 
         private void ReturnToDashboardButton_Click(object sender, EventArgs e)
@@ -136,9 +151,28 @@ namespace MachineProject3_TMS
             if (grid == null) return;
 
             DataGridViewRow row = grid.Rows[e.RowIndex];
-            CategoryIDTextBox.Text = row.Cells["category_id"].Value.ToString();
-            CategoryNameTextBox.Text = row.Cells["category_name"].Value.ToString();
-            DescriptionTextBox.Text = row.Cells["description"].Value.ToString();
+            // Use tolerant retrieval for both DB and displayed column headers
+            object idVal = (row.DataGridView != null && row.DataGridView.Columns.Contains("category_id")) ? row.Cells["category_id"].Value : TryGetCell(row, "Category ID", "category_id");
+            object nameVal = (row.DataGridView != null && row.DataGridView.Columns.Contains("category_name")) ? row.Cells["category_name"].Value : TryGetCell(row, "Category Name", "category_name");
+            object descVal = (row.DataGridView != null && row.DataGridView.Columns.Contains("description")) ? row.Cells["description"].Value : TryGetCell(row, "Description", "description");
+
+            CategoryIDTextBox.Text = idVal?.ToString() ?? "";
+            CategoryNameTextBox.Text = nameVal?.ToString() ?? "";
+            DescriptionTextBox.Text = descVal?.ToString() ?? "";
+            DetailStatusMessageLabel.Text = $"Selected category: {CategoryNameTextBox.Text}";
+        }
+
+        private object TryGetCell(DataGridViewRow row, params string[] names)
+        {
+            foreach (var n in names)
+            {
+                if (row.DataGridView != null && row.DataGridView.Columns.Contains(n) && row.Cells[n].Value != null) return row.Cells[n].Value;
+            }
+            foreach (DataGridViewCell c in row.Cells)
+            {
+                if (c.Value != null) return c.Value;
+            }
+            return null;
         }
     }
 }

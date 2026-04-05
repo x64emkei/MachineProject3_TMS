@@ -40,6 +40,7 @@
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.DemoModeCheckBox = new System.Windows.Forms.CheckBox();
             this.ConfigGuideLabel = new System.Windows.Forms.Label();
+            this.DB = new System.Windows.Forms.Label();
             BannerPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(BannerPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +133,7 @@
             this.SaveConfigCheckBox.AutoSize = true;
             this.SaveConfigCheckBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveConfigCheckBox.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.SaveConfigCheckBox.Location = new System.Drawing.Point(88, 199);
+            this.SaveConfigCheckBox.Location = new System.Drawing.Point(46, 199);
             this.SaveConfigCheckBox.Name = "SaveConfigCheckBox";
             this.SaveConfigCheckBox.Size = new System.Drawing.Size(145, 17);
             this.SaveConfigCheckBox.TabIndex = 13;
@@ -150,6 +151,7 @@
             this.ReturnToDashboardButton.Size = new System.Drawing.Size(45, 45);
             this.ReturnToDashboardButton.TabIndex = 16;
             this.ReturnToDashboardButton.UseVisualStyleBackColor = false;
+            this.ReturnToDashboardButton.Click += new System.EventHandler(this.ReturnToDashboardButton_Click);
             // 
             // DemoModeCheckBox
             // 
@@ -158,7 +160,7 @@
             this.DemoModeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DemoModeCheckBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DemoModeCheckBox.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.DemoModeCheckBox.Location = new System.Drawing.Point(239, 199);
+            this.DemoModeCheckBox.Location = new System.Drawing.Point(195, 199);
             this.DemoModeCheckBox.Name = "DemoModeCheckBox";
             this.DemoModeCheckBox.Size = new System.Drawing.Size(184, 17);
             this.DemoModeCheckBox.TabIndex = 13;
@@ -170,11 +172,22 @@
             this.ConfigGuideLabel.AutoSize = true;
             this.ConfigGuideLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfigGuideLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ConfigGuideLabel.Location = new System.Drawing.Point(106, 78);
+            this.ConfigGuideLabel.Location = new System.Drawing.Point(101, 65);
             this.ConfigGuideLabel.Name = "ConfigGuideLabel";
             this.ConfigGuideLabel.Size = new System.Drawing.Size(307, 17);
             this.ConfigGuideLabel.TabIndex = 17;
             this.ConfigGuideLabel.Text = "Configure this according to your database settings.";
+            // 
+            // DB
+            // 
+            this.DB.AutoSize = true;
+            this.DB.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DB.Location = new System.Drawing.Point(101, 97);
+            this.DB.Name = "DB";
+            this.DB.Size = new System.Drawing.Size(67, 13);
+            this.DB.TabIndex = 18;
+            this.DB.Text = "DB STATUS: ";
             // 
             // FrmDBConnect
             // 
@@ -182,6 +195,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(511, 237);
+            this.Controls.Add(this.DB);
             this.Controls.Add(this.ConfigGuideLabel);
             this.Controls.Add(this.ReturnToDashboardButton);
             this.Controls.Add(this.DemoModeCheckBox);
@@ -218,5 +232,6 @@
         private System.Windows.Forms.Button ReturnToDashboardButton;
         private System.Windows.Forms.CheckBox DemoModeCheckBox;
         private System.Windows.Forms.Label ConfigGuideLabel;
+        private System.Windows.Forms.Label DB;
     }
 }

@@ -51,13 +51,14 @@
             this.viewTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.DashboardStatusBar = new System.Windows.Forms.StatusStrip();
             this.DbConnectionStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.DbConnectionProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.DashboardButtonsToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.AboutUserButton = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.DatabaseConnectionButton = new System.Windows.Forms.Button();
             this.DashboardPanel.SuspendLayout();
             this.DashboardMenuStrip.SuspendLayout();
             this.DashboardStatusBar.SuspendLayout();
@@ -352,9 +353,16 @@
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.helpToolStripMenuItem1.Text = "&Help";
             // 
             // DashboardStatusBar
             // 
@@ -405,12 +413,23 @@
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
-            // helpToolStripMenuItem1
+            // DatabaseConnectionButton
             // 
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.helpToolStripMenuItem1.Text = "&Help";
+            this.DatabaseConnectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DatabaseConnectionButton.BackColor = System.Drawing.Color.MediumPurple;
+            this.DatabaseConnectionButton.FlatAppearance.BorderSize = 0;
+            this.DatabaseConnectionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DatabaseConnectionButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DatabaseConnectionButton.ForeColor = System.Drawing.Color.White;
+            this.DatabaseConnectionButton.Image = global::MachineProject3_TMS.Properties.Resources.person;
+            this.DatabaseConnectionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DatabaseConnectionButton.Location = new System.Drawing.Point(688, 44);
+            this.DatabaseConnectionButton.Name = "DatabaseConnectionButton";
+            this.DatabaseConnectionButton.Size = new System.Drawing.Size(102, 37);
+            this.DatabaseConnectionButton.TabIndex = 4;
+            this.DatabaseConnectionButton.Text = "DBC";
+            this.DatabaseConnectionButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DatabaseConnectionButton.UseVisualStyleBackColor = false;
             // 
             // FrmDashboard
             // 
@@ -421,6 +440,7 @@
             this.Controls.Add(this.DashboardMenuStrip);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.DashboardStatusBar);
+            this.Controls.Add(this.DatabaseConnectionButton);
             this.Controls.Add(this.AboutUserButton);
             this.Controls.Add(this.DashboardLabel);
             this.Controls.Add(this.DashboardPanel);
@@ -472,5 +492,6 @@
         private System.Windows.Forms.Label SelectLabel;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
+        private System.Windows.Forms.Button DatabaseConnectionButton;
     }
 }

@@ -18,6 +18,8 @@ namespace MachineProject3_TMS
         public FrmReports()
         {
             InitializeComponent();
+            // Ensure ReturnToDashboard button wired
+            if (ReturnToDashboardButton != null) ReturnToDashboardButton.Click += ReturnToDashboardButton_Click;
             RefreshGrid();
         }
 
@@ -39,6 +41,8 @@ namespace MachineProject3_TMS
                 }
             }
             TaskDirectoryDataGridView.DataSource = dt;
+            // Fill columns to view nicely
+            TaskDirectoryDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             UpdateLiveStats();
         }
 
@@ -96,9 +100,17 @@ namespace MachineProject3_TMS
 
         private void ReturnToDashboardButton_Click(object sender, EventArgs e)
         {
-            FrmDashboard dashboard = new FrmDashboard();
-            dashboard.Show();
-            this.Hide();
+            // Navigate back to dashboard and hide reports form
+            try
+            {
+                FrmDashboard dashboard = new FrmDashboard();
+                dashboard.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unable to navigate to dashboard: {ex.Message}", "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>

@@ -21,6 +21,8 @@ namespace MachineProject3_TMS
             if (AboutButton != null) AboutButton.Click += AboutButton_Click;
             if (LogoutSystemButton != null) LogoutSystemButton.Click += LogoutSystemButton_Click;
             if (AboutUserButton != null) AboutUserButton.Click += AboutUserButton_Click;
+            // Database connection button (open DB config from dashboard)
+            if (DatabaseConnectionButton != null) DatabaseConnectionButton.Click += DatabaseConnectionButton_Click;
 
             // Menu strip items
             if (taskManagementToolStripMenuItem != null) taskManagementToolStripMenuItem.Click += taskManagementToolStripMenuItem_Click;
@@ -31,6 +33,16 @@ namespace MachineProject3_TMS
             if (exitToolStripMenuItem != null) exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
 
             LoadUserData();
+        }
+
+        /// <summary>
+        /// Opens the database connection configuration form from the dashboard.
+        /// </summary>
+        private void DatabaseConnectionButton_Click(object sender, EventArgs e)
+        {
+            FrmDBConnect dbForm = new FrmDBConnect();
+            dbForm.Show();
+            this.Hide();
         }
 
         /// <summary>

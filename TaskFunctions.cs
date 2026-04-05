@@ -41,18 +41,24 @@ namespace MachineProject3_TMS
             DataTable dt = new DataTable();
             using (MySqlConnection conn = DbConnection.GetConnection())
             {
-                string query = @"SELECT t.task_id, t.task_title, t.description, t.due_date, t.priority, t.status, t.assigned_to, c.category_name, t.category_id 
-                                 FROM tasks t 
+                // Build base query
+                string query = @"SELECT t.task_id, t.task_title, t.description, t.due_date, t.priority, t.status, t.assigned_to, c.category_name, t.category_id
+                                 FROM tasks t
                                  LEFT JOIN categories c ON t.category_id = c.category_id";
 
-                if (!string.IsNullOrEmpty(filterQuery))
+                // If keyword provided and no specific filterQuery, search title and assigned_to
+                if (!string.IsNullOrEmpty(keyword) && string.IsNullOrEmpty(filterQuery))
+                {
+                    query += " WHERE t.task_title LIKE @keyword OR t.assigned_to LIKE @keyword";
+                }
+                else if (!string.IsNullOrEmpty(filterQuery))
                 {
                     query += $" WHERE {filterQuery} LIKE @keyword";
                 }
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    if (!string.IsNullOrEmpty(filterQuery))
+                    if (!string.IsNullOrEmpty(keyword))
                     {
                         cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
                     }

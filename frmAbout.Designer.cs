@@ -20,6 +20,7 @@ namespace MachineProject3_TMS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbout));
             this.AboutDashboardLabel = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.DisclaimerLabel = new System.Windows.Forms.Label();
             this.SecondaryDetailsPanel = new System.Windows.Forms.Panel();
             this.DevCLabel = new System.Windows.Forms.Label();
             this.DevBLabel = new System.Windows.Forms.Label();
@@ -29,21 +30,20 @@ namespace MachineProject3_TMS
             this.CourseLabel = new System.Windows.Forms.Label();
             this.ProfessorLabel = new System.Windows.Forms.Label();
             this.PrimaryDetailsLabel = new System.Windows.Forms.Panel();
+            this.MySQLPictureBox = new System.Windows.Forms.PictureBox();
+            this.CSharpPictureBox = new System.Windows.Forms.PictureBox();
             this.TechStackLogo = new System.Windows.Forms.Label();
             this.MP3Label = new System.Windows.Forms.Label();
             this.ProgramTitleLabel = new System.Windows.Forms.Label();
             this.ProgramDescriptionLabel = new System.Windows.Forms.Label();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.MySQLPictureBox = new System.Windows.Forms.PictureBox();
-            this.CSharpPictureBox = new System.Windows.Forms.PictureBox();
-            this.DisclaimerLabel = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.SecondaryDetailsPanel.SuspendLayout();
             this.PrimaryDetailsLabel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MySQLPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CSharpPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // AboutDashboardLabel
@@ -75,6 +75,18 @@ namespace MachineProject3_TMS
             this.MainPanel.Padding = new System.Windows.Forms.Padding(20);
             this.MainPanel.Size = new System.Drawing.Size(891, 491);
             this.MainPanel.TabIndex = 4;
+            // 
+            // DisclaimerLabel
+            // 
+            this.DisclaimerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.DisclaimerLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisclaimerLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DisclaimerLabel.Location = new System.Drawing.Point(42, 393);
+            this.DisclaimerLabel.Name = "DisclaimerLabel";
+            this.DisclaimerLabel.Size = new System.Drawing.Size(815, 64);
+            this.DisclaimerLabel.TabIndex = 0;
+            this.DisclaimerLabel.Text = resources.GetString("DisclaimerLabel.Text");
+            this.DisclaimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SecondaryDetailsPanel
             // 
@@ -186,6 +198,26 @@ namespace MachineProject3_TMS
             this.PrimaryDetailsLabel.Size = new System.Drawing.Size(431, 451);
             this.PrimaryDetailsLabel.TabIndex = 5;
             // 
+            // MySQLPictureBox
+            // 
+            this.MySQLPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.pngimg_com___mysql_PNG37;
+            this.MySQLPictureBox.Location = new System.Drawing.Point(218, 285);
+            this.MySQLPictureBox.Name = "MySQLPictureBox";
+            this.MySQLPictureBox.Size = new System.Drawing.Size(79, 74);
+            this.MySQLPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MySQLPictureBox.TabIndex = 2;
+            this.MySQLPictureBox.TabStop = false;
+            // 
+            // CSharpPictureBox
+            // 
+            this.CSharpPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.Logo_C_sharp_svg;
+            this.CSharpPictureBox.Location = new System.Drawing.Point(131, 285);
+            this.CSharpPictureBox.Name = "CSharpPictureBox";
+            this.CSharpPictureBox.Size = new System.Drawing.Size(81, 74);
+            this.CSharpPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CSharpPictureBox.TabIndex = 2;
+            this.CSharpPictureBox.TabStop = false;
+            // 
             // TechStackLogo
             // 
             this.TechStackLogo.AutoSize = true;
@@ -243,6 +275,7 @@ namespace MachineProject3_TMS
             this.ReturnToDashboardButton.Size = new System.Drawing.Size(45, 45);
             this.ReturnToDashboardButton.TabIndex = 5;
             this.ReturnToDashboardButton.UseVisualStyleBackColor = false;
+            this.ReturnToDashboardButton.Click += new System.EventHandler(this.ReturnToDashboardButton_Click);
             // 
             // ProgramLogoPictureBox
             // 
@@ -253,38 +286,6 @@ namespace MachineProject3_TMS
             this.ProgramLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ProgramLogoPictureBox.TabIndex = 2;
             this.ProgramLogoPictureBox.TabStop = false;
-            // 
-            // MySQLPictureBox
-            // 
-            this.MySQLPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.pngimg_com___mysql_PNG37;
-            this.MySQLPictureBox.Location = new System.Drawing.Point(218, 285);
-            this.MySQLPictureBox.Name = "MySQLPictureBox";
-            this.MySQLPictureBox.Size = new System.Drawing.Size(79, 74);
-            this.MySQLPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.MySQLPictureBox.TabIndex = 2;
-            this.MySQLPictureBox.TabStop = false;
-            // 
-            // CSharpPictureBox
-            // 
-            this.CSharpPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.Logo_C_sharp_svg;
-            this.CSharpPictureBox.Location = new System.Drawing.Point(131, 285);
-            this.CSharpPictureBox.Name = "CSharpPictureBox";
-            this.CSharpPictureBox.Size = new System.Drawing.Size(81, 74);
-            this.CSharpPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CSharpPictureBox.TabIndex = 2;
-            this.CSharpPictureBox.TabStop = false;
-            // 
-            // DisclaimerLabel
-            // 
-            this.DisclaimerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.DisclaimerLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DisclaimerLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DisclaimerLabel.Location = new System.Drawing.Point(42, 393);
-            this.DisclaimerLabel.Name = "DisclaimerLabel";
-            this.DisclaimerLabel.Size = new System.Drawing.Size(815, 64);
-            this.DisclaimerLabel.TabIndex = 0;
-            this.DisclaimerLabel.Text = resources.GetString("DisclaimerLabel.Text");
-            this.DisclaimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmAbout
             // 
@@ -304,9 +305,9 @@ namespace MachineProject3_TMS
             this.SecondaryDetailsPanel.ResumeLayout(false);
             this.PrimaryDetailsLabel.ResumeLayout(false);
             this.PrimaryDetailsLabel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MySQLPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CSharpPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
