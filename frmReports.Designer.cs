@@ -611,7 +611,7 @@
             this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SearchTextBox.CausesValidation = false;
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTextBox.ForeColor = System.Drawing.Color.White;
+            this.SearchTextBox.ForeColor = System.Drawing.Color.DimGray;
             this.SearchTextBox.Location = new System.Drawing.Point(27, 102);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(304, 29);

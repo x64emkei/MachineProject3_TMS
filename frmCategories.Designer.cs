@@ -17,6 +17,7 @@ namespace MachineProject3_TMS
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCategories));
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new System.Windows.Forms.Panel();
@@ -599,9 +600,10 @@ namespace MachineProject3_TMS
             this.Controls.Add(this.ReturnToDashboardButton);
             this.Controls.Add(this.menuTasks);
             this.Controls.Add(this.MainTitleLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Categories";
+            this.Text = "Task Management System | Categories";
             this.MainPanel.ResumeLayout(false);
             this.CategoryViewerPanel.ResumeLayout(false);
             this.CategoryViewerPanel.PerformLayout();

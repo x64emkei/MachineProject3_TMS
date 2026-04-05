@@ -448,7 +448,7 @@
             this.MainMenuStrip = this.DashboardMenuStrip;
             this.Name = "FrmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Task Management System";
+            this.Text = "Task Management System | Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.DashboardPanel.ResumeLayout(false);
             this.DashboardPanel.PerformLayout();

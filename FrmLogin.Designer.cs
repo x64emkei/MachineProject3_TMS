@@ -95,10 +95,11 @@
             this.LoginPanel.Controls.Add(this.PasswordLabel);
             this.LoginPanel.Controls.Add(this.UsernameLabel);
             this.LoginPanel.Controls.Add(this.LoginLabel);
+            this.LoginPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LoginPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginPanel.Location = new System.Drawing.Point(0, -1);
+            this.LoginPanel.Location = new System.Drawing.Point(0, 0);
             this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(258, 474);
+            this.LoginPanel.Size = new System.Drawing.Size(258, 471);
             this.LoginPanel.TabIndex = 0;
             // 
             // ForgotPasswordLabel
@@ -392,7 +393,6 @@
             this.RecoverAcctCloseButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RecoverAcctCloseButton.UseVisualStyleBackColor = true;
             this.RecoverAcctCloseButton.Click += new System.EventHandler(this.RecoverAcctCloseButton_Click);
-            
             // 
             // ChangePasswordButton
             // 
@@ -656,8 +656,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(664, 471);
-            this.Controls.Add(this.AccountRecoveryPanel);
             this.Controls.Add(this.CreateAcctPanel);
+            this.Controls.Add(this.AccountRecoveryPanel);
             this.Controls.Add(this.LoginImage);
             this.Controls.Add(this.LoginPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -665,7 +665,6 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Task Management System";
-            
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
             this.AccountRecoveryPanel.ResumeLayout(false);

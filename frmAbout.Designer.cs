@@ -300,7 +300,7 @@ namespace MachineProject3_TMS
             this.MaximizeBox = false;
             this.Name = "FrmAbout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Task Management System";
+            this.Text = "Task Management System | About";
             this.MainPanel.ResumeLayout(false);
             this.SecondaryDetailsPanel.ResumeLayout(false);
             this.PrimaryDetailsLabel.ResumeLayout(false);
