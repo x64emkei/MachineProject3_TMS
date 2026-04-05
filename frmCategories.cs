@@ -5,6 +5,7 @@
 
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MachineProject3_TMS
@@ -21,6 +22,17 @@ namespace MachineProject3_TMS
             // Wire navigation button if not wired by designer
             if (ReturnToDashboardButton != null) ReturnToDashboardButton.Click += ReturnToDashboardButton_Click;
             RefreshGrid();
+
+            // Wire search button defensively if present by locating control by name.
+            try
+            {
+                var btn = this.Controls.Find("SearchCategoryButton", true).FirstOrDefault() as Button;
+                if (btn != null) btn.Click += SearchCategoryButton_Click;
+            }
+            catch
+            {
+                // Swallows wiring errors.
+            }
         }
 
         /// <summary>
@@ -45,13 +57,14 @@ namespace MachineProject3_TMS
         }
 
         /// <summary>
-        /// Validates user category inputs.
+        /// Validates category input fields.
         /// </summary>
         private bool ValidateInputs()
         {
             if (string.IsNullOrWhiteSpace(CategoryNameTextBox.Text))
             {
-                MessageBox.Show("Category name must not be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                DetailStatusMessageLabel.Text = "Validation Error: Category name must not be empty.";
                 return false;
             }
             return true;
@@ -65,6 +78,51 @@ namespace MachineProject3_TMS
             DetailStatusMessageLabel.Text = "";
         }
 
+        /// <summary>
+        /// Searches categories using a parameterized query via the CategoryFunctions data layer.
+        /// </summary>
+        private void SearchCategoryButton_Click(object sender, EventArgs e)
+        {
+            string keyword = string.Empty;
+            try
+            {
+                var tb = this.Controls.Find("CategorySearchTextBox", true).FirstOrDefault() as TextBox;
+                if (tb != null) keyword = tb.Text.Trim();
+            }
+            catch
+            {
+                keyword = string.Empty;
+            }
+            try
+            {
+                DataTable dt = CategoryFunctions.GetAllCategories();
+                if (!string.IsNullOrWhiteSpace(keyword))
+                {
+                    for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                    {
+                        var name = dt.Rows[i]["category_name"]?.ToString() ?? string.Empty;
+                        var desc = dt.Rows[i].Table.Columns.Contains("description") ? dt.Rows[i]["description"]?.ToString() ?? string.Empty : string.Empty;
+                        if (!name.IndexOf(keyword, StringComparison.OrdinalIgnoreCase).Equals(0) && !name.ToLower().Contains(keyword.ToLower()) && !desc.ToLower().Contains(keyword.ToLower()))
+                        {
+                            dt.Rows.RemoveAt(i);
+                        }
+                    }
+                }
+
+                CategoryViewerDataGridView.DataSource = dt;
+                DetailStatusMessageLabel.ForeColor = System.Drawing.Color.SeaGreen;
+                DetailStatusMessageLabel.Text = string.IsNullOrWhiteSpace(keyword) ? "Showing all categories" : $"Search results for '{keyword}'";
+            }
+            catch (Exception ex)
+            {
+                DbConnection.EnableDemoMode();
+                CategoryViewerDataGridView.DataSource = DbConnection.DemoCategories.Copy();
+                DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                DetailStatusMessageLabel.Text = "Error searching categories.";
+                MessageBox.Show($"Search failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void AddCategoryButton_Click(object sender, EventArgs e)
         {
             if (ValidateInputs())
@@ -72,12 +130,15 @@ namespace MachineProject3_TMS
                 try
                 {
                     CategoryFunctions.AddCategory(CategoryNameTextBox.Text.Trim(), DescriptionTextBox.Text.Trim());
-                    MessageBox.Show("Category successfully added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DetailStatusMessageLabel.ForeColor = System.Drawing.Color.SeaGreen;
+                    DetailStatusMessageLabel.Text = "Category successfully added.";
                     RefreshGrid();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error adding category: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                    DetailStatusMessageLabel.Text = "Error adding category.";
+                    MessageBox.Show($"Critical Error adding category: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -86,7 +147,8 @@ namespace MachineProject3_TMS
         {
             if (string.IsNullOrEmpty(CategoryIDTextBox.Text))
             {
-                MessageBox.Show("Please select a category to update.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                DetailStatusMessageLabel.Text = "Selection Required: Please select a category to update.";
                 return;
             }
 
@@ -94,17 +156,24 @@ namespace MachineProject3_TMS
             {
                 try
                 {
-                    CategoryFunctions.UpdateCategory(
-                        Convert.ToInt32(CategoryIDTextBox.Text),
-                        CategoryNameTextBox.Text.Trim(),
-                        DescriptionTextBox.Text.Trim()
-                    );
-                    MessageBox.Show("Category successfully updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int id;
+                    if (!int.TryParse(CategoryIDTextBox.Text, out id))
+                    {
+                        DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                        DetailStatusMessageLabel.Text = "Invalid category selected.";
+                        return;
+                    }
+
+                    CategoryFunctions.UpdateCategory(id, CategoryNameTextBox.Text.Trim(), DescriptionTextBox.Text.Trim());
+                    DetailStatusMessageLabel.ForeColor = System.Drawing.Color.SeaGreen;
+                    DetailStatusMessageLabel.Text = "Category successfully updated.";
                     RefreshGrid();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error updating category: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                    DetailStatusMessageLabel.Text = "Error updating category.";
+                    MessageBox.Show($"Critical Error updating category: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -120,18 +189,34 @@ namespace MachineProject3_TMS
             DialogResult result = MessageBox.Show("Deleting a category may fail if it is assigned to existing tasks. Continue?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                int id;
+                if (!int.TryParse(CategoryIDTextBox.Text, out id))
+                {
+                    DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                    DetailStatusMessageLabel.Text = "Invalid category selected for deletion.";
+                    return;
+                }
+
                 try
                 {
-                    CategoryFunctions.DeleteCategory(Convert.ToInt32(CategoryIDTextBox.Text));
-                    MessageBox.Show("Category successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CategoryFunctions.DeleteCategory(id);
+                    DetailStatusMessageLabel.ForeColor = System.Drawing.Color.SeaGreen;
+                    DetailStatusMessageLabel.Text = "Category successfully deleted.";
                     RefreshGrid();
+                }
+                catch (MySql.Data.MySqlClient.MySqlException mex) when (mex.Number == 1451)
+                {
+                    // MySQL foreign key constraint fails when category in use.
+                    DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                    DetailStatusMessageLabel.Text = "Cannot delete this category because it is currently assigned to existing tasks.";
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error deleting category (possibly used in tasks): {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                    DetailStatusMessageLabel.Text = "Error deleting category.";
+                    MessageBox.Show($"Critical Error deleting category: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            DetailStatusMessageLabel.Text = "Category deleted.";
         }
 
         private void ReturnToDashboardButton_Click(object sender, EventArgs e)

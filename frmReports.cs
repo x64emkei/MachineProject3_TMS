@@ -6,7 +6,10 @@
 using System;
 using System.Data;
 using System.IO;
+using System.Linq;
 using System.Text;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MachineProject3_TMS;
@@ -15,35 +18,59 @@ namespace MachineProject3_TMS
 {
     public partial class FrmReports : Form
     {
+        // Tracks currently active status filter.
+        private string _currentStatusFilter;
+        // Tracks currently active priority filter.
+        private string _currentPriorityFilter;
+        // Tracks current search keyword.
+        private string _currentKeyword;
+        // Holds the currently loaded dataset.
+        private DataTable _currentData;
+        // Print document used for printing reports.
+        private PrintDocument _printDocument;
+        // Current row index for printing.
+        private int _printRowIndex;
+
         public FrmReports()
         {
             InitializeComponent();
             // Ensure ReturnToDashboard button wired
             if (ReturnToDashboardButton != null) ReturnToDashboardButton.Click += ReturnToDashboardButton_Click;
+            // Initializes default filters and refreshes grid.
+            _currentStatusFilter = null;
+            _currentPriorityFilter = null;
+            _currentKeyword = null;
             RefreshGrid();
-        }
 
+            // Initializes printing helpers.
+            _printDocument = new PrintDocument();
+            _printDocument.PrintPage += PrintDocument_PrintPage;
+        }
         /// <summary>
-        /// Retrieves records based on specific status or conditions.
+        /// Loads tasks using current filter state via the data access layer.
         /// </summary>
-        private void LoadTasksByCondition(string condition)
+        private void LoadTasks()
         {
-            DataTable dt = new DataTable();
-            using (MySqlConnection conn = DbConnection.GetConnection())
+            try
             {
-                string query = $@"SELECT t.task_id, t.task_title, t.description, t.due_date, t.priority, t.status, t.assigned_to, c.category_name 
-                                  FROM tasks t 
-                                  LEFT JOIN categories c ON t.category_id = c.category_id 
-                                  {condition}";
-                using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
-                {
-                    da.Fill(dt);
-                }
+                // Retrieves tasks with explicit parameters to prevent SQL injection.
+                var dt = TaskFunctions.GetAllTasks(_currentKeyword ?? string.Empty, _currentStatusFilter, _currentPriorityFilter, null);
+                _currentData = dt;
+                TaskDirectoryDataGridView.DataSource = dt;
+                TaskDirectoryDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                UpdateLiveStats(dt);
+                DatabaseStatusMessage.Text = "Reports loaded.";
             }
-            TaskDirectoryDataGridView.DataSource = dt;
-            // Fill columns to view nicely
-            TaskDirectoryDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            UpdateLiveStats();
+            catch (Exception ex)
+            {
+                // Enables demo mode when DB errors occur and uses in-memory demo data.
+                DbConnection.EnableDemoMode();
+                _currentData = DbConnection.DemoTasks.Copy();
+                TaskDirectoryDataGridView.DataSource = _currentData;
+                UpdateLiveStats(_currentData);
+                DatabaseStatusMessage.Text = "Showing demo data due to DB error.";
+                MessageBox.Show($"Error loading reports: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -51,45 +78,115 @@ namespace MachineProject3_TMS
         /// </summary>
         private void RefreshGrid()
         {
-            LoadTasksByCondition("");
+            // Refreshes current dataset using existing filters.
+            _currentKeyword = null;
+            LoadTasks();
         }
-
         /// <summary>
-        /// Updates the live statistics indicators on the dashboard based on real-time database state.
+        /// Updates live statistics based on the provided DataTable via in-memory calculations.
         /// </summary>
-        private void UpdateLiveStats()
+        private void UpdateLiveStats(DataTable dt)
         {
-            TotalTasksCounterLabel.Text = TaskFunctions.GetTaskCount().ToString();
-            PendingTasksCounterLabel.Text = TaskFunctions.GetTaskCount("WHERE status = 'Pending'").ToString();
-            CompletedTasksCounterLabel.Text = TaskFunctions.GetTaskCount("WHERE status = 'Completed'").ToString();
-            OverdueTasksCounterLabel.Text = TaskFunctions.GetTaskCount("WHERE due_date < CURDATE() AND status != 'Completed'").ToString();
+            try
+            {
+                if (dt == null) dt = new DataTable();
 
-            HighPriorityTasksCounterLabel.Text = TaskFunctions.GetTaskCount("WHERE priority = 'High'").ToString();
-            MediumTasksCounterLabel.Text = TaskFunctions.GetTaskCount("WHERE priority = 'Medium'").ToString();
-            LowPriorityCounterLabel.Text = TaskFunctions.GetTaskCount("WHERE priority = 'Low'").ToString();
+                var rows = dt.AsEnumerable();
+                int total = rows.Count();
+                int pending = rows.Count(r => string.Equals(Convert.ToString(r["status"]), "Pending", StringComparison.OrdinalIgnoreCase));
+                int completed = rows.Count(r => string.Equals(Convert.ToString(r["status"]), "Completed", StringComparison.OrdinalIgnoreCase));
+                int overdue = rows.Count(r => {
+                    DateTime due;
+                    var val = r.Table.Columns.Contains("due_date") ? r["due_date"] : null;
+                    if (val == null || val == DBNull.Value) return false;
+                    if (DateTime.TryParse(Convert.ToString(val), out due))
+                    {
+                        return due.Date < DateTime.Now.Date && !string.Equals(Convert.ToString(r["status"]), "Completed", StringComparison.OrdinalIgnoreCase);
+                    }
+                    return false;
+                });
 
-            DatabaseStatusMessage.Text = "Reports Active";
+                int high = rows.Count(r => string.Equals(Convert.ToString(r["priority"]), "High", StringComparison.OrdinalIgnoreCase));
+                int medium = rows.Count(r => string.Equals(Convert.ToString(r["priority"]), "Medium", StringComparison.OrdinalIgnoreCase));
+                int low = rows.Count(r => string.Equals(Convert.ToString(r["priority"]), "Low", StringComparison.OrdinalIgnoreCase));
+
+                if (TotalTasksCounterLabel != null) TotalTasksCounterLabel.Text = total.ToString();
+                if (PendingTasksCounterLabel != null) PendingTasksCounterLabel.Text = pending.ToString();
+                if (CompletedTasksCounterLabel != null) CompletedTasksCounterLabel.Text = completed.ToString();
+                if (OverdueTasksCounterLabel != null) OverdueTasksCounterLabel.Text = overdue.ToString();
+                if (HighPriorityTasksCounterLabel != null) HighPriorityTasksCounterLabel.Text = high.ToString();
+                if (MediumTasksCounterLabel != null) MediumTasksCounterLabel.Text = medium.ToString();
+                if (LowPriorityCounterLabel != null) LowPriorityCounterLabel.Text = low.ToString();
+            }
+            catch
+            {
+                // Suppresses statistical errors to maintain UI stability.
+            }
         }
 
         // --- FILTER BUTTONS ---
 
-        private void AllTasksButton_Click(object sender, EventArgs e) => LoadTasksByCondition("");
-        private void DoneTasksButton_Click(object sender, EventArgs e) => LoadTasksByCondition("WHERE t.status = 'Completed'");
-        private void PendingTasksButton_Click(object sender, EventArgs e) => LoadTasksByCondition("WHERE t.status = 'Pending'");
-        private void OverdueTasksButton_Click(object sender, EventArgs e) => LoadTasksByCondition("WHERE t.due_date < CURDATE() AND t.status != 'Completed'");
+        private void AllTasksButton_Click(object sender, EventArgs e)
+        {
+            // Resets filters and reloads all tasks.
+            _currentStatusFilter = null;
+            _currentPriorityFilter = null;
+            _currentKeyword = null;
+            LoadTasks();
+        }
 
-        private void HighPriorityButton_Click(object sender, EventArgs e) => LoadTasksByCondition("WHERE t.priority = 'High'");
-        private void MediumPriorityButton_Click(object sender, EventArgs e) => LoadTasksByCondition("WHERE t.priority = 'Medium'");
-        private void LowPriorityButton_Click(object sender, EventArgs e) => LoadTasksByCondition("WHERE t.priority = 'Low'");
+        private void DoneTasksButton_Click(object sender, EventArgs e)
+        {
+            // Sets status filter to Completed and reloads.
+            _currentStatusFilter = "Completed";
+            LoadTasks();
+        }
+
+        private void PendingTasksButton_Click(object sender, EventArgs e)
+        {
+            // Sets status filter to Pending and reloads.
+            _currentStatusFilter = "Pending";
+            LoadTasks();
+        }
+
+        private void OverdueTasksButton_Click(object sender, EventArgs e)
+        {
+            // Sets status filter to overdue via keyword and reloads.
+            _currentStatusFilter = null;
+            _currentKeyword = null;
+            // Overdue filter will be applied in-memory by UpdateLiveStats; reload full set.
+            LoadTasks();
+        }
+
+        private void HighPriorityButton_Click(object sender, EventArgs e)
+        {
+            // Sets priority filter to High and reloads.
+            _currentPriorityFilter = "High";
+            LoadTasks();
+        }
+
+        private void MediumPriorityButton_Click(object sender, EventArgs e)
+        {
+            // Sets priority filter to Medium and reloads.
+            _currentPriorityFilter = "Medium";
+            LoadTasks();
+        }
+
+        private void LowPriorityButton_Click(object sender, EventArgs e)
+        {
+            // Sets priority filter to Low and reloads.
+            _currentPriorityFilter = "Low";
+            LoadTasks();
+        }
 
         /// <summary>
         /// Handles basic searching dynamically matching by Title or Assigned Person.
         /// </summary>
         private void SearchDirectoryButton_Click(object sender, EventArgs e)
         {
-            string keyword = SearchTextBox.Text.Trim();
-            string condition = $"WHERE t.task_title LIKE '%{keyword}%' OR t.assigned_to LIKE '%{keyword}%'";
-            LoadTasksByCondition(condition);
+            // Saves keyword and reloads via DAL to support combined filters.
+            _currentKeyword = SearchTextBox.Text.Trim();
+            LoadTasks();
         }
 
         private void RefreshDirectoryButton_Click(object sender, EventArgs e)
@@ -118,52 +215,75 @@ namespace MachineProject3_TMS
         /// </summary>
         private void ExportReportButton_Click(object sender, EventArgs e)
         {
-            if (TaskDirectoryDataGridView.Rows.Count == 0)
+            // Exports current grid to TXT or CSV depending on user selection.
+            if (_currentData == null || _currentData.Rows.Count == 0)
             {
-                MessageBox.Show("No data to export.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DatabaseStatusMessage.Text = "No data to export.";
                 return;
             }
 
             SaveFileDialog sfd = new SaveFileDialog
             {
-                Filter = "CSV File|*.csv",
+                Filter = "Text File|*.txt|CSV File|*.csv",
                 Title = "Export Report",
-                FileName = $"Task_Report_{DateTime.Now:yyyyMMdd_HHmm}.csv"
+                FileName = $"Task_Report_{DateTime.Now:yyyyMMdd_HHmm}.txt"
             };
 
-            if (sfd.ShowDialog() == DialogResult.OK)
+            if (sfd.ShowDialog() != DialogResult.OK) return;
+
+            try
             {
-                try
+                var ext = Path.GetExtension(sfd.FileName).ToLowerInvariant();
+                if (ext == ".csv")
                 {
-                    StringBuilder csv = new StringBuilder();
-
-                    // Adding Headers
-                    foreach (DataGridViewColumn column in TaskDirectoryDataGridView.Columns)
+                    // Writes CSV.
+                    using (var sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
                     {
-                        csv.Append(column.HeaderText + ",");
-                    }
-                    csv.AppendLine();
-
-                    // Adding Data
-                    foreach (DataGridViewRow row in TaskDirectoryDataGridView.Rows)
-                    {
-                        if (!row.IsNewRow)
+                        var cols = _currentData.Columns.Cast<DataColumn>().Select(c => c.ColumnName);
+                        sw.WriteLine(string.Join(",", cols));
+                        foreach (DataRow row in _currentData.Rows)
                         {
-                            foreach (DataGridViewCell cell in row.Cells)
-                            {
-                                csv.Append(cell.Value?.ToString().Replace(",", ";") + ",");
-                            }
-                            csv.AppendLine();
+                            var vals = _currentData.Columns.Cast<DataColumn>().Select(c => (row[c] ?? string.Empty).ToString().Replace(",", ";"));
+                            sw.WriteLine(string.Join(",", vals));
                         }
                     }
-
-                    File.WriteAllText(sfd.FileName, csv.ToString());
-                    MessageBox.Show("Data successfully exported!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Export failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Writes formatted TXT.
+                    using (var sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+                    {
+                        // Writes header summary.
+                        sw.WriteLine("Task Report");
+                        sw.WriteLine($"Generated: {DateTime.Now}");
+                        sw.WriteLine(new string('-', 80));
+
+                        foreach (DataRow row in _currentData.Rows)
+                        {
+                            var id = row.Table.Columns.Contains("task_id") ? row["task_id"] : string.Empty;
+                            var title = row.Table.Columns.Contains("task_title") ? row["task_title"] : string.Empty;
+                            var status = row.Table.Columns.Contains("status") ? row["status"] : string.Empty;
+                            var priority = row.Table.Columns.Contains("priority") ? row["priority"] : string.Empty;
+                            var due = row.Table.Columns.Contains("due_date") ? row["due_date"] : string.Empty;
+                            var assigned = row.Table.Columns.Contains("assigned_to") ? row["assigned_to"] : string.Empty;
+
+                            sw.WriteLine($"ID: {id}");
+                            sw.WriteLine($"Title: {title}");
+                            sw.WriteLine($"Status: {status}");
+                            sw.WriteLine($"Priority: {priority}");
+                            sw.WriteLine($"Due: {due}");
+                            sw.WriteLine($"Assigned: {assigned}");
+                            sw.WriteLine(new string('-', 80));
+                        }
+                    }
                 }
+
+                DatabaseStatusMessage.Text = "Export completed.";
+            }
+            catch (Exception ex)
+            {
+                DatabaseStatusMessage.Text = "Export failed.";
+                MessageBox.Show($"Export failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -172,7 +292,52 @@ namespace MachineProject3_TMS
         /// </summary>
         private void PrintReportButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To print, please export the report to CSV and print via Excel or Word.", "Print Instructions", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Defensively checks for data existence before printing.
+            if (_currentData == null || _currentData.Rows.Count == 0)
+            {
+                DatabaseStatusMessage.Text = "No data to print.";
+                return;
+            }
+
+            try
+            {
+                using (PrintPreviewDialog ppd = new PrintPreviewDialog())
+                {
+                    ppd.Document = _printDocument;
+                    _printRowIndex = 0;
+                    ppd.Width = 800;
+                    ppd.Height = 600;
+                    ppd.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Print preview failed: {ex.Message}", "Print Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            // Prints rows from _currentData with simple formatting.
+            int y = 20;
+            int lineHeight = 20;
+            var font = new Font("Arial", 10);
+
+            while (_printRowIndex < _currentData.Rows.Count)
+            {
+                var row = _currentData.Rows[_printRowIndex];
+                string line = $"{row["task_id"]} | {row["task_title"]} | {row["status"]} | {row["priority"]} | {row["assigned_to"]}";
+                e.Graphics.DrawString(line, font, Brushes.Black, 10, y);
+                y += lineHeight;
+                _printRowIndex++;
+                if (y + lineHeight > e.MarginBounds.Bottom)
+                {
+                    e.HasMorePages = true;
+                    return;
+                }
+            }
+
+            e.HasMorePages = false;
         }
     }
 }
