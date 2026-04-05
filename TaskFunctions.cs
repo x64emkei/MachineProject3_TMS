@@ -19,6 +19,25 @@ namespace MachineProject3_TMS
         /// </summary>
         public static DataTable GetAllTasks(string filterQuery = "", string keyword = "")
         {
+            // If in demo mode return in-memory demo tasks
+            if (DbConnection.DemoMode)
+            {
+                DataTable demo = DbConnection.DemoTasks.Copy();
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    // Simple filter to mimic search behavior
+                    string lower = keyword.ToLower();
+                    for (int i = demo.Rows.Count - 1; i >= 0; i--)
+                    {
+                        var title = demo.Rows[i]["task_title"]?.ToString().ToLower() ?? "";
+                        var assigned = demo.Rows[i]["assigned_to"]?.ToString().ToLower() ?? "";
+                        if (!title.Contains(lower) && !assigned.Contains(lower))
+                            demo.Rows.RemoveAt(i);
+                    }
+                }
+                return demo;
+            }
+
             DataTable dt = new DataTable();
             using (MySqlConnection conn = DbConnection.GetConnection())
             {

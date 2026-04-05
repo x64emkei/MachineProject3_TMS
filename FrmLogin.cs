@@ -48,6 +48,22 @@ namespace MachineProject3_TMS
                 return;
             }
 
+            // Local bypass credentials for quick UI testing without DB access
+            // Username: admin  Password: adminpass
+            if (username == "admin" && password == "adminpass")
+            {
+                DbConnection.CurrentUserId = -1;
+                DbConnection.CurrentUsername = "admin";
+                DbConnection.CurrentName = "Administrator";
+                DbConnection.CurrentEmail = "";
+                DbConnection.CurrentLoginTime = DateTime.Now;
+
+                FrmDashboard dashboard = new FrmDashboard();
+                dashboard.Show();
+                this.Hide();
+                return;
+            }
+
             try
             {
                 using (MySqlConnection conn = DbConnection.GetConnection())

@@ -25,11 +25,61 @@ namespace MachineProject3_TMS
         public static string CurrentEmail { get; set; }
         public static DateTime CurrentLoginTime { get; set; }
 
+        // If true the application runs without contacting the database allowing UI testing
+        public static bool DemoMode { get; set; } = false;
+
+        // In-memory demo datasets used when DemoMode is active to allow UI testing without DB.
+        public static DataTable DemoCategories { get; private set; }
+        public static DataTable DemoTasks { get; private set; }
+
+        /// <summary>
+        /// Initializes in-memory demo data and enables demo mode.
+        /// </summary>
+        public static void EnableDemoMode()
+        {
+            DemoMode = true;
+
+            // Initialize demo categories
+            if (DemoCategories == null)
+            {
+                DemoCategories = new DataTable();
+                DemoCategories.Columns.Add("category_id", typeof(int));
+                DemoCategories.Columns.Add("category_name", typeof(string));
+                DemoCategories.Columns.Add("description", typeof(string));
+
+                DemoCategories.Rows.Add(1, "General", "General tasks");
+                DemoCategories.Rows.Add(2, "Work", "Work related tasks");
+                DemoCategories.Rows.Add(3, "Personal", "Personal errands");
+            }
+
+            // Initialize demo tasks
+            if (DemoTasks == null)
+            {
+                DemoTasks = new DataTable();
+                DemoTasks.Columns.Add("task_id", typeof(int));
+                DemoTasks.Columns.Add("task_title", typeof(string));
+                DemoTasks.Columns.Add("description", typeof(string));
+                DemoTasks.Columns.Add("due_date", typeof(DateTime));
+                DemoTasks.Columns.Add("priority", typeof(string));
+                DemoTasks.Columns.Add("status", typeof(string));
+                DemoTasks.Columns.Add("assigned_to", typeof(string));
+                DemoTasks.Columns.Add("category_name", typeof(string));
+                DemoTasks.Columns.Add("category_id", typeof(int));
+
+                DemoTasks.Rows.Add(1, "Buy groceries", "Milk, Eggs, Bread", DateTime.Now.AddDays(1), "Low", "Pending", "Demo User", "Personal", 3);
+                DemoTasks.Rows.Add(2, "Finish report", "Complete the monthly report", DateTime.Now.AddDays(2), "High", "Pending", "Demo User", "Work", 2);
+                DemoTasks.Rows.Add(3, "Plan trip", "Outline itinerary", DateTime.Now.AddDays(7), "Medium", "Completed", "Demo User", "General", 1);
+            }
+        }
+
         /// <summary>
         /// Attempts to open a test connection to verify database availability.
         /// </summary>
         public static bool TestConnection()
         {
+            // When running in demo mode we consider the DB "available" for UI testing.
+            if (DemoMode) return true;
+
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConnectionString))
@@ -61,6 +111,8 @@ namespace MachineProject3_TMS
             CurrentUsername = string.Empty;
             CurrentName = string.Empty;
             CurrentEmail = string.Empty;
+            CurrentLoginTime = DateTime.MinValue;
+            DemoMode = false;
         }
     }
 }

@@ -28,6 +28,7 @@ namespace MachineProject3_TMS
             if (DemoModeCheckBox != null && DemoModeCheckBox.Checked)
             {
                 // Set a minimal in-memory session so other forms have user info available
+                DbConnection.EnableDemoMode();
                 DbConnection.CurrentUserId = 0;
                 DbConnection.CurrentUsername = "demo";
                 DbConnection.CurrentName = "Demo User";

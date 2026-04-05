@@ -13,6 +13,23 @@ namespace MachineProject3_TMS
         public FrmDashboard()
         {
             InitializeComponent();
+
+            // Ensure controls are wired to their handlers in case the designer did not hook them up
+            if (TaskManagementButton != null) TaskManagementButton.Click += TaskManagementButton_Click;
+            if (CategoriesButton != null) CategoriesButton.Click += CategoriesButton_Click;
+            if (ReportTaskButton != null) ReportTaskButton.Click += ReportTaskButton_Click;
+            if (AboutButton != null) AboutButton.Click += AboutButton_Click;
+            if (LogoutSystemButton != null) LogoutSystemButton.Click += LogoutSystemButton_Click;
+            if (AboutUserButton != null) AboutUserButton.Click += AboutUserButton_Click;
+
+            // Menu strip items
+            if (taskManagementToolStripMenuItem != null) taskManagementToolStripMenuItem.Click += taskManagementToolStripMenuItem_Click;
+            if (categoriesToolStripMenuItem != null) categoriesToolStripMenuItem.Click += categoriesToolStripMenuItem_Click;
+            if (viewTasksToolStripMenuItem != null) viewTasksToolStripMenuItem.Click += reportsToolStripMenuItem_Click;
+            if (aboutToolStripMenuItem != null) aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
+            if (LogoutSystemToolStripMenuItem != null) LogoutSystemToolStripMenuItem.Click += logoutSystemToolStripMenuItem_Click;
+            if (exitToolStripMenuItem != null) exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+
             LoadUserData();
         }
 
@@ -23,7 +40,22 @@ namespace MachineProject3_TMS
         {
             WelcomeLabel.Text = $"Welcome, {DbConnection.CurrentUsername}!";
             AboutUserButton.Text = DbConnection.CurrentName;
-            DbConnectionStatusLabel.Text = "Connected to MySQL";
+            // Display connection status using TestConnection or DemoMode
+            if (DbConnection.DemoMode)
+            {
+                DbConnectionStatusLabel.Text = "Demo Mode (no DB)";
+            }
+            else
+            {
+                try
+                {
+                    DbConnectionStatusLabel.Text = DbConnection.TestConnection() ? "Connected to MySQL" : "DB Unavailable";
+                }
+                catch
+                {
+                    DbConnectionStatusLabel.Text = "DB Status Unknown";
+                }
+            }
         }
 
         /// <summary>
