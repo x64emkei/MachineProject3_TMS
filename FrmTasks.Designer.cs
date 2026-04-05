@@ -56,11 +56,9 @@ namespace MachineProject3_TMS
             this.CompletedTasksCounterLabel = new System.Windows.Forms.Label();
             this.PendingTasksCounterLabel = new System.Windows.Forms.Label();
             this.TotalTasksCounterLabel = new System.Windows.Forms.Label();
-            this.FilterByLabel = new System.Windows.Forms.Label();
             this.SearchDirectoryButton = new System.Windows.Forms.Button();
             this.RefreshDirectoryButton = new System.Windows.Forms.Button();
             this.TaskDirectoryLabel = new System.Windows.Forms.Label();
-            this.FilterByComboBox = new System.Windows.Forms.ComboBox();
             this.TaskDirectoryDataGridView = new System.Windows.Forms.DataGridView();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
@@ -285,11 +283,9 @@ namespace MachineProject3_TMS
             this.TaskDirectoryPanel.Controls.Add(this.CompletedTasksCounterLabel);
             this.TaskDirectoryPanel.Controls.Add(this.PendingTasksCounterLabel);
             this.TaskDirectoryPanel.Controls.Add(this.TotalTasksCounterLabel);
-            this.TaskDirectoryPanel.Controls.Add(this.FilterByLabel);
             this.TaskDirectoryPanel.Controls.Add(this.SearchDirectoryButton);
             this.TaskDirectoryPanel.Controls.Add(this.RefreshDirectoryButton);
             this.TaskDirectoryPanel.Controls.Add(this.TaskDirectoryLabel);
-            this.TaskDirectoryPanel.Controls.Add(this.FilterByComboBox);
             this.TaskDirectoryPanel.Controls.Add(this.TaskDirectoryDataGridView);
             this.TaskDirectoryPanel.Controls.Add(this.SearchLabel);
             this.TaskDirectoryPanel.Controls.Add(this.SearchTextBox);
@@ -372,17 +368,6 @@ namespace MachineProject3_TMS
             this.TotalTasksCounterLabel.Text = "--";
             this.TotalTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // FilterByLabel
-            // 
-            this.FilterByLabel.AutoSize = true;
-            this.FilterByLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FilterByLabel.ForeColor = System.Drawing.Color.Silver;
-            this.FilterByLabel.Location = new System.Drawing.Point(9, 359);
-            this.FilterByLabel.Name = "FilterByLabel";
-            this.FilterByLabel.Size = new System.Drawing.Size(66, 21);
-            this.FilterByLabel.TabIndex = 2;
-            this.FilterByLabel.Text = "Filter By";
-            // 
             // SearchDirectoryButton
             // 
             this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -431,23 +416,6 @@ namespace MachineProject3_TMS
             this.TaskDirectoryLabel.Text = "Task Directory";
             this.TaskDirectoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // FilterByComboBox
-            // 
-            this.FilterByComboBox.BackColor = System.Drawing.SystemColors.Info;
-            this.FilterByComboBox.CausesValidation = false;
-            this.FilterByComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FilterByComboBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.FilterByComboBox.ForeColor = System.Drawing.Color.DimGray;
-            this.FilterByComboBox.FormattingEnabled = true;
-            this.FilterByComboBox.Items.AddRange(new object[] {
-            "Priority",
-            "Status",
-            "Category"});
-            this.FilterByComboBox.Location = new System.Drawing.Point(13, 383);
-            this.FilterByComboBox.Name = "FilterByComboBox";
-            this.FilterByComboBox.Size = new System.Drawing.Size(164, 29);
-            this.FilterByComboBox.TabIndex = 5;
-            // 
             // TaskDirectoryDataGridView
             // 
             this.TaskDirectoryDataGridView.AllowUserToAddRows = false;
@@ -468,7 +436,7 @@ namespace MachineProject3_TMS
             this.SearchLabel.AutoSize = true;
             this.SearchLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchLabel.ForeColor = System.Drawing.Color.Silver;
-            this.SearchLabel.Location = new System.Drawing.Point(9, 300);
+            this.SearchLabel.Location = new System.Drawing.Point(9, 362);
             this.SearchLabel.Name = "SearchLabel";
             this.SearchLabel.Size = new System.Drawing.Size(57, 21);
             this.SearchLabel.TabIndex = 2;
@@ -481,7 +449,7 @@ namespace MachineProject3_TMS
             this.SearchTextBox.CausesValidation = false;
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.SearchTextBox.Location = new System.Drawing.Point(13, 324);
+            this.SearchTextBox.Location = new System.Drawing.Point(13, 386);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(164, 29);
             this.SearchTextBox.TabIndex = 3;
@@ -927,8 +895,6 @@ namespace MachineProject3_TMS
         private System.Windows.Forms.Button RefreshDirectoryButton;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.ComboBox FilterByComboBox;
-        private System.Windows.Forms.Label FilterByLabel;
         private System.Windows.Forms.Label CompletedTasksCounterLabel;
         private System.Windows.Forms.Label PendingTasksCounterLabel;
         private System.Windows.Forms.Label TotalTasksCounterLabel;
