@@ -3,7 +3,6 @@
 // BAARDE, ADRIAN C.
 // TUMBAGA, KURT CEZMER S. 
 
-using Ordenes_Baarde_Tumbaga_MP3;
 using System;
 using System.Windows.Forms;
 
@@ -52,7 +51,7 @@ namespace MachineProject3_TMS
         /// </summary>
         private void ReportTaskButton_Click(object sender, EventArgs e)
         {
-            Ordenes_Baarde_Tumbaga_MP3.FrmReports reportsForm = new FrmReports();
+            FrmReports reportsForm = new FrmReports();
             reportsForm.Show();
             this.Hide();
         }

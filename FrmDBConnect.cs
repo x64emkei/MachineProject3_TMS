@@ -3,17 +3,20 @@
 // BAARDE, ADRIAN C.
 // TUMBAGA, KURT CEZMER S. 
 
-using MachineProject3_TMS;
 using System;
 using System.Windows.Forms;
 
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     public partial class FrmDBConnect : Form
     {
         public FrmDBConnect()
         {
             InitializeComponent();
+            // Wire designer buttons to their handlers so the form is responsive at runtime
+            if (LoginButton != null) LoginButton.Click += LoginButton_Click;
+            if (ReturnToDashboardButton != null) ReturnToDashboardButton.Click += ReturnToDashboardButton_Click;
+            if (ShowPassLoginButtonLabel != null) ShowPassLoginButtonLabel.Click += ShowPassLoginButtonLabel_Click;
         }
 
         /// <summary>
@@ -21,6 +24,22 @@ namespace Ordenes_Baarde_Tumbaga_MP3
         /// </summary>
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            // If demo mode is checked, bypass DB connection and open the dashboard for UI testing
+            if (DemoModeCheckBox != null && DemoModeCheckBox.Checked)
+            {
+                // Set a minimal in-memory session so other forms have user info available
+                DbConnection.CurrentUserId = 0;
+                DbConnection.CurrentUsername = "demo";
+                DbConnection.CurrentName = "Demo User";
+                DbConnection.CurrentEmail = "demo@local";
+                DbConnection.CurrentLoginTime = DateTime.Now;
+
+                FrmDashboard dashboard = new FrmDashboard();
+                dashboard.Show();
+                this.Hide();
+                return;
+            }
+
             string user = UsernameTextBox.Text.Trim();
             string pass = PasswordTextBox.Text;
 

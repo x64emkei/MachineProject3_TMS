@@ -3,15 +3,15 @@
 // BAARDE, ADRIAN C.
 // TUMBAGA, KURT CEZMER S. 
 
-using MachineProject3_TMS;
-using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using MachineProject3_TMS;
 
-namespace Ordenes_Baarde_Tumbaga_MP3
+namespace MachineProject3_TMS
 {
     public partial class FrmReports : Form
     {
