@@ -116,11 +116,11 @@
   <ItemGroup>
     <Compile Include="CategoryFunctions.cs" />
     <Compile Include="DbConnection.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmDBConnect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmDBConnect.Designer.cs">
+      <DependentUpon>FrmDBConnect.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmReports.cs">
       <SubType>Form</SubType>
@@ -161,8 +161,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskFunctions.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDBConnect.resx">
+      <DependentUpon>FrmDBConnect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

@@ -1,76 +1,129 @@
+// MACHINE PROJECT 3 | CS207L
+// ORDENES, MICHAEL BENEDICT G. 
+// BAARDE, ADRIAN C.
+// TUMBAGA, KURT CEZMER S. 
+
 using System;
 using System.Data;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
-namespace TaskFunctions.Services
+namespace Ordenes_Baarde_Tumbaga_MP3
 {
-    public class TaskExportService
+    /// <summary>
+    /// Encapsulates CRUD operations for Task records.
+    /// </summary>
+    public static class TaskFunctions
     {
-        // Exports DataGridView contents to a standard CSV file
-        public bool ExportToCSV(DataGridView dgv, string filePath)
+        /// <summary>
+        /// Retrieves all tasks, optionally filtered by keyword and field.
+        /// </summary>
+        public static DataTable GetAllTasks(string filterQuery = "", string keyword = "")
         {
-            if (dgv.Rows.Count == 0) throw new InvalidOperationException("No data available to export.");
-
-            try
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = DbConnection.GetConnection())
             {
-                StringBuilder sb = new StringBuilder();
+                string query = @"SELECT t.task_id, t.task_title, t.description, t.due_date, t.priority, t.status, t.assigned_to, c.category_name, t.category_id 
+                                 FROM tasks t 
+                                 LEFT JOIN categories c ON t.category_id = c.category_id";
 
-                // 1. Write Headers
-                var headers = dgv.Columns.Cast<DataGridViewColumn>();
-                sb.AppendLine(string.Join(",", headers.Select(column => "\"" + column.HeaderText + "\"")));
-
-                // 2. Write Rows (Defensively handling nulls)
-                foreach (DataGridViewRow row in dgv.Rows)
+                if (!string.IsNullOrEmpty(filterQuery))
                 {
-                    if (!row.IsNewRow)
-                    {
-                        var cells = row.Cells.Cast<DataGridViewCell>();
-                        sb.AppendLine(string.Join(",", cells.Select(cell => "\"" + (cell.Value?.ToString() ?? "") + "\"")));
-                    }
+                    query += $" WHERE {filterQuery} LIKE @keyword";
                 }
 
-                File.WriteAllText(filePath, sb.ToString());
-                return true;
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    if (!string.IsNullOrEmpty(filterQuery))
+                    {
+                        cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+                    }
+
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
             }
-            catch (IOException ex)
+            return dt;
+        }
+
+        /// <summary>
+        /// Inserts a new task into the database.
+        /// </summary>
+        public static void AddTask(string title, string desc, DateTime dueDate, string priority, string status, string assignedTo, int categoryId)
+        {
+            using (MySqlConnection conn = DbConnection.GetConnection())
             {
-                throw new Exception("File is in use or inaccessible. Please close the file and try again.", ex);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("An unexpected error occurred during CSV export.", ex);
+                conn.Open();
+                string query = "INSERT INTO tasks (task_title, description, due_date, priority, status, assigned_to, category_id) VALUES (@title, @desc, @dueDate, @priority, @status, @assignedTo, @categoryId)";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@title", title);
+                    cmd.Parameters.AddWithValue("@desc", desc);
+                    cmd.Parameters.AddWithValue("@dueDate", dueDate);
+                    cmd.Parameters.AddWithValue("@priority", priority);
+                    cmd.Parameters.AddWithValue("@status", status);
+                    cmd.Parameters.AddWithValue("@assignedTo", assignedTo);
+                    cmd.Parameters.AddWithValue("@categoryId", categoryId);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 
-        // Exports DataGridView contents to a formatted TXT file
-        public bool ExportToTXT(DataGridView dgv, string filePath)
+        /// <summary>
+        /// Updates an existing task record.
+        /// </summary>
+        public static void UpdateTask(int id, string title, string desc, DateTime dueDate, string priority, string status, string assignedTo, int categoryId)
         {
-            if (dgv.Rows.Count == 0) throw new InvalidOperationException("No data available to export.");
-
-            try
+            using (MySqlConnection conn = DbConnection.GetConnection())
             {
-                using (StreamWriter sw = new StreamWriter(filePath))
+                conn.Open();
+                string query = "UPDATE tasks SET task_title=@title, description=@desc, due_date=@dueDate, priority=@priority, status=@status, assigned_to=@assignedTo, category_id=@categoryId WHERE task_id=@id";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    foreach (DataGridViewRow row in dgv.Rows)
-                    {
-                        if (!row.IsNewRow)
-                        {
-                            sw.WriteLine($"Task ID: {row.Cells["TaskID"].Value}");
-                            sw.WriteLine($"Title: {row.Cells["Title"].Value}");
-                            sw.WriteLine($"Status: {row.Cells["Status"].Value} | Priority: {row.Cells["Priority"].Value}");
-                            sw.WriteLine($"Due: {row.Cells["DueDate"].Value}");
-                            sw.WriteLine(new string('-', 50));
-                        }
-                    }
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@title", title);
+                    cmd.Parameters.AddWithValue("@desc", desc);
+                    cmd.Parameters.AddWithValue("@dueDate", dueDate);
+                    cmd.Parameters.AddWithValue("@priority", priority);
+                    cmd.Parameters.AddWithValue("@status", status);
+                    cmd.Parameters.AddWithValue("@assignedTo", assignedTo);
+                    cmd.Parameters.AddWithValue("@categoryId", categoryId);
+                    cmd.ExecuteNonQuery();
                 }
-                return true;
             }
-            catch (Exception ex)
+        }
+
+        /// <summary>
+        /// Removes a task from the database.
+        /// </summary>
+        public static void DeleteTask(int id)
+        {
+            using (MySqlConnection conn = DbConnection.GetConnection())
             {
-                throw new Exception("An error occurred during TXT export.", ex);
+                conn.Open();
+                string query = "DELETE FROM tasks WHERE task_id = @id";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns specific task statistics for the dashboard/counters.
+        /// </summary>
+        public static int GetTaskCount(string condition = "")
+        {
+            using (MySqlConnection conn = DbConnection.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM tasks " + condition;
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
             }
         }
     }

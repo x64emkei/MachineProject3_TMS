@@ -1,76 +1,33 @@
-﻿using System;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿// MACHINE PROJECT 3 | CS207L
+// ORDENES, MICHAEL BENEDICT G. 
+// BAARDE, ADRIAN C.
+// TUMBAGA, KURT CEZMER S. 
+
+using System;
 using System.Windows.Forms;
 
-namespace MachineProject3_TMS.Services
+namespace Ordenes_Baarde_Tumbaga_MP3
 {
-    public class TaskExportService
+    internal static class Program
     {
-        // Exports DataGridView contents to a standard CSV file
-        public bool ExportToCSV(DataGridView dgv, string filePath)
+        /// <summary>
+        /// Defines the main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            if (dgv.Rows.Count == 0) throw new InvalidOperationException("No data available to export.");
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            try
+            // Checks the database connection on startup.
+            if (DbConnection.TestConnection())
             {
-                StringBuilder sb = new StringBuilder();
-
-                // 1. Write Headers
-                var headers = dgv.Columns.Cast<DataGridViewColumn>();
-                sb.AppendLine(string.Join(",", headers.Select(column => "\"" + column.HeaderText + "\"")));
-
-                // 2. Write Rows (Defensively handling nulls)
-                foreach (DataGridViewRow row in dgv.Rows)
-                {
-                    if (!row.IsNewRow)
-                    {
-                        var cells = row.Cells.Cast<DataGridViewCell>();
-                        sb.AppendLine(string.Join(",", cells.Select(cell => "\"" + (cell.Value?.ToString() ?? "") + "\"")));
-                    }
-                }
-
-                File.WriteAllText(filePath, sb.ToString());
-                return true;
+                Application.Run(new FrmLogin());
             }
-            catch (IOException ex)
+            else
             {
-                throw new Exception("File is in use or inaccessible. Please close the file and try again.", ex);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("An unexpected error occurred during CSV export.", ex);
-            }
-        }
-
-        // Exports DataGridView contents to a formatted TXT file
-        public bool ExportToTXT(DataGridView dgv, string filePath)
-        {
-            if (dgv.Rows.Count == 0) throw new InvalidOperationException("No data available to export.");
-
-            try
-            {
-                using (StreamWriter sw = new StreamWriter(filePath))
-                {
-                    foreach (DataGridViewRow row in dgv.Rows)
-                    {
-                        if (!row.IsNewRow)
-                        {
-                            sw.WriteLine($"Task ID: {row.Cells["TaskID"].Value}");
-                            sw.WriteLine($"Title: {row.Cells["Title"].Value}");
-                            sw.WriteLine($"Status: {row.Cells["Status"].Value} | Priority: {row.Cells["Priority"].Value}");
-                            sw.WriteLine($"Due: {row.Cells["DueDate"].Value}");
-                            sw.WriteLine(new string('-', 50));
-                        }
-                    }
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("An error occurred during TXT export.", ex);
+                // Redirects to DB Connect form if connection fails.
+                Application.Run(new FrmDBConnect());
             }
         }
     }

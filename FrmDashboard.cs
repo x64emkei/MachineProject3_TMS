@@ -1,81 +1,129 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// MACHINE PROJECT 3 | CS207L
+// ORDENES, MICHAEL BENEDICT G. 
+// BAARDE, ADRIAN C.
+// TUMBAGA, KURT CEZMER S. 
+
+using MachineProject3_TMS;
+using System;
 using System.Windows.Forms;
 
-namespace MachineProject3_TMS
+namespace Ordenes_Baarde_Tumbaga_MP3
 {
     public partial class FrmDashboard : Form
     {
         public FrmDashboard()
         {
             InitializeComponent();
-            // Initializes the dashboard form and its components.
-            WireNavigationEvents();
+            LoadUserData();
         }
 
-        private void WireNavigationEvents()
+        /// <summary>
+        /// Populates the dashboard with the active user's details.
+        /// </summary>
+        private void LoadUserData()
         {
-            // Buttons
-            this.TaskManagementButton.Click += TaskManagementButton_Click;
-            this.ReportTaskButton.Click += ReportTaskButton_Click;
-            this.CategoriesButton.Click += CategoriesButton_Click;
-            this.AboutButton.Click += AboutButton_Click;
-            this.LogoutSystemButton.Click += Logout_Click;
-
-            // Menu items
-            this.taskManagementToolStripMenuItem.Click += TaskManagementButton_Click;
-            this.viewTasksToolStripMenuItem.Click += ReportTaskButton_Click;
-            this.categoriesToolStripMenuItem.Click += CategoriesButton_Click;
-            this.aboutToolStripMenuItem.Click += AboutButton_Click;
-            this.LogoutSystemToolStripMenuItem.Click += Logout_Click;
-
-            // Exit menu
-            this.exitToolStripMenuItem.Click += (s, e) => Application.Exit();
+            WelcomeLabel.Text = $"Welcome, {DbConnection.CurrentUsername}!";
+            AboutUserButton.Text = DbConnection.CurrentName;
+            DbConnectionStatusLabel.Text = "Connected to MySQL";
         }
 
+        /// <summary>
+        /// Opens the Task Management form.
+        /// </summary>
         private void TaskManagementButton_Click(object sender, EventArgs e)
         {
-            var f = new FrmTasks();
-            f.FormClosed += (s, ev) => this.Show();
-            f.Show();
+            FrmTasks tasksForm = new FrmTasks();
+            tasksForm.Show();
             this.Hide();
         }
 
-        private void ReportTaskButton_Click(object sender, EventArgs e)
-        {
-            var f = new FrmReports();
-            f.FormClosed += (s, ev) => this.Show();
-            f.Show();
-            this.Hide();
-        }
-
+        /// <summary>
+        /// Opens the Categories management form.
+        /// </summary>
         private void CategoriesButton_Click(object sender, EventArgs e)
         {
-            var f = new FrmCategories();
-            f.FormClosed += (s, ev) => this.Show();
-            f.Show();
+            FrmCategories categoryForm = new FrmCategories();
+            categoryForm.Show();
             this.Hide();
         }
 
+        /// <summary>
+        /// Opens the Reports viewing form.
+        /// </summary>
+        private void ReportTaskButton_Click(object sender, EventArgs e)
+        {
+            FrmReports reportsForm = new FrmReports();
+            reportsForm.Show();
+            this.Hide();
+        }
+
+        /// <summary>
+        /// Opens the About page.
+        /// </summary>
         private void AboutButton_Click(object sender, EventArgs e)
         {
-            var f = new FrmAbout();
-            f.FormClosed += (s, ev) => this.Show();
-            f.Show();
+            FrmAbout aboutForm = new FrmAbout();
+            aboutForm.Show();
             this.Hide();
         }
 
-        private void Logout_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Shows user session details in a dialog box.
+        /// </summary>
+        private void AboutUserButton_Click(object sender, EventArgs e)
         {
-            var login = new FrmLogin();
-            login.Show();
-            this.Close();
+            string details = $"Name: {DbConnection.CurrentName}\n" +
+                             $"Username: {DbConnection.CurrentUsername}\n" +
+                             $"Email: {DbConnection.CurrentEmail}\n" +
+                             $"Session Started: {DbConnection.CurrentLoginTime}";
+            MessageBox.Show(details, "User Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Handles the logout process safely with user confirmation.
+        /// </summary>
+        private void LogoutSystemButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("You are about to logout. Any unsaved data will not be saved. Continue?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                DbConnection.ClearSession();
+                FrmLogin loginForm = new FrmLogin();
+                loginForm.Show();
+                this.Hide();
+            }
+        }
+
+        // --- MENU STRIP HANDLERS ---
+
+        private void logoutSystemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LogoutSystemButton_Click(sender, e);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void taskManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaskManagementButton_Click(sender, e);
+        }
+
+        private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CategoriesButton_Click(sender, e);
+        }
+
+        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportTaskButton_Click(sender, e);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutButton_Click(sender, e);
         }
     }
 }

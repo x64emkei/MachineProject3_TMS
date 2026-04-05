@@ -1,4 +1,4 @@
-﻿namespace MachineProject3_TMS
+﻿namespace Ordenes_Baarde_Tumbaga_MP3
 {
     partial class FrmReports
     {
@@ -733,8 +733,8 @@
             // 
             // MainTitleLabel
             // 
-            this.MainTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.MainTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTitleLabel.AutoSize = true;
             this.MainTitleLabel.BackColor = System.Drawing.Color.Transparent;
