@@ -131,14 +131,14 @@ namespace MachineProject3_TMS
         /// </summary>
         private void CategoryDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                object CategoryDataGridView = null;
-                DataGridViewRow row = CategoryDataGridView.Rows[e.RowIndex];
-                CategoryIDTextBox.Text = row.Cells["category_id"].Value.ToString();
-                CategoryNameTextBox.Text = row.Cells["category_name"].Value.ToString();
-                DescriptionTextBox.Text = row.Cells["description"].Value.ToString();
-            }
+            if (e.RowIndex < 0) return;
+            var grid = sender as DataGridView;
+            if (grid == null) return;
+
+            DataGridViewRow row = grid.Rows[e.RowIndex];
+            CategoryIDTextBox.Text = row.Cells["category_id"].Value.ToString();
+            CategoryNameTextBox.Text = row.Cells["category_name"].Value.ToString();
+            DescriptionTextBox.Text = row.Cells["description"].Value.ToString();
         }
     }
 }
