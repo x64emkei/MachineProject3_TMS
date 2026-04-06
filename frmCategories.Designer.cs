@@ -18,6 +18,9 @@ namespace MachineProject3_TMS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCategories));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel = new System.Windows.Forms.Panel();
@@ -29,7 +32,13 @@ namespace MachineProject3_TMS
             this.CategoryViewerDataGridView = new System.Windows.Forms.DataGridView();
             this.CategoryDetailsPanel = new System.Windows.Forms.Panel();
             this.DetailStatusMessageLabel = new System.Windows.Forms.Label();
+            this.ClearEditorButton = new System.Windows.Forms.Button();
+            this.SearchDirectoryButton = new System.Windows.Forms.Button();
+            this.DeleteEditorButton = new System.Windows.Forms.Button();
+            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
+            this.UpdateEditorButton = new System.Windows.Forms.Button();
             this.SearchLabel = new System.Windows.Forms.Label();
+            this.AddEditorButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.CategoryDetailsLabel = new System.Windows.Forms.Label();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -57,12 +66,6 @@ namespace MachineProject3_TMS
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ClearEditorButton = new System.Windows.Forms.Button();
-            this.SearchDirectoryButton = new System.Windows.Forms.Button();
-            this.DeleteEditorButton = new System.Windows.Forms.Button();
-            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
-            this.UpdateEditorButton = new System.Windows.Forms.Button();
-            this.AddEditorButton = new System.Windows.Forms.Button();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
@@ -137,9 +140,36 @@ namespace MachineProject3_TMS
             this.CategoryViewerDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.CategoryViewerDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.CategoryViewerDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryViewerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CategoryViewerDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CategoryViewerDataGridView.EnableHeadersVisualStyles = false;
             this.CategoryViewerDataGridView.MultiSelect = false;
             this.CategoryViewerDataGridView.Name = "CategoryViewerDataGridView";
             this.CategoryViewerDataGridView.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryViewerDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.CategoryViewerDataGridView.RowHeadersVisible = false;
+            this.CategoryViewerDataGridView.RowTemplate.Height = 30;
             // 
             // CategoryDetailsPanel
             // 
@@ -171,11 +201,78 @@ namespace MachineProject3_TMS
             resources.ApplyResources(this.DetailStatusMessageLabel, "DetailStatusMessageLabel");
             this.DetailStatusMessageLabel.Name = "DetailStatusMessageLabel";
             // 
+            // ClearEditorButton
+            // 
+            this.ClearEditorButton.BackColor = System.Drawing.Color.DimGray;
+            this.ClearEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearEditorButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.ClearEditorButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.ClearEditorButton, "ClearEditorButton");
+            this.ClearEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.clear;
+            this.ClearEditorButton.Name = "ClearEditorButton";
+            this.ClearEditorButton.UseVisualStyleBackColor = false;
+            // 
+            // SearchDirectoryButton
+            // 
+            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.SearchDirectoryButton, "SearchDirectoryButton");
+            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
+            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
+            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
+            this.SearchDirectoryButton.Click += new System.EventHandler(this.SearchCategoryButton_Click);
+            // 
+            // DeleteEditorButton
+            // 
+            this.DeleteEditorButton.BackColor = System.Drawing.Color.Firebrick;
+            this.DeleteEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteEditorButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.DeleteEditorButton, "DeleteEditorButton");
+            this.DeleteEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.delete;
+            this.DeleteEditorButton.Name = "DeleteEditorButton";
+            this.DeleteEditorButton.UseVisualStyleBackColor = false;
+            this.DeleteEditorButton.Click += new System.EventHandler(this.DeleteCategoryButton_Click);
+            // 
+            // RefreshDirectoryButton
+            // 
+            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.RefreshDirectoryButton, "RefreshDirectoryButton");
+            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
+            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
+            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
+            // 
+            // UpdateEditorButton
+            // 
+            this.UpdateEditorButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.UpdateEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateEditorButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.UpdateEditorButton, "UpdateEditorButton");
+            this.UpdateEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.update;
+            this.UpdateEditorButton.Name = "UpdateEditorButton";
+            this.UpdateEditorButton.UseVisualStyleBackColor = false;
+            this.UpdateEditorButton.Click += new System.EventHandler(this.UpdateCategoryButton_Click);
+            // 
             // SearchLabel
             // 
             resources.ApplyResources(this.SearchLabel, "SearchLabel");
             this.SearchLabel.ForeColor = System.Drawing.Color.Silver;
             this.SearchLabel.Name = "SearchLabel";
+            // 
+            // AddEditorButton
+            // 
+            this.AddEditorButton.BackColor = System.Drawing.Color.SeaGreen;
+            this.AddEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddEditorButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.AddEditorButton, "AddEditorButton");
+            this.AddEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.add;
+            this.AddEditorButton.Name = "AddEditorButton";
+            this.AddEditorButton.UseVisualStyleBackColor = false;
+            this.AddEditorButton.Click += new System.EventHandler(this.AddCategoryButton_Click);
             // 
             // SearchTextBox
             // 
@@ -356,72 +453,6 @@ namespace MachineProject3_TMS
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-            // 
-            // ClearEditorButton
-            // 
-            this.ClearEditorButton.BackColor = System.Drawing.Color.DimGray;
-            this.ClearEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClearEditorButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.ClearEditorButton, "ClearEditorButton");
-            this.ClearEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.clear;
-            this.ClearEditorButton.Name = "ClearEditorButton";
-            this.ClearEditorButton.UseVisualStyleBackColor = false;
-            // 
-            // SearchDirectoryButton
-            // 
-            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.SearchDirectoryButton, "SearchDirectoryButton");
-            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
-            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
-            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
-            this.SearchDirectoryButton.Click += new System.EventHandler(this.SearchCategoryButton_Click);
-            // 
-            // DeleteEditorButton
-            // 
-            this.DeleteEditorButton.BackColor = System.Drawing.Color.Firebrick;
-            this.DeleteEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteEditorButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.DeleteEditorButton, "DeleteEditorButton");
-            this.DeleteEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.delete;
-            this.DeleteEditorButton.Name = "DeleteEditorButton";
-            this.DeleteEditorButton.UseVisualStyleBackColor = false;
-            this.DeleteEditorButton.Click += new System.EventHandler(this.DeleteCategoryButton_Click);
-            // 
-            // RefreshDirectoryButton
-            // 
-            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.RefreshDirectoryButton, "RefreshDirectoryButton");
-            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
-            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
-            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
-            // 
-            // UpdateEditorButton
-            // 
-            this.UpdateEditorButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.UpdateEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UpdateEditorButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.UpdateEditorButton, "UpdateEditorButton");
-            this.UpdateEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.update;
-            this.UpdateEditorButton.Name = "UpdateEditorButton";
-            this.UpdateEditorButton.UseVisualStyleBackColor = false;
-            this.UpdateEditorButton.Click += new System.EventHandler(this.UpdateCategoryButton_Click);
-            // 
-            // AddEditorButton
-            // 
-            this.AddEditorButton.BackColor = System.Drawing.Color.SeaGreen;
-            this.AddEditorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddEditorButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.AddEditorButton, "AddEditorButton");
-            this.AddEditorButton.Image = global::MachineProject3_TMS.Properties.Resources.add;
-            this.AddEditorButton.Name = "AddEditorButton";
-            this.AddEditorButton.UseVisualStyleBackColor = false;
-            this.AddEditorButton.Click += new System.EventHandler(this.AddCategoryButton_Click);
             // 
             // ProgramLogoPictureBox
             // 

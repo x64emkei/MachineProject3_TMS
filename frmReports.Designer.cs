@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReports));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TotalLabel = new System.Windows.Forms.Label();
             this.PendingLabel = new System.Windows.Forms.Label();
             this.CompletedLabel = new System.Windows.Forms.Label();
@@ -69,6 +72,10 @@
             this.PendingTasksButton = new System.Windows.Forms.Button();
             this.DoneTasksButton = new System.Windows.Forms.Button();
             this.AllTasksButton = new System.Windows.Forms.Button();
+            this.ExportReportButton = new System.Windows.Forms.Button();
+            this.SearchDirectoryButton = new System.Windows.Forms.Button();
+            this.PrintReportButton = new System.Windows.Forms.Button();
+            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.ExportToolsLabel = new System.Windows.Forms.Label();
             this.LiveStatusLabel = new System.Windows.Forms.Label();
@@ -87,10 +94,6 @@
             this.TaskEditorTitleLabel = new System.Windows.Forms.Label();
             this.MainTitleLabel = new System.Windows.Forms.Label();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.ExportReportButton = new System.Windows.Forms.Button();
-            this.SearchDirectoryButton = new System.Windows.Forms.Button();
-            this.PrintReportButton = new System.Windows.Forms.Button();
-            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).BeginInit();
             this.menuTasks.SuspendLayout();
@@ -160,9 +163,38 @@
             this.TaskDirectoryDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.TaskDirectoryDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TaskDirectoryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TaskDirectoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TaskDirectoryDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TaskDirectoryDataGridView.EnableHeadersVisualStyles = false;
             this.TaskDirectoryDataGridView.MultiSelect = false;
             this.TaskDirectoryDataGridView.Name = "TaskDirectoryDataGridView";
             this.TaskDirectoryDataGridView.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TaskDirectoryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.TaskDirectoryDataGridView.RowHeadersVisible = false;
+            this.TaskDirectoryDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaskDirectoryDataGridView.RowTemplate.Height = 30;
+            this.TaskDirectoryDataGridView.RowTemplate.ReadOnly = true;
             // 
             // SearchLabel
             // 
@@ -429,6 +461,54 @@
             this.AllTasksButton.UseVisualStyleBackColor = false;
             this.AllTasksButton.Click += new System.EventHandler(this.AllTasksButton_Click);
             // 
+            // ExportReportButton
+            // 
+            this.ExportReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ExportReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExportReportButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.ExportReportButton, "ExportReportButton");
+            this.ExportReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExportReportButton.Image = global::MachineProject3_TMS.Properties.Resources.export;
+            this.ExportReportButton.Name = "ExportReportButton";
+            this.ExportReportButton.UseVisualStyleBackColor = false;
+            this.ExportReportButton.Click += new System.EventHandler(this.ExportReportButton_Click);
+            // 
+            // SearchDirectoryButton
+            // 
+            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.SearchDirectoryButton, "SearchDirectoryButton");
+            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
+            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
+            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
+            this.SearchDirectoryButton.Click += new System.EventHandler(this.SearchDirectoryButton_Click);
+            // 
+            // PrintReportButton
+            // 
+            this.PrintReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PrintReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PrintReportButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.PrintReportButton, "PrintReportButton");
+            this.PrintReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PrintReportButton.Image = global::MachineProject3_TMS.Properties.Resources.print;
+            this.PrintReportButton.Name = "PrintReportButton";
+            this.PrintReportButton.UseVisualStyleBackColor = false;
+            this.PrintReportButton.Click += new System.EventHandler(this.PrintReportButton_Click);
+            // 
+            // RefreshDirectoryButton
+            // 
+            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.RefreshDirectoryButton, "RefreshDirectoryButton");
+            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
+            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
+            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
+            this.RefreshDirectoryButton.Click += new System.EventHandler(this.RefreshDirectoryButton_Click);
+            // 
             // SearchTextBox
             // 
             this.SearchTextBox.BackColor = System.Drawing.SystemColors.Info;
@@ -555,54 +635,6 @@
             this.ProgramLogoPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.logo;
             this.ProgramLogoPictureBox.Name = "ProgramLogoPictureBox";
             this.ProgramLogoPictureBox.TabStop = false;
-            // 
-            // ExportReportButton
-            // 
-            this.ExportReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ExportReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExportReportButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.ExportReportButton, "ExportReportButton");
-            this.ExportReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ExportReportButton.Image = global::MachineProject3_TMS.Properties.Resources.export;
-            this.ExportReportButton.Name = "ExportReportButton";
-            this.ExportReportButton.UseVisualStyleBackColor = false;
-            this.ExportReportButton.Click += new System.EventHandler(this.ExportReportButton_Click);
-            // 
-            // SearchDirectoryButton
-            // 
-            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.SearchDirectoryButton, "SearchDirectoryButton");
-            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
-            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
-            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
-            this.SearchDirectoryButton.Click += new System.EventHandler(this.SearchDirectoryButton_Click);
-            // 
-            // PrintReportButton
-            // 
-            this.PrintReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.PrintReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PrintReportButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.PrintReportButton, "PrintReportButton");
-            this.PrintReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PrintReportButton.Image = global::MachineProject3_TMS.Properties.Resources.print;
-            this.PrintReportButton.Name = "PrintReportButton";
-            this.PrintReportButton.UseVisualStyleBackColor = false;
-            this.PrintReportButton.Click += new System.EventHandler(this.PrintReportButton_Click);
-            // 
-            // RefreshDirectoryButton
-            // 
-            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.RefreshDirectoryButton, "RefreshDirectoryButton");
-            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
-            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
-            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
-            this.RefreshDirectoryButton.Click += new System.EventHandler(this.RefreshDirectoryButton_Click);
             // 
             // ReturnToDashboardButton
             // 

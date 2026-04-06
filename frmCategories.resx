@@ -140,127 +140,25 @@
   <data name="MainPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;CategoryViewerPanel.Name" xml:space="preserve">
-    <value>CategoryViewerPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerPanel.Parent" xml:space="preserve">
-    <value>MainPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsPanel.Name" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsPanel.Parent" xml:space="preserve">
-    <value>MainPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="MainPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 91</value>
-  </data>
-  <data name="MainPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 20, 20, 20</value>
-  </data>
-  <data name="MainPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1149, 660</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MainPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;MainPanel.Name" xml:space="preserve">
-    <value>MainPanel</value>
-  </data>
-  <data name="&gt;&gt;MainPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MainPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MainPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="statusStripTasks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>649, 17</value>
-  </metadata>
   <data name="CategoryViewerPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;statusStripTasks.Name" xml:space="preserve">
-    <value>statusStripTasks</value>
-  </data>
-  <data name="&gt;&gt;statusStripTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStripTasks.Parent" xml:space="preserve">
-    <value>CategoryViewerPanel</value>
-  </data>
-  <data name="&gt;&gt;statusStripTasks.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TaskDirectoryLabel.Name" xml:space="preserve">
-    <value>TaskDirectoryLabel</value>
-  </data>
-  <data name="&gt;&gt;TaskDirectoryLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TaskDirectoryLabel.Parent" xml:space="preserve">
-    <value>CategoryViewerPanel</value>
-  </data>
-  <data name="&gt;&gt;TaskDirectoryLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerDataGridView.Name" xml:space="preserve">
-    <value>CategoryViewerDataGridView</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerDataGridView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerDataGridView.Parent" xml:space="preserve">
-    <value>CategoryViewerPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerDataGridView.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CategoryViewerPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>388, 20</value>
-  </data>
-  <data name="CategoryViewerPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>741, 620</value>
-  </data>
-  <data name="CategoryViewerPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerPanel.Name" xml:space="preserve">
-    <value>CategoryViewerPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerPanel.Parent" xml:space="preserve">
-    <value>MainPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryViewerPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="statusStripTasks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>649, 17</value>
   </metadata>
+  <data name="TaskDirectoryStatusMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="DatabaseStatusMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
   <data name="statusStripTasks.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 598</value>
   </data>
   <data name="statusStripTasks.Size" type="System.Drawing.Size, System.Drawing">
     <value>741, 22</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="statusStripTasks.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
@@ -278,12 +176,6 @@
   </data>
   <data name="&gt;&gt;statusStripTasks.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="TaskDirectoryStatusMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="DatabaseStatusMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
   </data>
   <data name="TaskDirectoryLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -342,218 +234,26 @@
   <data name="&gt;&gt;CategoryViewerDataGridView.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;DetailStatusMessageLabel.Name" xml:space="preserve">
-    <value>DetailStatusMessageLabel</value>
+  <data name="CategoryViewerPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>388, 20</value>
   </data>
-  <data name="&gt;&gt;DetailStatusMessageLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="CategoryViewerPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>741, 620</value>
   </data>
-  <data name="&gt;&gt;DetailStatusMessageLabel.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;DetailStatusMessageLabel.ZOrder" xml:space="preserve">
+  <data name="CategoryViewerPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ClearEditorButton.Name" xml:space="preserve">
-    <value>ClearEditorButton</value>
+  <data name="&gt;&gt;CategoryViewerPanel.Name" xml:space="preserve">
+    <value>CategoryViewerPanel</value>
   </data>
-  <data name="&gt;&gt;ClearEditorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ClearEditorButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;ClearEditorButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SearchDirectoryButton.Name" xml:space="preserve">
-    <value>SearchDirectoryButton</value>
-  </data>
-  <data name="&gt;&gt;SearchDirectoryButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SearchDirectoryButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;SearchDirectoryButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;DeleteEditorButton.Name" xml:space="preserve">
-    <value>DeleteEditorButton</value>
-  </data>
-  <data name="&gt;&gt;DeleteEditorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DeleteEditorButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;DeleteEditorButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;RefreshDirectoryButton.Name" xml:space="preserve">
-    <value>RefreshDirectoryButton</value>
-  </data>
-  <data name="&gt;&gt;RefreshDirectoryButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RefreshDirectoryButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;RefreshDirectoryButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;UpdateEditorButton.Name" xml:space="preserve">
-    <value>UpdateEditorButton</value>
-  </data>
-  <data name="&gt;&gt;UpdateEditorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateEditorButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;UpdateEditorButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;SearchLabel.Name" xml:space="preserve">
-    <value>SearchLabel</value>
-  </data>
-  <data name="&gt;&gt;SearchLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SearchLabel.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;SearchLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;AddEditorButton.Name" xml:space="preserve">
-    <value>AddEditorButton</value>
-  </data>
-  <data name="&gt;&gt;AddEditorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AddEditorButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;AddEditorButton.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.Name" xml:space="preserve">
-    <value>SearchTextBox</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;SearchTextBox.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsLabel.Name" xml:space="preserve">
-    <value>CategoryDetailsLabel</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsLabel.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;DescriptionTextBox.Name" xml:space="preserve">
-    <value>DescriptionTextBox</value>
-  </data>
-  <data name="&gt;&gt;DescriptionTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DescriptionTextBox.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;DescriptionTextBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;DescriptionLabel.Name" xml:space="preserve">
-    <value>DescriptionLabel</value>
-  </data>
-  <data name="&gt;&gt;DescriptionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DescriptionLabel.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;DescriptionLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;CategoryNameTextBox.Name" xml:space="preserve">
-    <value>CategoryNameTextBox</value>
-  </data>
-  <data name="&gt;&gt;CategoryNameTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CategoryNameTextBox.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryNameTextBox.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;CategoryIDLabel.Name" xml:space="preserve">
-    <value>CategoryIDLabel</value>
-  </data>
-  <data name="&gt;&gt;CategoryIDLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CategoryIDLabel.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryIDLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;CategoryIDTextBox.Name" xml:space="preserve">
-    <value>CategoryIDTextBox</value>
-  </data>
-  <data name="&gt;&gt;CategoryIDTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CategoryIDTextBox.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryIDTextBox.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;CategoryNameLabel.Name" xml:space="preserve">
-    <value>CategoryNameLabel</value>
-  </data>
-  <data name="&gt;&gt;CategoryNameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CategoryNameLabel.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryNameLabel.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="CategoryDetailsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="CategoryDetailsPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 620</value>
-  </data>
-  <data name="CategoryDetailsPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsPanel.Name" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;CategoryDetailsPanel.Type" xml:space="preserve">
+  <data name="&gt;&gt;CategoryViewerPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CategoryDetailsPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CategoryViewerPanel.Parent" xml:space="preserve">
     <value>MainPanel</value>
   </data>
-  <data name="&gt;&gt;CategoryDetailsPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;CategoryViewerPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="DetailStatusMessageLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 9.75pt, style=Bold, Italic</value>
@@ -585,6 +285,186 @@
   <data name="&gt;&gt;DetailStatusMessageLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="ClearEditorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ClearEditorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="ClearEditorButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="ClearEditorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 512</value>
+  </data>
+  <data name="ClearEditorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 90</value>
+  </data>
+  <data name="ClearEditorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="ClearEditorButton.Text" xml:space="preserve">
+    <value>CLEAR</value>
+  </data>
+  <data name="ClearEditorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;ClearEditorButton.Name" xml:space="preserve">
+    <value>ClearEditorButton</value>
+  </data>
+  <data name="&gt;&gt;ClearEditorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ClearEditorButton.Parent" xml:space="preserve">
+    <value>CategoryDetailsPanel</value>
+  </data>
+  <data name="&gt;&gt;ClearEditorButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SearchDirectoryButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="SearchDirectoryButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="SearchDirectoryButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="SearchDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 275</value>
+  </data>
+  <data name="SearchDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 51</value>
+  </data>
+  <data name="SearchDirectoryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="SearchDirectoryButton.Text" xml:space="preserve">
+    <value>&amp;SEARCH</value>
+  </data>
+  <data name="SearchDirectoryButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;SearchDirectoryButton.Name" xml:space="preserve">
+    <value>SearchDirectoryButton</value>
+  </data>
+  <data name="&gt;&gt;SearchDirectoryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchDirectoryButton.Parent" xml:space="preserve">
+    <value>CategoryDetailsPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchDirectoryButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DeleteEditorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="DeleteEditorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="DeleteEditorButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="DeleteEditorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 512</value>
+  </data>
+  <data name="DeleteEditorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 90</value>
+  </data>
+  <data name="DeleteEditorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="DeleteEditorButton.Text" xml:space="preserve">
+    <value>DELETE</value>
+  </data>
+  <data name="DeleteEditorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;DeleteEditorButton.Name" xml:space="preserve">
+    <value>DeleteEditorButton</value>
+  </data>
+  <data name="&gt;&gt;DeleteEditorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteEditorButton.Parent" xml:space="preserve">
+    <value>CategoryDetailsPanel</value>
+  </data>
+  <data name="&gt;&gt;DeleteEditorButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RefreshDirectoryButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RefreshDirectoryButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="RefreshDirectoryButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="RefreshDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 275</value>
+  </data>
+  <data name="RefreshDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 51</value>
+  </data>
+  <data name="RefreshDirectoryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="RefreshDirectoryButton.Text" xml:space="preserve">
+    <value>&amp;REFRESH</value>
+  </data>
+  <data name="RefreshDirectoryButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;RefreshDirectoryButton.Name" xml:space="preserve">
+    <value>RefreshDirectoryButton</value>
+  </data>
+  <data name="&gt;&gt;RefreshDirectoryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RefreshDirectoryButton.Parent" xml:space="preserve">
+    <value>CategoryDetailsPanel</value>
+  </data>
+  <data name="&gt;&gt;RefreshDirectoryButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="UpdateEditorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="UpdateEditorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="UpdateEditorButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="UpdateEditorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 416</value>
+  </data>
+  <data name="UpdateEditorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 90</value>
+  </data>
+  <data name="UpdateEditorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="UpdateEditorButton.Text" xml:space="preserve">
+    <value>UPDATE</value>
+  </data>
+  <data name="UpdateEditorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;UpdateEditorButton.Name" xml:space="preserve">
+    <value>UpdateEditorButton</value>
+  </data>
+  <data name="&gt;&gt;UpdateEditorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpdateEditorButton.Parent" xml:space="preserve">
+    <value>CategoryDetailsPanel</value>
+  </data>
+  <data name="&gt;&gt;UpdateEditorButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="SearchLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -614,6 +494,42 @@
   </data>
   <data name="&gt;&gt;SearchLabel.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="AddEditorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="AddEditorButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="AddEditorButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="AddEditorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 416</value>
+  </data>
+  <data name="AddEditorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 90</value>
+  </data>
+  <data name="AddEditorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="AddEditorButton.Text" xml:space="preserve">
+    <value>ADD</value>
+  </data>
+  <data name="AddEditorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;AddEditorButton.Name" xml:space="preserve">
+    <value>AddEditorButton</value>
+  </data>
+  <data name="&gt;&gt;AddEditorButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddEditorButton.Parent" xml:space="preserve">
+    <value>CategoryDetailsPanel</value>
+  </data>
+  <data name="&gt;&gt;AddEditorButton.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="SearchTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -834,6 +750,51 @@
   <data name="&gt;&gt;CategoryNameLabel.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <data name="CategoryDetailsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="CategoryDetailsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 620</value>
+  </data>
+  <data name="CategoryDetailsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CategoryDetailsPanel.Name" xml:space="preserve">
+    <value>CategoryDetailsPanel</value>
+  </data>
+  <data name="&gt;&gt;CategoryDetailsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CategoryDetailsPanel.Parent" xml:space="preserve">
+    <value>MainPanel</value>
+  </data>
+  <data name="&gt;&gt;CategoryDetailsPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MainPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 91</value>
+  </data>
+  <data name="MainPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 20, 20, 20</value>
+  </data>
+  <data name="MainPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1149, 660</value>
+  </data>
+  <data name="MainPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;MainPanel.Name" xml:space="preserve">
+    <value>MainPanel</value>
+  </data>
+  <data name="&gt;&gt;MainPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="MainTitleLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -870,12 +831,6 @@
   <data name="&gt;&gt;MainTitleLabel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 21</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Help</value>
-  </data>
   <data name="helpToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F12</value>
   </data>
@@ -883,6 +838,12 @@
     <value>132, 22</value>
   </data>
   <data name="helpToolStripMenuItem1.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Help</value>
   </data>
   <data name="categoryManagementToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
@@ -899,36 +860,6 @@
   </metadata>
   <data name="menuTasks.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="menuTasks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1149, 25</value>
-  </data>
-  <data name="menuTasks.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="menuTasks.Text" xml:space="preserve">
-    <value>menuTasks</value>
-  </data>
-  <data name="&gt;&gt;menuTasks.Name" xml:space="preserve">
-    <value>menuTasks</value>
-  </data>
-  <data name="&gt;&gt;menuTasks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuTasks.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuTasks.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 21</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;File</value>
   </data>
   <data name="returnToDashboardToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+B</value>
@@ -960,11 +891,11 @@
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="recordToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 21</value>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 21</value>
   </data>
-  <data name="recordToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Record</value>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
   </data>
   <data name="addCategoryToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
@@ -1002,14 +933,11 @@
   <data name="clearFormToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Clear Form</value>
   </data>
-  <data name="refreshToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>F5</value>
+  <data name="recordToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 21</value>
   </data>
-  <data name="refreshToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 21</value>
-  </data>
-  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;View</value>
+  <data name="recordToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Record</value>
   </data>
   <data name="toolStripMenuItem3.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F5</value>
@@ -1023,221 +951,38 @@
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 6</value>
   </data>
-  <data name="ClearEditorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="refreshToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F5</value>
   </data>
-  <data name="ClearEditorButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 14.25pt, style=Bold</value>
+  <data name="refreshToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
   </data>
-  <data name="ClearEditorButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
+  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;View</value>
   </data>
-  <data name="ClearEditorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 512</value>
+  <data name="menuTasks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="ClearEditorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 90</value>
+  <data name="menuTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1149, 25</value>
   </data>
-  <data name="ClearEditorButton.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="menuTasks.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="ClearEditorButton.Text" xml:space="preserve">
-    <value>CLEAR</value>
+  <data name="menuTasks.Text" xml:space="preserve">
+    <value>menuTasks</value>
   </data>
-  <data name="ClearEditorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
+  <data name="&gt;&gt;menuTasks.Name" xml:space="preserve">
+    <value>menuTasks</value>
   </data>
-  <data name="&gt;&gt;ClearEditorButton.Name" xml:space="preserve">
-    <value>ClearEditorButton</value>
+  <data name="&gt;&gt;menuTasks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ClearEditorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;menuTasks.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;ClearEditorButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;ClearEditorButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SearchDirectoryButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="SearchDirectoryButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 12pt, style=Bold</value>
-  </data>
-  <data name="SearchDirectoryButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="SearchDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 275</value>
-  </data>
-  <data name="SearchDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 51</value>
-  </data>
-  <data name="SearchDirectoryButton.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="SearchDirectoryButton.Text" xml:space="preserve">
-    <value>&amp;SEARCH</value>
-  </data>
-  <data name="SearchDirectoryButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
-  </data>
-  <data name="&gt;&gt;SearchDirectoryButton.Name" xml:space="preserve">
-    <value>SearchDirectoryButton</value>
-  </data>
-  <data name="&gt;&gt;SearchDirectoryButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SearchDirectoryButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;SearchDirectoryButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="DeleteEditorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="DeleteEditorButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 14.25pt, style=Bold</value>
-  </data>
-  <data name="DeleteEditorButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="DeleteEditorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 512</value>
-  </data>
-  <data name="DeleteEditorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 90</value>
-  </data>
-  <data name="DeleteEditorButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="DeleteEditorButton.Text" xml:space="preserve">
-    <value>DELETE</value>
-  </data>
-  <data name="DeleteEditorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
-  </data>
-  <data name="&gt;&gt;DeleteEditorButton.Name" xml:space="preserve">
-    <value>DeleteEditorButton</value>
-  </data>
-  <data name="&gt;&gt;DeleteEditorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DeleteEditorButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;DeleteEditorButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;menuTasks.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="RefreshDirectoryButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="RefreshDirectoryButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 12pt, style=Bold</value>
-  </data>
-  <data name="RefreshDirectoryButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="RefreshDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 275</value>
-  </data>
-  <data name="RefreshDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 51</value>
-  </data>
-  <data name="RefreshDirectoryButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="RefreshDirectoryButton.Text" xml:space="preserve">
-    <value>&amp;REFRESH</value>
-  </data>
-  <data name="RefreshDirectoryButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
-  </data>
-  <data name="&gt;&gt;RefreshDirectoryButton.Name" xml:space="preserve">
-    <value>RefreshDirectoryButton</value>
-  </data>
-  <data name="&gt;&gt;RefreshDirectoryButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RefreshDirectoryButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;RefreshDirectoryButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="UpdateEditorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="UpdateEditorButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 14.25pt, style=Bold</value>
-  </data>
-  <data name="UpdateEditorButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="UpdateEditorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 416</value>
-  </data>
-  <data name="UpdateEditorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 90</value>
-  </data>
-  <data name="UpdateEditorButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="UpdateEditorButton.Text" xml:space="preserve">
-    <value>UPDATE</value>
-  </data>
-  <data name="UpdateEditorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
-  </data>
-  <data name="&gt;&gt;UpdateEditorButton.Name" xml:space="preserve">
-    <value>UpdateEditorButton</value>
-  </data>
-  <data name="&gt;&gt;UpdateEditorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateEditorButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;UpdateEditorButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="AddEditorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="AddEditorButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 14.25pt, style=Bold</value>
-  </data>
-  <data name="AddEditorButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="AddEditorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 416</value>
-  </data>
-  <data name="AddEditorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 90</value>
-  </data>
-  <data name="AddEditorButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="AddEditorButton.Text" xml:space="preserve">
-    <value>ADD</value>
-  </data>
-  <data name="AddEditorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
-  </data>
-  <data name="&gt;&gt;AddEditorButton.Name" xml:space="preserve">
-    <value>AddEditorButton</value>
-  </data>
-  <data name="&gt;&gt;AddEditorButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AddEditorButton.Parent" xml:space="preserve">
-    <value>CategoryDetailsPanel</value>
-  </data>
-  <data name="&gt;&gt;AddEditorButton.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="ProgramLogoPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1268,6 +1013,9 @@
   </data>
   <data name="ReturnToDashboardButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="ReturnToDashboardButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="ReturnToDashboardButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 37</value>
