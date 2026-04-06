@@ -26,7 +26,11 @@ namespace MachineProject3_TMS
         public static DateTime CurrentLoginTime { get; set; }
 
         // If true the application runs without contacting the database allowing UI testing
+        // Demo mode is only enabled when the user explicitly requests it via the DB Connect form.
         public static bool DemoMode { get; set; } = false;
+
+        // When true allows EnableDemoMode to actually enable demo data. This prevents accidental enabling.
+        public static bool DemoAllowed { get; set; } = false;
 
         // In-memory demo datasets used when DemoMode is active to allow UI testing without DB.
         public static DataTable DemoCategories { get; private set; }
@@ -37,6 +41,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static void EnableDemoMode()
         {
+            // Only enable demo mode when explicitly allowed by the user via the DB Connect form.
+            if (!DemoAllowed) return;
             DemoMode = true;
 
             // Initialize demo categories

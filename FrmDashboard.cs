@@ -33,6 +33,35 @@ namespace MachineProject3_TMS
             if (exitToolStripMenuItem != null) exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
 
             LoadUserData();
+
+            // Wire hover descriptors for dashboard buttons to update DescriptorLabel on mouse enter/leave.
+            try
+            {
+                if (TaskManagementButton != null)
+                {
+                    TaskManagementButton.MouseEnter += (s, e) => DescriptorLabel.Text = "Opens Task Management module.";
+                    TaskManagementButton.MouseLeave += (s, e) => DescriptorLabel.Text = string.Empty;
+                }
+                if (CategoriesButton != null)
+                {
+                    CategoriesButton.MouseEnter += (s, e) => DescriptorLabel.Text = "Opens Category Management.";
+                    CategoriesButton.MouseLeave += (s, e) => DescriptorLabel.Text = string.Empty;
+                }
+                if (ReportTaskButton != null)
+                {
+                    ReportTaskButton.MouseEnter += (s, e) => DescriptorLabel.Text = "Opens Reports viewer.";
+                    ReportTaskButton.MouseLeave += (s, e) => DescriptorLabel.Text = string.Empty;
+                }
+                if (AboutButton != null)
+                {
+                    AboutButton.MouseEnter += (s, e) => DescriptorLabel.Text = "Shows application information.";
+                    AboutButton.MouseLeave += (s, e) => DescriptorLabel.Text = string.Empty;
+                }
+            }
+            catch
+            {
+                // Swallows wiring errors.
+            }
         }
 
         /// <summary>
@@ -50,8 +79,9 @@ namespace MachineProject3_TMS
         /// </summary>
         private void LoadUserData()
         {
-            WelcomeLabel.Text = $"Welcome, {DbConnection.CurrentUsername}!";
-            AboutUserButton.Text = DbConnection.CurrentName;
+            // Swap: show full name in welcome, username on AboutUserButton
+            WelcomeLabel.Text = $"Welcome, {DbConnection.CurrentName}!";
+            AboutUserButton.Text = DbConnection.CurrentUsername;
             // Display connection status using TestConnection or DemoMode
             if (DbConnection.DemoMode)
             {
@@ -61,7 +91,7 @@ namespace MachineProject3_TMS
             {
                 try
                 {
-                    DbConnectionStatusLabel.Text = DbConnection.TestConnection() ? "Connected to MySQL" : "DB Unavailable";
+                    DbConnectionStatusLabel.Text = DbConnection.TestConnection() ? "Connected to MySQL - Ready" : "DB Unavailable";
                 }
                 catch
                 {
@@ -105,9 +135,17 @@ namespace MachineProject3_TMS
         /// </summary>
         private void AboutButton_Click(object sender, EventArgs e)
         {
-            FrmAbout aboutForm = new FrmAbout();
-            aboutForm.Show();
-            this.Hide();
+            // Shows about without hiding the dashboard so the user retains context.
+            try
+            {
+                FrmAbout aboutForm = new FrmAbout();
+                aboutForm.Owner = this;
+                aboutForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unable to open About: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>

@@ -54,12 +54,27 @@ namespace MachineProject3_TMS
             // Designer uses CategoryViewerDataGridView for the viewer list
             try
             {
-                CategoryViewerDataGridView.DataSource = CategoryFunctions.GetAllCategories();
+                if (!DbConnection.DemoMode)
+                {
+                    CategoryViewerDataGridView.DataSource = CategoryFunctions.GetAllCategories();
+                }
+                else
+                {
+                    CategoryViewerDataGridView.DataSource = DbConnection.DemoCategories != null ? DbConnection.DemoCategories.Copy() : new DataTable();
+                }
             }
             catch (Exception)
             {
-                DbConnection.EnableDemoMode();
-                CategoryViewerDataGridView.DataSource = DbConnection.DemoCategories.Copy();
+                // Do not automatically enable demo mode; show error in status label instead.
+                try
+                {
+                    CategoryViewerDataGridView.DataSource = CategoryFunctions.GetAllCategories();
+                }
+                catch (Exception ex)
+                {
+                    DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                    DetailStatusMessageLabel.Text = "Database error: " + ex.Message;
+                }
             }
             ClearInputFields();
             // Synchronizes category counters after grid refresh.
@@ -123,7 +138,7 @@ namespace MachineProject3_TMS
             }
             try
             {
-                DataTable dt = CategoryFunctions.GetAllCategories();
+                DataTable dt = DbConnection.DemoMode ? (DbConnection.DemoCategories != null ? DbConnection.DemoCategories.Copy() : new DataTable()) : CategoryFunctions.GetAllCategories();
                 if (!string.IsNullOrWhiteSpace(keyword))
                 {
                     for (int i = dt.Rows.Count - 1; i >= 0; i--)

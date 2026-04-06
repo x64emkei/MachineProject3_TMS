@@ -57,7 +57,6 @@ namespace MachineProject3_TMS
                 DbConnection.CurrentName = "Administrator";
                 DbConnection.CurrentEmail = "";
                 DbConnection.CurrentLoginTime = DateTime.Now;
-
                 FrmDashboard dashboard = new FrmDashboard();
                 dashboard.Show();
                 this.Hide();
@@ -172,15 +171,43 @@ namespace MachineProject3_TMS
                 using (MySqlConnection conn = DbConnection.GetConnection())
                 {
                     conn.Open();
+
+                    // Check uniqueness of username and email first to provide specific feedback
+                    using (MySqlCommand checkUser = new MySqlCommand("SELECT COUNT(*) FROM users WHERE username = @user", conn))
+                    {
+                        checkUser.Parameters.AddWithValue("@user", username);
+                        var userCount = Convert.ToInt32(checkUser.ExecuteScalar());
+                        if (userCount > 0)
+                        {
+                            MessageBox.Show("Username already exists. Please choose a different one.", "Duplicate User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(email))
+                    {
+                        using (MySqlCommand checkEmail = new MySqlCommand("SELECT COUNT(*) FROM users WHERE email = @em", conn))
+                        {
+                            checkEmail.Parameters.AddWithValue("@em", email);
+                            var emailCount = Convert.ToInt32(checkEmail.ExecuteScalar());
+                            if (emailCount > 0)
+                            {
+                                MessageBox.Show("Email address is already registered. Please use a different email.", "Duplicate Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
+                    }
+
                     string query = "INSERT INTO users (username, password, name, email) VALUES (@user, @pass, @name, @email)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@user", username);
-                        cmd.Parameters.AddWithValue("@pass", pass); // Assuming plain-text based on rubric requirements, ideally hashed.
+                        cmd.Parameters.AddWithValue("@pass", pass); // Ideally hash in real app
                         cmd.Parameters.AddWithValue("@name", name);
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.ExecuteNonQuery();
                     }
+
                     MessageBox.Show("Account successfully created! You may now login.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CreateAcctCloseButton_Click(null, null);
                 }

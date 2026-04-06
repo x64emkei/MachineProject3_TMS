@@ -38,7 +38,7 @@
             this.SaveConfigCheckBox = new System.Windows.Forms.CheckBox();
             this.DemoModeCheckBox = new System.Windows.Forms.CheckBox();
             this.ConfigGuideLabel = new System.Windows.Forms.Label();
-            this.DB = new System.Windows.Forms.Label();
+            this.DBStatusLabel = new System.Windows.Forms.Label();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
             BannerPictureBox = new System.Windows.Forms.PictureBox();
@@ -102,11 +102,11 @@
             this.ConfigGuideLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ConfigGuideLabel.Name = "ConfigGuideLabel";
             // 
-            // DB
+            // DBStatusLabel
             // 
-            resources.ApplyResources(this.DB, "DB");
-            this.DB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DB.Name = "DB";
+            resources.ApplyResources(this.DBStatusLabel, "DBStatusLabel");
+            this.DBStatusLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DBStatusLabel.Name = "DBStatusLabel";
             // 
             // ReturnToDashboardButton
             // 
@@ -142,7 +142,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.Controls.Add(this.DB);
+            this.Controls.Add(this.DBStatusLabel);
             this.Controls.Add(this.ConfigGuideLabel);
             this.Controls.Add(this.ReturnToDashboardButton);
             this.Controls.Add(this.DemoModeCheckBox);
@@ -176,6 +176,6 @@
         private System.Windows.Forms.Button ReturnToDashboardButton;
         private System.Windows.Forms.CheckBox DemoModeCheckBox;
         private System.Windows.Forms.Label ConfigGuideLabel;
-        private System.Windows.Forms.Label DB;
+        private System.Windows.Forms.Label DBStatusLabel;
     }
 }

@@ -139,13 +139,20 @@ namespace MachineProject3_TMS
                 TaskDirectoryDataGridView.DataSource = dt;
                 UpdateLiveStatistics(dt);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // If DB fails, enable demo mode and use demo data
-                DbConnection.EnableDemoMode();
-                var demo = DbConnection.DemoTasks.Copy();
-                TaskDirectoryDataGridView.DataSource = demo;
-                UpdateLiveStatistics(demo);
+                // If demo mode was explicitly enabled by the user, show demo data.
+                if (DbConnection.DemoMode && DbConnection.DemoTasks != null)
+                {
+                    var demo = DbConnection.DemoTasks.Copy();
+                    TaskDirectoryDataGridView.DataSource = demo;
+                    UpdateLiveStatistics(demo);
+                }
+                else
+                {
+                    // Reports the error to the user instead of auto-enabling demo mode.
+                    TaskDirectoryStatusMessage.Text = "Database error: " + ex.Message;
+                }
             }
 
             // Hide the raw category ID column if it exists, since we show Category Name
@@ -347,13 +354,19 @@ namespace MachineProject3_TMS
             }
             catch (Exception ex)
             {
-                DbConnection.EnableDemoMode();
-                var demo = DbConnection.DemoTasks.Copy();
-                TaskDirectoryDataGridView.DataSource = demo;
-                UpdateLiveStatistics(demo);
-                TaskDirectoryStatusMessage.Text = "Showing demo data due to DB error.";
-                EditorStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
-                EditorStatusMessageLabel.Text = "Database error while searching.";
+                if (DbConnection.DemoMode && DbConnection.DemoTasks != null)
+                {
+                    var demo = DbConnection.DemoTasks.Copy();
+                    TaskDirectoryDataGridView.DataSource = demo;
+                    UpdateLiveStatistics(demo);
+                    TaskDirectoryStatusMessage.Text = "Showing demo data (demo mode).";
+                }
+                else
+                {
+                    TaskDirectoryStatusMessage.Text = "Database error while searching.";
+                    EditorStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                    EditorStatusMessageLabel.Text = "Database error while searching.";
+                }
             }
         }
 
@@ -380,18 +393,21 @@ namespace MachineProject3_TMS
                 int total = dt.Rows.Count;
                 int pending = 0;
                 int completed = 0;
+                int inProgress = 0;
 
                 foreach (DataRow r in dt.Rows)
                 {
                     var status = r.Table.Columns.Contains("status") ? (r["status"]?.ToString() ?? string.Empty) : string.Empty;
                     if (string.Equals(status, "Pending", StringComparison.OrdinalIgnoreCase)) pending++;
                     if (string.Equals(status, "Completed", StringComparison.OrdinalIgnoreCase)) completed++;
+                    if (string.Equals(status, "In Progress", StringComparison.OrdinalIgnoreCase) || string.Equals(status, "InProgress", StringComparison.OrdinalIgnoreCase) || string.Equals(status, "In-Progress", StringComparison.OrdinalIgnoreCase)) inProgress++;
                 }
 
                 // Update labels gently.
                 if (TotalTasksCounterLabel != null) TotalTasksCounterLabel.Text = total.ToString();
                 if (PendingTasksCounterLabel != null) PendingTasksCounterLabel.Text = pending.ToString();
                 if (CompletedTasksCounterLabel != null) CompletedTasksCounterLabel.Text = completed.ToString();
+                if (InProgressCounterLabel != null) InProgressCounterLabel.Text = inProgress.ToString();
             }
             catch
             {

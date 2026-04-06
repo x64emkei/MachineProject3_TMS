@@ -82,8 +82,8 @@ namespace MachineProject3_TMS
             this.TaskTitleLabel = new System.Windows.Forms.Label();
             this.TaskIDLabel = new System.Windows.Forms.Label();
             this.TaskEditorTitleLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.InProgressCounterLabel = new System.Windows.Forms.Label();
+            this.InProgressLabel = new System.Windows.Forms.Label();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.SearchDirectoryButton = new System.Windows.Forms.Button();
             this.RefreshDirectoryButton = new System.Windows.Forms.Button();
@@ -286,9 +286,9 @@ namespace MachineProject3_TMS
             this.TaskDirectoryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.TaskDirectoryPanel.Controls.Add(this.TotalLabel);
             this.TaskDirectoryPanel.Controls.Add(this.PendingLabel);
-            this.TaskDirectoryPanel.Controls.Add(this.label2);
+            this.TaskDirectoryPanel.Controls.Add(this.InProgressLabel);
             this.TaskDirectoryPanel.Controls.Add(this.CompletedLabel);
-            this.TaskDirectoryPanel.Controls.Add(this.label1);
+            this.TaskDirectoryPanel.Controls.Add(this.InProgressCounterLabel);
             this.TaskDirectoryPanel.Controls.Add(this.CompletedTasksCounterLabel);
             this.TaskDirectoryPanel.Controls.Add(this.PendingTasksCounterLabel);
             this.TaskDirectoryPanel.Controls.Add(this.TotalTasksCounterLabel);
@@ -701,29 +701,29 @@ namespace MachineProject3_TMS
             this.TaskEditorTitleLabel.Text = "Task Editor";
             this.TaskEditorTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // InProgressCounterLabel
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label1.Location = new System.Drawing.Point(13, 207);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 64);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "--";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.InProgressCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.InProgressCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InProgressCounterLabel.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.InProgressCounterLabel.Location = new System.Drawing.Point(13, 207);
+            this.InProgressCounterLabel.Name = "InProgressCounterLabel";
+            this.InProgressCounterLabel.Size = new System.Drawing.Size(164, 64);
+            this.InProgressCounterLabel.TabIndex = 10;
+            this.InProgressCounterLabel.Text = "--";
+            this.InProgressCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label2
+            // InProgressLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(18, 251);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "IN PROGRESS";
+            this.InProgressLabel.AutoSize = true;
+            this.InProgressLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.InProgressLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
+            this.InProgressLabel.ForeColor = System.Drawing.Color.Silver;
+            this.InProgressLabel.Location = new System.Drawing.Point(18, 251);
+            this.InProgressLabel.Name = "InProgressLabel";
+            this.InProgressLabel.Size = new System.Drawing.Size(78, 15);
+            this.InProgressLabel.TabIndex = 2;
+            this.InProgressLabel.Text = "IN PROGRESS";
             // 
             // ProgramLogoPictureBox
             // 
@@ -955,7 +955,7 @@ namespace MachineProject3_TMS
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.Button ReturnToDashboardButton;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label InProgressLabel;
+        private System.Windows.Forms.Label InProgressCounterLabel;
     }
 }

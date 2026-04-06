@@ -264,7 +264,7 @@
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="SaveConfigCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 199</value>
+    <value>89, 199</value>
   </data>
   <data name="SaveConfigCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 17</value>
@@ -294,7 +294,7 @@
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="DemoModeCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 199</value>
+    <value>238, 199</value>
   </data>
   <data name="DemoModeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 17</value>
@@ -324,16 +324,16 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="ConfigGuideLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 65</value>
+    <value>72, 65</value>
   </data>
   <data name="ConfigGuideLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 17</value>
+    <value>375, 17</value>
   </data>
   <data name="ConfigGuideLabel.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="ConfigGuideLabel.Text" xml:space="preserve">
-    <value>Configure this according to your database settings.</value>
+    <value>Configure this according to your database credentials/settings.</value>
   </data>
   <data name="&gt;&gt;ConfigGuideLabel.Name" xml:space="preserve">
     <value>ConfigGuideLabel</value>
@@ -347,34 +347,34 @@
   <data name="&gt;&gt;ConfigGuideLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="DB.AutoSize" type="System.Boolean, mscorlib">
+  <data name="DBStatusLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="DB.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="DBStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
-  <data name="DB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 97</value>
+  <data name="DBStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 97</value>
   </data>
-  <data name="DB.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DBStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
   </data>
-  <data name="DB.TabIndex" type="System.Int32, mscorlib">
+  <data name="DBStatusLabel.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="DB.Text" xml:space="preserve">
+  <data name="DBStatusLabel.Text" xml:space="preserve">
     <value>DB STATUS: </value>
   </data>
-  <data name="&gt;&gt;DB.Name" xml:space="preserve">
-    <value>DB</value>
+  <data name="&gt;&gt;DBStatusLabel.Name" xml:space="preserve">
+    <value>DBStatusLabel</value>
   </data>
-  <data name="&gt;&gt;DB.Type" xml:space="preserve">
+  <data name="&gt;&gt;DBStatusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DB.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DBStatusLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;DB.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DBStatusLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -421,7 +421,7 @@
     <value>11</value>
   </data>
   <data name="LoginButton.Text" xml:space="preserve">
-    <value>Log-in</value>
+    <value>Connect</value>
   </data>
   <data name="LoginButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomLeft</value>

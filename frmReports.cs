@@ -54,7 +54,7 @@ namespace MachineProject3_TMS
             try
             {
                 // Retrieves tasks using the DAL filtered method which stacks filters.
-                var dt = TaskFunctions.GetFilteredTasks(_currentKeyword ?? string.Empty, _currentStatusFilter, _currentPriorityFilter);
+                var dt = DbConnection.DemoMode ? (DbConnection.DemoTasks != null ? DbConnection.DemoTasks.Copy() : new DataTable()) : TaskFunctions.GetFilteredTasks(_currentKeyword ?? string.Empty, _currentStatusFilter, _currentPriorityFilter);
                 _currentData = dt;
                 TaskDirectoryDataGridView.DataSource = dt;
                 TaskDirectoryDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
