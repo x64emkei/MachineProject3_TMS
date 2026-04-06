@@ -53,8 +53,8 @@ namespace MachineProject3_TMS
         {
             try
             {
-                // Retrieves tasks with explicit parameters to prevent SQL injection.
-                var dt = TaskFunctions.GetAllTasks(_currentKeyword ?? string.Empty, _currentStatusFilter, _currentPriorityFilter, null);
+                // Retrieves tasks using the DAL filtered method which stacks filters.
+                var dt = TaskFunctions.GetFilteredTasks(_currentKeyword ?? string.Empty, _currentStatusFilter, _currentPriorityFilter);
                 _currentData = dt;
                 TaskDirectoryDataGridView.DataSource = dt;
                 TaskDirectoryDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

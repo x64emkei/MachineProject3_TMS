@@ -23,6 +23,9 @@ namespace MachineProject3_TMS
         /// <param name="statusFilter">Filters by exact status when provided.</param>
         /// <param name="priorityFilter">Filters by exact priority when provided.</param>
         /// <param name="categoryId">Filters by category id when provided.</param>
+        /// <summary>
+        /// Retrieves all tasks with optional filters. Builds parameterized WHERE clauses depending on inputs.
+        /// </summary>
         public static DataTable GetAllTasks(string keyword = "", string statusFilter = null, string priorityFilter = null, int? categoryId = null)
         {
             // Returns demo-mode tasks when demo mode is enabled.
@@ -112,6 +115,60 @@ namespace MachineProject3_TMS
             }
 
             return dt;
+        }
+
+        /// <summary>
+        /// Retrieves tasks using explicit filters stacking. Public wrapper for UI reporting filters.
+        /// </summary>
+        public static DataTable GetFilteredTasks(string keyword, string statusFilter, string priorityFilter)
+        {
+            // Delegates to GetAllTasks which already supports stacking and parameterization.
+            return GetAllTasks(keyword ?? string.Empty, statusFilter, priorityFilter, null);
+        }
+
+        /// <summary>
+        /// Calculates task statistics (total, pending, completed) using efficient SQL counts.
+        /// </summary>
+        public static void GetTaskStats(out int total, out int pending, out int completed)
+        {
+            total = pending = completed = 0;
+            try
+            {
+                if (DbConnection.DemoMode)
+                {
+                    var dt = DbConnection.DemoTasks;
+                    total = dt.Rows.Count;
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        var s = r.Table.Columns.Contains("status") ? Convert.ToString(r["status"]) : string.Empty;
+                        if (string.Equals(s, "Pending", StringComparison.OrdinalIgnoreCase)) pending++;
+                        if (string.Equals(s, "Completed", StringComparison.OrdinalIgnoreCase)) completed++;
+                    }
+                    return;
+                }
+
+                using (MySqlConnection conn = DbConnection.GetConnection())
+                {
+                    conn.Open();
+                    string q = "SELECT COUNT(*) AS total, SUM(status='Pending') AS pending, SUM(status='Completed') AS completed FROM tasks";
+                    using (MySqlCommand cmd = new MySqlCommand(q, conn))
+                    {
+                        using (var rdr = cmd.ExecuteReader())
+                        {
+                            if (rdr.Read())
+                            {
+                                total = rdr["total"] != DBNull.Value ? Convert.ToInt32(rdr["total"]) : 0;
+                                pending = rdr["pending"] != DBNull.Value ? Convert.ToInt32(rdr["pending"]) : 0;
+                                completed = rdr["completed"] != DBNull.Value ? Convert.ToInt32(rdr["completed"]) : 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Database operation failed while calculating task statistics.", ex);
+            }
         }
 
         /// <summary>

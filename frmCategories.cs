@@ -23,6 +23,17 @@ namespace MachineProject3_TMS
             if (ReturnToDashboardButton != null) ReturnToDashboardButton.Click += ReturnToDashboardButton_Click;
             RefreshGrid();
 
+            // Wire clear and refresh buttons defensively.
+            try
+            {
+                if (ClearEditorButton != null) ClearEditorButton.Click += ClearEditorButton_Click;
+                if (RefreshDirectoryButton != null) RefreshDirectoryButton.Click += RefreshDirectoryButton_Click;
+            }
+            catch
+            {
+                // Swallows wiring errors to avoid breaking initialization.
+            }
+
             // Wire search button defensively if present by locating control by name.
             try
             {
@@ -51,6 +62,23 @@ namespace MachineProject3_TMS
                 CategoryViewerDataGridView.DataSource = DbConnection.DemoCategories.Copy();
             }
             ClearInputFields();
+            // Synchronizes category counters after grid refresh.
+            try
+            {
+                int total;
+                CategoryFunctions.GetCategoryStats(out total);
+                // Updates status strip or detail label with total categories if label exists.
+                try
+                {
+                    var lbl = this.Controls.Find("TotalCategoriesCounterLabel", true).FirstOrDefault() as Label;
+                    if (lbl != null) lbl.Text = total.ToString();
+                }
+                catch { }
+            }
+            catch
+            {
+                // Suppresses counter calculation errors.
+            }
             // Ensure the grid notifies on click
             CategoryViewerDataGridView.CellClick -= CategoryDataGridView_CellClick;
             CategoryViewerDataGridView.CellClick += CategoryDataGridView_CellClick;
@@ -203,6 +231,15 @@ namespace MachineProject3_TMS
                     DetailStatusMessageLabel.ForeColor = System.Drawing.Color.SeaGreen;
                     DetailStatusMessageLabel.Text = "Category successfully deleted.";
                     RefreshGrid();
+                    // Synchronizes category counters after CRUD.
+                    try
+                    {
+                        int total;
+                        CategoryFunctions.GetCategoryStats(out total);
+                        var lbl = this.Controls.Find("TotalCategoriesCounterLabel", true).FirstOrDefault() as Label;
+                        if (lbl != null) lbl.Text = total.ToString();
+                    }
+                    catch { }
                 }
                 catch (MySql.Data.MySqlClient.MySqlException mex) when (mex.Number == 1451)
                 {
@@ -224,6 +261,29 @@ namespace MachineProject3_TMS
             FrmDashboard dashboard = new FrmDashboard();
             dashboard.Show();
             this.Hide();
+        }
+
+        /// <summary>
+        /// Clears input fields when the Clear button is clicked.
+        /// </summary>
+        private void ClearEditorButton_Click(object sender, EventArgs e)
+        {
+            // Clears the editor input fields.
+            ClearInputFields();
+        }
+
+        /// <summary>
+        /// Refreshes the grid when the Refresh button is clicked.
+        /// </summary>
+        private void RefreshDirectoryButton_Click(object sender, EventArgs e)
+        {
+            // Refreshes the grid and clears the search box.
+            RefreshGrid();
+            try
+            {
+                if (SearchTextBox != null) SearchTextBox.Clear();
+            }
+            catch { }
         }
 
         /// <summary>

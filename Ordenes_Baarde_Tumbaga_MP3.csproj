@@ -263,6 +263,7 @@
     <None Include="media_resources\reports.png" />
     <None Include="media_resources\export.png" />
     <None Include="media_resources\print.png" />
+    <None Include="media_resources\sql.png" />
     <Content Include="tms.ico" />
   </ItemGroup>
   <ItemGroup>

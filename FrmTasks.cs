@@ -9,6 +9,19 @@ namespace MachineProject3_TMS
         public FrmTasks()
         {
             InitializeComponent();
+            // Ensures form load logic executes when the form is shown so categories populate immediately.
+            this.Load -= FrmTasks_Load;
+            this.Load += FrmTasks_Load;
+
+            // Populates category dropdown immediately so UI shows data when opened.
+            try
+            {
+                LoadCategories();
+            }
+            catch
+            {
+                // Suppresses errors during immediate load to allow form to initialize.
+            }
 
             // Wire up buttons
             AddEditorButton.Click += AddEditorButton_Click;
@@ -56,6 +69,20 @@ namespace MachineProject3_TMS
         {
             LoadCategories();
             RefreshGrid();
+
+            // Synchronizes counters on load.
+            try
+            {
+                int total, pending, completed;
+                TaskFunctions.GetTaskStats(out total, out pending, out completed);
+                if (TotalTasksCounterLabel != null) TotalTasksCounterLabel.Text = total.ToString();
+                if (PendingTasksCounterLabel != null) PendingTasksCounterLabel.Text = pending.ToString();
+                if (CompletedTasksCounterLabel != null) CompletedTasksCounterLabel.Text = completed.ToString();
+            }
+            catch
+            {
+                // Suppresses errors to avoid breaking UI during load; demo mode handled elsewhere.
+            }
         }
 
         /// <summary>
@@ -81,12 +108,27 @@ namespace MachineProject3_TMS
 
         private void LoadCategories()
         {
-            DataTable dt = CategoryFunctions.GetAllCategories();
-            // Expecting columns: category_id, category_name
-            CategoryComboBox.DataSource = dt;
-            CategoryComboBox.DisplayMember = "category_name";
-            CategoryComboBox.ValueMember = "category_id";
-            CategoryComboBox.SelectedIndex = -1;
+            try
+            {
+                DataTable dt = CategoryFunctions.GetAllCategories();
+                // Expecting columns: category_id, category_name
+                CategoryComboBox.DataSource = dt;
+                CategoryComboBox.DisplayMember = "category_name";
+                CategoryComboBox.ValueMember = "category_id";
+                CategoryComboBox.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                // Enables demo categories when DB fails to respond.
+                DbConnection.EnableDemoMode();
+                var demo = DbConnection.DemoCategories != null ? DbConnection.DemoCategories.Copy() : new DataTable();
+                CategoryComboBox.DataSource = demo;
+                CategoryComboBox.DisplayMember = demo.Columns.Contains("category_name") ? "category_name" : string.Empty;
+                CategoryComboBox.ValueMember = demo.Columns.Contains("category_id") ? "category_id" : string.Empty;
+                CategoryComboBox.SelectedIndex = -1;
+                EditorStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
+                EditorStatusMessageLabel.Text = "Failed to load categories from database.";
+            }
         }
 
         private void RefreshGrid()
@@ -173,6 +215,19 @@ namespace MachineProject3_TMS
                 EditorStatusMessageLabel.ForeColor = System.Drawing.Color.SeaGreen;
                 EditorStatusMessageLabel.Text = "Task successfully added.";
                 RefreshGrid();
+                // Synchronizes counters after CRUD operation.
+                try
+                {
+                    int total, pending, completed;
+                    TaskFunctions.GetTaskStats(out total, out pending, out completed);
+                    if (TotalTasksCounterLabel != null) TotalTasksCounterLabel.Text = total.ToString();
+                    if (PendingTasksCounterLabel != null) PendingTasksCounterLabel.Text = pending.ToString();
+                    if (CompletedTasksCounterLabel != null) CompletedTasksCounterLabel.Text = completed.ToString();
+                }
+                catch
+                {
+                    // Suppresses counter sync failures to avoid disturbing the user flow.
+                }
                 ClearFields();
             }
             catch (Exception ex)
@@ -210,6 +265,19 @@ namespace MachineProject3_TMS
                 EditorStatusMessageLabel.ForeColor = System.Drawing.Color.SeaGreen;
                 EditorStatusMessageLabel.Text = "Task successfully updated.";
                 RefreshGrid();
+                // Synchronizes counters after CRUD operation.
+                try
+                {
+                    int total, pending, completed;
+                    TaskFunctions.GetTaskStats(out total, out pending, out completed);
+                    if (TotalTasksCounterLabel != null) TotalTasksCounterLabel.Text = total.ToString();
+                    if (PendingTasksCounterLabel != null) PendingTasksCounterLabel.Text = pending.ToString();
+                    if (CompletedTasksCounterLabel != null) CompletedTasksCounterLabel.Text = completed.ToString();
+                }
+                catch
+                {
+                    // Suppresses counter sync failures to avoid disturbing the user flow.
+                }
                 ClearFields();
             }
             catch (Exception ex)
@@ -243,6 +311,19 @@ namespace MachineProject3_TMS
                     EditorStatusMessageLabel.ForeColor = System.Drawing.Color.SeaGreen;
                     EditorStatusMessageLabel.Text = "Task deleted.";
                     RefreshGrid();
+                    // Synchronizes counters after CRUD operation.
+                    try
+                    {
+                        int total, pending, completed;
+                        TaskFunctions.GetTaskStats(out total, out pending, out completed);
+                        if (TotalTasksCounterLabel != null) TotalTasksCounterLabel.Text = total.ToString();
+                        if (PendingTasksCounterLabel != null) PendingTasksCounterLabel.Text = pending.ToString();
+                        if (CompletedTasksCounterLabel != null) CompletedTasksCounterLabel.Text = completed.ToString();
+                    }
+                    catch
+                    {
+                        // Suppresses counter sync failures to avoid disturbing the user flow.
+                    }
                     ClearFields();
                 }
                 catch (Exception ex)
@@ -320,9 +401,12 @@ namespace MachineProject3_TMS
 
         private void TaskDirectoryDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = TaskDirectoryDataGridView.Rows[e.RowIndex];
+            if (e.RowIndex < 0) return; // Ignores header clicks defensively.
+
+            if (e.RowIndex >= TaskDirectoryDataGridView.Rows.Count) return; // Prevents out-of-range access.
+
+            DataGridViewRow row = TaskDirectoryDataGridView.Rows[e.RowIndex];
+            if (row == null || row.IsNewRow) return; // Ignores new rows.
                 // Use tolerant retrieval for both DB and displayed column headers
                 object idVal = TryGetCellValue(row, "task_id", "Task ID", "task_id ");
                 object titleVal = TryGetCellValue(row, "task_title", "Title");
@@ -342,6 +426,12 @@ namespace MachineProject3_TMS
                     DateTime parsed;
                     if (DateTime.TryParse(dueVal.ToString(), out parsed))
                         DueDatePicker.Value = parsed;
+                    else
+                        DueDatePicker.Value = DateTime.Now;
+                }
+                else
+                {
+                    DueDatePicker.Value = DateTime.Now;
                 }
 
                 PriorityComboBox.Text = priorityVal?.ToString() ?? "";
@@ -354,7 +444,15 @@ namespace MachineProject3_TMS
                     int catId;
                     if (int.TryParse(categoryIdVal.ToString(), out catId))
                     {
-                        CategoryComboBox.SelectedValue = catId;
+                        try
+                        {
+                            CategoryComboBox.SelectedValue = catId;
+                        }
+                        catch
+                        {
+                            // Fallback: try to set by displayed text
+                            CategoryComboBox.SelectedIndex = CategoryComboBox.FindStringExact(categoryIdVal.ToString());
+                        }
                     }
                     else
                     {
@@ -365,7 +463,6 @@ namespace MachineProject3_TMS
 
                 EditorStatusMessageLabel.Text = $"Selected task: {TaskTitleTextBox.Text}";
             }
-        }
 
         private void ReturnToDashboardButton_Click(object sender, EventArgs e)
         {

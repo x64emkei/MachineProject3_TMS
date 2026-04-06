@@ -114,5 +114,16 @@ namespace MachineProject3_TMS
             CurrentLoginTime = DateTime.MinValue;
             DemoMode = false;
         }
+
+        /// <summary>
+        /// Disables demo mode and clears in-memory demo datasets so the application uses the real database.
+        /// </summary>
+        public static void DisableDemoMode()
+        {
+            // Disables demo flag and releases demo data to ensure real DB is used for testing.
+            DemoMode = false;
+            DemoCategories = null;
+            DemoTasks = null;
+        }
     }
 }

@@ -117,16 +117,690 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="WelcomeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="WelcomeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="WelcomeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 30pt, style=Italic</value>
+  </data>
+  <data name="WelcomeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 29</value>
+  </data>
+  <data name="WelcomeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 54</value>
+  </data>
+  <data name="WelcomeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="WelcomeLabel.Text" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+  <data name="WelcomeLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;WelcomeLabel.Name" xml:space="preserve">
+    <value>WelcomeLabel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WelcomeLabel.Parent" xml:space="preserve">
+    <value>DashboardPanel</value>
+  </data>
+  <data name="&gt;&gt;WelcomeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DashboardLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="DashboardLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DashboardLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Light, 36pt</value>
+  </data>
+  <data name="DashboardLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 26</value>
+  </data>
+  <data name="DashboardLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 65</value>
+  </data>
+  <data name="DashboardLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="DashboardLabel.Text" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="&gt;&gt;DashboardLabel.Name" xml:space="preserve">
+    <value>DashboardLabel</value>
+  </data>
+  <data name="&gt;&gt;DashboardLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DashboardLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DashboardLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="DashboardPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="DescriptorLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="DescriptorLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 11.25pt, style=Bold, Italic</value>
+  </data>
+  <data name="DescriptorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 368</value>
+  </data>
+  <data name="DescriptorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 23</value>
+  </data>
+  <data name="DescriptorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="DescriptorLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;DescriptorLabel.Name" xml:space="preserve">
+    <value>DescriptorLabel</value>
+  </data>
+  <data name="&gt;&gt;DescriptorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DescriptorLabel.Parent" xml:space="preserve">
+    <value>DashboardPanel</value>
+  </data>
+  <data name="&gt;&gt;DescriptorLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SelectLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="SelectLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 13pt, style=Italic</value>
+  </data>
+  <data name="SelectLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>752, 53</value>
+  </data>
+  <data name="SelectLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 25</value>
+  </data>
+  <data name="SelectLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SelectLabel.Text" xml:space="preserve">
+    <value>Select an option to continue...</value>
+  </data>
+  <data name="SelectLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;SelectLabel.Name" xml:space="preserve">
+    <value>SelectLabel</value>
+  </data>
+  <data name="&gt;&gt;SelectLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectLabel.Parent" xml:space="preserve">
+    <value>DashboardPanel</value>
+  </data>
+  <data name="&gt;&gt;SelectLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LogoutSystemButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="LogoutSystemButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LogoutSystemButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="LogoutSystemButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 20.25pt</value>
+  </data>
+  <data name="LogoutSystemButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="LogoutSystemButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>772, 263</value>
+  </data>
+  <data name="LogoutSystemButton.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="LogoutSystemButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 91</value>
+  </data>
+  <data name="LogoutSystemButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LogoutSystemButton.Text" xml:space="preserve">
+    <value>&amp;Logout</value>
+  </data>
+  <data name="LogoutSystemButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
   <metadata name="DashboardButtonsToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>343, 17</value>
   </metadata>
+  <data name="LogoutSystemButton.ToolTip" xml:space="preserve">
+    <value>Securely log out of the current session and return to the login screen</value>
+  </data>
+  <data name="&gt;&gt;LogoutSystemButton.Name" xml:space="preserve">
+    <value>LogoutSystemButton</value>
+  </data>
+  <data name="&gt;&gt;LogoutSystemButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoutSystemButton.Parent" xml:space="preserve">
+    <value>DashboardPanel</value>
+  </data>
+  <data name="&gt;&gt;LogoutSystemButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AboutButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="AboutButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AboutButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="AboutButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 20.25pt</value>
+  </data>
+  <data name="AboutButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="AboutButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>772, 88</value>
+  </data>
+  <data name="AboutButton.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="AboutButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 169</value>
+  </data>
+  <data name="AboutButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="AboutButton.Text" xml:space="preserve">
+    <value>&amp;About</value>
+  </data>
+  <data name="AboutButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="AboutButton.ToolTip" xml:space="preserve">
+    <value>View system information, course details, and developer credits.</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.Name" xml:space="preserve">
+    <value>AboutButton</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.Parent" xml:space="preserve">
+    <value>DashboardPanel</value>
+  </data>
+  <data name="&gt;&gt;AboutButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CategoriesButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="CategoriesButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CategoriesButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="CategoriesButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 20.25pt</value>
+  </data>
+  <data name="CategoriesButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="CategoriesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>370, 88</value>
+  </data>
+  <data name="CategoriesButton.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="CategoriesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>396, 138</value>
+  </data>
+  <data name="CategoriesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CategoriesButton.Text" xml:space="preserve">
+    <value>&amp;Categories</value>
+  </data>
+  <data name="CategoriesButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="CategoriesButton.ToolTip" xml:space="preserve">
+    <value>Organize your tasks by creating, editing, and managing custom task categories.</value>
+  </data>
+  <data name="&gt;&gt;CategoriesButton.Name" xml:space="preserve">
+    <value>CategoriesButton</value>
+  </data>
+  <data name="&gt;&gt;CategoriesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CategoriesButton.Parent" xml:space="preserve">
+    <value>DashboardPanel</value>
+  </data>
+  <data name="&gt;&gt;CategoriesButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ReportTaskButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ReportTaskButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ReportTaskButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ReportTaskButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 20.25pt</value>
+  </data>
+  <data name="ReportTaskButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="ReportTaskButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>370, 232</value>
+  </data>
+  <data name="ReportTaskButton.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="ReportTaskButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>396, 122</value>
+  </data>
+  <data name="ReportTaskButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ReportTaskButton.Text" xml:space="preserve">
+    <value>&amp;View Reports</value>
+  </data>
+  <data name="ReportTaskButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="ReportTaskButton.ToolTip" xml:space="preserve">
+    <value>Generate filtered views of your tasks to monitor pending, completed, and overdue work.</value>
+  </data>
+  <data name="&gt;&gt;ReportTaskButton.Name" xml:space="preserve">
+    <value>ReportTaskButton</value>
+  </data>
+  <data name="&gt;&gt;ReportTaskButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReportTaskButton.Parent" xml:space="preserve">
+    <value>DashboardPanel</value>
+  </data>
+  <data name="&gt;&gt;ReportTaskButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TaskManagementButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="TaskManagementButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TaskManagementButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="TaskManagementButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 20.25pt</value>
+  </data>
+  <data name="TaskManagementButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="TaskManagementButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 88</value>
+  </data>
+  <data name="TaskManagementButton.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="TaskManagementButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 266</value>
+  </data>
+  <data name="TaskManagementButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TaskManagementButton.Text" xml:space="preserve">
+    <value>&amp;Task Management</value>
+  </data>
+  <data name="TaskManagementButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="TaskManagementButton.ToolTip" xml:space="preserve">
+    <value>Open the Task Management module to create, update, delete, and track your daily assignments.</value>
+  </data>
+  <data name="&gt;&gt;TaskManagementButton.Name" xml:space="preserve">
+    <value>TaskManagementButton</value>
+  </data>
+  <data name="&gt;&gt;TaskManagementButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TaskManagementButton.Parent" xml:space="preserve">
+    <value>DashboardPanel</value>
+  </data>
+  <data name="&gt;&gt;TaskManagementButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="DashboardPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 92</value>
+  </data>
+  <data name="DashboardPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1074, 435</value>
+  </data>
+  <data name="DashboardPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;DashboardPanel.Name" xml:space="preserve">
+    <value>DashboardPanel</value>
+  </data>
+  <data name="&gt;&gt;DashboardPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DashboardPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DashboardPanel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <metadata name="DashboardMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="DashboardMenuStrip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="LogoutSystemToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+L</value>
+  </data>
+  <data name="LogoutSystemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="LogoutSystemToolStripMenuItem.Text" xml:space="preserve">
+    <value>Log-out System</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+F4</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="exitToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 21</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="taskManagementToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+T</value>
+  </data>
+  <data name="taskManagementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="taskManagementToolStripMenuItem.Text" xml:space="preserve">
+    <value>Task Management</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 6</value>
+  </data>
+  <data name="categoriesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+G</value>
+  </data>
+  <data name="categoriesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="categoriesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="modulesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 21</value>
+  </data>
+  <data name="modulesToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Modules</value>
+  </data>
+  <data name="viewTasksToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+R</value>
+  </data>
+  <data name="viewTasksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="viewTasksToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;View Tasks</value>
+  </data>
+  <data name="reportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 21</value>
+  </data>
+  <data name="reportsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Reports</value>
+  </data>
+  <data name="aboutToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F1</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;About</value>
+  </data>
+  <data name="aboutToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="helpToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F12</value>
+  </data>
+  <data name="helpToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="helpToolStripMenuItem1.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="helpToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F1</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="helpToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="DashboardMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="DashboardMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1074, 25</value>
+  </data>
+  <data name="DashboardMenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="DashboardMenuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;DashboardMenuStrip.Name" xml:space="preserve">
+    <value>DashboardMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;DashboardMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DashboardMenuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DashboardMenuStrip.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="DashboardStatusBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>183, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="DashboardStatusBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Off</value>
+  </data>
+  <data name="DbConnectionStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="DbConnectionProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 16</value>
+  </data>
+  <data name="DashboardStatusBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 517</value>
+  </data>
+  <data name="DashboardStatusBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1074, 22</value>
+  </data>
+  <data name="DashboardStatusBar.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="DashboardStatusBar.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;DashboardStatusBar.Name" xml:space="preserve">
+    <value>DashboardStatusBar</value>
+  </data>
+  <data name="&gt;&gt;DashboardStatusBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DashboardStatusBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DashboardStatusBar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ProgramLogoPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 34</value>
+  </data>
+  <data name="ProgramLogoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 52</value>
+  </data>
+  <data name="ProgramLogoPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="ProgramLogoPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;ProgramLogoPictureBox.Name" xml:space="preserve">
+    <value>ProgramLogoPictureBox</value>
+  </data>
+  <data name="&gt;&gt;ProgramLogoPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProgramLogoPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ProgramLogoPictureBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DatabaseConnectionButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="DatabaseConnectionButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="DatabaseConnectionButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 11.25pt, style=Bold</value>
+  </data>
+  <data name="DatabaseConnectionButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="DatabaseConnectionButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>701, 44</value>
+  </data>
+  <data name="DatabaseConnectionButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 37</value>
+  </data>
+  <data name="DatabaseConnectionButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="DatabaseConnectionButton.Text" xml:space="preserve">
+    <value>DBconnect</value>
+  </data>
+  <data name="DatabaseConnectionButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;DatabaseConnectionButton.Name" xml:space="preserve">
+    <value>DatabaseConnectionButton</value>
+  </data>
+  <data name="&gt;&gt;DatabaseConnectionButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DatabaseConnectionButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DatabaseConnectionButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AboutUserButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="AboutUserButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="AboutUserButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 11.25pt, style=Bold</value>
+  </data>
+  <data name="AboutUserButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="AboutUserButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 44</value>
+  </data>
+  <data name="AboutUserButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 37</value>
+  </data>
+  <data name="AboutUserButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="AboutUserButton.Text" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="&gt;&gt;AboutUserButton.Name" xml:space="preserve">
+    <value>AboutUserButton</value>
+  </data>
+  <data name="&gt;&gt;AboutUserButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AboutUserButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AboutUserButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1074, 539</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIACpuQAAZgAAAICAAAABACAAKAgBAA+6AAAwMAAAAQAgAKglAAA3wgEAICAAAAEA
@@ -2343,5 +3017,113 @@
         AAAA8H8AAMABAACAAAAAAAAAAAAAAAAAPQAAgAcAAMABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACB
         AQAA4c8AAA==
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Task Management System | Dashboard</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
+    <value>fileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoutSystemToolStripMenuItem.Name" xml:space="preserve">
+    <value>LogoutSystemToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;LogoutSystemToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
+    <value>exitToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;modulesToolStripMenuItem.Name" xml:space="preserve">
+    <value>modulesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;modulesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;taskManagementToolStripMenuItem.Name" xml:space="preserve">
+    <value>taskManagementToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;taskManagementToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;categoriesToolStripMenuItem.Name" xml:space="preserve">
+    <value>categoriesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;categoriesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reportsToolStripMenuItem.Name" xml:space="preserve">
+    <value>reportsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reportsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;viewTasksToolStripMenuItem.Name" xml:space="preserve">
+    <value>viewTasksToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;viewTasksToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
+    <value>helpToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
+    <value>aboutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem1.Name" xml:space="preserve">
+    <value>helpToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DbConnectionStatusLabel.Name" xml:space="preserve">
+    <value>DbConnectionStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;DbConnectionStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DbConnectionProgressBar.Name" xml:space="preserve">
+    <value>DbConnectionProgressBar</value>
+  </data>
+  <data name="&gt;&gt;DbConnectionProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DashboardButtonsToolTip.Name" xml:space="preserve">
+    <value>DashboardButtonsToolTip</value>
+  </data>
+  <data name="&gt;&gt;DashboardButtonsToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmDashboard</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

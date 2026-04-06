@@ -69,10 +69,6 @@
             this.PendingTasksButton = new System.Windows.Forms.Button();
             this.DoneTasksButton = new System.Windows.Forms.Button();
             this.AllTasksButton = new System.Windows.Forms.Button();
-            this.ExportReportButton = new System.Windows.Forms.Button();
-            this.SearchDirectoryButton = new System.Windows.Forms.Button();
-            this.PrintReportButton = new System.Windows.Forms.Button();
-            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.ExportToolsLabel = new System.Windows.Forms.Label();
             this.LiveStatusLabel = new System.Windows.Forms.Label();
@@ -91,6 +87,10 @@
             this.TaskEditorTitleLabel = new System.Windows.Forms.Label();
             this.MainTitleLabel = new System.Windows.Forms.Label();
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.ExportReportButton = new System.Windows.Forms.Button();
+            this.SearchDirectoryButton = new System.Windows.Forms.Button();
+            this.PrintReportButton = new System.Windows.Forms.Button();
+            this.RefreshDirectoryButton = new System.Windows.Forms.Button();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).BeginInit();
             this.menuTasks.SuspendLayout();
@@ -103,126 +103,82 @@
             // 
             // TotalLabel
             // 
-            this.TotalLabel.AutoSize = true;
+            resources.ApplyResources(this.TotalLabel, "TotalLabel");
             this.TotalLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.TotalLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.TotalLabel.ForeColor = System.Drawing.Color.Silver;
-            this.TotalLabel.Location = new System.Drawing.Point(32, 472);
             this.TotalLabel.Name = "TotalLabel";
-            this.TotalLabel.Size = new System.Drawing.Size(74, 15);
-            this.TotalLabel.TabIndex = 2;
-            this.TotalLabel.Text = "TOTAL TASKS";
             // 
             // PendingLabel
             // 
-            this.PendingLabel.AutoSize = true;
+            resources.ApplyResources(this.PendingLabel, "PendingLabel");
             this.PendingLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.PendingLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.PendingLabel.ForeColor = System.Drawing.Color.Silver;
-            this.PendingLabel.Location = new System.Drawing.Point(32, 555);
             this.PendingLabel.Name = "PendingLabel";
-            this.PendingLabel.Size = new System.Drawing.Size(57, 15);
-            this.PendingLabel.TabIndex = 2;
-            this.PendingLabel.Text = "PENDING";
             // 
             // CompletedLabel
             // 
-            this.CompletedLabel.AutoSize = true;
+            resources.ApplyResources(this.CompletedLabel, "CompletedLabel");
             this.CompletedLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.CompletedLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.CompletedLabel.ForeColor = System.Drawing.Color.Silver;
-            this.CompletedLabel.Location = new System.Drawing.Point(136, 554);
             this.CompletedLabel.Name = "CompletedLabel";
-            this.CompletedLabel.Size = new System.Drawing.Size(72, 15);
-            this.CompletedLabel.TabIndex = 2;
-            this.CompletedLabel.Text = "COMPLETED";
             // 
             // CompletedTasksCounterLabel
             // 
+            resources.ApplyResources(this.CompletedTasksCounterLabel, "CompletedTasksCounterLabel");
             this.CompletedTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.CompletedTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompletedTasksCounterLabel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.CompletedTasksCounterLabel.Location = new System.Drawing.Point(131, 513);
             this.CompletedTasksCounterLabel.Name = "CompletedTasksCounterLabel";
-            this.CompletedTasksCounterLabel.Size = new System.Drawing.Size(98, 59);
-            this.CompletedTasksCounterLabel.TabIndex = 10;
-            this.CompletedTasksCounterLabel.Text = "--";
-            this.CompletedTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // PendingTasksCounterLabel
             // 
+            resources.ApplyResources(this.PendingTasksCounterLabel, "PendingTasksCounterLabel");
             this.PendingTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.PendingTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PendingTasksCounterLabel.ForeColor = System.Drawing.Color.DarkOrange;
-            this.PendingTasksCounterLabel.Location = new System.Drawing.Point(27, 513);
             this.PendingTasksCounterLabel.Name = "PendingTasksCounterLabel";
-            this.PendingTasksCounterLabel.Size = new System.Drawing.Size(98, 59);
-            this.PendingTasksCounterLabel.TabIndex = 10;
-            this.PendingTasksCounterLabel.Text = "--";
-            this.PendingTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // TotalTasksCounterLabel
             // 
+            resources.ApplyResources(this.TotalTasksCounterLabel, "TotalTasksCounterLabel");
             this.TotalTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.TotalTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalTasksCounterLabel.ForeColor = System.Drawing.Color.MediumPurple;
-            this.TotalTasksCounterLabel.Location = new System.Drawing.Point(27, 448);
             this.TotalTasksCounterLabel.Name = "TotalTasksCounterLabel";
-            this.TotalTasksCounterLabel.Size = new System.Drawing.Size(304, 55);
-            this.TotalTasksCounterLabel.TabIndex = 10;
-            this.TotalTasksCounterLabel.Text = "--";
-            this.TotalTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // TaskDirectoryLabel
             // 
+            resources.ApplyResources(this.TaskDirectoryLabel, "TaskDirectoryLabel");
             this.TaskDirectoryLabel.BackColor = System.Drawing.Color.Orange;
-            this.TaskDirectoryLabel.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TaskDirectoryLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TaskDirectoryLabel.Location = new System.Drawing.Point(0, 0);
             this.TaskDirectoryLabel.Name = "TaskDirectoryLabel";
-            this.TaskDirectoryLabel.Size = new System.Drawing.Size(708, 44);
-            this.TaskDirectoryLabel.TabIndex = 0;
-            this.TaskDirectoryLabel.Text = "Task Directory";
-            this.TaskDirectoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TaskDirectoryDataGridView
             // 
             this.TaskDirectoryDataGridView.AllowUserToAddRows = false;
             this.TaskDirectoryDataGridView.AllowUserToDeleteRows = false;
             this.TaskDirectoryDataGridView.AllowUserToOrderColumns = true;
-            this.TaskDirectoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            resources.ApplyResources(this.TaskDirectoryDataGridView, "TaskDirectoryDataGridView");
+            this.TaskDirectoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TaskDirectoryDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.TaskDirectoryDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TaskDirectoryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TaskDirectoryDataGridView.Location = new System.Drawing.Point(15, 53);
+            this.TaskDirectoryDataGridView.MultiSelect = false;
             this.TaskDirectoryDataGridView.Name = "TaskDirectoryDataGridView";
-            this.TaskDirectoryDataGridView.Size = new System.Drawing.Size(666, 590);
-            this.TaskDirectoryDataGridView.TabIndex = 3;
+            this.TaskDirectoryDataGridView.ReadOnly = true;
             // 
             // SearchLabel
             // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI", 11F);
+            resources.ApplyResources(this.SearchLabel, "SearchLabel");
             this.SearchLabel.ForeColor = System.Drawing.Color.Silver;
-            this.SearchLabel.Location = new System.Drawing.Point(23, 78);
             this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(53, 20);
-            this.SearchLabel.TabIndex = 2;
-            this.SearchLabel.Text = "Search";
             // 
             // menuTasks
             // 
-            this.menuTasks.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.menuTasks, "menuTasks");
             this.menuTasks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.recordToolStripMenuItem,
             this.refreshToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.menuTasks.Location = new System.Drawing.Point(0, 0);
             this.menuTasks.Name = "menuTasks";
-            this.menuTasks.Size = new System.Drawing.Size(1102, 25);
-            this.menuTasks.TabIndex = 9;
-            this.menuTasks.Text = "menuTasks";
             // 
             // fileToolStripMenuItem
             // 
@@ -232,34 +188,27 @@
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
-            this.fileToolStripMenuItem.Text = "&File";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // returnToDashboardToolStripMenuItem
             // 
             this.returnToDashboardToolStripMenuItem.Name = "returnToDashboardToolStripMenuItem";
-            this.returnToDashboardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.returnToDashboardToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.returnToDashboardToolStripMenuItem.Text = "Return to Dashboard";
+            resources.ApplyResources(this.returnToDashboardToolStripMenuItem, "returnToDashboardToolStripMenuItem");
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.logoutToolStripMenuItem.Text = "Log-out";
+            resources.ApplyResources(this.logoutToolStripMenuItem, "logoutToolStripMenuItem");
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(240, 6);
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             // 
             // recordToolStripMenuItem
             // 
@@ -268,29 +217,22 @@
             this.completedTasksToolStripMenuItem,
             this.pendingTasksToolStripMenuItem});
             this.recordToolStripMenuItem.Name = "recordToolStripMenuItem";
-            this.recordToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
-            this.recordToolStripMenuItem.Text = "F&ilter";
+            resources.ApplyResources(this.recordToolStripMenuItem, "recordToolStripMenuItem");
             // 
             // allTasksToolStripMenuItem
             // 
             this.allTasksToolStripMenuItem.Name = "allTasksToolStripMenuItem";
-            this.allTasksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.allTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.allTasksToolStripMenuItem.Text = "A&ll Tasks";
+            resources.ApplyResources(this.allTasksToolStripMenuItem, "allTasksToolStripMenuItem");
             // 
             // completedTasksToolStripMenuItem
             // 
             this.completedTasksToolStripMenuItem.Name = "completedTasksToolStripMenuItem";
-            this.completedTasksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.completedTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.completedTasksToolStripMenuItem.Text = "&Completed Tasks";
+            resources.ApplyResources(this.completedTasksToolStripMenuItem, "completedTasksToolStripMenuItem");
             // 
             // pendingTasksToolStripMenuItem
             // 
             this.pendingTasksToolStripMenuItem.Name = "pendingTasksToolStripMenuItem";
-            this.pendingTasksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.pendingTasksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.pendingTasksToolStripMenuItem.Text = "&Pending Tasks";
+            resources.ApplyResources(this.pendingTasksToolStripMenuItem, "pendingTasksToolStripMenuItem");
             // 
             // refreshToolStripMenuItem
             // 
@@ -300,35 +242,27 @@
             this.categoryManagementToolStripMenuItem,
             this.reportsToolStripMenuItem});
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
-            this.refreshToolStripMenuItem.Text = "&View";
+            resources.ApplyResources(this.refreshToolStripMenuItem, "refreshToolStripMenuItem");
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(256, 22);
-            this.toolStripMenuItem3.Text = "Refresh/View All Tasks";
+            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(253, 6);
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             // 
             // categoryManagementToolStripMenuItem
             // 
             this.categoryManagementToolStripMenuItem.Name = "categoryManagementToolStripMenuItem";
-            this.categoryManagementToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-            this.categoryManagementToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.categoryManagementToolStripMenuItem.Text = "Category Management";
+            resources.ApplyResources(this.categoryManagementToolStripMenuItem, "categoryManagementToolStripMenuItem");
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.reportsToolStripMenuItem.Text = "Reports";
+            resources.ApplyResources(this.reportsToolStripMenuItem, "reportsToolStripMenuItem");
             // 
             // helpToolStripMenuItem
             // 
@@ -336,67 +270,53 @@
             this.aboutToolStripMenuItem,
             this.helpToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
-            this.helpToolStripMenuItem.Text = "&Help";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.aboutToolStripMenuItem.Text = "&About";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
-            this.helpToolStripMenuItem1.Text = "&Help";
+            resources.ApplyResources(this.helpToolStripMenuItem1, "helpToolStripMenuItem1");
             // 
             // MainPanel
             // 
+            resources.ApplyResources(this.MainPanel, "MainPanel");
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.MainPanel.Controls.Add(this.TaskDirectoryPanel);
             this.MainPanel.Controls.Add(this.ReportControlPanel);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.MainPanel.Location = new System.Drawing.Point(0, 91);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Padding = new System.Windows.Forms.Padding(20);
-            this.MainPanel.Size = new System.Drawing.Size(1102, 724);
-            this.MainPanel.TabIndex = 11;
             // 
             // TaskDirectoryPanel
             // 
+            resources.ApplyResources(this.TaskDirectoryPanel, "TaskDirectoryPanel");
             this.TaskDirectoryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.TaskDirectoryPanel.Controls.Add(this.statusStripTasks);
             this.TaskDirectoryPanel.Controls.Add(this.TaskDirectoryLabel);
             this.TaskDirectoryPanel.Controls.Add(this.TaskDirectoryDataGridView);
-            this.TaskDirectoryPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TaskDirectoryPanel.Location = new System.Drawing.Point(386, 20);
             this.TaskDirectoryPanel.Name = "TaskDirectoryPanel";
-            this.TaskDirectoryPanel.Size = new System.Drawing.Size(696, 684);
-            this.TaskDirectoryPanel.TabIndex = 0;
             // 
             // statusStripTasks
             // 
+            this.statusStripTasks.BackColor = System.Drawing.SystemColors.Control;
             this.statusStripTasks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TaskDirectoryStatusMessage,
             this.DatabaseStatusMessage});
-            this.statusStripTasks.Location = new System.Drawing.Point(0, 662);
+            resources.ApplyResources(this.statusStripTasks, "statusStripTasks");
             this.statusStripTasks.Name = "statusStripTasks";
-            this.statusStripTasks.Size = new System.Drawing.Size(696, 22);
-            this.statusStripTasks.TabIndex = 6;
-            this.statusStripTasks.Text = "statusStripTasks";
             // 
             // TaskDirectoryStatusMessage
             // 
             this.TaskDirectoryStatusMessage.Name = "TaskDirectoryStatusMessage";
-            this.TaskDirectoryStatusMessage.Size = new System.Drawing.Size(0, 17);
+            resources.ApplyResources(this.TaskDirectoryStatusMessage, "TaskDirectoryStatusMessage");
             // 
             // DatabaseStatusMessage
             // 
             this.DatabaseStatusMessage.Name = "DatabaseStatusMessage";
-            this.DatabaseStatusMessage.Size = new System.Drawing.Size(0, 17);
+            resources.ApplyResources(this.DatabaseStatusMessage, "DatabaseStatusMessage");
             // 
             // ReportControlPanel
             // 
@@ -435,422 +355,279 @@
             this.ReportControlPanel.Controls.Add(this.FilterByLabel);
             this.ReportControlPanel.Controls.Add(this.SearchLabel);
             this.ReportControlPanel.Controls.Add(this.TaskEditorTitleLabel);
-            this.ReportControlPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.ReportControlPanel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ReportControlPanel.Location = new System.Drawing.Point(20, 20);
+            resources.ApplyResources(this.ReportControlPanel, "ReportControlPanel");
             this.ReportControlPanel.Name = "ReportControlPanel";
-            this.ReportControlPanel.Size = new System.Drawing.Size(360, 684);
-            this.ReportControlPanel.TabIndex = 0;
             // 
             // LowPriorityButton
             // 
             this.LowPriorityButton.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.LowPriorityButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LowPriorityButton.FlatAppearance.BorderSize = 0;
-            this.LowPriorityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LowPriorityButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LowPriorityButton.Location = new System.Drawing.Point(235, 274);
+            resources.ApplyResources(this.LowPriorityButton, "LowPriorityButton");
             this.LowPriorityButton.Name = "LowPriorityButton";
-            this.LowPriorityButton.Size = new System.Drawing.Size(96, 25);
-            this.LowPriorityButton.TabIndex = 11;
-            this.LowPriorityButton.Text = "&LOW";
             this.LowPriorityButton.UseVisualStyleBackColor = false;
+            this.LowPriorityButton.Click += new System.EventHandler(this.LowPriorityButton_Click);
             // 
             // MediumPriorityButton
             // 
             this.MediumPriorityButton.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.MediumPriorityButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MediumPriorityButton.FlatAppearance.BorderSize = 0;
-            this.MediumPriorityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MediumPriorityButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MediumPriorityButton.Location = new System.Drawing.Point(131, 274);
+            resources.ApplyResources(this.MediumPriorityButton, "MediumPriorityButton");
             this.MediumPriorityButton.Name = "MediumPriorityButton";
-            this.MediumPriorityButton.Size = new System.Drawing.Size(98, 25);
-            this.MediumPriorityButton.TabIndex = 11;
-            this.MediumPriorityButton.Text = "&MEDIUM";
             this.MediumPriorityButton.UseVisualStyleBackColor = false;
+            this.MediumPriorityButton.Click += new System.EventHandler(this.MediumPriorityButton_Click);
             // 
             // HighPriorityButton
             // 
             this.HighPriorityButton.BackColor = System.Drawing.Color.Firebrick;
+            this.HighPriorityButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HighPriorityButton.FlatAppearance.BorderSize = 0;
-            this.HighPriorityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HighPriorityButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HighPriorityButton.Location = new System.Drawing.Point(27, 274);
+            resources.ApplyResources(this.HighPriorityButton, "HighPriorityButton");
             this.HighPriorityButton.Name = "HighPriorityButton";
-            this.HighPriorityButton.Size = new System.Drawing.Size(98, 25);
-            this.HighPriorityButton.TabIndex = 11;
-            this.HighPriorityButton.Text = "&HIGH";
             this.HighPriorityButton.UseVisualStyleBackColor = false;
+            this.HighPriorityButton.Click += new System.EventHandler(this.HighPriorityButton_Click);
             // 
             // OverdueTasksButton
             // 
             this.OverdueTasksButton.BackColor = System.Drawing.Color.Red;
+            this.OverdueTasksButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OverdueTasksButton.FlatAppearance.BorderSize = 0;
-            this.OverdueTasksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OverdueTasksButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OverdueTasksButton.Location = new System.Drawing.Point(235, 221);
+            resources.ApplyResources(this.OverdueTasksButton, "OverdueTasksButton");
             this.OverdueTasksButton.Name = "OverdueTasksButton";
-            this.OverdueTasksButton.Size = new System.Drawing.Size(96, 25);
-            this.OverdueTasksButton.TabIndex = 11;
-            this.OverdueTasksButton.Text = "OVERDUE";
             this.OverdueTasksButton.UseVisualStyleBackColor = false;
+            this.OverdueTasksButton.Click += new System.EventHandler(this.OverdueTasksButton_Click);
             // 
             // PendingTasksButton
             // 
             this.PendingTasksButton.BackColor = System.Drawing.Color.Goldenrod;
+            this.PendingTasksButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PendingTasksButton.FlatAppearance.BorderSize = 0;
-            this.PendingTasksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PendingTasksButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PendingTasksButton.Location = new System.Drawing.Point(148, 221);
+            resources.ApplyResources(this.PendingTasksButton, "PendingTasksButton");
             this.PendingTasksButton.Name = "PendingTasksButton";
-            this.PendingTasksButton.Size = new System.Drawing.Size(81, 25);
-            this.PendingTasksButton.TabIndex = 11;
-            this.PendingTasksButton.Text = "&PENDING";
             this.PendingTasksButton.UseVisualStyleBackColor = false;
+            this.PendingTasksButton.Click += new System.EventHandler(this.PendingTasksButton_Click);
             // 
             // DoneTasksButton
             // 
             this.DoneTasksButton.BackColor = System.Drawing.Color.SeaGreen;
+            this.DoneTasksButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoneTasksButton.FlatAppearance.BorderSize = 0;
-            this.DoneTasksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DoneTasksButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoneTasksButton.Location = new System.Drawing.Point(82, 221);
+            resources.ApplyResources(this.DoneTasksButton, "DoneTasksButton");
             this.DoneTasksButton.Name = "DoneTasksButton";
-            this.DoneTasksButton.Size = new System.Drawing.Size(60, 25);
-            this.DoneTasksButton.TabIndex = 11;
-            this.DoneTasksButton.Text = "DO&NE";
             this.DoneTasksButton.UseVisualStyleBackColor = false;
+            this.DoneTasksButton.Click += new System.EventHandler(this.DoneTasksButton_Click);
             // 
             // AllTasksButton
             // 
             this.AllTasksButton.BackColor = System.Drawing.Color.DimGray;
+            this.AllTasksButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AllTasksButton.FlatAppearance.BorderSize = 0;
-            this.AllTasksButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AllTasksButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllTasksButton.Location = new System.Drawing.Point(27, 221);
+            resources.ApplyResources(this.AllTasksButton, "AllTasksButton");
             this.AllTasksButton.Name = "AllTasksButton";
-            this.AllTasksButton.Size = new System.Drawing.Size(49, 25);
-            this.AllTasksButton.TabIndex = 11;
-            this.AllTasksButton.Text = "A&LL";
             this.AllTasksButton.UseVisualStyleBackColor = false;
-            // 
-            // ExportReportButton
-            // 
-            this.ExportReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ExportReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExportReportButton.FlatAppearance.BorderSize = 0;
-            this.ExportReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExportReportButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExportReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ExportReportButton.Image = global::MachineProject3_TMS.Properties.Resources.export;
-            this.ExportReportButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.ExportReportButton.Location = new System.Drawing.Point(27, 360);
-            this.ExportReportButton.Name = "ExportReportButton";
-            this.ExportReportButton.Size = new System.Drawing.Size(149, 51);
-            this.ExportReportButton.TabIndex = 9;
-            this.ExportReportButton.Text = "&EXPORT";
-            this.ExportReportButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ExportReportButton.UseVisualStyleBackColor = false;
-            // 
-            // SearchDirectoryButton
-            // 
-            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
-            this.SearchDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
-            this.SearchDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.SearchDirectoryButton.Location = new System.Drawing.Point(27, 137);
-            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
-            this.SearchDirectoryButton.Size = new System.Drawing.Size(149, 51);
-            this.SearchDirectoryButton.TabIndex = 9;
-            this.SearchDirectoryButton.Text = "&SEARCH";
-            this.SearchDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
-            // 
-            // PrintReportButton
-            // 
-            this.PrintReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.PrintReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PrintReportButton.FlatAppearance.BorderSize = 0;
-            this.PrintReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintReportButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrintReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PrintReportButton.Image = global::MachineProject3_TMS.Properties.Resources.print;
-            this.PrintReportButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.PrintReportButton.Location = new System.Drawing.Point(182, 360);
-            this.PrintReportButton.Name = "PrintReportButton";
-            this.PrintReportButton.Size = new System.Drawing.Size(149, 51);
-            this.PrintReportButton.TabIndex = 7;
-            this.PrintReportButton.Text = "&PRINT";
-            this.PrintReportButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.PrintReportButton.UseVisualStyleBackColor = false;
-            // 
-            // RefreshDirectoryButton
-            // 
-            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
-            this.RefreshDirectoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RefreshDirectoryButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
-            this.RefreshDirectoryButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.RefreshDirectoryButton.Location = new System.Drawing.Point(182, 137);
-            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
-            this.RefreshDirectoryButton.Size = new System.Drawing.Size(149, 51);
-            this.RefreshDirectoryButton.TabIndex = 7;
-            this.RefreshDirectoryButton.Text = "&REFRESH";
-            this.RefreshDirectoryButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
+            this.AllTasksButton.Click += new System.EventHandler(this.AllTasksButton_Click);
             // 
             // SearchTextBox
             // 
             this.SearchTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.SearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SearchTextBox.CausesValidation = false;
-            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.SearchTextBox, "SearchTextBox");
             this.SearchTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.SearchTextBox.Location = new System.Drawing.Point(27, 102);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(304, 29);
-            this.SearchTextBox.TabIndex = 3;
             // 
             // ExportToolsLabel
             // 
             this.ExportToolsLabel.CausesValidation = false;
             this.ExportToolsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExportToolsLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.ExportToolsLabel, "ExportToolsLabel");
             this.ExportToolsLabel.ForeColor = System.Drawing.Color.DarkOrange;
-            this.ExportToolsLabel.Location = new System.Drawing.Point(24, 307);
             this.ExportToolsLabel.Name = "ExportToolsLabel";
-            this.ExportToolsLabel.Size = new System.Drawing.Size(307, 29);
-            this.ExportToolsLabel.TabIndex = 10;
-            this.ExportToolsLabel.Text = "EXPORT TOOLS";
-            this.ExportToolsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LiveStatusLabel
             // 
             this.LiveStatusLabel.CausesValidation = false;
             this.LiveStatusLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LiveStatusLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.LiveStatusLabel, "LiveStatusLabel");
             this.LiveStatusLabel.ForeColor = System.Drawing.Color.DarkOrange;
-            this.LiveStatusLabel.Location = new System.Drawing.Point(27, 416);
             this.LiveStatusLabel.Name = "LiveStatusLabel";
-            this.LiveStatusLabel.Size = new System.Drawing.Size(304, 29);
-            this.LiveStatusLabel.TabIndex = 10;
-            this.LiveStatusLabel.Text = "LIVE STATUS";
-            this.LiveStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // EditorStatusMessageLabel
             // 
             this.EditorStatusMessageLabel.CausesValidation = false;
             this.EditorStatusMessageLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditorStatusMessageLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.EditorStatusMessageLabel, "EditorStatusMessageLabel");
             this.EditorStatusMessageLabel.ForeColor = System.Drawing.Color.DarkOrange;
-            this.EditorStatusMessageLabel.Location = new System.Drawing.Point(24, 53);
             this.EditorStatusMessageLabel.Name = "EditorStatusMessageLabel";
-            this.EditorStatusMessageLabel.Size = new System.Drawing.Size(307, 29);
-            this.EditorStatusMessageLabel.TabIndex = 10;
-            this.EditorStatusMessageLabel.Text = "DATA CONTROLS";
-            this.EditorStatusMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LowPriorityTasksLabel
             // 
-            this.LowPriorityTasksLabel.AutoSize = true;
+            resources.ApplyResources(this.LowPriorityTasksLabel, "LowPriorityTasksLabel");
             this.LowPriorityTasksLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.LowPriorityTasksLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.LowPriorityTasksLabel.ForeColor = System.Drawing.Color.Silver;
-            this.LowPriorityTasksLabel.Location = new System.Drawing.Point(240, 642);
             this.LowPriorityTasksLabel.Name = "LowPriorityTasksLabel";
-            this.LowPriorityTasksLabel.Size = new System.Drawing.Size(33, 15);
-            this.LowPriorityTasksLabel.TabIndex = 2;
-            this.LowPriorityTasksLabel.Text = "LOW";
             // 
             // MediumPriorityTasksLabel
             // 
-            this.MediumPriorityTasksLabel.AutoSize = true;
+            resources.ApplyResources(this.MediumPriorityTasksLabel, "MediumPriorityTasksLabel");
             this.MediumPriorityTasksLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.MediumPriorityTasksLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.MediumPriorityTasksLabel.ForeColor = System.Drawing.Color.Silver;
-            this.MediumPriorityTasksLabel.Location = new System.Drawing.Point(136, 642);
             this.MediumPriorityTasksLabel.Name = "MediumPriorityTasksLabel";
-            this.MediumPriorityTasksLabel.Size = new System.Drawing.Size(52, 15);
-            this.MediumPriorityTasksLabel.TabIndex = 2;
-            this.MediumPriorityTasksLabel.Text = "MEDIUM";
             // 
             // HighPriorityTasksLabel
             // 
-            this.HighPriorityTasksLabel.AutoSize = true;
+            resources.ApplyResources(this.HighPriorityTasksLabel, "HighPriorityTasksLabel");
             this.HighPriorityTasksLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.HighPriorityTasksLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.HighPriorityTasksLabel.ForeColor = System.Drawing.Color.Silver;
-            this.HighPriorityTasksLabel.Location = new System.Drawing.Point(32, 642);
             this.HighPriorityTasksLabel.Name = "HighPriorityTasksLabel";
-            this.HighPriorityTasksLabel.Size = new System.Drawing.Size(34, 15);
-            this.HighPriorityTasksLabel.TabIndex = 2;
-            this.HighPriorityTasksLabel.Text = "HIGH";
             // 
             // OverdueTasksLabel
             // 
-            this.OverdueTasksLabel.AutoSize = true;
+            resources.ApplyResources(this.OverdueTasksLabel, "OverdueTasksLabel");
             this.OverdueTasksLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.OverdueTasksLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.OverdueTasksLabel.ForeColor = System.Drawing.Color.Silver;
-            this.OverdueTasksLabel.Location = new System.Drawing.Point(240, 554);
             this.OverdueTasksLabel.Name = "OverdueTasksLabel";
-            this.OverdueTasksLabel.Size = new System.Drawing.Size(58, 15);
-            this.OverdueTasksLabel.TabIndex = 2;
-            this.OverdueTasksLabel.Text = "OVERDUE";
             // 
             // OverdueTasksCounterLabel
             // 
+            resources.ApplyResources(this.OverdueTasksCounterLabel, "OverdueTasksCounterLabel");
             this.OverdueTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.OverdueTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OverdueTasksCounterLabel.ForeColor = System.Drawing.Color.Crimson;
-            this.OverdueTasksCounterLabel.Location = new System.Drawing.Point(235, 513);
             this.OverdueTasksCounterLabel.Name = "OverdueTasksCounterLabel";
-            this.OverdueTasksCounterLabel.Size = new System.Drawing.Size(98, 59);
-            this.OverdueTasksCounterLabel.TabIndex = 10;
-            this.OverdueTasksCounterLabel.Text = "--";
-            this.OverdueTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // LowPriorityCounterLabel
             // 
+            resources.ApplyResources(this.LowPriorityCounterLabel, "LowPriorityCounterLabel");
             this.LowPriorityCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.LowPriorityCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LowPriorityCounterLabel.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LowPriorityCounterLabel.Location = new System.Drawing.Point(235, 582);
             this.LowPriorityCounterLabel.Name = "LowPriorityCounterLabel";
-            this.LowPriorityCounterLabel.Size = new System.Drawing.Size(96, 81);
-            this.LowPriorityCounterLabel.TabIndex = 10;
-            this.LowPriorityCounterLabel.Text = "--";
-            this.LowPriorityCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // MediumTasksCounterLabel
             // 
+            resources.ApplyResources(this.MediumTasksCounterLabel, "MediumTasksCounterLabel");
             this.MediumTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.MediumTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MediumTasksCounterLabel.ForeColor = System.Drawing.Color.Goldenrod;
-            this.MediumTasksCounterLabel.Location = new System.Drawing.Point(131, 582);
             this.MediumTasksCounterLabel.Name = "MediumTasksCounterLabel";
-            this.MediumTasksCounterLabel.Size = new System.Drawing.Size(98, 81);
-            this.MediumTasksCounterLabel.TabIndex = 10;
-            this.MediumTasksCounterLabel.Text = "--";
-            this.MediumTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // HighPriorityTasksCounterLabel
             // 
+            resources.ApplyResources(this.HighPriorityTasksCounterLabel, "HighPriorityTasksCounterLabel");
             this.HighPriorityTasksCounterLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.HighPriorityTasksCounterLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HighPriorityTasksCounterLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.HighPriorityTasksCounterLabel.Location = new System.Drawing.Point(27, 582);
             this.HighPriorityTasksCounterLabel.Name = "HighPriorityTasksCounterLabel";
-            this.HighPriorityTasksCounterLabel.Size = new System.Drawing.Size(98, 81);
-            this.HighPriorityTasksCounterLabel.TabIndex = 10;
-            this.HighPriorityTasksCounterLabel.Text = "--";
-            this.HighPriorityTasksCounterLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // QuickPriorityLabel
             // 
-            this.QuickPriorityLabel.AutoSize = true;
-            this.QuickPriorityLabel.Font = new System.Drawing.Font("Segoe UI", 11F);
+            resources.ApplyResources(this.QuickPriorityLabel, "QuickPriorityLabel");
             this.QuickPriorityLabel.ForeColor = System.Drawing.Color.Silver;
-            this.QuickPriorityLabel.Location = new System.Drawing.Point(23, 251);
             this.QuickPriorityLabel.Name = "QuickPriorityLabel";
-            this.QuickPriorityLabel.Size = new System.Drawing.Size(97, 20);
-            this.QuickPriorityLabel.TabIndex = 2;
-            this.QuickPriorityLabel.Text = "Quick Priority";
             // 
             // ExportsGuideLabel
             // 
-            this.ExportsGuideLabel.AutoSize = true;
-            this.ExportsGuideLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.ExportsGuideLabel, "ExportsGuideLabel");
             this.ExportsGuideLabel.ForeColor = System.Drawing.Color.Silver;
-            this.ExportsGuideLabel.Location = new System.Drawing.Point(23, 336);
             this.ExportsGuideLabel.Name = "ExportsGuideLabel";
-            this.ExportsGuideLabel.Size = new System.Drawing.Size(230, 21);
-            this.ExportsGuideLabel.TabIndex = 2;
-            this.ExportsGuideLabel.Text = "Save the report to a file or print:";
             // 
             // FilterByLabel
             // 
-            this.FilterByLabel.AutoSize = true;
-            this.FilterByLabel.Font = new System.Drawing.Font("Segoe UI", 11F);
+            resources.ApplyResources(this.FilterByLabel, "FilterByLabel");
             this.FilterByLabel.ForeColor = System.Drawing.Color.Silver;
-            this.FilterByLabel.Location = new System.Drawing.Point(23, 197);
             this.FilterByLabel.Name = "FilterByLabel";
-            this.FilterByLabel.Size = new System.Drawing.Size(90, 20);
-            this.FilterByLabel.TabIndex = 2;
-            this.FilterByLabel.Text = "Quick Status";
             // 
             // TaskEditorTitleLabel
             // 
             this.TaskEditorTitleLabel.BackColor = System.Drawing.Color.Orange;
-            this.TaskEditorTitleLabel.Font = new System.Drawing.Font("Segoe UI Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaskEditorTitleLabel.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.TaskEditorTitleLabel, "TaskEditorTitleLabel");
             this.TaskEditorTitleLabel.Name = "TaskEditorTitleLabel";
-            this.TaskEditorTitleLabel.Size = new System.Drawing.Size(360, 44);
-            this.TaskEditorTitleLabel.TabIndex = 0;
-            this.TaskEditorTitleLabel.Text = "Report Controls";
-            this.TaskEditorTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainTitleLabel
             // 
-            this.MainTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainTitleLabel.AutoSize = true;
+            resources.ApplyResources(this.MainTitleLabel, "MainTitleLabel");
             this.MainTitleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.MainTitleLabel.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainTitleLabel.ForeColor = System.Drawing.Color.White;
-            this.MainTitleLabel.Location = new System.Drawing.Point(68, 25);
-            this.MainTitleLabel.Margin = new System.Windows.Forms.Padding(0);
             this.MainTitleLabel.Name = "MainTitleLabel";
-            this.MainTitleLabel.Size = new System.Drawing.Size(516, 65);
-            this.MainTitleLabel.TabIndex = 10;
-            this.MainTitleLabel.Text = "Reports and Task Viewer";
-            this.MainTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ProgramLogoPictureBox
             // 
+            resources.ApplyResources(this.ProgramLogoPictureBox, "ProgramLogoPictureBox");
             this.ProgramLogoPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.logo;
-            this.ProgramLogoPictureBox.Location = new System.Drawing.Point(1037, 38);
             this.ProgramLogoPictureBox.Name = "ProgramLogoPictureBox";
-            this.ProgramLogoPictureBox.Size = new System.Drawing.Size(45, 45);
-            this.ProgramLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ProgramLogoPictureBox.TabIndex = 12;
             this.ProgramLogoPictureBox.TabStop = false;
+            // 
+            // ExportReportButton
+            // 
+            this.ExportReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ExportReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExportReportButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.ExportReportButton, "ExportReportButton");
+            this.ExportReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ExportReportButton.Image = global::MachineProject3_TMS.Properties.Resources.export;
+            this.ExportReportButton.Name = "ExportReportButton";
+            this.ExportReportButton.UseVisualStyleBackColor = false;
+            this.ExportReportButton.Click += new System.EventHandler(this.ExportReportButton_Click);
+            // 
+            // SearchDirectoryButton
+            // 
+            this.SearchDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.SearchDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchDirectoryButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.SearchDirectoryButton, "SearchDirectoryButton");
+            this.SearchDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.SearchDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.search;
+            this.SearchDirectoryButton.Name = "SearchDirectoryButton";
+            this.SearchDirectoryButton.UseVisualStyleBackColor = false;
+            this.SearchDirectoryButton.Click += new System.EventHandler(this.SearchDirectoryButton_Click);
+            // 
+            // PrintReportButton
+            // 
+            this.PrintReportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.PrintReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PrintReportButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.PrintReportButton, "PrintReportButton");
+            this.PrintReportButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PrintReportButton.Image = global::MachineProject3_TMS.Properties.Resources.print;
+            this.PrintReportButton.Name = "PrintReportButton";
+            this.PrintReportButton.UseVisualStyleBackColor = false;
+            this.PrintReportButton.Click += new System.EventHandler(this.PrintReportButton_Click);
+            // 
+            // RefreshDirectoryButton
+            // 
+            this.RefreshDirectoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.RefreshDirectoryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshDirectoryButton.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.RefreshDirectoryButton, "RefreshDirectoryButton");
+            this.RefreshDirectoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RefreshDirectoryButton.Image = global::MachineProject3_TMS.Properties.Resources.refresh;
+            this.RefreshDirectoryButton.Name = "RefreshDirectoryButton";
+            this.RefreshDirectoryButton.UseVisualStyleBackColor = false;
+            this.RefreshDirectoryButton.Click += new System.EventHandler(this.RefreshDirectoryButton_Click);
             // 
             // ReturnToDashboardButton
             // 
             this.ReturnToDashboardButton.BackColor = System.Drawing.Color.Transparent;
+            this.ReturnToDashboardButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReturnToDashboardButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonFace;
-            this.ReturnToDashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.ReturnToDashboardButton, "ReturnToDashboardButton");
             this.ReturnToDashboardButton.Image = global::MachineProject3_TMS.Properties.Resources.arrow_back;
-            this.ReturnToDashboardButton.Location = new System.Drawing.Point(20, 38);
             this.ReturnToDashboardButton.Name = "ReturnToDashboardButton";
-            this.ReturnToDashboardButton.Size = new System.Drawing.Size(45, 45);
-            this.ReturnToDashboardButton.TabIndex = 13;
             this.ReturnToDashboardButton.UseVisualStyleBackColor = false;
             this.ReturnToDashboardButton.Click += new System.EventHandler(this.ReturnToDashboardButton_Click);
             // 
             // FrmReports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(1102, 815);
             this.Controls.Add(this.ProgramLogoPictureBox);
             this.Controls.Add(this.menuTasks);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.MainTitleLabel);
             this.Controls.Add(this.ReturnToDashboardButton);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuTasks;
             this.Name = "FrmReports";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Task Management System | Reports";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.TaskDirectoryDataGridView)).EndInit();
             this.menuTasks.ResumeLayout(false);
             this.menuTasks.PerformLayout();

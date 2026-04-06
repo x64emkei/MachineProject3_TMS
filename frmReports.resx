@@ -117,16 +117,1512 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TotalLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TotalLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TotalLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9pt</value>
+  </data>
+  <data name="TotalLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 472</value>
+  </data>
+  <data name="TotalLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 15</value>
+  </data>
+  <data name="TotalLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TotalLabel.Text" xml:space="preserve">
+    <value>TOTAL TASKS</value>
+  </data>
+  <data name="&gt;&gt;TotalLabel.Name" xml:space="preserve">
+    <value>TotalLabel</value>
+  </data>
+  <data name="&gt;&gt;TotalLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TotalLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;TotalLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="PendingLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="PendingLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PendingLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9pt</value>
+  </data>
+  <data name="PendingLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 555</value>
+  </data>
+  <data name="PendingLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 15</value>
+  </data>
+  <data name="PendingLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="PendingLabel.Text" xml:space="preserve">
+    <value>PENDING</value>
+  </data>
+  <data name="&gt;&gt;PendingLabel.Name" xml:space="preserve">
+    <value>PendingLabel</value>
+  </data>
+  <data name="&gt;&gt;PendingLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PendingLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;PendingLabel.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="CompletedLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="CompletedLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CompletedLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9pt</value>
+  </data>
+  <data name="CompletedLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 554</value>
+  </data>
+  <data name="CompletedLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 15</value>
+  </data>
+  <data name="CompletedLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CompletedLabel.Text" xml:space="preserve">
+    <value>COMPLETED</value>
+  </data>
+  <data name="&gt;&gt;CompletedLabel.Name" xml:space="preserve">
+    <value>CompletedLabel</value>
+  </data>
+  <data name="&gt;&gt;CompletedLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CompletedLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;CompletedLabel.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="CompletedTasksCounterLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="CompletedTasksCounterLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 24pt</value>
+  </data>
+  <data name="CompletedTasksCounterLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 513</value>
+  </data>
+  <data name="CompletedTasksCounterLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 59</value>
+  </data>
+  <data name="CompletedTasksCounterLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="CompletedTasksCounterLabel.Text" xml:space="preserve">
+    <value>--</value>
+  </data>
+  <data name="CompletedTasksCounterLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;CompletedTasksCounterLabel.Name" xml:space="preserve">
+    <value>CompletedTasksCounterLabel</value>
+  </data>
+  <data name="&gt;&gt;CompletedTasksCounterLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CompletedTasksCounterLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;CompletedTasksCounterLabel.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="PendingTasksCounterLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="PendingTasksCounterLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 24pt</value>
+  </data>
+  <data name="PendingTasksCounterLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 513</value>
+  </data>
+  <data name="PendingTasksCounterLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 59</value>
+  </data>
+  <data name="PendingTasksCounterLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="PendingTasksCounterLabel.Text" xml:space="preserve">
+    <value>--</value>
+  </data>
+  <data name="PendingTasksCounterLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;PendingTasksCounterLabel.Name" xml:space="preserve">
+    <value>PendingTasksCounterLabel</value>
+  </data>
+  <data name="&gt;&gt;PendingTasksCounterLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PendingTasksCounterLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;PendingTasksCounterLabel.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="TotalTasksCounterLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="TotalTasksCounterLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 24pt</value>
+  </data>
+  <data name="TotalTasksCounterLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 448</value>
+  </data>
+  <data name="TotalTasksCounterLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 55</value>
+  </data>
+  <data name="TotalTasksCounterLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="TotalTasksCounterLabel.Text" xml:space="preserve">
+    <value>--</value>
+  </data>
+  <data name="TotalTasksCounterLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;TotalTasksCounterLabel.Name" xml:space="preserve">
+    <value>TotalTasksCounterLabel</value>
+  </data>
+  <data name="&gt;&gt;TotalTasksCounterLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TotalTasksCounterLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;TotalTasksCounterLabel.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="TaskDirectoryLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="TaskDirectoryLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Light, 21.75pt</value>
+  </data>
+  <data name="TaskDirectoryLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TaskDirectoryLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>915, 44</value>
+  </data>
+  <data name="TaskDirectoryLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TaskDirectoryLabel.Text" xml:space="preserve">
+    <value>Task Directory</value>
+  </data>
+  <data name="TaskDirectoryLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryLabel.Name" xml:space="preserve">
+    <value>TaskDirectoryLabel</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryLabel.Parent" xml:space="preserve">
+    <value>TaskDirectoryPanel</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TaskDirectoryDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="TaskDirectoryDataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 53</value>
+  </data>
+  <data name="TaskDirectoryDataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>880, 590</value>
+  </data>
+  <data name="TaskDirectoryDataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryDataGridView.Name" xml:space="preserve">
+    <value>TaskDirectoryDataGridView</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryDataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryDataGridView.Parent" xml:space="preserve">
+    <value>TaskDirectoryPanel</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryDataGridView.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SearchLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SearchLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11pt</value>
+  </data>
+  <data name="SearchLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 78</value>
+  </data>
+  <data name="SearchLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="SearchLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SearchLabel.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;SearchLabel.Name" xml:space="preserve">
+    <value>SearchLabel</value>
+  </data>
+  <data name="&gt;&gt;SearchLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchLabel.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
   <metadata name="menuTasks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>265, 17</value>
   </metadata>
+  <data name="menuTasks.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="returnToDashboardToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+B</value>
+  </data>
+  <data name="returnToDashboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="returnToDashboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Return to Dashboard</value>
+  </data>
+  <data name="logoutToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+L</value>
+  </data>
+  <data name="logoutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="logoutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Log-out</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+F4</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 21</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="allTasksToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+A</value>
+  </data>
+  <data name="allTasksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="allTasksToolStripMenuItem.Text" xml:space="preserve">
+    <value>A&amp;ll Tasks</value>
+  </data>
+  <data name="completedTasksToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="completedTasksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="completedTasksToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Completed Tasks</value>
+  </data>
+  <data name="pendingTasksToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="pendingTasksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="pendingTasksToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Pending Tasks</value>
+  </data>
+  <data name="recordToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 21</value>
+  </data>
+  <data name="recordToolStripMenuItem.Text" xml:space="preserve">
+    <value>F&amp;ilter</value>
+  </data>
+  <data name="toolStripMenuItem3.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F5</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 22</value>
+  </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>Refresh/View All Tasks</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 6</value>
+  </data>
+  <data name="categoryManagementToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+G</value>
+  </data>
+  <data name="categoryManagementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 22</value>
+  </data>
+  <data name="categoryManagementToolStripMenuItem.Text" xml:space="preserve">
+    <value>Category Management</value>
+  </data>
+  <data name="reportsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+R</value>
+  </data>
+  <data name="reportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 22</value>
+  </data>
+  <data name="reportsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="refreshToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F5</value>
+  </data>
+  <data name="refreshToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;View</value>
+  </data>
+  <data name="aboutToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F1</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;About</value>
+  </data>
+  <data name="helpToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F12</value>
+  </data>
+  <data name="helpToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="helpToolStripMenuItem1.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="menuTasks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1321, 25</value>
+  </data>
+  <data name="menuTasks.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="menuTasks.Text" xml:space="preserve">
+    <value>menuTasks</value>
+  </data>
+  <data name="&gt;&gt;menuTasks.Name" xml:space="preserve">
+    <value>menuTasks</value>
+  </data>
+  <data name="&gt;&gt;menuTasks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuTasks.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuTasks.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MainPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="TaskDirectoryPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <metadata name="statusStripTasks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>513, 17</value>
   </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="TaskDirectoryStatusMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="DatabaseStatusMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="statusStripTasks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 662</value>
+  </data>
+  <data name="statusStripTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>915, 22</value>
+  </data>
+  <data name="statusStripTasks.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="statusStripTasks.Text" xml:space="preserve">
+    <value>statusStripTasks</value>
+  </data>
+  <data name="&gt;&gt;statusStripTasks.Name" xml:space="preserve">
+    <value>statusStripTasks</value>
+  </data>
+  <data name="&gt;&gt;statusStripTasks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStripTasks.Parent" xml:space="preserve">
+    <value>TaskDirectoryPanel</value>
+  </data>
+  <data name="&gt;&gt;statusStripTasks.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TaskDirectoryPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 20</value>
+  </data>
+  <data name="TaskDirectoryPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>915, 684</value>
+  </data>
+  <data name="TaskDirectoryPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryPanel.Name" xml:space="preserve">
+    <value>TaskDirectoryPanel</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryPanel.Parent" xml:space="preserve">
+    <value>MainPanel</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LowPriorityButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="LowPriorityButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="LowPriorityButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 274</value>
+  </data>
+  <data name="LowPriorityButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 25</value>
+  </data>
+  <data name="LowPriorityButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="LowPriorityButton.Text" xml:space="preserve">
+    <value>&amp;LOW</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityButton.Name" xml:space="preserve">
+    <value>LowPriorityButton</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="MediumPriorityButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="MediumPriorityButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="MediumPriorityButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 274</value>
+  </data>
+  <data name="MediumPriorityButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 25</value>
+  </data>
+  <data name="MediumPriorityButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="MediumPriorityButton.Text" xml:space="preserve">
+    <value>&amp;MEDIUM</value>
+  </data>
+  <data name="&gt;&gt;MediumPriorityButton.Name" xml:space="preserve">
+    <value>MediumPriorityButton</value>
+  </data>
+  <data name="&gt;&gt;MediumPriorityButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MediumPriorityButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;MediumPriorityButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="HighPriorityButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="HighPriorityButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="HighPriorityButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 274</value>
+  </data>
+  <data name="HighPriorityButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 25</value>
+  </data>
+  <data name="HighPriorityButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="HighPriorityButton.Text" xml:space="preserve">
+    <value>&amp;HIGH</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityButton.Name" xml:space="preserve">
+    <value>HighPriorityButton</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="OverdueTasksButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="OverdueTasksButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="OverdueTasksButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 221</value>
+  </data>
+  <data name="OverdueTasksButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 25</value>
+  </data>
+  <data name="OverdueTasksButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="OverdueTasksButton.Text" xml:space="preserve">
+    <value>OVERDUE</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksButton.Name" xml:space="preserve">
+    <value>OverdueTasksButton</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PendingTasksButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="PendingTasksButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="PendingTasksButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 221</value>
+  </data>
+  <data name="PendingTasksButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 25</value>
+  </data>
+  <data name="PendingTasksButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="PendingTasksButton.Text" xml:space="preserve">
+    <value>&amp;PENDING</value>
+  </data>
+  <data name="&gt;&gt;PendingTasksButton.Name" xml:space="preserve">
+    <value>PendingTasksButton</value>
+  </data>
+  <data name="&gt;&gt;PendingTasksButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PendingTasksButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;PendingTasksButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="DoneTasksButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="DoneTasksButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="DoneTasksButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 221</value>
+  </data>
+  <data name="DoneTasksButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 25</value>
+  </data>
+  <data name="DoneTasksButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="DoneTasksButton.Text" xml:space="preserve">
+    <value>DO&amp;NE</value>
+  </data>
+  <data name="&gt;&gt;DoneTasksButton.Name" xml:space="preserve">
+    <value>DoneTasksButton</value>
+  </data>
+  <data name="&gt;&gt;DoneTasksButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DoneTasksButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;DoneTasksButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AllTasksButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="AllTasksButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="AllTasksButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 221</value>
+  </data>
+  <data name="AllTasksButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 25</value>
+  </data>
+  <data name="AllTasksButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="AllTasksButton.Text" xml:space="preserve">
+    <value>A&amp;LL</value>
+  </data>
+  <data name="&gt;&gt;AllTasksButton.Name" xml:space="preserve">
+    <value>AllTasksButton</value>
+  </data>
+  <data name="&gt;&gt;AllTasksButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllTasksButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;AllTasksButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ExportReportButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ExportReportButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="ExportReportButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="ExportReportButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 360</value>
+  </data>
+  <data name="ExportReportButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 51</value>
+  </data>
+  <data name="ExportReportButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="ExportReportButton.Text" xml:space="preserve">
+    <value>&amp;EXPORT</value>
+  </data>
+  <data name="ExportReportButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;ExportReportButton.Name" xml:space="preserve">
+    <value>ExportReportButton</value>
+  </data>
+  <data name="&gt;&gt;ExportReportButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExportReportButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;ExportReportButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="SearchDirectoryButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="SearchDirectoryButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="SearchDirectoryButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="SearchDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 137</value>
+  </data>
+  <data name="SearchDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 51</value>
+  </data>
+  <data name="SearchDirectoryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="SearchDirectoryButton.Text" xml:space="preserve">
+    <value>&amp;SEARCH</value>
+  </data>
+  <data name="SearchDirectoryButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;SearchDirectoryButton.Name" xml:space="preserve">
+    <value>SearchDirectoryButton</value>
+  </data>
+  <data name="&gt;&gt;SearchDirectoryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchDirectoryButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchDirectoryButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="PrintReportButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="PrintReportButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="PrintReportButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="PrintReportButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 360</value>
+  </data>
+  <data name="PrintReportButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 51</value>
+  </data>
+  <data name="PrintReportButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="PrintReportButton.Text" xml:space="preserve">
+    <value>&amp;PRINT</value>
+  </data>
+  <data name="PrintReportButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;PrintReportButton.Name" xml:space="preserve">
+    <value>PrintReportButton</value>
+  </data>
+  <data name="&gt;&gt;PrintReportButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PrintReportButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;PrintReportButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="RefreshDirectoryButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RefreshDirectoryButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="RefreshDirectoryButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="RefreshDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 137</value>
+  </data>
+  <data name="RefreshDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 51</value>
+  </data>
+  <data name="RefreshDirectoryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="RefreshDirectoryButton.Text" xml:space="preserve">
+    <value>&amp;REFRESH</value>
+  </data>
+  <data name="RefreshDirectoryButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;RefreshDirectoryButton.Name" xml:space="preserve">
+    <value>RefreshDirectoryButton</value>
+  </data>
+  <data name="&gt;&gt;RefreshDirectoryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RefreshDirectoryButton.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;RefreshDirectoryButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="SearchTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="SearchTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 102</value>
+  </data>
+  <data name="SearchTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 29</value>
+  </data>
+  <data name="SearchTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;SearchTextBox.Name" xml:space="preserve">
+    <value>SearchTextBox</value>
+  </data>
+  <data name="&gt;&gt;SearchTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SearchTextBox.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;SearchTextBox.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="ExportToolsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 8.25pt</value>
+  </data>
+  <data name="ExportToolsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 307</value>
+  </data>
+  <data name="ExportToolsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 29</value>
+  </data>
+  <data name="ExportToolsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="ExportToolsLabel.Text" xml:space="preserve">
+    <value>EXPORT TOOLS</value>
+  </data>
+  <data name="ExportToolsLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ExportToolsLabel.Name" xml:space="preserve">
+    <value>ExportToolsLabel</value>
+  </data>
+  <data name="&gt;&gt;ExportToolsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExportToolsLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;ExportToolsLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="LiveStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 8.25pt</value>
+  </data>
+  <data name="LiveStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 416</value>
+  </data>
+  <data name="LiveStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 29</value>
+  </data>
+  <data name="LiveStatusLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="LiveStatusLabel.Text" xml:space="preserve">
+    <value>LIVE STATUS</value>
+  </data>
+  <data name="LiveStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;LiveStatusLabel.Name" xml:space="preserve">
+    <value>LiveStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;LiveStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LiveStatusLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;LiveStatusLabel.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="EditorStatusMessageLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 8.25pt</value>
+  </data>
+  <data name="EditorStatusMessageLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 53</value>
+  </data>
+  <data name="EditorStatusMessageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 29</value>
+  </data>
+  <data name="EditorStatusMessageLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="EditorStatusMessageLabel.Text" xml:space="preserve">
+    <value>DATA CONTROLS</value>
+  </data>
+  <data name="EditorStatusMessageLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;EditorStatusMessageLabel.Name" xml:space="preserve">
+    <value>EditorStatusMessageLabel</value>
+  </data>
+  <data name="&gt;&gt;EditorStatusMessageLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditorStatusMessageLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;EditorStatusMessageLabel.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="LowPriorityTasksLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="LowPriorityTasksLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LowPriorityTasksLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9pt</value>
+  </data>
+  <data name="LowPriorityTasksLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 642</value>
+  </data>
+  <data name="LowPriorityTasksLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 15</value>
+  </data>
+  <data name="LowPriorityTasksLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LowPriorityTasksLabel.Text" xml:space="preserve">
+    <value>LOW</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityTasksLabel.Name" xml:space="preserve">
+    <value>LowPriorityTasksLabel</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityTasksLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityTasksLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityTasksLabel.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="MediumPriorityTasksLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="MediumPriorityTasksLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MediumPriorityTasksLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9pt</value>
+  </data>
+  <data name="MediumPriorityTasksLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 642</value>
+  </data>
+  <data name="MediumPriorityTasksLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 15</value>
+  </data>
+  <data name="MediumPriorityTasksLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="MediumPriorityTasksLabel.Text" xml:space="preserve">
+    <value>MEDIUM</value>
+  </data>
+  <data name="&gt;&gt;MediumPriorityTasksLabel.Name" xml:space="preserve">
+    <value>MediumPriorityTasksLabel</value>
+  </data>
+  <data name="&gt;&gt;MediumPriorityTasksLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MediumPriorityTasksLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;MediumPriorityTasksLabel.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="HighPriorityTasksLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="HighPriorityTasksLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="HighPriorityTasksLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9pt</value>
+  </data>
+  <data name="HighPriorityTasksLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 642</value>
+  </data>
+  <data name="HighPriorityTasksLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 15</value>
+  </data>
+  <data name="HighPriorityTasksLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="HighPriorityTasksLabel.Text" xml:space="preserve">
+    <value>HIGH</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityTasksLabel.Name" xml:space="preserve">
+    <value>HighPriorityTasksLabel</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityTasksLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityTasksLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityTasksLabel.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="OverdueTasksLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="OverdueTasksLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="OverdueTasksLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 9pt</value>
+  </data>
+  <data name="OverdueTasksLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 554</value>
+  </data>
+  <data name="OverdueTasksLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 15</value>
+  </data>
+  <data name="OverdueTasksLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="OverdueTasksLabel.Text" xml:space="preserve">
+    <value>OVERDUE</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksLabel.Name" xml:space="preserve">
+    <value>OverdueTasksLabel</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksLabel.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="OverdueTasksCounterLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="OverdueTasksCounterLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 24pt</value>
+  </data>
+  <data name="OverdueTasksCounterLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 513</value>
+  </data>
+  <data name="OverdueTasksCounterLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 59</value>
+  </data>
+  <data name="OverdueTasksCounterLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="OverdueTasksCounterLabel.Text" xml:space="preserve">
+    <value>--</value>
+  </data>
+  <data name="OverdueTasksCounterLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksCounterLabel.Name" xml:space="preserve">
+    <value>OverdueTasksCounterLabel</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksCounterLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksCounterLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;OverdueTasksCounterLabel.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="LowPriorityCounterLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="LowPriorityCounterLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 24pt</value>
+  </data>
+  <data name="LowPriorityCounterLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 582</value>
+  </data>
+  <data name="LowPriorityCounterLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 81</value>
+  </data>
+  <data name="LowPriorityCounterLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="LowPriorityCounterLabel.Text" xml:space="preserve">
+    <value>--</value>
+  </data>
+  <data name="LowPriorityCounterLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityCounterLabel.Name" xml:space="preserve">
+    <value>LowPriorityCounterLabel</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityCounterLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityCounterLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;LowPriorityCounterLabel.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="MediumTasksCounterLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="MediumTasksCounterLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 24pt</value>
+  </data>
+  <data name="MediumTasksCounterLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 582</value>
+  </data>
+  <data name="MediumTasksCounterLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 81</value>
+  </data>
+  <data name="MediumTasksCounterLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="MediumTasksCounterLabel.Text" xml:space="preserve">
+    <value>--</value>
+  </data>
+  <data name="MediumTasksCounterLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;MediumTasksCounterLabel.Name" xml:space="preserve">
+    <value>MediumTasksCounterLabel</value>
+  </data>
+  <data name="&gt;&gt;MediumTasksCounterLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MediumTasksCounterLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;MediumTasksCounterLabel.ZOrder" xml:space="preserve">
     <value>25</value>
+  </data>
+  <data name="HighPriorityTasksCounterLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="HighPriorityTasksCounterLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 24pt</value>
+  </data>
+  <data name="HighPriorityTasksCounterLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 582</value>
+  </data>
+  <data name="HighPriorityTasksCounterLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 81</value>
+  </data>
+  <data name="HighPriorityTasksCounterLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="HighPriorityTasksCounterLabel.Text" xml:space="preserve">
+    <value>--</value>
+  </data>
+  <data name="HighPriorityTasksCounterLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityTasksCounterLabel.Name" xml:space="preserve">
+    <value>HighPriorityTasksCounterLabel</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityTasksCounterLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityTasksCounterLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;HighPriorityTasksCounterLabel.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="QuickPriorityLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="QuickPriorityLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11pt</value>
+  </data>
+  <data name="QuickPriorityLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 251</value>
+  </data>
+  <data name="QuickPriorityLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 20</value>
+  </data>
+  <data name="QuickPriorityLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="QuickPriorityLabel.Text" xml:space="preserve">
+    <value>Quick Priority</value>
+  </data>
+  <data name="&gt;&gt;QuickPriorityLabel.Name" xml:space="preserve">
+    <value>QuickPriorityLabel</value>
+  </data>
+  <data name="&gt;&gt;QuickPriorityLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;QuickPriorityLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;QuickPriorityLabel.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="ExportsGuideLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ExportsGuideLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="ExportsGuideLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 336</value>
+  </data>
+  <data name="ExportsGuideLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 21</value>
+  </data>
+  <data name="ExportsGuideLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ExportsGuideLabel.Text" xml:space="preserve">
+    <value>Save the report to a file or print:</value>
+  </data>
+  <data name="&gt;&gt;ExportsGuideLabel.Name" xml:space="preserve">
+    <value>ExportsGuideLabel</value>
+  </data>
+  <data name="&gt;&gt;ExportsGuideLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExportsGuideLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;ExportsGuideLabel.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="FilterByLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FilterByLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11pt</value>
+  </data>
+  <data name="FilterByLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 197</value>
+  </data>
+  <data name="FilterByLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 20</value>
+  </data>
+  <data name="FilterByLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="FilterByLabel.Text" xml:space="preserve">
+    <value>Quick Status</value>
+  </data>
+  <data name="&gt;&gt;FilterByLabel.Name" xml:space="preserve">
+    <value>FilterByLabel</value>
+  </data>
+  <data name="&gt;&gt;FilterByLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FilterByLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;FilterByLabel.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="TaskEditorTitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Light, 21.75pt</value>
+  </data>
+  <data name="TaskEditorTitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TaskEditorTitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 44</value>
+  </data>
+  <data name="TaskEditorTitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TaskEditorTitleLabel.Text" xml:space="preserve">
+    <value>Report Controls</value>
+  </data>
+  <data name="TaskEditorTitleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;TaskEditorTitleLabel.Name" xml:space="preserve">
+    <value>TaskEditorTitleLabel</value>
+  </data>
+  <data name="&gt;&gt;TaskEditorTitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TaskEditorTitleLabel.Parent" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;TaskEditorTitleLabel.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="ReportControlPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="ReportControlPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 684</value>
+  </data>
+  <data name="ReportControlPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ReportControlPanel.Name" xml:space="preserve">
+    <value>ReportControlPanel</value>
+  </data>
+  <data name="&gt;&gt;ReportControlPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReportControlPanel.Parent" xml:space="preserve">
+    <value>MainPanel</value>
+  </data>
+  <data name="&gt;&gt;ReportControlPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MainPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 91</value>
+  </data>
+  <data name="MainPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 20, 20, 20</value>
+  </data>
+  <data name="MainPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1321, 724</value>
+  </data>
+  <data name="MainPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;MainPanel.Name" xml:space="preserve">
+    <value>MainPanel</value>
+  </data>
+  <data name="&gt;&gt;MainPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="MainTitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MainTitleLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Light, 36pt</value>
+  </data>
+  <data name="MainTitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 25</value>
+  </data>
+  <data name="MainTitleLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="MainTitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>516, 65</value>
+  </data>
+  <data name="MainTitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="MainTitleLabel.Text" xml:space="preserve">
+    <value>Reports and Task Viewer</value>
+  </data>
+  <data name="MainTitleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;MainTitleLabel.Name" xml:space="preserve">
+    <value>MainTitleLabel</value>
+  </data>
+  <data name="&gt;&gt;MainTitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainTitleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainTitleLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ProgramLogoPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="ProgramLogoPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1256, 38</value>
+  </data>
+  <data name="ProgramLogoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 45</value>
+  </data>
+  <data name="ProgramLogoPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="ProgramLogoPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;ProgramLogoPictureBox.Name" xml:space="preserve">
+    <value>ProgramLogoPictureBox</value>
+  </data>
+  <data name="&gt;&gt;ProgramLogoPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ProgramLogoPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ProgramLogoPictureBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ReturnToDashboardButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ReturnToDashboardButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 38</value>
+  </data>
+  <data name="ReturnToDashboardButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 45</value>
+  </data>
+  <data name="ReturnToDashboardButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;ReturnToDashboardButton.Name" xml:space="preserve">
+    <value>ReturnToDashboardButton</value>
+  </data>
+  <data name="&gt;&gt;ReturnToDashboardButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReturnToDashboardButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ReturnToDashboardButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>108</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1321, 815</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIACpuQAAZgAAAICAAAABACAAKAgBAA+6AAAwMAAAAQAgAKglAAA3wgEAICAAAAEA
@@ -2343,5 +3839,131 @@
         AAAA8H8AAMABAACAAAAAAAAAAAAAAAAAPQAAgAcAAMABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACB
         AQAA4c8AAA==
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Task Management System | Reports</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
+    <value>fileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;returnToDashboardToolStripMenuItem.Name" xml:space="preserve">
+    <value>returnToDashboardToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;returnToDashboardToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logoutToolStripMenuItem.Name" xml:space="preserve">
+    <value>logoutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;logoutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
+    <value>exitToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recordToolStripMenuItem.Name" xml:space="preserve">
+    <value>recordToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;recordToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;allTasksToolStripMenuItem.Name" xml:space="preserve">
+    <value>allTasksToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;allTasksToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;completedTasksToolStripMenuItem.Name" xml:space="preserve">
+    <value>completedTasksToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;completedTasksToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pendingTasksToolStripMenuItem.Name" xml:space="preserve">
+    <value>pendingTasksToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pendingTasksToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;refreshToolStripMenuItem.Name" xml:space="preserve">
+    <value>refreshToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;refreshToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
+    <value>toolStripMenuItem3</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
+    <value>toolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;categoryManagementToolStripMenuItem.Name" xml:space="preserve">
+    <value>categoryManagementToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;categoryManagementToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reportsToolStripMenuItem.Name" xml:space="preserve">
+    <value>reportsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reportsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
+    <value>helpToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
+    <value>aboutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem1.Name" xml:space="preserve">
+    <value>helpToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryStatusMessage.Name" xml:space="preserve">
+    <value>TaskDirectoryStatusMessage</value>
+  </data>
+  <data name="&gt;&gt;TaskDirectoryStatusMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusMessage.Name" xml:space="preserve">
+    <value>DatabaseStatusMessage</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmReports</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
