@@ -122,7 +122,7 @@
             this.ShowPassLoginButtonLabel.Location = new System.Drawing.Point(194, 158);
             this.ShowPassLoginButtonLabel.Name = "ShowPassLoginButtonLabel";
             this.ShowPassLoginButtonLabel.Size = new System.Drawing.Size(36, 15);
-            this.ShowPassLoginButtonLabel.TabIndex = 6;
+            this.ShowPassLoginButtonLabel.TabIndex = 5;
             this.ShowPassLoginButtonLabel.Text = "Show";
             this.ShowPassLoginButtonLabel.Click += new System.EventHandler(this.ShowPassLoginButtonLabel_Click);
             // 
@@ -152,7 +152,7 @@
             this.CreateAcctButton.Location = new System.Drawing.Point(21, 325);
             this.CreateAcctButton.Name = "CreateAcctButton";
             this.CreateAcctButton.Size = new System.Drawing.Size(209, 54);
-            this.CreateAcctButton.TabIndex = 5;
+            this.CreateAcctButton.TabIndex = 7;
             this.CreateAcctButton.Text = "Create account";
             this.CreateAcctButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.CreateAcctButton.UseVisualStyleBackColor = false;
@@ -172,7 +172,7 @@
             this.ClearButton.Location = new System.Drawing.Point(22, 209);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(82, 47);
-            this.ClearButton.TabIndex = 5;
+            this.ClearButton.TabIndex = 4;
             this.ClearButton.Text = "Clear";
             this.ClearButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.ClearButton.UseVisualStyleBackColor = false;
@@ -188,7 +188,7 @@
             this.MainExitButton.Location = new System.Drawing.Point(22, 428);
             this.MainExitButton.Name = "MainExitButton";
             this.MainExitButton.Size = new System.Drawing.Size(208, 30);
-            this.MainExitButton.TabIndex = 5;
+            this.MainExitButton.TabIndex = 8;
             this.MainExitButton.Text = "Exit";
             this.MainExitButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.MainExitButton.UseVisualStyleBackColor = true;
@@ -208,7 +208,7 @@
             this.LoginButton.Location = new System.Drawing.Point(110, 209);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(120, 47);
-            this.LoginButton.TabIndex = 5;
+            this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Log-in";
             this.LoginButton.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.LoginButton.UseVisualStyleBackColor = false;
@@ -222,7 +222,7 @@
             this.PasswordTextBox.Location = new System.Drawing.Point(21, 176);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(209, 27);
-            this.PasswordTextBox.TabIndex = 4;
+            this.PasswordTextBox.TabIndex = 2;
             this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
             // UsernameTextBox
@@ -233,7 +233,7 @@
             this.UsernameTextBox.Location = new System.Drawing.Point(21, 117);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(209, 27);
-            this.UsernameTextBox.TabIndex = 4;
+            this.UsernameTextBox.TabIndex = 9;
             // 
             // CreateAcctGuideLabel
             // 

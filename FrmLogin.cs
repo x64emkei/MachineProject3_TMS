@@ -16,6 +16,14 @@ namespace MachineProject3_TMS
         {
             InitializeComponent();
             SetupForm();
+            // Focus the username field on form open and wire Enter key behavior
+            try
+            {
+                this.Shown += (s, e) => { try { UsernameTextBox?.Focus(); } catch { } };
+                if (UsernameTextBox != null) UsernameTextBox.KeyDown += UsernameTextBox_KeyDown;
+                if (PasswordTextBox != null) PasswordTextBox.KeyDown += PasswordTextBox_KeyDown;
+            }
+            catch { }
         }
 
         /// <summary>
@@ -119,6 +127,25 @@ namespace MachineProject3_TMS
         private void ShowPassLoginButtonLabel_Click(object sender, EventArgs e)
         {
             PasswordTextBox.UseSystemPasswordChar = !PasswordTextBox.UseSystemPasswordChar;
+        }
+
+        private void UsernameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                try { PasswordTextBox?.Focus(); } catch { }
+            }
+        }
+
+        private void PasswordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                // Trigger login
+                try { LoginButton_Click(LoginButton, EventArgs.Empty); } catch { }
+            }
         }
 
         /// <summary>
