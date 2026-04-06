@@ -4,6 +4,7 @@
 // TUMBAGA, KURT CEZMER S. 
 
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace MachineProject3_TMS
@@ -168,10 +169,34 @@ namespace MachineProject3_TMS
             DialogResult result = MessageBox.Show("You are about to logout. Any unsaved data will not be saved. Continue?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                // Clears session data.
                 DbConnection.ClearSession();
+
+                // Show the login form first.
                 FrmLogin loginForm = new FrmLogin();
                 loginForm.Show();
-                this.Hide();
+
+                // Close all other open forms (dashboard and any child forms) so only the login remains.
+                var openForms = new List<Form>();
+                foreach (Form f in Application.OpenForms)
+                {
+                    openForms.Add(f);
+                }
+
+                foreach (var f in openForms)
+                {
+                    try
+                    {
+                        if (f == loginForm) continue;
+                        if (f == this) continue; // dashboard already will be closed via loop; ensure login remains
+                        if (f.IsDisposed) continue;
+                        f.Close();
+                    }
+                    catch
+                    {
+                        // Suppresses close errors to ensure login remains visible.
+                    }
+                }
             }
         }
 
