@@ -172,11 +172,32 @@ namespace MachineProject3_TMS
                 // Clears session data.
                 DbConnection.ClearSession();
 
-                // Show the login form first.
-                FrmLogin loginForm = new FrmLogin();
-                loginForm.Show();
+                // Try to find an existing hidden Login form created by Application.Run.
+                FrmLogin existingLogin = null;
+                foreach (Form f in Application.OpenForms)
+                {
+                    if (f is FrmLogin)
+                    {
+                        existingLogin = f as FrmLogin;
+                        break;
+                    }
+                }
 
-                // Close all other open forms (dashboard and any child forms) so only the login remains.
+                FrmLogin loginForm;
+                if (existingLogin != null)
+                {
+                    // Reuse the existing main login form so the application main loop remains intact.
+                    loginForm = existingLogin;
+                    try { loginForm.Show(); loginForm.BringToFront(); } catch { }
+                }
+                else
+                {
+                    // No existing login form found, create a new one.
+                    loginForm = new FrmLogin();
+                    loginForm.Show();
+                }
+
+                // Close all other open forms except the login form we will keep.
                 var openForms = new List<Form>();
                 foreach (Form f in Application.OpenForms)
                 {
@@ -187,8 +208,7 @@ namespace MachineProject3_TMS
                 {
                     try
                     {
-                        if (f == loginForm) continue;
-                        if (f == this) continue; // dashboard already will be closed via loop; ensure login remains
+                        if (f == loginForm) continue; // Keep the login form alive
                         if (f.IsDisposed) continue;
                         f.Close();
                     }
