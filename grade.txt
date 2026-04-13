@@ -1,0 +1,47 @@
+Ercia • 4:09 AM, Apr 13 (PST)
+1. GUI Design and Multi-Form Navigation – 20 pts
+
+Score: 18/20
+
+Metro design applied, clean and modern UI (seen in documentation screenshots).
+Navigation is well implemented (Dashboard → Forms flow works properly)
+Minor issue: some forms rely on Hide() instead of better form management.
+2. Database Design and Connectivity – 20 pts
+
+Score: 19/20
+
+Proper relational design with foreign key (tasks → categories)
+Good use of parameterized queries (secure coding)
+Strong feature: dynamic DB connection + demo mode
+Minor deduction: password stored as plain text (security issue).
+3. CRUD Functionality – 25 pts
+
+Score: 23/25
+
+Complete CRUD for tasks and categories
+Proper use of DataGridView binding and updates
+Good structure: separate functions/classes (CategoryFunctions, TaskFunctions)
+Minor issue: no advanced validation before delete/update in some cases.
+4. Search and Filter Features – 15 pts
+
+Score: 14/15
+
+Functional keyword search and filtering (status, priority)
+Reports module includes statistics and filtering (excellent)
+Minor issue: search logic is manual filtering (not optimized SQL query).
+5. Input Validation and Error Handling – 10 pts
+
+Score: 9/10
+
+Strong validation (required fields, date checks)
+Good use of try-catch and user feedback
+Minor issue: some exceptions are silently caught (not ideal practice).
+6. Code Organization and Readability – 10 pts
+
+Score: 9/10
+
+Well-structured (Separation of Concerns)
+Use of classes and modular design (DAL, forms, helpers)
+Clean naming and comments
+Minor issue: some duplicate comments and long methods.
+FINAL SCORE: 92/100
