@@ -59,9 +59,9 @@ namespace MachineProject3_TMS
                     AboutButton.MouseLeave += (s, e) => DescriptorLabel.Text = string.Empty;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // Swallows wiring errors.
+                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
         }
 
@@ -71,8 +71,8 @@ namespace MachineProject3_TMS
         private void DatabaseConnectionButton_Click(object sender, EventArgs e)
         {
             FrmDBConnect dbForm = new FrmDBConnect();
-            dbForm.Show();
-            this.Hide();
+            // Use AppController to switch main form so old form is closed cleanly
+            AppController.SwitchTo(dbForm);
         }
 
         /// <summary>
@@ -107,8 +107,7 @@ namespace MachineProject3_TMS
         private void TaskManagementButton_Click(object sender, EventArgs e)
         {
             FrmTasks tasksForm = new FrmTasks();
-            tasksForm.Show();
-            this.Hide();
+            AppController.SwitchTo(tasksForm);
         }
 
         /// <summary>
@@ -117,8 +116,7 @@ namespace MachineProject3_TMS
         private void CategoriesButton_Click(object sender, EventArgs e)
         {
             FrmCategories categoryForm = new FrmCategories();
-            categoryForm.Show();
-            this.Hide();
+            AppController.SwitchTo(categoryForm);
         }
 
         /// <summary>
@@ -127,8 +125,7 @@ namespace MachineProject3_TMS
         private void ReportTaskButton_Click(object sender, EventArgs e)
         {
             FrmReports reportsForm = new FrmReports();
-            reportsForm.Show();
-            this.Hide();
+            AppController.SwitchTo(reportsForm);
         }
 
         /// <summary>

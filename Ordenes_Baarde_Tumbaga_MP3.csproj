@@ -160,6 +160,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityHelpers.cs" />
     <Compile Include="TaskFunctions.cs" />
     <EmbeddedResource Include="FrmDBConnect.resx">
       <DependentUpon>FrmDBConnect.cs</DependentUpon>

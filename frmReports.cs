@@ -197,15 +197,15 @@ namespace MachineProject3_TMS
 
         private void ReturnToDashboardButton_Click(object sender, EventArgs e)
         {
-            // Navigate back to dashboard and hide reports form
+            // Navigate back to dashboard and close this form via AppController
             try
             {
                 FrmDashboard dashboard = new FrmDashboard();
-                dashboard.Show();
-                this.Hide();
+                AppController.SwitchTo(dashboard);
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
                 MessageBox.Show($"Unable to navigate to dashboard: {ex.Message}", "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -29,9 +29,9 @@ namespace MachineProject3_TMS
                 if (ClearEditorButton != null) ClearEditorButton.Click += ClearEditorButton_Click;
                 if (RefreshDirectoryButton != null) RefreshDirectoryButton.Click += RefreshDirectoryButton_Click;
             }
-            catch
+            catch (Exception ex)
             {
-                // Swallows wiring errors to avoid breaking initialization.
+                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
 
             // Wire search button defensively if present by locating control by name.
@@ -40,9 +40,9 @@ namespace MachineProject3_TMS
                 var btn = this.Controls.Find("SearchCategoryButton", true).FirstOrDefault() as Button;
                 if (btn != null) btn.Click += SearchCategoryButton_Click;
             }
-            catch
+            catch (Exception ex)
             {
-                // Swallows wiring errors.
+                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
         }
 
@@ -88,11 +88,14 @@ namespace MachineProject3_TMS
                     var lbl = this.Controls.Find("TotalCategoriesCounterLabel", true).FirstOrDefault() as Label;
                     if (lbl != null) lbl.Text = total.ToString();
                 }
-                catch { }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                // Suppresses counter calculation errors.
+                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
             // Ensure the grid notifies on click
             CategoryViewerDataGridView.CellClick -= CategoryDataGridView_CellClick;
@@ -138,18 +141,14 @@ namespace MachineProject3_TMS
             }
             try
             {
-                DataTable dt = DbConnection.DemoMode ? (DbConnection.DemoCategories != null ? DbConnection.DemoCategories.Copy() : new DataTable()) : CategoryFunctions.GetAllCategories();
-                if (!string.IsNullOrWhiteSpace(keyword))
+                DataTable dt;
+                if (DbConnection.DemoMode)
                 {
-                    for (int i = dt.Rows.Count - 1; i >= 0; i--)
-                    {
-                        var name = dt.Rows[i]["category_name"]?.ToString() ?? string.Empty;
-                        var desc = dt.Rows[i].Table.Columns.Contains("description") ? dt.Rows[i]["description"]?.ToString() ?? string.Empty : string.Empty;
-                        if (!name.IndexOf(keyword, StringComparison.OrdinalIgnoreCase).Equals(0) && !name.ToLower().Contains(keyword.ToLower()) && !desc.ToLower().Contains(keyword.ToLower()))
-                        {
-                            dt.Rows.RemoveAt(i);
-                        }
-                    }
+                    dt = DbConnection.DemoCategories != null ? DbConnection.DemoCategories.Copy() : new DataTable();
+                }
+                else
+                {
+                    dt = string.IsNullOrWhiteSpace(keyword) ? CategoryFunctions.GetAllCategories() : CategoryFunctions.GetFilteredCategories(keyword);
                 }
 
                 CategoryViewerDataGridView.DataSource = dt;
@@ -158,8 +157,9 @@ namespace MachineProject3_TMS
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
                 DbConnection.EnableDemoMode();
-                CategoryViewerDataGridView.DataSource = DbConnection.DemoCategories.Copy();
+                CategoryViewerDataGridView.DataSource = DbConnection.DemoCategories != null ? DbConnection.DemoCategories.Copy() : new DataTable();
                 DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
                 DetailStatusMessageLabel.Text = "Error searching categories.";
                 MessageBox.Show($"Search failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

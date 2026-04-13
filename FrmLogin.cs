@@ -12,6 +12,9 @@ namespace MachineProject3_TMS
 {
     public partial class FrmLogin : Form
     {
+        // Raised when login completes successfully so Program.AppContext can switch main forms
+        public event EventHandler LoginSucceeded;
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -19,11 +22,14 @@ namespace MachineProject3_TMS
             // Focus the username field on form open and wire Enter key behavior
             try
             {
-                this.Shown += (s, e) => { try { UsernameTextBox?.Focus(); } catch { } };
+                this.Shown += (s, e) => { try { UsernameTextBox?.Focus(); } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.Message); } };
                 if (UsernameTextBox != null) UsernameTextBox.KeyDown += UsernameTextBox_KeyDown;
                 if (PasswordTextBox != null) PasswordTextBox.KeyDown += PasswordTextBox_KeyDown;
             }
-            catch { }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
@@ -65,9 +71,8 @@ namespace MachineProject3_TMS
                 DbConnection.CurrentName = "Administrator";
                 DbConnection.CurrentEmail = "";
                 DbConnection.CurrentLoginTime = DateTime.Now;
-                FrmDashboard dashboard = new FrmDashboard();
-                dashboard.Show();
-                this.Hide();
+                // Signal success; let Program switch main forms to avoid hidden instances
+                LoginSucceeded?.Invoke(this, EventArgs.Empty);
                 return;
             }
 
@@ -77,25 +82,31 @@ namespace MachineProject3_TMS
                 {
                     conn.Open();
                     // Assumes DB schema extended with 'name' and 'email' based on project UI requirements.
-                    string query = "SELECT user_id, username, name, email FROM users WHERE username = @user AND password = @pass";
+                    string query = "SELECT user_id, username, name, email, password FROM users WHERE username = @user";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@user", username);
-                        cmd.Parameters.AddWithValue("@pass", password);
 
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
+                                var storedHash = reader.IsDBNull(reader.GetOrdinal("password")) ? string.Empty : reader.GetString("password");
+                                bool verified = SecurityHelpers.VerifyPassword(password, storedHash);
+                                if (!verified)
+                                {
+                                    MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+
                                 DbConnection.CurrentUserId = reader.GetInt32("user_id");
                                 DbConnection.CurrentUsername = reader.GetString("username");
                                 DbConnection.CurrentName = reader.IsDBNull(reader.GetOrdinal("name")) ? username : reader.GetString("name");
                                 DbConnection.CurrentEmail = reader.IsDBNull(reader.GetOrdinal("email")) ? "" : reader.GetString("email");
                                 DbConnection.CurrentLoginTime = DateTime.Now;
 
-                                FrmDashboard dashboard = new FrmDashboard();
-                                dashboard.Show();
-                                this.Hide();
+                                // Signal success and let Program switch main forms
+                                LoginSucceeded?.Invoke(this, EventArgs.Empty);
                             }
                             else
                             {
@@ -225,11 +236,12 @@ namespace MachineProject3_TMS
                         }
                     }
 
+                    string hashed = SecurityHelpers.HashPassword(pass);
                     string query = "INSERT INTO users (username, password, name, email) VALUES (@user, @pass, @name, @email)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@user", username);
-                        cmd.Parameters.AddWithValue("@pass", pass); // Ideally hash in real app
+                        cmd.Parameters.AddWithValue("@pass", hashed);
                         cmd.Parameters.AddWithValue("@name", name);
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.ExecuteNonQuery();
@@ -335,12 +347,14 @@ namespace MachineProject3_TMS
                     using (MySqlConnection conn = DbConnection.GetConnection())
                     {
                         conn.Open();
+                        string hashed = SecurityHelpers.HashPassword(newPass);
                         string query = "UPDATE users SET password = @pass WHERE username = @user";
                         using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@pass", newPass);
+                            cmd.Parameters.AddWithValue("@pass", hashed);
                             cmd.Parameters.AddWithValue("@user", username);
-                            cmd.ExecuteNonQuery();
+                            int affected = cmd.ExecuteNonQuery();
+                            if (affected == 0) throw new InvalidOperationException("No user record found to update.");
                         }
                     }
                     MessageBox.Show("Password successfully updated! You can now log in.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -30,9 +30,9 @@ namespace MachineProject3_TMS
                 LoadSavedConfig();
                 UpdateDbStatusLabel();
             }
-            catch
+            catch (Exception ex)
             {
-                // Suppresses setup errors to allow form to display.
+                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
 
             // Initialize demo allowed flag from checkbox state
@@ -40,7 +40,10 @@ namespace MachineProject3_TMS
             {
                 DbConnection.DemoAllowed = DemoModeCheckBox != null && DemoModeCheckBox.Checked;
             }
-            catch { }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
         }
 
         /// <summary>
@@ -147,8 +150,7 @@ namespace MachineProject3_TMS
                 UpdateDbStatusLabel();
 
                 FrmLogin loginForm = new FrmLogin();
-                loginForm.Show();
-                this.Hide();
+                AppController.SwitchTo(loginForm);
             }
             else
             {
@@ -204,10 +206,16 @@ namespace MachineProject3_TMS
                                 }
                             }
                         }
-                        catch { }
+                        catch (Exception ex)
+                        {
+                            System.Diagnostics.Debug.WriteLine(ex.Message);
+                        }
                     }
                 }
-                catch { }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
             }
         }
 
@@ -247,8 +255,9 @@ namespace MachineProject3_TMS
 
                 DBStatusLabel.Text = string.IsNullOrWhiteSpace(configInfo) ? status : $"{status} | {configInfo}";
             }
-            catch
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
                 DBStatusLabel.Text = "DB Status Unknown";
             }
         }
