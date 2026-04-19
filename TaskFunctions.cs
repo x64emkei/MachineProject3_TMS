@@ -222,7 +222,11 @@ namespace MachineProject3_TMS
                         cmd.Parameters.AddWithValue("@status", status ?? string.Empty);
                         cmd.Parameters.AddWithValue("@assignedTo", assignedTo ?? string.Empty);
                         cmd.Parameters.AddWithValue("@categoryId", categoryId);
-                        cmd.ExecuteNonQuery();
+                        int affected = cmd.ExecuteNonQuery();
+                        if (affected == 0)
+                        {
+                            throw new InvalidOperationException("No task record found to update.");
+                        }
                     }
                 }
             }
@@ -246,7 +250,11 @@ namespace MachineProject3_TMS
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", id);
-                        cmd.ExecuteNonQuery();
+                        int affected = cmd.ExecuteNonQuery();
+                        if (affected == 0)
+                        {
+                            throw new InvalidOperationException("No task record found to delete.");
+                        }
                     }
                 }
             }

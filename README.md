@@ -1,81 +1,218 @@
-📊 Task Management System (Metro UI)
+# TASK MANAGEMENT SYSTEM (TMS)
 
-A sleek, dark-mode "Metro UI" Task Management System built with C# (Windows Forms) and a MySQL database. This application is designed to help users efficiently organize, track, and report on their workloads using a flat, tile-based interface inspired by modern Windows design.
+**Machine Project 3 — CS207L Data Structures & Programming**
 
-Built as a Machine Project for CS207L | Object Oriented Programming.
+---
 
-✨ Features
+## 📌 Project Overview
 
-🔐 Secure Authentication: Complete user login, account registration, password recovery, and a hidden developer "Admin Bypass" mode.
+The **Task Management System (TMS)** is a desktop application built using **C# Windows Forms** for the front end and **MySQL** for the back end. It enables users to efficiently organize, track, and manage tasks through a clean and intuitive interface.
 
-🗂️ Tile-Based Dashboard: A centralized, color-coded hub for navigating the application modules.
+The system follows the **Metro Design Language**, emphasizing clarity, simplicity, and accessibility. It is structured as a multi-form application demonstrating strong implementation of GUI design, database connectivity, and object-oriented programming.
 
-✅ Full CRUD Capabilities: Create, Read, Update, and Delete both Tasks and Categories. Tasks track detailed metadata such as Due Dates, Priority (High/Med/Low), Status (Pending/Completed), and Assignees.
+* **Repository:** [https://github.com/x64emkei/MachineProject3_TMS](https://github.com/x64emkei/MachineProject3_TMS)
+* **Tech Stack:** C# WinForms + MySQL
+* **Design:** Metro UI
 
-📊 Reports & Live Analytics: A comprehensive Task Viewer featuring custom search, quick filters, and live mini-tile stat counters (Total, Pending, Completed).
+---
 
-💾 Export Tools: Built-in options to export task data to TXT, CSV, PDF, or direct to Print.
+## ⚙️ Development Workflow & Tools
 
-⌨️ Power-User Accessibility: Completely keyboard-friendly with fully mapped MenuStrip items, access keys (&), and standard shortcut combinations (e.g., Ctrl+S to save) for rapid data entry.
+* **GitHub** — Version control and repository management
+* **Gemini** — Codebase analysis and logic tracing
+* **Claude** — Documentation generation
 
-🛠️ Technology Stack
+> All tools were used strictly as assistants. The system design, logic, and implementation were executed by the developers.
 
-Language: C#
+---
 
-Framework: .NET Framework (Windows Forms)
+## 🚀 System Features
 
-Database: MySQL
+### 🔐 Authentication (FrmLogin + FrmDBConnect)
 
-Tools Used: * Visual Studio 2022 Community Edition
+* Secure login and registration
+* Password recovery system
+* Offline/demo mode fallback
 
-MySQL Workbench 8 CE
+### 🏠 Dashboard (FrmDashboard)
 
-📸 Screenshots
+* Central navigation hub
+* Metro-style UI tiles
+* Session management
 
-(Hint: Add your screenshots to an assets folder in GitHub and link them here!)
+### ✅ Task Management (FrmTasks)
 
-Dashboard: ![Dashboard UI](assets/dashboard.png)
+* Full CRUD operations
+* Category assignment
+* Real-time task counters
+* Keyword search
+* Smart date handling
 
-Task Editor & Directory: ![Task Management UI](assets/tasks.png)
+### 🗂️ Category Management (frmCategories)
 
-Reports & Statistics: ![Reports UI](assets/reports.png)
+* Add, update, delete categories
+* Deletion constraint protection
+* Grid-to-editor synchronization
 
-🚀 Installation & Setup
+### 📊 Reports & Analytics (frmReports)
 
-Clone the repository:
+* Filter by status, priority, keywords
+* LINQ-based statistics
+* Export to CSV and TXT
 
-git clone [https://github.com/yourusername/TaskManagementSystem.git](https://github.com/yourusername/TaskManagementSystem.git)
+### ⚙️ Database Configuration (FrmDBConnect)
 
+* Dynamic MySQL connection setup
 
-Setup the Database:
+### ℹ️ About (frmAbout)
 
-Open MySQL Workbench (or XAMPP/WAMP).
+* Project details
+* Credits and academic integrity
 
-Create a new database named task_management_db.
+---
 
-Import the provided database.sql script (if applicable) or run the necessary CREATE TABLE scripts for users, tasks, and categories.
+## 🧠 System Architecture
 
-Configure Connection String:
+The system follows a **Separation of Concerns (SoC)** architecture:
 
-Open the project in Visual Studio 2022 CE.
+### 🖥️ UI Layer (Forms)
 
-Locate the connection string in the code files (e.g., entry_login.cs, frmTaskManagement.cs) and update the Uid and Pwd to match your local MySQL server credentials.
+* Handles presentation logic only
+* No embedded SQL queries
 
-string connectionString = "Server=localhost;Database=task_management_db;Uid=root;Pwd=yourpassword;";
+### 🗄️ Data Access Layer (Classes)
 
+* Encapsulates all SQL operations
 
-Run the Application:
+#### Core Classes:
 
-Press F5 or click Start in Visual Studio to compile and run the program.
+* `DbConnection.cs` — Manages database connections
+* `TaskFunctions.cs` — Task-related queries
+* `CategoryFunctions.cs` — Category-related queries
 
-👨‍💻 Development Team
+---
 
-Michael Ordenes
+## 🗃️ Database Design
 
-Adrian Baarde
+### Database Initialization
 
-Kurt Cezmer Tumbaga
+```sql
+CREATE DATABASE IF NOT EXISTS task_management_db;
+USE task_management_db;
+```
 
-Course: CS207L | Object Oriented Programming
+### 👤 Users Table
 
-Instructor: Leandro "Jun" Ercia Jr.
+| Column   | Type         | Description       |
+| -------- | ------------ | ----------------- |
+| user_id  | INT (PK)     | Unique user ID    |
+| username | VARCHAR(50)  | Unique login name |
+| password | VARCHAR(100) | Stored password   |
+| name     | VARCHAR(100) | Full name         |
+| email    | VARCHAR(100) | Used for recovery |
+
+### 🗂️ Categories Table
+
+| Column        | Type         | Description          |
+| ------------- | ------------ | -------------------- |
+| category_id   | INT (PK)     | Unique category ID   |
+| category_name | VARCHAR(100) | Category name        |
+| description   | VARCHAR(255) | Optional description |
+
+### 📌 Tasks Table
+
+| Column      | Type         | Description                   |
+| ----------- | ------------ | ----------------------------- |
+| task_id     | INT (PK)     | Unique task ID                |
+| task_title  | VARCHAR(100) | Task title                    |
+| description | VARCHAR(255) | Task details                  |
+| due_date    | DATE         | Deadline                      |
+| priority    | VARCHAR(20)  | High/Medium/Low               |
+| status      | VARCHAR(20)  | Pending/In Progress/Completed |
+| assigned_to | VARCHAR(100) | Responsible person            |
+| category_id | INT (FK)     | Linked category               |
+
+> **Constraint:** `ON DELETE RESTRICT` prevents deleting categories with assigned tasks.
+
+---
+
+## 🏗️ Technical Highlights
+
+* **Separation of Concerns** — Clean architecture
+* **Parameterized SQL** — Prevents SQL injection
+* **Responsive UI** — Adaptive layout scaling
+* **Defensive Programming** — Error handling and validation
+* **Offline Mode** — Runs without database connection
+* **LINQ Analytics** — Efficient in-memory statistics
+
+---
+
+## ⚡ Setup & Installation
+
+### 📋 Prerequisites
+
+* Visual Studio 2022/2026 (.NET Desktop Development)
+* MySQL Server
+* MySQL Connector/NET (NuGet: `MySql.Data`)
+
+### 🗄️ Database Setup
+
+1. Open MySQL Workbench
+2. Create database: `task_management_db`
+3. Run table initialization scripts
+4. Insert default user:
+
+   * **Username:** `admin`
+   * **Password:** `admin123`
+
+### 💻 Application Setup
+
+1. Open solution file (`.sln`) in Visual Studio
+2. Restore NuGet packages
+3. Build and run
+4. Configure database connection:
+
+   * Server: `localhost`
+   * Username: `root`
+   * Password: *(blank or your setup)*
+   * Database: `task_management_db`
+5. Login using default credentials
+
+---
+
+## 🎓 Academic Integrity & Roles
+
+This project was developed independently in compliance with academic policies. No unauthorized code sharing or plagiarism was involved.
+
+### 👥 Team Roles
+
+* **Ordenes** — UI Design & Application Logic
+* **Baarde** — Core System Logic Implementation
+* **Tumbaga** — Documentation & Database Design
+
+### 🤖 AI Usage
+
+* **Gemini** — Code analysis assistance
+* **Claude** — Documentation support
+
+> All architectural and implementation decisions are original work.
+
+---
+
+## 👨‍💻 Developers
+
+**ORDENES · BAARDE · TUMBAGA**
+
+---
+
+## 📎 License / Disclaimer
+
+This project is developed strictly for academic purposes under CS207L Machine Project 3 requirements.
+
+All trademarks, tools, and technologies used (including Microsoft Visual Studio and MySQL) are the property of their respective owners.
+
+---
+
+## ⭐ Final Note
+
+A well-designed system is not just about functionality, but about **user experience, maintainability, and resilience**. This project reflects a balance of all three.

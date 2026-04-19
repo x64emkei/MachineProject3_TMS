@@ -17,9 +17,6 @@ namespace MachineProject3_TMS
         /// <summary>
         /// Fetches all categories.
         /// </summary>
-        /// <summary>
-        /// Fetches all categories.
-        /// </summary>
         public static DataTable GetAllCategories()
         {
             try
@@ -28,6 +25,51 @@ namespace MachineProject3_TMS
                 {
                     return DbConnection.DemoCategories.Copy();
                 }
+
+        /// <summary>
+        /// Returns filtered categories using parameterized LIKE queries on name and description.
+        /// </summary>
+        public static DataTable GetFilteredCategories(string keyword)
+        {
+            try
+            {
+                if (DbConnection.DemoMode && DbConnection.DemoCategories != null)
+                {
+                    var copy = DbConnection.DemoCategories.Copy();
+                    if (string.IsNullOrWhiteSpace(keyword)) return copy;
+                    for (int i = copy.Rows.Count - 1; i >= 0; i--)
+                    {
+                        var name = Convert.ToString(copy.Rows[i]["category_name"] ?? string.Empty);
+                        var desc = copy.Rows[i].Table.Columns.Contains("description") ? Convert.ToString(copy.Rows[i]["description"] ?? string.Empty) : string.Empty;
+                        if (!name.IndexOf(keyword, StringComparison.OrdinalIgnoreCase).Equals(0) && !name.ToLower().Contains(keyword.ToLower()) && !desc.ToLower().Contains(keyword.ToLower()))
+                        {
+                            copy.Rows.RemoveAt(i);
+                        }
+                    }
+                    return copy;
+                }
+
+                DataTable dt = new DataTable();
+                using (MySqlConnection conn = DbConnection.GetConnection())
+                {
+                    conn.Open();
+                    string q = "SELECT * FROM categories WHERE category_name LIKE @kw OR description LIKE @kw";
+                    using (MySqlCommand cmd = new MySqlCommand(q, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@kw", "%" + keyword + "%");
+                        using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                        {
+                            da.Fill(dt);
+                        }
+                    }
+                }
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Database operation failed while filtering categories.", ex);
+            }
+        }
 
                 DataTable dt = new DataTable();
                 using (MySqlConnection conn = DbConnection.GetConnection())
@@ -46,9 +88,6 @@ namespace MachineProject3_TMS
             }
         }
 
-        /// <summary>
-        /// Adds a new category.
-        /// </summary>
         /// <summary>
         /// Adds a new category.
         /// </summary>
@@ -77,9 +116,6 @@ namespace MachineProject3_TMS
         /// <summary>
         /// Updates a category.
         /// </summary>
-        /// <summary>
-        /// Updates a category.
-        /// </summary>
         public static void UpdateCategory(int id, string name, string desc)
         {
             try
@@ -93,7 +129,11 @@ namespace MachineProject3_TMS
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@name", name ?? string.Empty);
                         cmd.Parameters.AddWithValue("@desc", desc ?? string.Empty);
-                        cmd.ExecuteNonQuery();
+                        int affected = cmd.ExecuteNonQuery();
+                        if (affected == 0)
+                        {
+                            throw new InvalidOperationException("No category record found to update.");
+                        }
                     }
                 }
             }
@@ -103,9 +143,6 @@ namespace MachineProject3_TMS
             }
         }
 
-        /// <summary>
-        /// Deletes a category. Foreign key constraints in tasks table will apply.
-        /// </summary>
         /// <summary>
         /// Deletes a category. Foreign key constraints in tasks table will apply.
         /// </summary>
@@ -120,7 +157,11 @@ namespace MachineProject3_TMS
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", id);
-                        cmd.ExecuteNonQuery();
+                        int affected = cmd.ExecuteNonQuery();
+                        if (affected == 0)
+                        {
+                            throw new InvalidOperationException("No category record found to delete.");
+                        }
                     }
                 }
             }

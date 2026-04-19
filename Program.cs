@@ -16,9 +16,83 @@ namespace MachineProject3_TMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Start application at the Login form so the user can authenticate or use demo flows.
-            Application.Run(new FrmLogin());
+            // Initialize the application context that manages main form switching
+            var ctx = new AppContext();
+            AppController.Initialize(ctx);
+            Application.Run(ctx);
         }
 
+        // Application-level controller used to switch the main form safely.
+        public static class AppController
+        {
+            private static AppContext _context;
+            public static void Initialize(AppContext ctx) => _context = ctx;
+
+            public static void SwitchTo(Form newMain)
+            {
+                if (_context == null) throw new InvalidOperationException("AppController not initialized.");
+                // If switching to a login form, ensure its LoginSucceeded event is wired to open dashboard
+                if (newMain is FrmLogin fl)
+                {
+                    // Remove existing to avoid duplicate handlers
+                    fl.LoginSucceeded -= Fl_LoginSucceeded;
+                    fl.LoginSucceeded += Fl_LoginSucceeded;
+                }
+
+                _context.SwitchMainForm(newMain);
+            }
+
+            private static void Fl_LoginSucceeded(object sender, EventArgs e)
+            {
+                try
+                {
+                    // Create dashboard and switch to it
+                    var dash = new FrmDashboard();
+                    _context.SwitchMainForm(dash);
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Error opening dashboard from login: " + ex.Message);
+                }
+            }
+        }
+
+        private class AppContext : ApplicationContext
+        {
+            public AppContext()
+            {
+                // Start with the login form as the main form
+                var login = new FrmLogin();
+                MainForm = login;
+                login.Show();
+            }
+
+            public void SwitchMainForm(Form newMain)
+            {
+                if (newMain == null) return;
+
+                // Show the new main form first so the message loop stays active
+                try
+                {
+                    newMain.Show();
+                }
+                catch
+                {
+                    // If show fails, do not change main form
+                    try { newMain.Dispose(); } catch { }
+                    return;
+                }
+
+                // Close and dispose the old main form if it exists and is not the same
+                var old = MainForm;
+                if (old != null && old != newMain)
+                {
+                    try { old.Close(); } catch { }
+                    try { old.Dispose(); } catch { }
+                }
+
+                MainForm = newMain;
+            }
+        }
     }
 }

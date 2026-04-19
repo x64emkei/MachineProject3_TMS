@@ -19,9 +19,9 @@ namespace MachineProject3_TMS
             {
                 LoadCategories();
             }
-            catch
+            catch (Exception ex)
             {
-                // Suppresses errors during immediate load to allow form to initialize.
+                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
 
             // Wire up buttons
@@ -124,6 +124,7 @@ namespace MachineProject3_TMS
             catch (Exception ex)
             {
                 // Enables demo categories when DB fails to respond.
+                System.Diagnostics.Debug.WriteLine(ex.Message);
                 DbConnection.EnableDemoMode();
                 var demo = DbConnection.DemoCategories != null ? DbConnection.DemoCategories.Copy() : new DataTable();
                 CategoryComboBox.DataSource = demo;
@@ -145,6 +146,7 @@ namespace MachineProject3_TMS
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
                 // If demo mode was explicitly enabled by the user, show demo data.
                 if (DbConnection.DemoMode && DbConnection.DemoTasks != null)
                 {
@@ -235,10 +237,10 @@ namespace MachineProject3_TMS
                     if (PendingTasksCounterLabel != null) PendingTasksCounterLabel.Text = pending.ToString();
                     if (CompletedTasksCounterLabel != null) CompletedTasksCounterLabel.Text = completed.ToString();
                 }
-                catch
-                {
-                    // Suppresses counter sync failures to avoid disturbing the user flow.
-                }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
                 ClearFields();
             }
             catch (Exception ex)
@@ -293,6 +295,7 @@ namespace MachineProject3_TMS
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
                 EditorStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
                 EditorStatusMessageLabel.Text = "Error updating task.";
                 MessageBox.Show($"Critical Error updating task: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -339,6 +342,7 @@ namespace MachineProject3_TMS
                 }
                 catch (Exception ex)
                 {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
                     EditorStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
                     EditorStatusMessageLabel.Text = "Error deleting task.";
                     MessageBox.Show($"Critical Error deleting task: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
