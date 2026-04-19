@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using MachineProject3_TMS.Helpers;
 
 namespace MachineProject3_TMS
 {
@@ -8,6 +9,7 @@ namespace MachineProject3_TMS
         public FrmAbout()
         {
             InitializeComponent();
+            try { InputHelpers.WireEnterToAdvance(this); } catch { }
         }
 
         private void ReturnToDashboardButton_Click(object sender, EventArgs e)

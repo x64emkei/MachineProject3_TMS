@@ -13,6 +13,7 @@ using System.Drawing.Printing;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MachineProject3_TMS;
+using MachineProject3_TMS.Helpers;
 
 namespace MachineProject3_TMS
 {
@@ -45,6 +46,8 @@ namespace MachineProject3_TMS
             // Initializes printing helpers.
             _printDocument = new PrintDocument();
             _printDocument.PrintPage += PrintDocument_PrintPage;
+
+            try { InputHelpers.WireEnterToAdvance(this); } catch { }
         }
         /// <summary>
         /// Loads tasks using current filter state via the data access layer.

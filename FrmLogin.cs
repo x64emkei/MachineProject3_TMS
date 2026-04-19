@@ -7,6 +7,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MachineProject3_TMS.Helpers;
 
 namespace MachineProject3_TMS
 {
@@ -22,6 +23,16 @@ namespace MachineProject3_TMS
                 this.Shown += (s, e) => { try { UsernameTextBox?.Focus(); } catch { } };
                 if (UsernameTextBox != null) UsernameTextBox.KeyDown += UsernameTextBox_KeyDown;
                 if (PasswordTextBox != null) PasswordTextBox.KeyDown += PasswordTextBox_KeyDown;
+            }
+            catch { }
+
+            // No automatic DB creation prompt here; user may open DB Connect from Login if needed.
+
+            // Wire Enter-to-advance for input fields and set AcceptButton to Login
+            try
+            {
+                InputHelpers.WireEnterToAdvance(this);
+                if (LoginButton != null) this.AcceptButton = LoginButton;
             }
             catch { }
         }
@@ -73,37 +84,45 @@ namespace MachineProject3_TMS
 
             try
             {
-                using (MySqlConnection conn = DbConnection.GetConnection())
-                {
-                    conn.Open();
-                    // Assumes DB schema extended with 'name' and 'email' based on project UI requirements.
-                    string query = "SELECT user_id, username, name, email FROM users WHERE username = @user AND password = @pass";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlConnection conn = DbConnection.GetConnection())
                     {
-                        cmd.Parameters.AddWithValue("@user", username);
-                        cmd.Parameters.AddWithValue("@pass", password);
-
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        conn.Open();
+                        // Assumes DB schema extended with 'name' and 'email' based on project UI requirements.
+                        string query = "SELECT user_id, username, name, email, password FROM users WHERE username = @user";
+                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
-                            if (reader.Read())
-                            {
-                                DbConnection.CurrentUserId = reader.GetInt32("user_id");
-                                DbConnection.CurrentUsername = reader.GetString("username");
-                                DbConnection.CurrentName = reader.IsDBNull(reader.GetOrdinal("name")) ? username : reader.GetString("name");
-                                DbConnection.CurrentEmail = reader.IsDBNull(reader.GetOrdinal("email")) ? "" : reader.GetString("email");
-                                DbConnection.CurrentLoginTime = DateTime.Now;
+                            cmd.Parameters.AddWithValue("@user", username);
 
-                                FrmDashboard dashboard = new FrmDashboard();
-                                dashboard.Show();
-                                this.Hide();
-                            }
-                            else
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
                             {
-                                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                if (reader.Read())
+                                {
+                                    var stored = reader.IsDBNull(reader.GetOrdinal("password")) ? string.Empty : reader.GetString("password");
+                                    bool ok = PasswordHelper.VerifyPassword(stored, password);
+                                    if (ok)
+                                    {
+                                        DbConnection.CurrentUserId = reader.GetInt32("user_id");
+                                        DbConnection.CurrentUsername = reader.GetString("username");
+                                        DbConnection.CurrentName = reader.IsDBNull(reader.GetOrdinal("name")) ? username : reader.GetString("name");
+                                        DbConnection.CurrentEmail = reader.IsDBNull(reader.GetOrdinal("email")) ? "" : reader.GetString("email");
+                                        DbConnection.CurrentLoginTime = DateTime.Now;
+
+                                        FrmDashboard dashboard = new FrmDashboard();
+                                        dashboard.Show();
+                                        this.Hide();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                         }
                     }
-                }
             }
             catch (Exception ex)
             {
@@ -127,6 +146,21 @@ namespace MachineProject3_TMS
         private void ShowPassLoginButtonLabel_Click(object sender, EventArgs e)
         {
             PasswordTextBox.UseSystemPasswordChar = !PasswordTextBox.UseSystemPasswordChar;
+        }
+
+        /// <summary>
+        /// Shows the create-account panel programmatically (used after DB initialization).
+        /// </summary>
+        public void ShowCreateAccountPanel()
+        {
+            try
+            {
+                CreateAcctPanel.Visible = true;
+                LoginPanel.Enabled = false;
+                // focus the name input when panel shown
+                try { NameInputTextBox?.Focus(); } catch { }
+            }
+            catch { }
         }
 
         private void UsernameTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -154,6 +188,23 @@ namespace MachineProject3_TMS
         private void MainExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        /// <summary>
+        /// Opens the database connection configuration form.
+        /// </summary>
+        private void ConnectToDBButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmDBConnect dbForm = new FrmDBConnect();
+                dbForm.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to open DB settings: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // --- CREATE ACCOUNT PANEL LOGIC ---
@@ -225,11 +276,12 @@ namespace MachineProject3_TMS
                         }
                     }
 
+                    string hashed = PasswordHelper.HashPassword(pass);
                     string query = "INSERT INTO users (username, password, name, email) VALUES (@user, @pass, @name, @email)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@user", username);
-                        cmd.Parameters.AddWithValue("@pass", pass); // Ideally hash in real app
+                        cmd.Parameters.AddWithValue("@pass", hashed);
                         cmd.Parameters.AddWithValue("@name", name);
                         cmd.Parameters.AddWithValue("@email", email);
                         cmd.ExecuteNonQuery();
@@ -335,10 +387,11 @@ namespace MachineProject3_TMS
                     using (MySqlConnection conn = DbConnection.GetConnection())
                     {
                         conn.Open();
+                        string hashed = PasswordHelper.HashPassword(newPass);
                         string query = "UPDATE users SET password = @pass WHERE username = @user";
                         using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@pass", newPass);
+                            cmd.Parameters.AddWithValue("@pass", hashed);
                             cmd.Parameters.AddWithValue("@user", username);
                             cmd.ExecuteNonQuery();
                         }

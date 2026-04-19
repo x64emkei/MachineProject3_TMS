@@ -158,8 +158,13 @@
     <Compile Include="FrmTasks.Designer.cs">
       <DependentUpon>FrmTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\InputHelpers.cs" />
+    <Compile Include="PasswordHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchemaSummaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TaskFunctions.cs" />
     <EmbeddedResource Include="FrmDBConnect.resx">
       <DependentUpon>FrmDBConnect.cs</DependentUpon>

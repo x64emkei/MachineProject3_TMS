@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using MachineProject3_TMS.Helpers;
 
 namespace MachineProject3_TMS
 {
@@ -63,6 +64,9 @@ namespace MachineProject3_TMS
             {
                 // Swallows wiring errors.
             }
+
+            // Wire Enter-to-advance behaviour for textboxes on this form
+            try { InputHelpers.WireEnterToAdvance(this); } catch { }
         }
 
         /// <summary>

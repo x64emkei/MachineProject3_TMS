@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using MachineProject3_TMS.Helpers;
 
 namespace MachineProject3_TMS
 {
@@ -39,6 +40,9 @@ namespace MachineProject3_TMS
 
             // Optional Form settings
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            try { InputHelpers.WireEnterToAdvance(this); } catch { }
+            try { if (AddEditorButton != null) this.AcceptButton = AddEditorButton; } catch { }
         }
 
         #region Task Loading, UI helpers, and status messages

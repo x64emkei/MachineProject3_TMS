@@ -7,6 +7,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using MachineProject3_TMS.Helpers;
 
 namespace MachineProject3_TMS
 {
@@ -44,6 +45,9 @@ namespace MachineProject3_TMS
             {
                 // Swallows wiring errors.
             }
+
+            try { InputHelpers.WireEnterToAdvance(this); } catch { }
+            try { if (AddEditorButton != null) this.AcceptButton = AddEditorButton; } catch { }
         }
 
         /// <summary>

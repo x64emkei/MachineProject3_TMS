@@ -117,16 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="BannerPictureBox.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BannerPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, -1</value>
+  </data>
+  <data name="BannerPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>513, 60</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BannerPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;BannerPictureBox.Name" xml:space="preserve">
+    <value>BannerPictureBox</value>
+  </data>
+  <data name="&gt;&gt;BannerPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BannerPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BannerPictureBox.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="ShowPassLoginButtonLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ShowPassLoginButtonLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt, style=Underline</value>
   </data>
   <data name="ShowPassLoginButtonLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 127</value>
+    <value>339, 118</value>
   </data>
   <data name="ShowPassLoginButtonLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 15</value>
@@ -147,13 +171,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ShowPassLoginButtonLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="PasswordTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="PasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 146</value>
+    <value>227, 137</value>
   </data>
   <data name="PasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 27</value>
@@ -171,13 +195,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PasswordTextBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="UsernameTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="UsernameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 146</value>
+    <value>77, 137</value>
   </data>
   <data name="UsernameTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 27</value>
@@ -195,7 +219,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UsernameTextBox.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="PasswordLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -204,7 +228,7 @@
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="PasswordLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 123</value>
+    <value>224, 114</value>
   </data>
   <data name="PasswordLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 20</value>
@@ -225,7 +249,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PasswordLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="UsernameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -234,7 +258,7 @@
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="UsernameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 123</value>
+    <value>74, 114</value>
   </data>
   <data name="UsernameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -255,7 +279,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UsernameLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="SaveConfigCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -264,7 +288,7 @@
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="SaveConfigCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 199</value>
+    <value>76, 236</value>
   </data>
   <data name="SaveConfigCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 17</value>
@@ -285,7 +309,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SaveConfigCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="DemoModeCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -294,7 +318,7 @@
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="DemoModeCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 199</value>
+    <value>227, 238</value>
   </data>
   <data name="DemoModeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 17</value>
@@ -315,7 +339,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DemoModeCheckBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ConfigGuideLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -324,7 +348,7 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="ConfigGuideLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 65</value>
+    <value>100, 73</value>
   </data>
   <data name="ConfigGuideLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>375, 17</value>
@@ -345,7 +369,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ConfigGuideLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="DBStatusLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -354,7 +378,7 @@
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="DBStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 97</value>
+    <value>73, 210</value>
   </data>
   <data name="DBStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -375,14 +399,14 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DBStatusLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ReturnToDashboardButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="ReturnToDashboardButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 65</value>
+    <value>12, 8</value>
   </data>
   <data name="ReturnToDashboardButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 45</value>
@@ -400,7 +424,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ReturnToDashboardButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="LoginButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -412,7 +436,7 @@
     <value>MiddleRight</value>
   </data>
   <data name="LoginButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 127</value>
+    <value>381, 118</value>
   </data>
   <data name="LoginButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 47</value>
@@ -436,31 +460,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LoginButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
-  <metadata name="BannerPictureBox.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="BannerPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1, -1</value>
+  <data name="CreateNewDataBaseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>381, 176</value>
   </data>
-  <data name="BannerPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>513, 60</value>
+  <data name="CreateNewDataBaseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 23</value>
   </data>
-  <data name="BannerPictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="CreateNewDataBaseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
-  <data name="&gt;&gt;BannerPictureBox.Name" xml:space="preserve">
-    <value>BannerPictureBox</value>
+  <data name="CreateNewDataBaseButton.Text" xml:space="preserve">
+    <value>Create new database</value>
   </data>
-  <data name="&gt;&gt;BannerPictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;CreateNewDataBaseButton.Name" xml:space="preserve">
+    <value>CreateNewDataBaseButton</value>
   </data>
-  <data name="&gt;&gt;BannerPictureBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CreateNewDataBaseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreateNewDataBaseButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;BannerPictureBox.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;CreateNewDataBaseButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -469,7 +493,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>511, 237</value>
+    <value>575, 286</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

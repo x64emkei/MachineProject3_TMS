@@ -35,6 +35,7 @@
             this.SystemTitleLabel = new System.Windows.Forms.Label();
             this.CreateAcctButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
+            this.ConnectToDBButton = new System.Windows.Forms.Button();
             this.MainExitButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
@@ -87,6 +88,7 @@
             this.LoginPanel.Controls.Add(this.SystemTitleLabel);
             this.LoginPanel.Controls.Add(this.CreateAcctButton);
             this.LoginPanel.Controls.Add(this.ClearButton);
+            this.LoginPanel.Controls.Add(this.ConnectToDBButton);
             this.LoginPanel.Controls.Add(this.MainExitButton);
             this.LoginPanel.Controls.Add(this.LoginButton);
             this.LoginPanel.Controls.Add(this.PasswordTextBox);
@@ -149,7 +151,7 @@
             this.CreateAcctButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.CreateAcctButton.Image = global::MachineProject3_TMS.Properties.Resources.new_account;
             this.CreateAcctButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CreateAcctButton.Location = new System.Drawing.Point(21, 325);
+            this.CreateAcctButton.Location = new System.Drawing.Point(21, 316);
             this.CreateAcctButton.Name = "CreateAcctButton";
             this.CreateAcctButton.Size = new System.Drawing.Size(209, 54);
             this.CreateAcctButton.TabIndex = 7;
@@ -178,6 +180,22 @@
             this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
+            // ConnectToDBButton
+            // 
+            this.ConnectToDBButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConnectToDBButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ConnectToDBButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConnectToDBButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConnectToDBButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ConnectToDBButton.Location = new System.Drawing.Point(22, 393);
+            this.ConnectToDBButton.Name = "ConnectToDBButton";
+            this.ConnectToDBButton.Size = new System.Drawing.Size(208, 30);
+            this.ConnectToDBButton.TabIndex = 8;
+            this.ConnectToDBButton.Text = "Connect to Database";
+            this.ConnectToDBButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConnectToDBButton.UseVisualStyleBackColor = true;
+            this.ConnectToDBButton.Click += new System.EventHandler(this.ConnectToDBButton_Click);
+            // 
             // MainExitButton
             // 
             this.MainExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -185,7 +203,7 @@
             this.MainExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MainExitButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainExitButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.MainExitButton.Location = new System.Drawing.Point(22, 428);
+            this.MainExitButton.Location = new System.Drawing.Point(22, 429);
             this.MainExitButton.Name = "MainExitButton";
             this.MainExitButton.Size = new System.Drawing.Size(208, 30);
             this.MainExitButton.TabIndex = 8;
@@ -241,7 +259,7 @@
             this.CreateAcctGuideLabel.BackColor = System.Drawing.Color.Transparent;
             this.CreateAcctGuideLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateAcctGuideLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CreateAcctGuideLabel.Location = new System.Drawing.Point(18, 302);
+            this.CreateAcctGuideLabel.Location = new System.Drawing.Point(18, 293);
             this.CreateAcctGuideLabel.Name = "CreateAcctGuideLabel";
             this.CreateAcctGuideLabel.Size = new System.Drawing.Size(104, 20);
             this.CreateAcctGuideLabel.TabIndex = 3;
@@ -520,9 +538,9 @@
             this.CreateAccountTitleLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 18F);
             this.CreateAccountTitleLabel.Location = new System.Drawing.Point(18, 15);
             this.CreateAccountTitleLabel.Name = "CreateAccountTitleLabel";
-            this.CreateAccountTitleLabel.Size = new System.Drawing.Size(170, 32);
+            this.CreateAccountTitleLabel.Size = new System.Drawing.Size(202, 32);
             this.CreateAccountTitleLabel.TabIndex = 0;
-            this.CreateAccountTitleLabel.Text = "Create account";
+            this.CreateAccountTitleLabel.Text = "Create an account";
             // 
             // ShowPasswordButtonLabel
             // 
@@ -722,6 +740,7 @@
         private System.Windows.Forms.Button CreateAccountPanelButton;
         private System.Windows.Forms.Label ConfirmPasswordLabel;
         private System.Windows.Forms.Panel CreateAcctPanel;
+        private System.Windows.Forms.Button ConnectToDBButton;
     }
 }
 

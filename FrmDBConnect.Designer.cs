@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDBConnect));
             System.Windows.Forms.PictureBox BannerPictureBox;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDBConnect));
             this.ShowPassLoginButtonLabel = new System.Windows.Forms.Label();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.UsernameTextBox = new System.Windows.Forms.TextBox();
@@ -41,9 +41,17 @@
             this.DBStatusLabel = new System.Windows.Forms.Label();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
+            this.CreateNewDataBaseButton = new System.Windows.Forms.Button();
             BannerPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(BannerPictureBox)).BeginInit();
             this.SuspendLayout();
+            // 
+            // BannerPictureBox
+            // 
+            BannerPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.banner;
+            resources.ApplyResources(BannerPictureBox, "BannerPictureBox");
+            BannerPictureBox.Name = "BannerPictureBox";
+            BannerPictureBox.TabStop = false;
             // 
             // ShowPassLoginButtonLabel
             // 
@@ -130,18 +138,18 @@
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.UseVisualStyleBackColor = false;
             // 
-            // BannerPictureBox
+            // CreateNewDataBaseButton
             // 
-            BannerPictureBox.Image = global::MachineProject3_TMS.Properties.Resources.banner;
-            resources.ApplyResources(BannerPictureBox, "BannerPictureBox");
-            BannerPictureBox.Name = "BannerPictureBox";
-            BannerPictureBox.TabStop = false;
+            resources.ApplyResources(this.CreateNewDataBaseButton, "CreateNewDataBaseButton");
+            this.CreateNewDataBaseButton.Name = "CreateNewDataBaseButton";
+            this.CreateNewDataBaseButton.UseVisualStyleBackColor = true;
             // 
             // FrmDBConnect
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
+            this.Controls.Add(this.CreateNewDataBaseButton);
             this.Controls.Add(this.DBStatusLabel);
             this.Controls.Add(this.ConfigGuideLabel);
             this.Controls.Add(this.ReturnToDashboardButton);
@@ -177,5 +185,6 @@
         private System.Windows.Forms.CheckBox DemoModeCheckBox;
         private System.Windows.Forms.Label ConfigGuideLabel;
         private System.Windows.Forms.Label DBStatusLabel;
+        private System.Windows.Forms.Button CreateNewDataBaseButton;
     }
 }
