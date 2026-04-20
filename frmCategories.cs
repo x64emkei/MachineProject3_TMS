@@ -133,6 +133,8 @@ namespace MachineProject3_TMS
         /// </summary>
         private void SearchCategoryButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Search Categories", "In a live environment, this loads category records from the database based on your search keyword. Disabled in Demo Mode.")) return;
+
             string keyword = string.Empty;
             try
             {
@@ -172,6 +174,8 @@ namespace MachineProject3_TMS
 
         private void AddCategoryButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Add Category", "In a live environment, this creates a new category record in MySQL. Disabled in Demo Mode.")) return;
+
             if (ValidateInputs())
             {
                 try
@@ -192,6 +196,8 @@ namespace MachineProject3_TMS
 
         private void UpdateCategoryButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Update Category", "In a live environment, this updates the selected category in MySQL. Disabled in Demo Mode.")) return;
+
             if (string.IsNullOrEmpty(CategoryIDTextBox.Text))
             {
                 DetailStatusMessageLabel.ForeColor = System.Drawing.Color.Firebrick;
@@ -227,6 +233,8 @@ namespace MachineProject3_TMS
 
         private void DeleteCategoryButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Delete Category", "In a live environment, this deletes the selected category from MySQL. Disabled in Demo Mode.")) return;
+
             if (string.IsNullOrEmpty(CategoryIDTextBox.Text))
             {
                 MessageBox.Show("Please select a category to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -296,6 +304,8 @@ namespace MachineProject3_TMS
         /// </summary>
         private void RefreshDirectoryButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Refresh Category Data", "In a live environment, this reloads categories from MySQL. Disabled in Demo Mode.")) return;
+
             // Refreshes the grid and clears the search box.
             RefreshGrid();
             try

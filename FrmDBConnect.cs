@@ -4,9 +4,11 @@
 // TUMBAGA, KURT CEZMER S. 
 
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.ServiceProcess;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -26,7 +28,7 @@ namespace MachineProject3_TMS
             // Wire designer buttons to their handlers so the form is responsive at runtime
             if (DemoModeButton != null) DemoModeButton.Click += DemoModeButton_Click;
             if (StartServiceButton != null) StartServiceButton.Click += async (s, e) => await ManageServiceAsync("start");
-            if (RestartServiceButton != null) RestartServiceButton.Click += async (s, e) => { await ManageServiceAsync("stop"); await ManageServiceAsync("start"); };
+            if (RestartServiceButton != null) RestartServiceButton.Click += async (s, e) => await ManageServiceAsync("restart");
             if (StopServiceButton != null) StopServiceButton.Click += async (s, e) => await ManageServiceAsync("stop");
             if (LoginButton != null) LoginButton.Click += LoginButton_Click;
             if (ServerLookupButton != null) ServerLookupButton.Click += ServerLookupButton_Click;
@@ -68,7 +70,7 @@ namespace MachineProject3_TMS
             catch { }
         }
 
-        private async void DemoModeButton_Click(object sender, EventArgs e)
+        private void DemoModeButton_Click(object sender, EventArgs e)
         {
             using (Form prompt = new Form())
             {
@@ -114,9 +116,8 @@ namespace MachineProject3_TMS
 
                 if (result == DialogResult.OK)
                 {
-                    DemoHelper.IsDemoMode = true;
-                    try { MySqlConnection.ClearAllPools(); } catch { }
-                    
+                    DbConnection.DemoAllowed = true;
+                    DemoHelper.EnableDemoMode();
                     DbConnection.EnableDemoMode();
                     DbConnection.CurrentUserId = 0;
                     DbConnection.CurrentUsername = "demo";
@@ -133,18 +134,44 @@ namespace MachineProject3_TMS
 
         private async Task ManageServiceAsync(string action)
         {
-            if (DemoHelper.InterceptAction($"Manage MySQL Service ({action})", "This button manages the local MySQL Windows Service. Disabled in Demo Mode.")) return;
+            string title;
+            string description;
+            switch ((action ?? string.Empty).ToLowerInvariant())
+            {
+                case "start":
+                    title = "Start MySQL Service";
+                    description = "Starts the local MySQL Windows Service. Disabled in Demo Mode.";
+                    break;
+                case "stop":
+                    title = "Stop MySQL Service";
+                    description = "Stops the local MySQL Windows Service. Disabled in Demo Mode.";
+                    break;
+                default:
+                    title = "Restart MySQL Service";
+                    description = "Restarts the local MySQL Windows Service. Disabled in Demo Mode.";
+                    break;
+            }
 
+            if (DemoHelper.InterceptAction(title, description)) return;
+
+            SetProgressMarquee(true);
             try
             {
                 UpdateStatusLabel(WindowsServiceStatusOutputLabel, $"Executing {action}...", "Checking...");
-                SetProgressMarquee(true);
                 await Task.Run(() =>
                 {
+                    string fileName = "net.exe";
+                    string arguments = $"{action} mysql";
+                    if (string.Equals(action, "restart", StringComparison.OrdinalIgnoreCase))
+                    {
+                        fileName = "cmd.exe";
+                        arguments = "/c net stop mysql && net start mysql";
+                    }
+
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "net.exe",
-                        Arguments = $"{(action)} mysql",
+                        FileName = fileName,
+                        Arguments = arguments,
                         Verb = "runas",
                         UseShellExecute = true,
                         CreateNoWindow = true
@@ -155,6 +182,10 @@ namespace MachineProject3_TMS
                     }
                 });
                 UpdateStatusLabel(WindowsServiceStatusOutputLabel, $"Service {action} completed.", "Running");
+            }
+            catch (Win32Exception ex) when (ex.NativeErrorCode == 1223)
+            {
+                UpdateStatusLabel(WindowsServiceStatusOutputLabel, "Service action cancelled by user.", "Failed");
             }
             catch (Exception)
             {
@@ -170,14 +201,23 @@ namespace MachineProject3_TMS
         {
             if (DemoHelper.InterceptAction("Server Lookup", "This button looks up the default local MySQL configuration. Disabled in Demo Mode.")) return;
 
+            string host = string.Empty;
+            string port = string.Empty;
             SetProgressMarquee(true);
-            UpdateStatusLabel(ServerStatusOutputLabel, "Looking up server...", "Checking...");
-            
-            await Task.Delay(500); 
-            string host = "127.0.0.1";
-            string port = "3306";
-            
-            SetProgressMarquee(false);
+            try
+            {
+                UpdateStatusLabel(ServerStatusOutputLabel, "Looking up server...", "Checking...");
+
+                await Task.Run(() =>
+                {
+                    host = "127.0.0.1";
+                    port = "3306";
+                });
+            }
+            finally
+            {
+                SetProgressMarquee(false);
+            }
 
             var answer = MessageBox.Show($"Is Host: {host} and Port: {port} correct for this environment?", "Server Lookup", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (answer == DialogResult.Yes)
@@ -198,29 +238,36 @@ namespace MachineProject3_TMS
             string user = UsernameTextBox?.Text?.Trim() ?? "";
             string pass = PasswordTextBox?.Text ?? "";
 
-            SetProgressMarquee(true);
-            UpdateStatusLabel(ConnectionStatusOutputLabel, "Connecting...", "Checking...");
-            
             bool success = false;
-            await Task.Run(() =>
+            string errorMessage = string.Empty;
+            SetProgressMarquee(true);
+            try
             {
-                string serverOnly = $"Server=localhost;Uid={user};Pwd={pass};";
-                try
-                {
-                    using (var conn = new MySqlConnection(serverOnly))
-                    {
-                        conn.Open();
-                        success = true;
-                    }
-                    DbConnection.ConnectionString = serverOnly + "Database=task_management_db;";
-                }
-                catch
-                {
-                    success = false;
-                }
-            });
+                UpdateStatusLabel(ConnectionStatusOutputLabel, "Connecting...", "Checking...");
 
-            SetProgressMarquee(false);
+                await Task.Run(() =>
+                {
+                    string serverOnly = $"Server=localhost;Uid={user};Pwd={pass};";
+                    try
+                    {
+                        using (var conn = new MySqlConnection(serverOnly))
+                        {
+                            conn.Open();
+                            success = true;
+                        }
+                        DbConnection.ConnectionString = serverOnly + "Database=task_management_db;";
+                    }
+                    catch (Exception ex)
+                    {
+                        success = false;
+                        errorMessage = ex.Message;
+                    }
+                });
+            }
+            finally
+            {
+                SetProgressMarquee(false);
+            }
 
             if (success)
             {
@@ -257,7 +304,7 @@ namespace MachineProject3_TMS
             {
                 UpdateStatusLabel(ConnectionStatusOutputLabel, "Connection Failed", "Failed");
                 UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid Credentials", "Failed");
-                MessageBox.Show("Failed to connect to the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.IsNullOrWhiteSpace(errorMessage) ? "Failed to connect to the database." : $"Failed to connect to the database.\n\n{errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -266,10 +313,51 @@ namespace MachineProject3_TMS
             if (DemoHelper.InterceptAction("Check Status", "This button checks the database and service status. Disabled in Demo Mode.")) return;
 
             SetProgressMarquee(true);
-            UpdateStatusLabel(DatabaseStatusOutputLabel, "Checking DB...", "Checking...");
-            await Task.Delay(500);
-            UpdateStatusLabel(DatabaseStatusOutputLabel, "Not Checked", "Disconnected");
-            SetProgressMarquee(false);
+            try
+            {
+                UpdateStatusLabel(DatabaseStatusOutputLabel, "Checking...", "Checking...");
+                UpdateStatusLabel(ServerStatusOutputLabel, "Checking...", "Checking...");
+                UpdateStatusLabel(WindowsServiceStatusOutputLabel, "Checking...", "Checking...");
+
+                string serviceStatus = await GetMySqlServiceStatusAsync();
+                UpdateStatusLabel(WindowsServiceStatusOutputLabel, serviceStatus, serviceStatus == "Running" ? "Running" : "Stopped");
+
+                bool dbConnected = await Task.Run(() => DbConnection.TestConnection());
+                UpdateStatusLabel(DatabaseStatusOutputLabel, dbConnected ? "Connected" : "Disconnected", dbConnected ? "Connected" : "Disconnected");
+                UpdateStatusLabel(ConnectionStatusOutputLabel, dbConnected ? "Connected" : "Disconnected", dbConnected ? "Connected" : "Disconnected");
+
+                bool hasUser = !string.IsNullOrWhiteSpace(UsernameTextBox?.Text);
+                bool hasPass = !string.IsNullOrWhiteSpace(PasswordTextBox?.Text);
+                UpdateStatusLabel(CredentialStatusOutputLabel, (hasUser && hasPass) ? "Credentials Present" : "Credentials Missing", (hasUser && hasPass) ? "Valid" : "Failed");
+            }
+            catch
+            {
+                UpdateStatusLabel(DatabaseStatusOutputLabel, "Failed", "Failed");
+                UpdateStatusLabel(ServerStatusOutputLabel, "Failed", "Failed");
+                UpdateStatusLabel(WindowsServiceStatusOutputLabel, "Failed", "Failed");
+            }
+            finally
+            {
+                SetProgressMarquee(false);
+            }
+        }
+
+        private async Task<string> GetMySqlServiceStatusAsync()
+        {
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    using (var service = new ServiceController("mysql"))
+                    {
+                        return service.Status == ServiceControllerStatus.Running ? "Running" : "Stopped";
+                    }
+                }
+                catch
+                {
+                    return "Stopped";
+                }
+            });
         }
 
         private void SetProgressMarquee(bool isMarquee)
@@ -478,6 +566,8 @@ namespace MachineProject3_TMS
 
         private void CreateNewDataBaseButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Create Database Schema", "In a live environment, this creates the MySQL database and required tables. Disabled in Demo Mode.")) return;
+
             string user = UsernameTextBox?.Text?.Trim() ?? string.Empty;
             string pass = PasswordTextBox?.Text ?? string.Empty;
             if (string.IsNullOrWhiteSpace(user))
@@ -690,20 +780,6 @@ namespace MachineProject3_TMS
         }
     }
 
-    public static class DemoHelper
-    {
-        public static bool IsDemoMode { get; set; } = false;
-
-        public static bool InterceptAction(string featureName, string description)
-        {
-            if (IsDemoMode)
-            {
-                MessageBox.Show($"Demo Mode: {featureName}\n\n{description}", "Demo Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return true;
-            }
-            return false;
-        }
-    }
 }
 
 namespace MachineProject3_TMS.Properties

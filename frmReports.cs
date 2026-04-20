@@ -131,6 +131,8 @@ namespace MachineProject3_TMS
 
         private void AllTasksButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Load All Tasks Report", "In a live environment, this loads all task records for reporting from MySQL. Disabled in Demo Mode.")) return;
+
             // Resets filters and reloads all tasks.
             _currentStatusFilter = null;
             _currentPriorityFilter = null;
@@ -140,6 +142,8 @@ namespace MachineProject3_TMS
 
         private void DoneTasksButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Load Completed Tasks Report", "In a live environment, this loads completed task records from MySQL. Disabled in Demo Mode.")) return;
+
             // Sets status filter to Completed and reloads.
             _currentStatusFilter = "Completed";
             LoadTasks();
@@ -147,6 +151,8 @@ namespace MachineProject3_TMS
 
         private void PendingTasksButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Load Pending Tasks Report", "In a live environment, this loads pending task records from MySQL. Disabled in Demo Mode.")) return;
+
             // Sets status filter to Pending and reloads.
             _currentStatusFilter = "Pending";
             LoadTasks();
@@ -154,6 +160,8 @@ namespace MachineProject3_TMS
 
         private void OverdueTasksButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Load Overdue Tasks Report", "In a live environment, this loads task records used to calculate overdue items from MySQL. Disabled in Demo Mode.")) return;
+
             // Sets status filter to overdue via keyword and reloads.
             _currentStatusFilter = null;
             _currentKeyword = null;
@@ -163,6 +171,8 @@ namespace MachineProject3_TMS
 
         private void HighPriorityButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Load High Priority Report", "In a live environment, this loads high-priority tasks from MySQL. Disabled in Demo Mode.")) return;
+
             // Sets priority filter to High and reloads.
             _currentPriorityFilter = "High";
             LoadTasks();
@@ -170,6 +180,8 @@ namespace MachineProject3_TMS
 
         private void MediumPriorityButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Load Medium Priority Report", "In a live environment, this loads medium-priority tasks from MySQL. Disabled in Demo Mode.")) return;
+
             // Sets priority filter to Medium and reloads.
             _currentPriorityFilter = "Medium";
             LoadTasks();
@@ -177,6 +189,8 @@ namespace MachineProject3_TMS
 
         private void LowPriorityButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Load Low Priority Report", "In a live environment, this loads low-priority tasks from MySQL. Disabled in Demo Mode.")) return;
+
             // Sets priority filter to Low and reloads.
             _currentPriorityFilter = "Low";
             LoadTasks();
@@ -187,6 +201,8 @@ namespace MachineProject3_TMS
         /// </summary>
         private void SearchDirectoryButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Search Reports", "In a live environment, this queries task report data from MySQL based on your keyword. Disabled in Demo Mode.")) return;
+
             // Saves keyword and reloads via DAL to support combined filters.
             _currentKeyword = SearchTextBox.Text.Trim();
             LoadTasks();
@@ -194,6 +210,8 @@ namespace MachineProject3_TMS
 
         private void RefreshDirectoryButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Refresh Report Data", "In a live environment, this reloads report data from MySQL. Disabled in Demo Mode.")) return;
+
             RefreshGrid();
             SearchTextBox.Clear();
         }
@@ -218,6 +236,8 @@ namespace MachineProject3_TMS
         /// </summary>
         private void ExportReportButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Export Report", "In a live environment, this exports database-backed report results to a file. Disabled in Demo Mode.")) return;
+
             // Exports current grid to TXT or CSV depending on user selection.
             if (_currentData == null || _currentData.Rows.Count == 0)
             {
@@ -295,6 +315,8 @@ namespace MachineProject3_TMS
         /// </summary>
         private void PrintReportButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Print Report", "In a live environment, this prints database-backed report results. Disabled in Demo Mode.")) return;
+
             // Defensively checks for data existence before printing.
             if (_currentData == null || _currentData.Rows.Count == 0)
             {

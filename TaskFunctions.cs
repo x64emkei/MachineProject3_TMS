@@ -28,6 +28,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static DataTable GetAllTasks(string keyword = "", string statusFilter = null, string priorityFilter = null, int? categoryId = null)
         {
+            if (DemoHelper.IsDemoMode) return new DataTable();
+
             // Returns demo-mode tasks when demo mode is enabled.
             if (DbConnection.DemoMode)
             {
@@ -122,6 +124,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static DataTable GetFilteredTasks(string keyword, string statusFilter, string priorityFilter)
         {
+            if (DemoHelper.IsDemoMode) return new DataTable();
+
             // Delegates to GetAllTasks which already supports stacking and parameterization.
             return GetAllTasks(keyword ?? string.Empty, statusFilter, priorityFilter, null);
         }
@@ -132,6 +136,8 @@ namespace MachineProject3_TMS
         public static void GetTaskStats(out int total, out int pending, out int completed)
         {
             total = pending = completed = 0;
+            if (DemoHelper.IsDemoMode) return;
+
             try
             {
                 if (DbConnection.DemoMode)
@@ -176,6 +182,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static void AddTask(string title, string desc, DateTime dueDate, string priority, string status, string assignedTo, int categoryId)
         {
+            if (DemoHelper.IsDemoMode) return;
+
             try
             {
                 using (MySqlConnection conn = DbConnection.GetConnection())
@@ -206,6 +214,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static void UpdateTask(int id, string title, string desc, DateTime dueDate, string priority, string status, string assignedTo, int categoryId)
         {
+            if (DemoHelper.IsDemoMode) return;
+
             try
             {
                 using (MySqlConnection conn = DbConnection.GetConnection())
@@ -241,6 +251,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static void DeleteTask(int id)
         {
+            if (DemoHelper.IsDemoMode) return;
+
             try
             {
                 using (MySqlConnection conn = DbConnection.GetConnection())

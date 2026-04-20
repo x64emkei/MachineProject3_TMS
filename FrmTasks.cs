@@ -216,6 +216,8 @@ namespace MachineProject3_TMS
 
         private void AddEditorButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Add New Task", "In a live environment, this allows you to insert a new task into the MySQL database. Disabled in Demo Mode.")) return;
+
             if (!ValidateInputs()) return;
 
             int categoryId = 0;
@@ -254,6 +256,8 @@ namespace MachineProject3_TMS
 
         private void UpdateEditorButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Update Task", "In a live environment, this updates the selected task in MySQL. Disabled in Demo Mode.")) return;
+
             if (string.IsNullOrEmpty(TaskIDTextBox.Text))
             {
                 MessageBox.Show("Please select a task from the directory to update.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -304,6 +308,8 @@ namespace MachineProject3_TMS
 
         private void DeleteEditorButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Delete Task", "In a live environment, this permanently deletes the selected task from MySQL. Disabled in Demo Mode.")) return;
+
             if (string.IsNullOrEmpty(TaskIDTextBox.Text))
             {
                 MessageBox.Show("Please select a task from the directory to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -352,6 +358,8 @@ namespace MachineProject3_TMS
 
         private void SearchDirectoryButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Search Tasks", "In a live environment, this loads matching task records from MySQL. Disabled in Demo Mode.")) return;
+
             // Use TaskFunctions filtering to search Title and Assigned To when no field is specified.
             try
             {
@@ -385,6 +393,8 @@ namespace MachineProject3_TMS
 
         private void RefreshDirectoryButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.InterceptAction("Refresh Task Data", "In a live environment, this reloads tasks from MySQL. Disabled in Demo Mode.")) return;
+
             RefreshGrid();
             SearchTextBox.Clear();
             TaskDirectoryStatusMessage.Text = "Grid refreshed";

@@ -6,7 +6,6 @@
 using System;
 using System.Data;
 using MySql.Data.MySqlClient;
-using System.IO;
 
 namespace MachineProject3_TMS
 {
@@ -15,6 +14,9 @@ namespace MachineProject3_TMS
     /// </summary>
     public static class DbConnection
     {
+        private static readonly object ConnectionSync = new object();
+        private static MySqlConnection _activeConnection;
+
         // Stores the active connection string.
         public static string ConnectionString { get; set; } = "Server=localhost;Database=task_management_db;Uid=root;Pwd=XV770D2_sql!;";
 
@@ -26,8 +28,8 @@ namespace MachineProject3_TMS
         public static DateTime CurrentLoginTime { get; set; }
 
         // If true the application runs without contacting the database allowing UI testing
-        // Demo mode is only enabled when the user explicitly requests it via the DB Connect form.
-        public static bool DemoMode { get; set; } = false;
+        // Demo mode is only enabled when the user explicitly requests it.
+        public static bool DemoMode => DemoHelper.IsDemoMode;
 
         // When true allows EnableDemoMode to actually enable demo data. This prevents accidental enabling.
         public static bool DemoAllowed { get; set; } = false;
@@ -43,7 +45,7 @@ namespace MachineProject3_TMS
         {
             // Only enable demo mode when explicitly allowed by the user via the DB Connect form.
             if (!DemoAllowed) return;
-            DemoMode = true;
+            DemoHelper.EnableDemoMode();
 
             // Initialize demo categories
             if (DemoCategories == null)
@@ -105,7 +107,58 @@ namespace MachineProject3_TMS
         /// </summary>
         public static MySqlConnection GetConnection()
         {
-            return new MySqlConnection(ConnectionString);
+            var connection = new MySqlConnection(ConnectionString);
+            connection.StateChange += Connection_StateChange;
+            return connection;
+        }
+
+        private static void Connection_StateChange(object sender, System.Data.StateChangeEventArgs e)
+        {
+            var connection = sender as MySqlConnection;
+            if (connection == null) return;
+
+            lock (ConnectionSync)
+            {
+                if (e.CurrentState == ConnectionState.Open)
+                {
+                    _activeConnection = connection;
+                }
+                else if (ReferenceEquals(_activeConnection, connection) &&
+                         (e.CurrentState == ConnectionState.Closed || e.CurrentState == ConnectionState.Broken))
+                {
+                    _activeConnection = null;
+                }
+            }
+        }
+
+        public static void Disconnect()
+        {
+            lock (ConnectionSync)
+            {
+                try
+                {
+                    if (_activeConnection != null)
+                    {
+                        if (_activeConnection.State != ConnectionState.Closed)
+                        {
+                            _activeConnection.Close();
+                        }
+                        _activeConnection.Dispose();
+                        _activeConnection = null;
+                    }
+                }
+                catch
+                {
+                }
+
+                try
+                {
+                    MySqlConnection.ClearAllPools();
+                }
+                catch
+                {
+                }
+            }
         }
 
         /// <summary>
@@ -118,7 +171,7 @@ namespace MachineProject3_TMS
             CurrentName = string.Empty;
             CurrentEmail = string.Empty;
             CurrentLoginTime = DateTime.MinValue;
-            DemoMode = false;
+            DemoHelper.DisableDemoMode();
         }
 
         /// <summary>
@@ -127,7 +180,7 @@ namespace MachineProject3_TMS
         public static void DisableDemoMode()
         {
             // Disables demo flag and releases demo data to ensure real DB is used for testing.
-            DemoMode = false;
+            DemoHelper.DisableDemoMode();
             DemoCategories = null;
             DemoTasks = null;
         }

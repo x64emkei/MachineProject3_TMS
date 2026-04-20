@@ -19,6 +19,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static DataTable GetAllCategories()
         {
+            if (DemoHelper.IsDemoMode) return new DataTable();
+
             try
             {
                 if (DbConnection.DemoMode && DbConnection.DemoCategories != null)
@@ -48,6 +50,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static DataTable GetFilteredCategories(string keyword)
         {
+            if (DemoHelper.IsDemoMode) return new DataTable();
+
             try
             {
                 if (DbConnection.DemoMode && DbConnection.DemoCategories != null)
@@ -93,6 +97,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static void AddCategory(string name, string desc)
         {
+            if (DemoHelper.IsDemoMode) return;
+
             try
             {
                 using (MySqlConnection conn = DbConnection.GetConnection())
@@ -118,6 +124,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static void UpdateCategory(int id, string name, string desc)
         {
+            if (DemoHelper.IsDemoMode) return;
+
             try
             {
                 using (MySqlConnection conn = DbConnection.GetConnection())
@@ -148,6 +156,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static void DeleteCategory(int id)
         {
+            if (DemoHelper.IsDemoMode) return;
+
             try
             {
                 using (MySqlConnection conn = DbConnection.GetConnection())
@@ -176,6 +186,8 @@ namespace MachineProject3_TMS
         /// </summary>
         public static int GetCategoryCount()
         {
+            if (DemoHelper.IsDemoMode) return 0;
+
             try
             {
                 if (DbConnection.DemoMode && DbConnection.DemoCategories != null)
@@ -206,6 +218,8 @@ namespace MachineProject3_TMS
         public static void GetCategoryStats(out int total)
         {
             total = 0;
+            if (DemoHelper.IsDemoMode) return;
+
             try
             {
                 total = GetCategoryCount();
