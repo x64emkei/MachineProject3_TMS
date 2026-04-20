@@ -21,9 +21,10 @@ namespace MachineProject3_TMS
             AppController.Initialize(ctx);
             Application.Run(ctx);
         }
+    }
 
-        // Application-level controller used to switch the main form safely.
-        public static class AppController
+    // Application-level controller used to switch the main form safely.
+    public static class AppController
         {
             private static AppContext _context;
             public static void Initialize(AppContext ctx) => _context = ctx;
@@ -57,7 +58,7 @@ namespace MachineProject3_TMS
             }
         }
 
-        private class AppContext : ApplicationContext
+        public class AppContext : ApplicationContext
         {
             public AppContext()
             {
@@ -94,5 +95,4 @@ namespace MachineProject3_TMS
                 MainForm = newMain;
             }
         }
-    }
 }

@@ -26,6 +26,23 @@ namespace MachineProject3_TMS
                     return DbConnection.DemoCategories.Copy();
                 }
 
+                DataTable dt = new DataTable();
+                using (MySqlConnection conn = DbConnection.GetConnection())
+                {
+                    string query = "SELECT * FROM categories";
+                    using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Database operation failed while retrieving categories.", ex);
+            }
+        }
+
         /// <summary>
         /// Returns filtered categories using parameterized LIKE queries on name and description.
         /// </summary>
@@ -68,23 +85,6 @@ namespace MachineProject3_TMS
             catch (Exception ex)
             {
                 throw new Exception("Database operation failed while filtering categories.", ex);
-            }
-        }
-
-                DataTable dt = new DataTable();
-                using (MySqlConnection conn = DbConnection.GetConnection())
-                {
-                    string query = "SELECT * FROM categories";
-                    using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
-                    {
-                        da.Fill(dt);
-                    }
-                }
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Database operation failed while retrieving categories.", ex);
             }
         }
 

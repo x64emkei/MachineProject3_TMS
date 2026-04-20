@@ -1,12 +1,15 @@
-﻿// MACHINE PROJECT 3 | CS207L
+// MACHINE PROJECT 3 | CS207L
 // ORDENES, MICHAEL BENEDICT G. 
 // BAARDE, ADRIAN C.
 // TUMBAGA, KURT CEZMER S. 
 
 using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
-using MySql.Data.MySqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MachineProject3_TMS
 {
@@ -14,13 +17,21 @@ namespace MachineProject3_TMS
     {
         // Stores last schema creation summary for display
         private string _lastSchemaSummary = string.Empty;
+
         public FrmDBConnect()
         {
             InitializeComponent();
+            this.Load += FrmDBConnect_Load;
+
             // Wire designer buttons to their handlers so the form is responsive at runtime
+            if (DemoModeButton != null) DemoModeButton.Click += DemoModeButton_Click;
+            if (StartServiceButton != null) StartServiceButton.Click += async (s, e) => await ManageServiceAsync("start");
+            if (RestartServiceButton != null) RestartServiceButton.Click += async (s, e) => { await ManageServiceAsync("stop"); await ManageServiceAsync("start"); };
+            if (StopServiceButton != null) StopServiceButton.Click += async (s, e) => await ManageServiceAsync("stop");
             if (LoginButton != null) LoginButton.Click += LoginButton_Click;
-            if (ReturnToDashboardButton != null) ReturnToDashboardButton.Click += ReturnToDashboardButton_Click;
-            if (ShowPassLoginButtonLabel != null) ShowPassLoginButtonLabel.Click += ShowPassLoginButtonLabel_Click;
+            if (ServerLookupButton != null) ServerLookupButton.Click += ServerLookupButton_Click;
+            if (CheckStatusButton != null) CheckStatusButton.Click += async (s, e) => await CheckAllStatusesAsync();
+            if (RefreshStatusButton != null) RefreshStatusButton.Click += async (s, e) => await CheckAllStatusesAsync();
 
             // Keyboard helpers
             try
@@ -31,30 +42,275 @@ namespace MachineProject3_TMS
             }
             catch { }
 
-            // Wire checkbox events
-            if (SaveConfigCheckBox != null) SaveConfigCheckBox.CheckedChanged += SaveConfigCheckBox_CheckedChanged;
-            if (DemoModeCheckBox != null) DemoModeCheckBox.CheckedChanged += DemoModeCheckBox_CheckedChanged;
-            if (CreateNewDataBaseButton != null) CreateNewDataBaseButton.Click += CreateNewDataBaseButton_Click;
-
             // Loads saved DB config (if any) and updates status label.
             try
             {
                 LoadSavedConfig();
-                UpdateDbStatusLabel();
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
             }
+        }
 
-            // Initialize demo allowed flag from checkbox state
+        private void FrmDBConnect_Load(object sender, EventArgs e)
+        {
+            // Remember Credentials Check
             try
             {
-                DbConnection.DemoAllowed = DemoModeCheckBox != null && DemoModeCheckBox.Checked;
+                if (Properties.Settings.Default.RememberMe)
+                {
+                    if (UsernameTextBox != null) UsernameTextBox.Text = Properties.Settings.Default.DbUsername;
+                    if (PasswordTextBox != null) PasswordTextBox.Text = Properties.Settings.Default.DbPassword;
+                    if (RememberCredentialsCheckBox != null) RememberCredentialsCheckBox.Checked = true;
+                }
             }
-            catch (Exception ex)
+            catch { }
+        }
+
+        private async void DemoModeButton_Click(object sender, EventArgs e)
+        {
+            using (Form prompt = new Form())
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                prompt.Width = 400;
+                prompt.Height = 200;
+                prompt.Text = "Enable Demo Mode";
+                prompt.StartPosition = FormStartPosition.CenterParent;
+                prompt.FormBorderStyle = FormBorderStyle.FixedDialog;
+                prompt.MaximizeBox = false;
+                prompt.MinimizeBox = false;
+
+                Label warningLabel = new Label() { Left = 20, Top = 20, Width = 350, Height = 40, Text = "Warning: You are about to enter Demo Mode. The database connection will be disabled." };
+                Label countdownLabel = new Label() { Left = 20, Top = 60, Width = 350, Text = "Please wait 10 seconds..." };
+                Button enableButton = new Button() { Text = "Enable Demo", Left = 50, Top = 100, Width = 120, Enabled = false };
+                Button cancelButton = new Button() { Text = "Cancel", Left = 200, Top = 100, Width = 100 };
+
+                prompt.Controls.Add(warningLabel);
+                prompt.Controls.Add(countdownLabel);
+                prompt.Controls.Add(enableButton);
+                prompt.Controls.Add(cancelButton);
+
+                int timeLeft = 10;
+                Timer timer = new Timer();
+                timer.Interval = 1000;
+                timer.Tick += (s, args) =>
+                {
+                    timeLeft--;
+                    countdownLabel.Text = $"Please wait {timeLeft} seconds...";
+                    if (timeLeft <= 0)
+                    {
+                        timer.Stop();
+                        countdownLabel.Text = "You can now enable demo mode.";
+                        enableButton.Enabled = true;
+                    }
+                };
+
+                enableButton.Click += (s, args) => { prompt.DialogResult = DialogResult.OK; prompt.Close(); };
+                cancelButton.Click += (s, args) => { prompt.DialogResult = DialogResult.Cancel; prompt.Close(); };
+
+                timer.Start();
+                var result = prompt.ShowDialog(this);
+                timer.Stop();
+
+                if (result == DialogResult.OK)
+                {
+                    DemoHelper.IsDemoMode = true;
+                    try { MySqlConnection.ClearAllPools(); } catch { }
+                    
+                    DbConnection.EnableDemoMode();
+                    DbConnection.CurrentUserId = 0;
+                    DbConnection.CurrentUsername = "demo";
+                    DbConnection.CurrentName = "Demo User";
+                    DbConnection.CurrentEmail = "demo@local";
+                    DbConnection.CurrentLoginTime = DateTime.Now;
+
+                    FrmDashboard dashboard = new FrmDashboard();
+                    dashboard.Show();
+                    this.Hide();
+                }
+            }
+        }
+
+        private async Task ManageServiceAsync(string action)
+        {
+            if (DemoHelper.InterceptAction($"Manage MySQL Service ({action})", "This button manages the local MySQL Windows Service. Disabled in Demo Mode.")) return;
+
+            try
+            {
+                UpdateStatusLabel(WindowsServiceStatusOutputLabel, $"Executing {action}...", "Checking...");
+                SetProgressMarquee(true);
+                await Task.Run(() =>
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo
+                    {
+                        FileName = "net.exe",
+                        Arguments = $"{(action)} mysql",
+                        Verb = "runas",
+                        UseShellExecute = true,
+                        CreateNoWindow = true
+                    };
+                    using (Process p = Process.Start(psi))
+                    {
+                        if (p != null) p.WaitForExit();
+                    }
+                });
+                UpdateStatusLabel(WindowsServiceStatusOutputLabel, $"Service {action} completed.", "Running");
+            }
+            catch (Exception)
+            {
+                UpdateStatusLabel(WindowsServiceStatusOutputLabel, "Service action cancelled or failed.", "Failed");
+            }
+            finally
+            {
+                SetProgressMarquee(false);
+            }
+        }
+
+        private async void ServerLookupButton_Click(object sender, EventArgs e)
+        {
+            if (DemoHelper.InterceptAction("Server Lookup", "This button looks up the default local MySQL configuration. Disabled in Demo Mode.")) return;
+
+            SetProgressMarquee(true);
+            UpdateStatusLabel(ServerStatusOutputLabel, "Looking up server...", "Checking...");
+            
+            await Task.Delay(500); 
+            string host = "127.0.0.1";
+            string port = "3306";
+            
+            SetProgressMarquee(false);
+
+            var answer = MessageBox.Show($"Is Host: {host} and Port: {port} correct for this environment?", "Server Lookup", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (answer == DialogResult.Yes)
+            {
+                UpdateStatusLabel(ServerStatusOutputLabel, $"Host: {host}:{port}", "Valid");
+                if (ServerDetailsOutputLabel != null) ServerDetailsOutputLabel.Text = $"{(host)}:{(port)}";
+            }
+            else
+            {
+                UpdateStatusLabel(ServerStatusOutputLabel, "Lookup rejected", "Failed");
+            }
+        }
+
+        private async void LoginButton_Click(object sender, EventArgs e)
+        {
+            if (DemoHelper.InterceptAction("Database Connect", "This button attempts to connect to the MySQL database. Disabled in Demo Mode.")) return;
+
+            string user = UsernameTextBox?.Text?.Trim() ?? "";
+            string pass = PasswordTextBox?.Text ?? "";
+
+            SetProgressMarquee(true);
+            UpdateStatusLabel(ConnectionStatusOutputLabel, "Connecting...", "Checking...");
+            
+            bool success = false;
+            await Task.Run(() =>
+            {
+                string serverOnly = $"Server=localhost;Uid={user};Pwd={pass};";
+                try
+                {
+                    using (var conn = new MySqlConnection(serverOnly))
+                    {
+                        conn.Open();
+                        success = true;
+                    }
+                    DbConnection.ConnectionString = serverOnly + "Database=task_management_db;";
+                }
+                catch
+                {
+                    success = false;
+                }
+            });
+
+            SetProgressMarquee(false);
+
+            if (success)
+            {
+                UpdateStatusLabel(ConnectionStatusOutputLabel, "Connected", "Connected");
+                UpdateStatusLabel(CredentialStatusOutputLabel, "Credentials Valid", "Valid");
+
+                if (RememberCredentialsCheckBox != null)
+                {
+                    try
+                    {
+                        if (RememberCredentialsCheckBox.Checked)
+                        {
+                            Properties.Settings.Default.DbUsername = user;
+                            Properties.Settings.Default.DbPassword = pass;
+                            Properties.Settings.Default.RememberMe = true;
+                        }
+                        else
+                        {
+                            Properties.Settings.Default.DbUsername = "";
+                            Properties.Settings.Default.DbPassword = "";
+                            Properties.Settings.Default.RememberMe = false;
+                        }
+                        Properties.Settings.Default.Save();
+                    }
+                    catch { }
+                }
+
+                DbConnection.DisableDemoMode();
+                FrmDashboard dashboard = new FrmDashboard();
+                dashboard.Show();
+                this.Hide();
+            }
+            else
+            {
+                UpdateStatusLabel(ConnectionStatusOutputLabel, "Connection Failed", "Failed");
+                UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid Credentials", "Failed");
+                MessageBox.Show("Failed to connect to the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task CheckAllStatusesAsync()
+        {
+            if (DemoHelper.InterceptAction("Check Status", "This button checks the database and service status. Disabled in Demo Mode.")) return;
+
+            SetProgressMarquee(true);
+            UpdateStatusLabel(DatabaseStatusOutputLabel, "Checking DB...", "Checking...");
+            await Task.Delay(500);
+            UpdateStatusLabel(DatabaseStatusOutputLabel, "Not Checked", "Disconnected");
+            SetProgressMarquee(false);
+        }
+
+        private void SetProgressMarquee(bool isMarquee)
+        {
+            if (StatusProgressBar != null)
+            {
+                if (isMarquee)
+                {
+                    StatusProgressBar.Style = ProgressBarStyle.Marquee;
+                }
+                else
+                {
+                    StatusProgressBar.Style = ProgressBarStyle.Blocks;
+                    StatusProgressBar.Value = 0;
+                }
+            }
+        }
+
+        private void UpdateStatusLabel(Label label, string text, string stateType)
+        {
+            if (label == null) return;
+            label.Text = text;
+
+            switch (stateType)
+            {
+                case "Running":
+                case "Connected":
+                case "Valid":
+                    label.ForeColor = Color.LimeGreen;
+                    break;
+                case "Stopped":
+                case "Failed":
+                case "Disconnected":
+                    label.ForeColor = Color.Red;
+                    break;
+                case "Checking...":
+                    label.ForeColor = Color.Orange;
+                    break;
+                default:
+                    label.ForeColor = SystemColors.ControlText;
+                    break;
             }
         }
 
@@ -99,14 +355,13 @@ namespace MachineProject3_TMS
                 }
 
                 // Build server-only connection string (no Database)
-                string serverOnly = string.Join(";", serverParts) + ";";
+                string serverOnly = string.Join(";", serverParts) + ";" ;
 
                 // Connect to server and create database
                 using (var conn = new MySqlConnection(serverOnly))
                 {
                     conn.Open();
-                    // Auto-save server-only credentials so fields remain stored
-                    try { SaveConfigCheckBox.Checked = true; SaveConfig(serverOnly); } catch { }
+                    try { if (RememberCredentialsCheckBox != null) RememberCredentialsCheckBox.Checked = true; SaveConfig(serverOnly); } catch { }
                     string createDb = $"CREATE DATABASE IF NOT EXISTS `{dbName}` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;";
                     using (var cmd = new MySqlCommand(createDb, conn))
                     {
@@ -115,7 +370,7 @@ namespace MachineProject3_TMS
                 }
 
                 // Update application connection string to include database (recompose)
-                DbConnection.ConnectionString = serverOnly + "Database=" + dbName + ";";
+                DbConnection.ConnectionString = serverOnly + "Database=" + dbName + ";" ;
 
                 // Ensure schema/tables
                 bool ok = EnsureDatabaseSchema();
@@ -221,13 +476,6 @@ namespace MachineProject3_TMS
             }
         }
 
-
-        /// <summary>
-        /// Handles SaveConfig checkbox changes by asking for confirmation when being unchecked.
-        /// </summary>
-        /// <summary>
-        /// Handler for CreateNewDataBaseButton click. Attempts to create the database and ensure schema, then reports result.
-        /// </summary>
         private void CreateNewDataBaseButton_Click(object sender, EventArgs e)
         {
             string user = UsernameTextBox?.Text?.Trim() ?? string.Empty;
@@ -254,7 +502,7 @@ namespace MachineProject3_TMS
                 return;
             }
 
-            DbConnection.ConnectionString = serverOnly + "Database=" + dbName + ";";
+            DbConnection.ConnectionString = serverOnly + "Database=" + dbName + ";" ;
 
             try
             {
@@ -265,8 +513,7 @@ namespace MachineProject3_TMS
                 if (ok)
                 {
                     MessageBox.Show("Database and schema ensured:\r\n" + msg, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Auto-save server credentials and keep box checked
-                    try { SaveConfigCheckBox.Checked = true; SaveConfig(DbConnection.ConnectionString); } catch { }
+                    try { if (RememberCredentialsCheckBox != null) RememberCredentialsCheckBox.Checked = true; SaveConfig(DbConnection.ConnectionString); } catch { }
                 }
                 else
                 {
@@ -281,286 +528,8 @@ namespace MachineProject3_TMS
             try { UpdateDbStatusLabel(); } catch { }
         }
 
-        private void SaveConfigCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (SaveConfigCheckBox != null && !SaveConfigCheckBox.Checked)
-                {
-                    var res = MessageBox.Show("Unchecking will remove saved DB configuration from disk. Continue?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (res == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            var path = GetConfigFilePath();
-                            if (File.Exists(path)) File.Delete(path);
-                        }
-                        catch { }
-                    }
-                    else
-                    {
-                        SaveConfigCheckBox.Checked = true; // Revert
-                    }
-                }
-            }
-            catch { }
-        }
-
-        /// <summary>
-        /// Handles demo checkbox changes by enabling/disabling DemoAllowed and disabling demo mode when unchecked.
-        /// </summary>
-        private void DemoModeCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                DbConnection.DemoAllowed = DemoModeCheckBox != null && DemoModeCheckBox.Checked;
-                if (!DbConnection.DemoAllowed)
-                {
-                    DbConnection.DisableDemoMode();
-                }
-                UpdateDbStatusLabel();
-            }
-            catch { }
-        }
-
-        /// <summary>
-        /// Tests the connection using the provided credentials.
-        /// </summary>
-        private void LoginButton_Click(object sender, EventArgs e)
-        {
-            // If demo mode is checked, bypass DB connection and open the dashboard for UI testing
-            if (DemoModeCheckBox != null && DemoModeCheckBox.Checked)
-            {
-                // Set a minimal in-memory session so other forms have user info available
-                // Explicitly enable demo mode only when checkbox is checked.
-                DbConnection.EnableDemoMode();
-                DbConnection.CurrentUserId = 0;
-                DbConnection.CurrentUsername = "demo";
-                DbConnection.CurrentName = "Demo User";
-                DbConnection.CurrentEmail = "demo@local";
-                DbConnection.CurrentLoginTime = DateTime.Now;
-
-                FrmDashboard dashboard = new FrmDashboard();
-                dashboard.Show();
-                this.Hide();
-                return;
-            }
-
-            string user = UsernameTextBox.Text.Trim();
-            string pass = PasswordTextBox.Text;
-
-            if (string.IsNullOrWhiteSpace(user))
-            {
-                MessageBox.Show("Please enter a database username.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string dbName = "task_management_db";
-            string serverOnly = $"Server=localhost;Uid={user};Pwd={pass};";
-
-            // First, try connecting to the server (no database selected)
-            try
-            {
-                using (var conn = new MySqlConnection(serverOnly))
-                {
-                    conn.Open();
-
-                    // Server reachable. Check if the target database exists.
-                    using (var cmd = new MySqlCommand("SELECT COUNT(*) FROM information_schema.schemata WHERE schema_name = @db", conn))
-                    {
-                        cmd.Parameters.AddWithValue("@db", dbName);
-                        var exists = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
-
-                        if (exists)
-                        {
-                            // Database exists. Ask user whether to overwrite or migrate.
-                            var ask = MessageBox.Show($"Database '{dbName}' was found on the server.\r\n\r\nChoose Yes to overwrite (drop existing tables and recreate schema).\r\nChoose No to attempt a non-destructive migration (create missing tables).\r\nChoose Cancel to abort.",
-                                "Database Exists", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
-                            if (ask == DialogResult.Cancel)
-                            {
-                                return;
-                            }
-
-                            // Set connection string to the database for schema operations
-                            DbConnection.ConnectionString = serverOnly + "Database=" + dbName + ";";
-                            if (ask == DialogResult.Yes)
-                            {
-                                // Overwrite: offer backup then drop known tables then recreate
-                                try
-                                {
-                                    var backupAnswer = MessageBox.Show("Would you like to backup existing data before overwriting?", "Backup Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                    if (backupAnswer == DialogResult.Yes)
-                                    {
-                                        // perform backup into backup_{table}_{timestamp} tables
-                                        string ts = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-                                        using (var c3 = new MySqlConnection(DbConnection.ConnectionString))
-                                        {
-                                            c3.Open();
-                                            foreach (var t in new[] { "users", "categories", "tasks", "schema_migrations" })
-                                            {
-                                                try
-                                                {
-                                                    // Check if table exists
-                                                    using (var chk = new MySqlCommand("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() AND table_name = @t", c3))
-                                                    {
-                                                        chk.Parameters.AddWithValue("@t", t);
-                                                        var cnt = Convert.ToInt32(chk.ExecuteScalar());
-                                                        if (cnt == 0) continue; // nothing to backup
-                                                    }
-
-                                                    string backupName = $"backup_{t}_{ts}";
-                                                    string bkSql = $"CREATE TABLE `{backupName}` AS SELECT * FROM `{t}`;";
-                                                    using (var bk = new MySqlCommand(bkSql, c3)) { bk.ExecuteNonQuery(); }
-                                                }
-                                                catch (Exception ex)
-                                                {
-                                                    var cont = MessageBox.Show($"Failed to backup table {t}: {ex.Message}\r\nContinue with overwrite?", "Backup Failed", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                                                    if (cont == DialogResult.No)
-                                                    {
-                                                        return;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-
-                                    using (var c2 = new MySqlConnection(DbConnection.ConnectionString))
-                                    {
-                                        c2.Open();
-                                        using (var drop = new MySqlCommand(@"SET FOREIGN_KEY_CHECKS=0; DROP TABLE IF EXISTS tasks; DROP TABLE IF EXISTS categories; DROP TABLE IF EXISTS users; DROP TABLE IF EXISTS schema_migrations; SET FOREIGN_KEY_CHECKS=1;", c2))
-                                        {
-                                            drop.ExecuteNonQuery();
-                                        }
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("Failed to drop existing tables: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-
-                                var ok = EnsureDatabaseSchema();
-                                if (ok)
-                                {
-                                    MessageBox.Show("Database schema overwritten and created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Failed to recreate database schema.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-                            }
-                            else
-                            {
-                                // Migrate: non-destructive ensure
-                                var ok = EnsureDatabaseSchema();
-                                if (ok)
-                                {
-                                    MessageBox.Show("Database checked and missing tables were created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Failed to ensure database schema.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-                            }
-
-                            // Persist settings if requested
-                            if (SaveConfigCheckBox.Checked)
-                            {
-                                try { SaveConfig(DbConnection.ConnectionString); } catch { }
-                            }
-
-                            DbConnection.DisableDemoMode();
-                            UpdateDbStatusLabel();
-
-                            // After schema is present, check for users
-                            bool hasUsers = false;
-                            try
-                            {
-                                using (var conn2 = new MySqlConnection(DbConnection.ConnectionString))
-                                {
-                                    conn2.Open();
-                                    using (var cmd2 = new MySqlCommand("SELECT COUNT(*) FROM users", conn2))
-                                    {
-                                        var val = cmd2.ExecuteScalar();
-                                        hasUsers = val != DBNull.Value && Convert.ToInt32(val) > 0;
-                                    }
-                                }
-                            }
-                            catch { hasUsers = false; }
-
-                            FrmLogin loginForm = new FrmLogin();
-                            if (!hasUsers)
-                            {
-                                try
-                                {
-                                    this.Hide();
-                                    using (var dlg = new SchemaSummaryForm("Schema Creation Summary", _lastSchemaSummary)) { try { dlg.ShowDialog(this); } catch { } }
-                                    loginForm.Show();
-                                    loginForm.ShowCreateAccountPanel();
-                                    return;
-                                }
-                                catch { }
-                            }
-
-                            try
-                            {
-                                if (!string.IsNullOrEmpty(_lastSchemaSummary))
-                                {
-                                    using (var dlg = new SchemaSummaryForm("Schema Creation Summary", _lastSchemaSummary)) { try { dlg.ShowDialog(this); } catch { } }
-                                }
-                            }
-                            catch { }
-
-                            loginForm.Show();
-                            this.Hide();
-                            return;
-                        }
-                        else
-                        {
-                            // Database not found on server
-                            var create = MessageBox.Show($"Connected to server, but database '{dbName}' was not found.\r\nWould you like to create it now?", "Database Missing", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (create == DialogResult.Yes)
-                            {
-                                DbConnection.ConnectionString = serverOnly + "Database=" + dbName + ";";
-                                var res = TryCreateDatabaseAndSchema();
-                                if (res.Item1)
-                                {
-                                    MessageBox.Show("Database created and schema applied successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    if (SaveConfigCheckBox.Checked) { try { SaveConfig(DbConnection.ConnectionString); } catch { } }
-                                    DbConnection.DisableDemoMode();
-                                    UpdateDbStatusLabel();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Failed to create database: " + res.Item2, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                            else
-                            {
-                                // User chose not to create DB now. Keep server-only connection string so user can create manually later.
-                                DbConnection.ConnectionString = serverOnly;
-                                UpdateDbStatusLabel();
-                                MessageBox.Show("Connected to server. You may create the database later using the Create Database button.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            return;
-                        }
-                    }
-                }
-            }
-            catch (MySqlException mex)
-            {
-                MessageBox.Show($"Server connection failed: {mex.Message}", "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Unexpected error checking server/database: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
+        private void SaveConfigCheckBox_CheckedChanged(object sender, EventArgs e) { }
+        private void DemoModeCheckBox_CheckedChanged(object sender, EventArgs e) { }
 
         /// <summary>
         /// Returns path to saved DB config file in the user's AppData folder.
@@ -595,7 +564,7 @@ namespace MachineProject3_TMS
                     if (!string.IsNullOrWhiteSpace(saved))
                     {
                         DbConnection.ConnectionString = saved;
-                        SaveConfigCheckBox.Checked = true;
+                        if (RememberCredentialsCheckBox != null) RememberCredentialsCheckBox.Checked = true;
                         // Try to pre-fill username in the UI if present
                         try
                         {
@@ -666,12 +635,12 @@ namespace MachineProject3_TMS
                 }
                 catch { }
 
-                DBStatusLabel.Text = string.IsNullOrWhiteSpace(configInfo) ? status : $"{status} | {configInfo}";
+                if (ConnectionStatusOutputLabel != null) ConnectionStatusOutputLabel.Text = string.IsNullOrWhiteSpace(configInfo) ? status : $"{(status)} | {(configInfo)}";
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex.Message);
-                DBStatusLabel.Text = "DB Status Unknown";
+                if (ConnectionStatusOutputLabel != null) ConnectionStatusOutputLabel.Text = "DB Status Unknown";
             }
         }
 
@@ -718,6 +687,51 @@ namespace MachineProject3_TMS
                 // Fallback to exit if something unexpected occurs
                 Application.Exit();
             }
+        }
+    }
+
+    public static class DemoHelper
+    {
+        public static bool IsDemoMode { get; set; } = false;
+
+        public static bool InterceptAction(string featureName, string description)
+        {
+            if (IsDemoMode)
+            {
+                MessageBox.Show($"Demo Mode: {featureName}\n\n{description}", "Demo Mode", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+            return false;
+        }
+    }
+}
+
+namespace MachineProject3_TMS.Properties
+{
+    internal sealed partial class Settings
+    {
+        [System.Configuration.UserScopedSettingAttribute()]
+        [System.Configuration.DefaultSettingValueAttribute("")]
+        public string DbUsername 
+        {
+            get { try { return (string)this["DbUsername"]; } catch { return ""; } }
+            set { this["DbUsername"] = value; }
+        }
+
+        [System.Configuration.UserScopedSettingAttribute()]
+        [System.Configuration.DefaultSettingValueAttribute("")]
+        public string DbPassword 
+        {
+            get { try { return (string)this["DbPassword"]; } catch { return ""; } }
+            set { this["DbPassword"] = value; }
+        }
+
+        [System.Configuration.UserScopedSettingAttribute()]
+        [System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RememberMe 
+        {
+            get { try { return (bool)this["RememberMe"]; } catch { return false; } }
+            set { this["RememberMe"] = value; }
         }
     }
 }

@@ -215,6 +215,54 @@ namespace MachineProject3_TMS
             LoginPanel.Enabled = true;
         }
 
+        public static int RegisterUserDatabase(string username, string email, string pass, string name)
+        {
+            try
+            {
+                using (MySqlConnection conn = DbConnection.GetConnection())
+                {
+                    conn.Open();
+
+                    // Check uniqueness of username and email first to provide specific feedback
+                    using (MySqlCommand checkUser = new MySqlCommand("SELECT COUNT(*) FROM users WHERE username = @user", conn))
+                    {
+                        checkUser.Parameters.AddWithValue("@user", username);
+                        var userCount = Convert.ToInt32(checkUser.ExecuteScalar());
+                        if (userCount > 0) return 1; // Duplicate username
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(email))
+                    {
+                        using (MySqlCommand checkEmail = new MySqlCommand("SELECT COUNT(*) FROM users WHERE email = @em", conn))
+                        {
+                            checkEmail.Parameters.AddWithValue("@em", email);
+                            var emailCount = Convert.ToInt32(checkEmail.ExecuteScalar());
+                            if (emailCount > 0) return 2; // Duplicate email
+                        }
+                    }
+
+                    string query = "INSERT INTO users (username, password, name, email) VALUES (@user, @pass, @name, @email)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@user", username);
+                        cmd.Parameters.AddWithValue("@pass", pass);
+                        cmd.Parameters.AddWithValue("@name", name);
+                        cmd.Parameters.AddWithValue("@email", email);
+                        cmd.ExecuteNonQuery();
+                    }
+                    return 0; // Success
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException ex) when (ex.Number == 1062)
+            {
+                return 1;
+            }
+            catch
+            {
+                return -1; // General error
+            }
+        }
+
         /// <summary>
         /// Validates and registers a new user in the database.
         /// </summary>
@@ -238,59 +286,24 @@ namespace MachineProject3_TMS
                 return;
             }
 
-            try
-            {
-                using (MySqlConnection conn = DbConnection.GetConnection())
-                {
-                    conn.Open();
-
-                    // Check uniqueness of username and email first to provide specific feedback
-                    using (MySqlCommand checkUser = new MySqlCommand("SELECT COUNT(*) FROM users WHERE username = @user", conn))
-                    {
-                        checkUser.Parameters.AddWithValue("@user", username);
-                        var userCount = Convert.ToInt32(checkUser.ExecuteScalar());
-                        if (userCount > 0)
-                        {
-                            MessageBox.Show("Username already exists. Please choose a different one.", "Duplicate User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(email))
-                    {
-                        using (MySqlCommand checkEmail = new MySqlCommand("SELECT COUNT(*) FROM users WHERE email = @em", conn))
-                        {
-                            checkEmail.Parameters.AddWithValue("@em", email);
-                            var emailCount = Convert.ToInt32(checkEmail.ExecuteScalar());
-                            if (emailCount > 0)
-                            {
-                                MessageBox.Show("Email address is already registered. Please use a different email.", "Duplicate Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                return;
-                            }
-                        }
-                    }
-
-                    string query = "INSERT INTO users (username, password, name, email) VALUES (@user, @pass, @name, @email)";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@user", username);
-                        cmd.Parameters.AddWithValue("@pass", hashed);
-                        cmd.Parameters.AddWithValue("@name", name);
-                        cmd.Parameters.AddWithValue("@email", email);
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Account successfully created! You may now login.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CreateAcctCloseButton_Click(null, null);
-                }
-            }
-            catch (MySqlException ex) when (ex.Number == 1062) // Duplicate entry
+            // Moved DB logic to RegisterUserDatabase
+            int result = RegisterUserDatabase(username, email, pass, name);
+            if (result == 1)
             {
                 MessageBox.Show("Username already exists. Please choose a different one.", "Duplicate User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else if (result == 2)
             {
-                MessageBox.Show($"Error creating account: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email address is already registered. Please use a different email.", "Duplicate Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (result == 0)
+            {
+                MessageBox.Show("Account successfully created! You may now login.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CreateAcctCloseButton_Click(null, null);
+            }
+            else
+            {
+                MessageBox.Show("Error creating account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -383,7 +396,7 @@ namespace MachineProject3_TMS
                         string query = "UPDATE users SET password = @pass WHERE username = @user";
                         using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@pass", hashed);
+                            cmd.Parameters.AddWithValue("@pass", newPass);
                             cmd.Parameters.AddWithValue("@user", username);
                             int affected = cmd.ExecuteNonQuery();
                             if (affected == 0) throw new InvalidOperationException("No user record found to update.");

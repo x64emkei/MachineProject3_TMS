@@ -35,15 +35,36 @@
             this.UsernameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
-            this.SaveConfigCheckBox = new System.Windows.Forms.CheckBox();
-            this.DemoModeCheckBox = new System.Windows.Forms.CheckBox();
             this.ConfigGuideLabel = new System.Windows.Forms.Label();
-            this.DBStatusLabel = new System.Windows.Forms.Label();
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
-            this.CreateNewDataBaseButton = new System.Windows.Forms.Button();
+            this.ServerCredentials = new System.Windows.Forms.GroupBox();
+            this.DBServerStatus = new System.Windows.Forms.GroupBox();
+            this.CredentialStatusLabel = new System.Windows.Forms.Label();
+            this.CredentialStatusOutputLabel = new System.Windows.Forms.Label();
+            this.ConnectionStatusOutputLabel = new System.Windows.Forms.Label();
+            this.ServerStatusLabel = new System.Windows.Forms.Label();
+            this.ConnectionStatusLabel = new System.Windows.Forms.Label();
+            this.RememberCredentialsCheckBox = new System.Windows.Forms.CheckBox();
+            this.DatabaseStatusLabel = new System.Windows.Forms.Label();
+            this.CheckStatusButton = new System.Windows.Forms.Button();
+            this.DemoModeButton = new System.Windows.Forms.Button();
+            this.ServerLookupButton = new System.Windows.Forms.Button();
+            this.WindowsServiceLabel = new System.Windows.Forms.Label();
+            this.WindowsServiceStatusOutputLabel = new System.Windows.Forms.Label();
+            this.ServerStatusOutputLabel = new System.Windows.Forms.Label();
+            this.DatabaseStatusOutputLabel = new System.Windows.Forms.Label();
+            this.StartServiceButton = new System.Windows.Forms.Button();
+            this.StopServiceButton = new System.Windows.Forms.Button();
+            this.RestartServiceButton = new System.Windows.Forms.Button();
+            this.RefreshStatusButton = new System.Windows.Forms.Button();
+            this.StatusProgressBar = new System.Windows.Forms.ProgressBar();
+            this.ServerDetailsLabel = new System.Windows.Forms.Label();
+            this.ServerDetailsOutputLabel = new System.Windows.Forms.Label();
             BannerPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(BannerPictureBox)).BeginInit();
+            this.ServerCredentials.SuspendLayout();
+            this.DBServerStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // BannerPictureBox
@@ -88,33 +109,12 @@
             this.UsernameLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.UsernameLabel.Name = "UsernameLabel";
             // 
-            // SaveConfigCheckBox
-            // 
-            resources.ApplyResources(this.SaveConfigCheckBox, "SaveConfigCheckBox");
-            this.SaveConfigCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SaveConfigCheckBox.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.SaveConfigCheckBox.Name = "SaveConfigCheckBox";
-            this.SaveConfigCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // DemoModeCheckBox
-            // 
-            resources.ApplyResources(this.DemoModeCheckBox, "DemoModeCheckBox");
-            this.DemoModeCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DemoModeCheckBox.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.DemoModeCheckBox.Name = "DemoModeCheckBox";
-            this.DemoModeCheckBox.UseVisualStyleBackColor = true;
-            // 
             // ConfigGuideLabel
             // 
             resources.ApplyResources(this.ConfigGuideLabel, "ConfigGuideLabel");
+            this.ConfigGuideLabel.BackColor = System.Drawing.Color.Transparent;
             this.ConfigGuideLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ConfigGuideLabel.Name = "ConfigGuideLabel";
-            // 
-            // DBStatusLabel
-            // 
-            resources.ApplyResources(this.DBStatusLabel, "DBStatusLabel");
-            this.DBStatusLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DBStatusLabel.Name = "DBStatusLabel";
             // 
             // ReturnToDashboardButton
             // 
@@ -138,37 +138,225 @@
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.UseVisualStyleBackColor = false;
             // 
-            // CreateNewDataBaseButton
+            // ServerCredentials
             // 
-            resources.ApplyResources(this.CreateNewDataBaseButton, "CreateNewDataBaseButton");
-            this.CreateNewDataBaseButton.Name = "CreateNewDataBaseButton";
-            this.CreateNewDataBaseButton.UseVisualStyleBackColor = true;
+            this.ServerCredentials.Controls.Add(this.RememberCredentialsCheckBox);
+            this.ServerCredentials.Controls.Add(this.ServerLookupButton);
+            this.ServerCredentials.Controls.Add(this.ConfigGuideLabel);
+            this.ServerCredentials.Controls.Add(this.LoginButton);
+            this.ServerCredentials.Controls.Add(this.UsernameLabel);
+            this.ServerCredentials.Controls.Add(this.PasswordLabel);
+            this.ServerCredentials.Controls.Add(this.UsernameTextBox);
+            this.ServerCredentials.Controls.Add(this.ShowPassLoginButtonLabel);
+            this.ServerCredentials.Controls.Add(this.PasswordTextBox);
+            resources.ApplyResources(this.ServerCredentials, "ServerCredentials");
+            this.ServerCredentials.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ServerCredentials.Name = "ServerCredentials";
+            this.ServerCredentials.TabStop = false;
+            // 
+            // DBServerStatus
+            // 
+            this.DBServerStatus.CausesValidation = false;
+            this.DBServerStatus.Controls.Add(this.DemoModeButton);
+            this.DBServerStatus.Controls.Add(this.StopServiceButton);
+            this.DBServerStatus.Controls.Add(this.RestartServiceButton);
+            this.DBServerStatus.Controls.Add(this.StartServiceButton);
+            this.DBServerStatus.Controls.Add(this.RefreshStatusButton);
+            this.DBServerStatus.Controls.Add(this.CheckStatusButton);
+            this.DBServerStatus.Controls.Add(this.WindowsServiceStatusOutputLabel);
+            this.DBServerStatus.Controls.Add(this.WindowsServiceLabel);
+            this.DBServerStatus.Controls.Add(this.ServerDetailsOutputLabel);
+            this.DBServerStatus.Controls.Add(this.DatabaseStatusOutputLabel);
+            this.DBServerStatus.Controls.Add(this.ServerDetailsLabel);
+            this.DBServerStatus.Controls.Add(this.ConnectionStatusOutputLabel);
+            this.DBServerStatus.Controls.Add(this.DatabaseStatusLabel);
+            this.DBServerStatus.Controls.Add(this.ServerStatusOutputLabel);
+            this.DBServerStatus.Controls.Add(this.CredentialStatusOutputLabel);
+            this.DBServerStatus.Controls.Add(this.ServerStatusLabel);
+            this.DBServerStatus.Controls.Add(this.ConnectionStatusLabel);
+            this.DBServerStatus.Controls.Add(this.CredentialStatusLabel);
+            this.DBServerStatus.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.DBServerStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.DBServerStatus, "DBServerStatus");
+            this.DBServerStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DBServerStatus.Name = "DBServerStatus";
+            this.DBServerStatus.TabStop = false;
+            this.DBServerStatus.UseCompatibleTextRendering = true;
+            // 
+            // CredentialStatusLabel
+            // 
+            resources.ApplyResources(this.CredentialStatusLabel, "CredentialStatusLabel");
+            this.CredentialStatusLabel.Name = "CredentialStatusLabel";
+            // 
+            // CredentialStatusOutputLabel
+            // 
+            this.CredentialStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.CredentialStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.CredentialStatusOutputLabel, "CredentialStatusOutputLabel");
+            this.CredentialStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CredentialStatusOutputLabel.Name = "CredentialStatusOutputLabel";
+            // 
+            // ConnectionStatusOutputLabel
+            // 
+            this.ConnectionStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.ConnectionStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.ConnectionStatusOutputLabel, "ConnectionStatusOutputLabel");
+            this.ConnectionStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ConnectionStatusOutputLabel.Name = "ConnectionStatusOutputLabel";
+            // 
+            // ServerStatusLabel
+            // 
+            resources.ApplyResources(this.ServerStatusLabel, "ServerStatusLabel");
+            this.ServerStatusLabel.Name = "ServerStatusLabel";
+            // 
+            // ConnectionStatusLabel
+            // 
+            resources.ApplyResources(this.ConnectionStatusLabel, "ConnectionStatusLabel");
+            this.ConnectionStatusLabel.Name = "ConnectionStatusLabel";
+            // 
+            // RememberCredentialsCheckBox
+            // 
+            resources.ApplyResources(this.RememberCredentialsCheckBox, "RememberCredentialsCheckBox");
+            this.RememberCredentialsCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RememberCredentialsCheckBox.Name = "RememberCredentialsCheckBox";
+            this.RememberCredentialsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DatabaseStatusLabel
+            // 
+            resources.ApplyResources(this.DatabaseStatusLabel, "DatabaseStatusLabel");
+            this.DatabaseStatusLabel.Name = "DatabaseStatusLabel";
+            // 
+            // CheckStatusButton
+            // 
+            this.CheckStatusButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckStatusButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.CheckStatusButton, "CheckStatusButton");
+            this.CheckStatusButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CheckStatusButton.Name = "CheckStatusButton";
+            this.CheckStatusButton.UseVisualStyleBackColor = true;
+            // 
+            // DemoModeButton
+            // 
+            this.DemoModeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DemoModeButton.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+            resources.ApplyResources(this.DemoModeButton, "DemoModeButton");
+            this.DemoModeButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DemoModeButton.Name = "DemoModeButton";
+            this.DemoModeButton.UseVisualStyleBackColor = true;
+            // 
+            // ServerLookupButton
+            // 
+            this.ServerLookupButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ServerLookupButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.ServerLookupButton, "ServerLookupButton");
+            this.ServerLookupButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ServerLookupButton.Name = "ServerLookupButton";
+            this.ServerLookupButton.UseVisualStyleBackColor = true;
+            // 
+            // WindowsServiceLabel
+            // 
+            resources.ApplyResources(this.WindowsServiceLabel, "WindowsServiceLabel");
+            this.WindowsServiceLabel.Name = "WindowsServiceLabel";
+            // 
+            // WindowsServiceStatusOutputLabel
+            // 
+            this.WindowsServiceStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.WindowsServiceStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.WindowsServiceStatusOutputLabel, "WindowsServiceStatusOutputLabel");
+            this.WindowsServiceStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.WindowsServiceStatusOutputLabel.Name = "WindowsServiceStatusOutputLabel";
+            // 
+            // ServerStatusOutputLabel
+            // 
+            this.ServerStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.ServerStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.ServerStatusOutputLabel, "ServerStatusOutputLabel");
+            this.ServerStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ServerStatusOutputLabel.Name = "ServerStatusOutputLabel";
+            // 
+            // DatabaseStatusOutputLabel
+            // 
+            this.DatabaseStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.DatabaseStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.DatabaseStatusOutputLabel, "DatabaseStatusOutputLabel");
+            this.DatabaseStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DatabaseStatusOutputLabel.Name = "DatabaseStatusOutputLabel";
+            // 
+            // StartServiceButton
+            // 
+            this.StartServiceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StartServiceButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.StartServiceButton, "StartServiceButton");
+            this.StartServiceButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.StartServiceButton.Name = "StartServiceButton";
+            this.StartServiceButton.UseVisualStyleBackColor = true;
+            // 
+            // StopServiceButton
+            // 
+            this.StopServiceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StopServiceButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.StopServiceButton, "StopServiceButton");
+            this.StopServiceButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.StopServiceButton.Name = "StopServiceButton";
+            this.StopServiceButton.UseVisualStyleBackColor = true;
+            // 
+            // RestartServiceButton
+            // 
+            this.RestartServiceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RestartServiceButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.RestartServiceButton, "RestartServiceButton");
+            this.RestartServiceButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RestartServiceButton.Name = "RestartServiceButton";
+            this.RestartServiceButton.UseVisualStyleBackColor = true;
+            // 
+            // RefreshStatusButton
+            // 
+            this.RefreshStatusButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshStatusButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.RefreshStatusButton, "RefreshStatusButton");
+            this.RefreshStatusButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.RefreshStatusButton.Name = "RefreshStatusButton";
+            this.RefreshStatusButton.UseVisualStyleBackColor = true;
+            // 
+            // StatusProgressBar
+            // 
+            resources.ApplyResources(this.StatusProgressBar, "StatusProgressBar");
+            this.StatusProgressBar.MarqueeAnimationSpeed = 450;
+            this.StatusProgressBar.Name = "StatusProgressBar";
+            // 
+            // ServerDetailsLabel
+            // 
+            resources.ApplyResources(this.ServerDetailsLabel, "ServerDetailsLabel");
+            this.ServerDetailsLabel.Name = "ServerDetailsLabel";
+            // 
+            // ServerDetailsOutputLabel
+            // 
+            this.ServerDetailsOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.ServerDetailsOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.ServerDetailsOutputLabel, "ServerDetailsOutputLabel");
+            this.ServerDetailsOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ServerDetailsOutputLabel.Name = "ServerDetailsOutputLabel";
             // 
             // FrmDBConnect
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.Controls.Add(this.CreateNewDataBaseButton);
-            this.Controls.Add(this.DBStatusLabel);
-            this.Controls.Add(this.ConfigGuideLabel);
+            this.Controls.Add(this.StatusProgressBar);
+            this.Controls.Add(this.DBServerStatus);
+            this.Controls.Add(this.ServerCredentials);
             this.Controls.Add(this.ReturnToDashboardButton);
-            this.Controls.Add(this.DemoModeCheckBox);
-            this.Controls.Add(this.SaveConfigCheckBox);
-            this.Controls.Add(this.ShowPassLoginButtonLabel);
-            this.Controls.Add(this.LoginButton);
-            this.Controls.Add(this.PasswordTextBox);
-            this.Controls.Add(this.UsernameTextBox);
-            this.Controls.Add(this.PasswordLabel);
-            this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(BannerPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmDBConnect";
             ((System.ComponentModel.ISupportInitialize)(BannerPictureBox)).EndInit();
+            this.ServerCredentials.ResumeLayout(false);
+            this.ServerCredentials.PerformLayout();
+            this.DBServerStatus.ResumeLayout(false);
+            this.DBServerStatus.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -180,11 +368,30 @@
         private System.Windows.Forms.TextBox UsernameTextBox;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label UsernameLabel;
-        private System.Windows.Forms.CheckBox SaveConfigCheckBox;
         private System.Windows.Forms.Button ReturnToDashboardButton;
-        private System.Windows.Forms.CheckBox DemoModeCheckBox;
         private System.Windows.Forms.Label ConfigGuideLabel;
-        private System.Windows.Forms.Label DBStatusLabel;
-        private System.Windows.Forms.Button CreateNewDataBaseButton;
+        private System.Windows.Forms.GroupBox ServerCredentials;
+        private System.Windows.Forms.GroupBox DBServerStatus;
+        private System.Windows.Forms.Label ConnectionStatusOutputLabel;
+        private System.Windows.Forms.Label CredentialStatusOutputLabel;
+        private System.Windows.Forms.Label ServerStatusLabel;
+        private System.Windows.Forms.Label ConnectionStatusLabel;
+        private System.Windows.Forms.Label CredentialStatusLabel;
+        private System.Windows.Forms.CheckBox RememberCredentialsCheckBox;
+        private System.Windows.Forms.Button CheckStatusButton;
+        private System.Windows.Forms.Label DatabaseStatusLabel;
+        private System.Windows.Forms.Button DemoModeButton;
+        private System.Windows.Forms.Button ServerLookupButton;
+        private System.Windows.Forms.Label WindowsServiceStatusOutputLabel;
+        private System.Windows.Forms.Label WindowsServiceLabel;
+        private System.Windows.Forms.Label DatabaseStatusOutputLabel;
+        private System.Windows.Forms.Label ServerStatusOutputLabel;
+        private System.Windows.Forms.Button StopServiceButton;
+        private System.Windows.Forms.Button StartServiceButton;
+        private System.Windows.Forms.Button RestartServiceButton;
+        private System.Windows.Forms.Button RefreshStatusButton;
+        private System.Windows.Forms.ProgressBar StatusProgressBar;
+        private System.Windows.Forms.Label ServerDetailsOutputLabel;
+        private System.Windows.Forms.Label ServerDetailsLabel;
     }
 }

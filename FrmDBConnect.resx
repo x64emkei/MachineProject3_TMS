@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BannerPictureBox.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>4</value>
   </data>
   <data name="ShowPassLoginButtonLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -150,7 +150,7 @@
     <value>Segoe UI, 9pt, style=Underline</value>
   </data>
   <data name="ShowPassLoginButtonLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>339, 118</value>
+    <value>314, 56</value>
   </data>
   <data name="ShowPassLoginButtonLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 15</value>
@@ -168,16 +168,16 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ShowPassLoginButtonLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;ShowPassLoginButtonLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="PasswordTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="PasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 137</value>
+    <value>202, 74</value>
   </data>
   <data name="PasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 27</value>
@@ -192,7 +192,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PasswordTextBox.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;PasswordTextBox.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -201,7 +201,7 @@
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="UsernameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 137</value>
+    <value>52, 74</value>
   </data>
   <data name="UsernameTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 27</value>
@@ -216,10 +216,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;UsernameTextBox.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;UsernameTextBox.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="PasswordLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -228,7 +228,7 @@
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="PasswordLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 114</value>
+    <value>198, 52</value>
   </data>
   <data name="PasswordLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 20</value>
@@ -246,10 +246,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PasswordLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;PasswordLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>5</value>
   </data>
   <data name="UsernameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -258,7 +258,7 @@
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="UsernameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 114</value>
+    <value>48, 52</value>
   </data>
   <data name="UsernameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -276,69 +276,9 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;UsernameLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;UsernameLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="SaveConfigCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SaveConfigCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="SaveConfigCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 236</value>
-  </data>
-  <data name="SaveConfigCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 17</value>
-  </data>
-  <data name="SaveConfigCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="SaveConfigCheckBox.Text" xml:space="preserve">
-    <value>Save this configuration</value>
-  </data>
-  <data name="&gt;&gt;SaveConfigCheckBox.Name" xml:space="preserve">
-    <value>SaveConfigCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SaveConfigCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SaveConfigCheckBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SaveConfigCheckBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="DemoModeCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DemoModeCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="DemoModeCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 238</value>
-  </data>
-  <data name="DemoModeCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 17</value>
-  </data>
-  <data name="DemoModeCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="DemoModeCheckBox.Text" xml:space="preserve">
-    <value>(DEMO) Disable DB connection</value>
-  </data>
-  <data name="&gt;&gt;DemoModeCheckBox.Name" xml:space="preserve">
-    <value>DemoModeCheckBox</value>
-  </data>
-  <data name="&gt;&gt;DemoModeCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DemoModeCheckBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DemoModeCheckBox.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="ConfigGuideLabel.AutoSize" type="System.Boolean, mscorlib">
@@ -348,7 +288,7 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="ConfigGuideLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 73</value>
+    <value>6, 23</value>
   </data>
   <data name="ConfigGuideLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>375, 17</value>
@@ -366,40 +306,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ConfigGuideLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;ConfigGuideLabel.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="DBStatusLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DBStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt</value>
-  </data>
-  <data name="DBStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 210</value>
-  </data>
-  <data name="DBStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
-  </data>
-  <data name="DBStatusLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="DBStatusLabel.Text" xml:space="preserve">
-    <value>DB STATUS: </value>
-  </data>
-  <data name="&gt;&gt;DBStatusLabel.Name" xml:space="preserve">
-    <value>DBStatusLabel</value>
-  </data>
-  <data name="&gt;&gt;DBStatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DBStatusLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DBStatusLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ReturnToDashboardButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -436,7 +346,7 @@
     <value>MiddleRight</value>
   </data>
   <data name="LoginButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>381, 118</value>
+    <value>356, 55</value>
   </data>
   <data name="LoginButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 47</value>
@@ -457,33 +367,711 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LoginButton.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;LoginButton.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>3</value>
   </data>
-  <data name="CreateNewDataBaseButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>381, 176</value>
+  <data name="RememberCredentialsCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="CreateNewDataBaseButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RememberCredentialsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 109</value>
+  </data>
+  <data name="RememberCredentialsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 21</value>
+  </data>
+  <data name="RememberCredentialsCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="RememberCredentialsCheckBox.Text" xml:space="preserve">
+    <value>Remember credentials</value>
+  </data>
+  <data name="&gt;&gt;RememberCredentialsCheckBox.Name" xml:space="preserve">
+    <value>RememberCredentialsCheckBox</value>
+  </data>
+  <data name="&gt;&gt;RememberCredentialsCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RememberCredentialsCheckBox.Parent" xml:space="preserve">
+    <value>ServerCredentials</value>
+  </data>
+  <data name="&gt;&gt;RememberCredentialsCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ServerLookupButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ServerLookupButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="ServerLookupButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ServerLookupButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 108</value>
+  </data>
+  <data name="ServerLookupButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 23</value>
   </data>
-  <data name="CreateNewDataBaseButton.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+  <data name="ServerLookupButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="CreateNewDataBaseButton.Text" xml:space="preserve">
-    <value>Create new database</value>
+  <data name="ServerLookupButton.Text" xml:space="preserve">
+    <value>Server Lookup</value>
   </data>
-  <data name="&gt;&gt;CreateNewDataBaseButton.Name" xml:space="preserve">
-    <value>CreateNewDataBaseButton</value>
+  <data name="ServerLookupButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;CreateNewDataBaseButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;ServerLookupButton.Name" xml:space="preserve">
+    <value>ServerLookupButton</value>
+  </data>
+  <data name="&gt;&gt;ServerLookupButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CreateNewDataBaseButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ServerLookupButton.Parent" xml:space="preserve">
+    <value>ServerCredentials</value>
+  </data>
+  <data name="&gt;&gt;ServerLookupButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ServerCredentials.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="ServerCredentials.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 74</value>
+  </data>
+  <data name="ServerCredentials.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 155</value>
+  </data>
+  <data name="ServerCredentials.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="ServerCredentials.Text" xml:space="preserve">
+    <value>Connection Settings</value>
+  </data>
+  <data name="&gt;&gt;ServerCredentials.Name" xml:space="preserve">
+    <value>ServerCredentials</value>
+  </data>
+  <data name="&gt;&gt;ServerCredentials.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ServerCredentials.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;CreateNewDataBaseButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ServerCredentials.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DemoModeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="DemoModeButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="DemoModeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DemoModeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>245, 112</value>
+  </data>
+  <data name="DemoModeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="DemoModeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="DemoModeButton.Text" xml:space="preserve">
+    <value>Demo Mode</value>
+  </data>
+  <data name="DemoModeButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;DemoModeButton.Name" xml:space="preserve">
+    <value>DemoModeButton</value>
+  </data>
+  <data name="&gt;&gt;DemoModeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DemoModeButton.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;DemoModeButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="StopServiceButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="StopServiceButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="StopServiceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="StopServiceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 112</value>
+  </data>
+  <data name="StopServiceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 23</value>
+  </data>
+  <data name="StopServiceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="StopServiceButton.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="&gt;&gt;StopServiceButton.Name" xml:space="preserve">
+    <value>StopServiceButton</value>
+  </data>
+  <data name="&gt;&gt;StopServiceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StopServiceButton.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;StopServiceButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="RestartServiceButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RestartServiceButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="RestartServiceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RestartServiceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>439, 83</value>
+  </data>
+  <data name="RestartServiceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 23</value>
+  </data>
+  <data name="RestartServiceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RestartServiceButton.Text" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="&gt;&gt;RestartServiceButton.Name" xml:space="preserve">
+    <value>RestartServiceButton</value>
+  </data>
+  <data name="&gt;&gt;RestartServiceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RestartServiceButton.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;RestartServiceButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="StartServiceButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="StartServiceButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="StartServiceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="StartServiceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 83</value>
+  </data>
+  <data name="StartServiceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 23</value>
+  </data>
+  <data name="StartServiceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="StartServiceButton.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="&gt;&gt;StartServiceButton.Name" xml:space="preserve">
+    <value>StartServiceButton</value>
+  </data>
+  <data name="&gt;&gt;StartServiceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StartServiceButton.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;StartServiceButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RefreshStatusButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="RefreshStatusButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="RefreshStatusButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RefreshStatusButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 112</value>
+  </data>
+  <data name="RefreshStatusButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="RefreshStatusButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RefreshStatusButton.Text" xml:space="preserve">
+    <value>Refresh Status</value>
+  </data>
+  <data name="RefreshStatusButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;RefreshStatusButton.Name" xml:space="preserve">
+    <value>RefreshStatusButton</value>
+  </data>
+  <data name="&gt;&gt;RefreshStatusButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RefreshStatusButton.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;RefreshStatusButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CheckStatusButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="CheckStatusButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="CheckStatusButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CheckStatusButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 112</value>
+  </data>
+  <data name="CheckStatusButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 23</value>
+  </data>
+  <data name="CheckStatusButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CheckStatusButton.Text" xml:space="preserve">
+    <value>Check Status</value>
+  </data>
+  <data name="CheckStatusButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="&gt;&gt;CheckStatusButton.Name" xml:space="preserve">
+    <value>CheckStatusButton</value>
+  </data>
+  <data name="&gt;&gt;CheckStatusButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckStatusButton.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;CheckStatusButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="WindowsServiceStatusOutputLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="WindowsServiceStatusOutputLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindowsServiceStatusOutputLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 48</value>
+  </data>
+  <data name="WindowsServiceStatusOutputLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 27</value>
+  </data>
+  <data name="WindowsServiceStatusOutputLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="WindowsServiceStatusOutputLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;WindowsServiceStatusOutputLabel.Name" xml:space="preserve">
+    <value>WindowsServiceStatusOutputLabel</value>
+  </data>
+  <data name="&gt;&gt;WindowsServiceStatusOutputLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindowsServiceStatusOutputLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;WindowsServiceStatusOutputLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="WindowsServiceLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WindowsServiceLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindowsServiceLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 26</value>
+  </data>
+  <data name="WindowsServiceLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 17</value>
+  </data>
+  <data name="WindowsServiceLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="WindowsServiceLabel.Text" xml:space="preserve">
+    <value>Windows Service</value>
+  </data>
+  <data name="&gt;&gt;WindowsServiceLabel.Name" xml:space="preserve">
+    <value>WindowsServiceLabel</value>
+  </data>
+  <data name="&gt;&gt;WindowsServiceLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindowsServiceLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;WindowsServiceLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ServerDetailsOutputLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="ServerDetailsOutputLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ServerDetailsOutputLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 80</value>
+  </data>
+  <data name="ServerDetailsOutputLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 27</value>
+  </data>
+  <data name="ServerDetailsOutputLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ServerDetailsOutputLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ServerDetailsOutputLabel.Name" xml:space="preserve">
+    <value>ServerDetailsOutputLabel</value>
+  </data>
+  <data name="&gt;&gt;ServerDetailsOutputLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ServerDetailsOutputLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;ServerDetailsOutputLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="DatabaseStatusOutputLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="DatabaseStatusOutputLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DatabaseStatusOutputLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 48</value>
+  </data>
+  <data name="DatabaseStatusOutputLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 27</value>
+  </data>
+  <data name="DatabaseStatusOutputLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="DatabaseStatusOutputLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusOutputLabel.Name" xml:space="preserve">
+    <value>DatabaseStatusOutputLabel</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusOutputLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusOutputLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusOutputLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ServerDetailsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ServerDetailsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ServerDetailsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 85</value>
+  </data>
+  <data name="ServerDetailsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="ServerDetailsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ServerDetailsLabel.Text" xml:space="preserve">
+    <value>Server Details</value>
+  </data>
+  <data name="&gt;&gt;ServerDetailsLabel.Name" xml:space="preserve">
+    <value>ServerDetailsLabel</value>
+  </data>
+  <data name="&gt;&gt;ServerDetailsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ServerDetailsLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;ServerDetailsLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ConnectionStatusOutputLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="ConnectionStatusOutputLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ConnectionStatusOutputLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 48</value>
+  </data>
+  <data name="ConnectionStatusOutputLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 27</value>
+  </data>
+  <data name="ConnectionStatusOutputLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ConnectionStatusOutputLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ConnectionStatusOutputLabel.Name" xml:space="preserve">
+    <value>ConnectionStatusOutputLabel</value>
+  </data>
+  <data name="&gt;&gt;ConnectionStatusOutputLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ConnectionStatusOutputLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;ConnectionStatusOutputLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="DatabaseStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DatabaseStatusLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DatabaseStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>199, 53</value>
+  </data>
+  <data name="DatabaseStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 17</value>
+  </data>
+  <data name="DatabaseStatusLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="DatabaseStatusLabel.Text" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusLabel.Name" xml:space="preserve">
+    <value>DatabaseStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;DatabaseStatusLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="ServerStatusOutputLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="ServerStatusOutputLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ServerStatusOutputLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 21</value>
+  </data>
+  <data name="ServerStatusOutputLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 27</value>
+  </data>
+  <data name="ServerStatusOutputLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ServerStatusOutputLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ServerStatusOutputLabel.Name" xml:space="preserve">
+    <value>ServerStatusOutputLabel</value>
+  </data>
+  <data name="&gt;&gt;ServerStatusOutputLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ServerStatusOutputLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;ServerStatusOutputLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="CredentialStatusOutputLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="CredentialStatusOutputLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CredentialStatusOutputLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 21</value>
+  </data>
+  <data name="CredentialStatusOutputLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 27</value>
+  </data>
+  <data name="CredentialStatusOutputLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CredentialStatusOutputLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;CredentialStatusOutputLabel.Name" xml:space="preserve">
+    <value>CredentialStatusOutputLabel</value>
+  </data>
+  <data name="&gt;&gt;CredentialStatusOutputLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CredentialStatusOutputLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;CredentialStatusOutputLabel.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="ServerStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ServerStatusLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ServerStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 26</value>
+  </data>
+  <data name="ServerStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 17</value>
+  </data>
+  <data name="ServerStatusLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ServerStatusLabel.Text" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="&gt;&gt;ServerStatusLabel.Name" xml:space="preserve">
+    <value>ServerStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;ServerStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ServerStatusLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;ServerStatusLabel.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ConnectionStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ConnectionStatusLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ConnectionStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 53</value>
+  </data>
+  <data name="ConnectionStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 17</value>
+  </data>
+  <data name="ConnectionStatusLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ConnectionStatusLabel.Text" xml:space="preserve">
+    <value>Connection</value>
+  </data>
+  <data name="&gt;&gt;ConnectionStatusLabel.Name" xml:space="preserve">
+    <value>ConnectionStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;ConnectionStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ConnectionStatusLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;ConnectionStatusLabel.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="CredentialStatusLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CredentialStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 26</value>
+  </data>
+  <data name="CredentialStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 17</value>
+  </data>
+  <data name="CredentialStatusLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CredentialStatusLabel.Text" xml:space="preserve">
+    <value>Credentials</value>
+  </data>
+  <data name="&gt;&gt;CredentialStatusLabel.Name" xml:space="preserve">
+    <value>CredentialStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;CredentialStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CredentialStatusLabel.Parent" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;CredentialStatusLabel.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="DBServerStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="DBServerStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 235</value>
+  </data>
+  <data name="DBServerStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 148</value>
+  </data>
+  <data name="DBServerStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="DBServerStatus.Text" xml:space="preserve">
+    <value>Database Server Status</value>
+  </data>
+  <data name="&gt;&gt;DBServerStatus.Name" xml:space="preserve">
+    <value>DBServerStatus</value>
+  </data>
+  <data name="&gt;&gt;DBServerStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DBServerStatus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DBServerStatus.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="StatusProgressBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 396</value>
+  </data>
+  <data name="StatusProgressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 23</value>
+  </data>
+  <data name="StatusProgressBar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;StatusProgressBar.Name" xml:space="preserve">
+    <value>StatusProgressBar</value>
+  </data>
+  <data name="&gt;&gt;StatusProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusProgressBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;StatusProgressBar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -493,7 +1081,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>575, 286</value>
+    <value>575, 431</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

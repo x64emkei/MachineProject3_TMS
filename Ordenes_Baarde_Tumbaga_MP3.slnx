@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="BenchmarkSuite1/BenchmarkSuite1.csproj" />
   <Project Path="Ordenes_Baarde_Tumbaga_MP3.csproj" Id="0ebb78fb-ad14-46b6-b211-695cd247d0f9" />
 </Solution>
