@@ -171,7 +171,7 @@
     <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;ShowPassLoginButtonLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="PasswordTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>
@@ -195,7 +195,7 @@
     <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;PasswordTextBox.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="UsernameTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>
@@ -219,7 +219,7 @@
     <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;UsernameTextBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="PasswordLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -249,7 +249,7 @@
     <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;PasswordLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="UsernameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -279,7 +279,7 @@
     <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;UsernameLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="ConfigGuideLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -309,7 +309,7 @@
     <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;ConfigGuideLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ReturnToDashboardButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -370,13 +370,13 @@
     <value>ServerCredentials</value>
   </data>
   <data name="&gt;&gt;LoginButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="RememberCredentialsCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="RememberCredentialsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 109</value>
+    <value>52, 107</value>
   </data>
   <data name="RememberCredentialsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 21</value>
@@ -398,42 +398,6 @@
   </data>
   <data name="&gt;&gt;RememberCredentialsCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="ServerLookupButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ServerLookupButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="ServerLookupButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ServerLookupButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>356, 108</value>
-  </data>
-  <data name="ServerLookupButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="ServerLookupButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ServerLookupButton.Text" xml:space="preserve">
-    <value>Server Lookup</value>
-  </data>
-  <data name="ServerLookupButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;ServerLookupButton.Name" xml:space="preserve">
-    <value>ServerLookupButton</value>
-  </data>
-  <data name="&gt;&gt;ServerLookupButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ServerLookupButton.Parent" xml:space="preserve">
-    <value>ServerCredentials</value>
-  </data>
-  <data name="&gt;&gt;ServerLookupButton.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="ServerCredentials.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>

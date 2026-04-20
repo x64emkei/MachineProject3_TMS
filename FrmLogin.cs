@@ -5,6 +5,7 @@
 
 using System;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MachineProject3_TMS.Helpers;
@@ -15,11 +16,13 @@ namespace MachineProject3_TMS
     {
         // Raised when login completes successfully so Program.AppContext can switch main forms
         public event EventHandler LoginSucceeded;
+        private bool _missingConfigurationNoticeShown;
 
         public FrmLogin()
         {
             InitializeComponent();
             SetupForm();
+            this.Load += FrmLogin_Load;
             // Focus the username field on form open and wire Enter key behavior
             try
             {
@@ -56,11 +59,152 @@ namespace MachineProject3_TMS
 
         // --- MAIN LOGIN LOGIC ---
 
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            ApplyLoginLifecycleState();
+        }
+
+        private void ApplyLoginLifecycleState()
+        {
+            if (DemoHelper.IsDemoMode)
+            {
+                ApplyDemoModeLoginUi();
+                return;
+            }
+
+            if (!HasSavedDatabaseConfiguration())
+            {
+                ApplyMissingConfigurationUi();
+                return;
+            }
+
+            ApplyNormalLoginUi();
+        }
+
+        private bool HasSavedDatabaseConfiguration()
+        {
+            bool hasSettingsCredentials = !string.IsNullOrWhiteSpace(Properties.Settings.Default.DbUsername) &&
+                                          !string.IsNullOrWhiteSpace(Properties.Settings.Default.DbPassword);
+            bool hasRuntimeConnection = !string.IsNullOrWhiteSpace(Properties.Settings.Default.Setting);
+
+            bool hasSavedConfigFile = false;
+            try
+            {
+                string configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MachineProject3_TMS", "dbconfig.txt");
+                if (File.Exists(configPath))
+                {
+                    string content = File.ReadAllText(configPath);
+                    hasSavedConfigFile = !string.IsNullOrWhiteSpace(content);
+                }
+            }
+            catch
+            {
+                hasSavedConfigFile = false;
+            }
+
+            return hasSettingsCredentials || hasRuntimeConnection || hasSavedConfigFile;
+        }
+
+        private void ApplyMissingConfigurationUi()
+        {
+            if (UsernameTextBox != null)
+            {
+                UsernameTextBox.ReadOnly = true;
+                UsernameTextBox.Enabled = false;
+            }
+
+            if (PasswordTextBox != null)
+            {
+                PasswordTextBox.ReadOnly = true;
+                PasswordTextBox.Enabled = false;
+            }
+
+            if (LoginButton != null) LoginButton.Enabled = false;
+            if (CreateAcctButton != null) CreateAcctButton.Enabled = false;
+            if (ConnectToDBButton != null) ConnectToDBButton.Enabled = true;
+
+            if (!_missingConfigurationNoticeShown)
+            {
+                _missingConfigurationNoticeShown = true;
+                MessageBox.Show("No database connected. Please initialize the server connection first.", "Database Setup Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ApplyDemoModeLoginUi()
+        {
+            if (UsernameTextBox != null)
+            {
+                UsernameTextBox.Text = "DemoUser";
+                UsernameTextBox.ReadOnly = true;
+                UsernameTextBox.Enabled = false;
+            }
+
+            if (PasswordTextBox != null)
+            {
+                PasswordTextBox.Text = "********";
+                PasswordTextBox.ReadOnly = true;
+                PasswordTextBox.Enabled = false;
+            }
+
+            if (LoginButton != null)
+            {
+                LoginButton.Enabled = true;
+                LoginButton.Text = "Start Demo";
+            }
+
+            if (CreateAcctButton != null) CreateAcctButton.Enabled = false;
+            if (ConnectToDBButton != null) ConnectToDBButton.Enabled = true;
+        }
+
+        private void ApplyNormalLoginUi()
+        {
+            _missingConfigurationNoticeShown = false;
+
+            if (UsernameTextBox != null)
+            {
+                UsernameTextBox.ReadOnly = false;
+                UsernameTextBox.Enabled = true;
+            }
+
+            if (PasswordTextBox != null)
+            {
+                PasswordTextBox.ReadOnly = false;
+                PasswordTextBox.Enabled = true;
+                PasswordTextBox.UseSystemPasswordChar = true;
+            }
+
+            if (LoginButton != null)
+            {
+                LoginButton.Enabled = true;
+                LoginButton.Text = "Login";
+            }
+
+            if (CreateAcctButton != null) CreateAcctButton.Enabled = true;
+            if (ConnectToDBButton != null) ConnectToDBButton.Enabled = true;
+        }
+
         /// <summary>
         /// Authenticates the user and navigates to the dashboard.
         /// </summary>
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            if (DemoHelper.IsDemoMode)
+            {
+                DbConnection.CurrentUserId = 0;
+                DbConnection.CurrentUsername = "demo";
+                DbConnection.CurrentName = "Demo User";
+                DbConnection.CurrentEmail = "demo@local";
+                DbConnection.CurrentLoginTime = DateTime.Now;
+                LoginSucceeded?.Invoke(this, EventArgs.Empty);
+                return;
+            }
+
+            if (!HasSavedDatabaseConfiguration())
+            {
+                MessageBox.Show("No database connected. Please initialize the server connection first.", "Database Setup Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             string username = UsernameTextBox.Text.Trim();
             string password = PasswordTextBox.Text;
 
@@ -79,7 +223,6 @@ namespace MachineProject3_TMS
                 DbConnection.CurrentName = "Administrator";
                 DbConnection.CurrentEmail = "";
                 DbConnection.CurrentLoginTime = DateTime.Now;
-                // Signal success; let Program switch main forms to avoid hidden instances
                 LoginSucceeded?.Invoke(this, EventArgs.Empty);
                 return;
             }
@@ -89,7 +232,6 @@ namespace MachineProject3_TMS
                 using (MySqlConnection conn = DbConnection.GetConnection())
                 {
                     conn.Open();
-                    // Assumes DB schema extended with 'name' and 'email' based on project UI requirements.
                     string query = "SELECT user_id, username, name, email FROM users WHERE username = @user AND password = @pass";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -105,10 +247,7 @@ namespace MachineProject3_TMS
                                 DbConnection.CurrentName = reader.IsDBNull(reader.GetOrdinal("name")) ? username : reader.GetString("name");
                                 DbConnection.CurrentEmail = reader.IsDBNull(reader.GetOrdinal("email")) ? "" : reader.GetString("email");
                                 DbConnection.CurrentLoginTime = DateTime.Now;
-
-                                FrmDashboard dashboard = new FrmDashboard();
-                                dashboard.Show();
-                                this.Hide();
+                                LoginSucceeded?.Invoke(this, EventArgs.Empty);
                             }
                             else
                             {
@@ -192,12 +331,20 @@ namespace MachineProject3_TMS
             try
             {
                 FrmDBConnect dbForm = new FrmDBConnect();
-                dbForm.Show();
-                this.Hide();
+                AppController.SwitchTo(dbForm);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to open DB settings: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    var dbForm = new FrmDBConnect();
+                    dbForm.Show();
+                    this.Hide();
+                }
+                catch
+                {
+                    MessageBox.Show($"Failed to open DB settings: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

@@ -4,7 +4,7 @@ namespace MachineProject3_TMS
 {
     public static class DemoHelper
     {
-        public static bool IsDemoMode { get; private set; } = false;
+        public static bool IsDemoMode { get; set; } = false;
 
         public static void EnableDemoMode()
         {

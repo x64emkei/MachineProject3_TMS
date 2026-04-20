@@ -72,6 +72,17 @@ namespace MachineProject3_TMS
             {
                 if (newMain == null) return;
 
+                if (ReferenceEquals(MainForm, newMain))
+                {
+                    return;
+                }
+
+                var old = MainForm;
+
+                // IMPORTANT: assign MainForm first so closing the old main form
+                // does not terminate the app message loop.
+                MainForm = newMain;
+
                 // Show the new main form first so the message loop stays active
                 try
                 {
@@ -80,19 +91,17 @@ namespace MachineProject3_TMS
                 catch
                 {
                     // If show fails, do not change main form
+                    MainForm = old;
                     try { newMain.Dispose(); } catch { }
                     return;
                 }
 
                 // Close and dispose the old main form if it exists and is not the same
-                var old = MainForm;
                 if (old != null && old != newMain)
                 {
                     try { old.Close(); } catch { }
                     try { old.Dispose(); } catch { }
                 }
-
-                MainForm = newMain;
             }
         }
 }

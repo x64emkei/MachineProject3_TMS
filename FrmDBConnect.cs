@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net.Sockets;
 using System.ServiceProcess;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,9 @@ namespace MachineProject3_TMS
     {
         // Stores last schema creation summary for display
         private string _lastSchemaSummary = string.Empty;
+        private bool _hasVerifiedConnection;
+        private string _currentHost = "127.0.0.1";
+        private string _currentPort = "3306";
 
         public FrmDBConnect()
         {
@@ -31,9 +35,8 @@ namespace MachineProject3_TMS
             if (RestartServiceButton != null) RestartServiceButton.Click += async (s, e) => await ManageServiceAsync("restart");
             if (StopServiceButton != null) StopServiceButton.Click += async (s, e) => await ManageServiceAsync("stop");
             if (LoginButton != null) LoginButton.Click += LoginButton_Click;
-            if (ServerLookupButton != null) ServerLookupButton.Click += ServerLookupButton_Click;
-            if (CheckStatusButton != null) CheckStatusButton.Click += async (s, e) => await CheckAllStatusesAsync();
-            if (RefreshStatusButton != null) RefreshStatusButton.Click += async (s, e) => await CheckAllStatusesAsync();
+            if (CheckStatusButton != null) CheckStatusButton.Click += CheckStatusButton_Click;
+            if (RefreshStatusButton != null) RefreshStatusButton.Click += RefreshStatusButton_Click;
 
             // Keyboard helpers
             try
@@ -55,17 +58,24 @@ namespace MachineProject3_TMS
             }
         }
 
-        private void FrmDBConnect_Load(object sender, EventArgs e)
+        private async void FrmDBConnect_Load(object sender, EventArgs e)
         {
-            // Remember Credentials Check
             try
             {
+                _currentHost = ReadConfiguredHost();
+                _currentPort = ReadConfiguredPort();
+
+                if (RememberCredentialsCheckBox != null) RememberCredentialsCheckBox.Checked = Properties.Settings.Default.RememberMe;
+
                 if (Properties.Settings.Default.RememberMe)
                 {
                     if (UsernameTextBox != null) UsernameTextBox.Text = Properties.Settings.Default.DbUsername;
                     if (PasswordTextBox != null) PasswordTextBox.Text = Properties.Settings.Default.DbPassword;
-                    if (RememberCredentialsCheckBox != null) RememberCredentialsCheckBox.Checked = true;
                 }
+
+                if (ServerDetailsOutputLabel != null) ServerDetailsOutputLabel.Text = _currentHost + ":" + _currentPort;
+
+                await RunSilentInitialStatusCheckAsync();
             }
             catch { }
         }
@@ -74,22 +84,24 @@ namespace MachineProject3_TMS
         {
             using (Form prompt = new Form())
             {
-                prompt.Width = 400;
-                prompt.Height = 200;
-                prompt.Text = "Enable Demo Mode";
+                prompt.Width = 460;
+                prompt.Height = 230;
+                prompt.Text = "Demo Mode Controls";
                 prompt.StartPosition = FormStartPosition.CenterParent;
                 prompt.FormBorderStyle = FormBorderStyle.FixedDialog;
                 prompt.MaximizeBox = false;
                 prompt.MinimizeBox = false;
 
-                Label warningLabel = new Label() { Left = 20, Top = 20, Width = 350, Height = 40, Text = "Warning: You are about to enter Demo Mode. The database connection will be disabled." };
-                Label countdownLabel = new Label() { Left = 20, Top = 60, Width = 350, Text = "Please wait 10 seconds..." };
-                Button enableButton = new Button() { Text = "Enable Demo", Left = 50, Top = 100, Width = 120, Enabled = false };
-                Button cancelButton = new Button() { Text = "Cancel", Left = 200, Top = 100, Width = 100 };
+                Label warningLabel = new Label() { Left = 20, Top = 20, Width = 410, Height = 40, Text = "Warning: Demo Mode disconnects all database access and limits actions to preview-only behavior." };
+                Label countdownLabel = new Label() { Left = 20, Top = 65, Width = 410, Text = "Enable Demo available in 10 seconds..." };
+                Button enableButton = new Button() { Text = "Enable Demo", Left = 20, Top = 110, Width = 120, Enabled = false };
+                Button disableButton = new Button() { Text = "Disable Demo", Left = 155, Top = 110, Width = 120, Enabled = true };
+                Button cancelButton = new Button() { Text = "Cancel", Left = 290, Top = 110, Width = 120 };
 
                 prompt.Controls.Add(warningLabel);
                 prompt.Controls.Add(countdownLabel);
                 prompt.Controls.Add(enableButton);
+                prompt.Controls.Add(disableButton);
                 prompt.Controls.Add(cancelButton);
 
                 int timeLeft = 10;
@@ -98,7 +110,7 @@ namespace MachineProject3_TMS
                 timer.Tick += (s, args) =>
                 {
                     timeLeft--;
-                    countdownLabel.Text = $"Please wait {timeLeft} seconds...";
+                    countdownLabel.Text = $"Enable Demo available in {timeLeft} seconds...";
                     if (timeLeft <= 0)
                     {
                         timer.Stop();
@@ -108,6 +120,7 @@ namespace MachineProject3_TMS
                 };
 
                 enableButton.Click += (s, args) => { prompt.DialogResult = DialogResult.OK; prompt.Close(); };
+                disableButton.Click += (s, args) => { prompt.DialogResult = DialogResult.Retry; prompt.Close(); };
                 cancelButton.Click += (s, args) => { prompt.DialogResult = DialogResult.Cancel; prompt.Close(); };
 
                 timer.Start();
@@ -124,10 +137,13 @@ namespace MachineProject3_TMS
                     DbConnection.CurrentName = "Demo User";
                     DbConnection.CurrentEmail = "demo@local";
                     DbConnection.CurrentLoginTime = DateTime.Now;
-
-                    FrmDashboard dashboard = new FrmDashboard();
-                    dashboard.Show();
-                    this.Hide();
+                    NavigateBackToLogin();
+                }
+                else if (result == DialogResult.Retry)
+                {
+                    DemoHelper.DisableDemoMode();
+                    DbConnection.DisableDemoMode();
+                    NavigateBackToLogin();
                 }
             }
         }
@@ -181,7 +197,7 @@ namespace MachineProject3_TMS
                         if (p != null) p.WaitForExit();
                     }
                 });
-                UpdateStatusLabel(WindowsServiceStatusOutputLabel, $"Service {action} completed.", "Running");
+                await UpdateServiceStatusAsync();
             }
             catch (Win32Exception ex) when (ex.NativeErrorCode == 1223)
             {
@@ -197,143 +213,209 @@ namespace MachineProject3_TMS
             }
         }
 
-        private async void ServerLookupButton_Click(object sender, EventArgs e)
-        {
-            if (DemoHelper.InterceptAction("Server Lookup", "This button looks up the default local MySQL configuration. Disabled in Demo Mode.")) return;
-
-            string host = string.Empty;
-            string port = string.Empty;
-            SetProgressMarquee(true);
-            try
-            {
-                UpdateStatusLabel(ServerStatusOutputLabel, "Looking up server...", "Checking...");
-
-                await Task.Run(() =>
-                {
-                    host = "127.0.0.1";
-                    port = "3306";
-                });
-            }
-            finally
-            {
-                SetProgressMarquee(false);
-            }
-
-            var answer = MessageBox.Show($"Is Host: {host} and Port: {port} correct for this environment?", "Server Lookup", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (answer == DialogResult.Yes)
-            {
-                UpdateStatusLabel(ServerStatusOutputLabel, $"Host: {host}:{port}", "Valid");
-                if (ServerDetailsOutputLabel != null) ServerDetailsOutputLabel.Text = $"{(host)}:{(port)}";
-            }
-            else
-            {
-                UpdateStatusLabel(ServerStatusOutputLabel, "Lookup rejected", "Failed");
-            }
-        }
-
         private async void LoginButton_Click(object sender, EventArgs e)
         {
-            if (DemoHelper.InterceptAction("Database Connect", "This button attempts to connect to the MySQL database. Disabled in Demo Mode.")) return;
-
-            string user = UsernameTextBox?.Text?.Trim() ?? "";
-            string pass = PasswordTextBox?.Text ?? "";
-
-            bool success = false;
-            string errorMessage = string.Empty;
+            SetConnectInputsLocked(true);
             SetProgressMarquee(true);
             try
             {
+                string user = (UsernameTextBox?.Text ?? string.Empty).Trim();
+                string pass = (PasswordTextBox?.Text ?? string.Empty).Trim();
+
+                if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
+                {
+                    MessageBox.Show("Please enter both username and password before connecting.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (DemoHelper.InterceptAction("Connect to Database", "Connects the application to the MySQL server. Disabled in Demo Mode.")) return;
+
+                string host = ReadConfiguredHost();
+                string port = ReadConfiguredPort();
+                string dbName = "task_management_db";
+                string serverOnly = BuildServerConnectionString(host, port, user, pass);
+
+                _currentHost = host;
+                _currentPort = port;
+
                 UpdateStatusLabel(ConnectionStatusOutputLabel, "Connecting...", "Checking...");
+                UpdateStatusLabel(ServerStatusOutputLabel, "Checking...", "Checking...");
+                UpdateStatusLabel(CredentialStatusOutputLabel, "Checking...", "Checking...");
+                UpdateStatusLabel(DatabaseStatusOutputLabel, "Checking...", "Checking...");
+                if (ServerDetailsOutputLabel != null) ServerDetailsOutputLabel.Text = host + ":" + port;
 
-                await Task.Run(() =>
+                string serviceStatus = await GetLocalMySqlServiceStateAsync();
+                UpdateStatusLabel(WindowsServiceStatusOutputLabel, serviceStatus, serviceStatus);
+
+                if (serviceStatus == "Stopped")
                 {
-                    string serverOnly = $"Server=localhost;Uid={user};Pwd={pass};";
+                    var continuePrompt = MessageBox.Show(
+                        "The MySQL Service appears to be stopped. Do you want to try connecting anyway?",
+                        "Service Warning",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                    if (continuePrompt == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+
+                bool serverReachable = await TryPingServerAsync(host, port);
+                if (!serverReachable)
+                {
+                    UpdateStatusLabel(ServerStatusOutputLabel, "Failed", "Failed");
+                    UpdateStatusLabel(ConnectionStatusOutputLabel, "Connection Failed", "Failed");
+                    MessageBox.Show($"Cannot reach the server at {host}:{port}. Please check your server address and ensure the MySQL service is running.", "Server Unreachable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                UpdateStatusLabel(ServerStatusOutputLabel, "Active", "Active");
+
+                using (var conn = new MySqlConnection(serverOnly))
+                {
                     try
                     {
-                        using (var conn = new MySqlConnection(serverOnly))
-                        {
-                            conn.Open();
-                            success = true;
-                        }
-                        DbConnection.ConnectionString = serverOnly + "Database=task_management_db;";
+                        await conn.OpenAsync();
                     }
-                    catch (Exception ex)
+                    catch (MySqlException mex) when (mex.Number == 1045)
                     {
-                        success = false;
-                        errorMessage = ex.Message;
+                        UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid", "Invalid");
+                        UpdateStatusLabel(ConnectionStatusOutputLabel, "Connection Failed", "Failed");
+                        MessageBox.Show($"Access denied for user '{user}'. Please check your credentials.", "Invalid Credentials", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
-                });
-            }
-            finally
-            {
-                SetProgressMarquee(false);
-            }
-
-            if (success)
-            {
-                UpdateStatusLabel(ConnectionStatusOutputLabel, "Connected", "Connected");
-                UpdateStatusLabel(CredentialStatusOutputLabel, "Credentials Valid", "Valid");
-
-                if (RememberCredentialsCheckBox != null)
-                {
-                    try
+                    catch (MySqlException mex) when (mex.Number == 1042)
                     {
-                        if (RememberCredentialsCheckBox.Checked)
+                        UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid", "Invalid");
+                        UpdateStatusLabel(ConnectionStatusOutputLabel, "Connection Failed", "Failed");
+                        MessageBox.Show("Unable to reach the MySQL server (Error 1042). Please verify host, port, and service state.", "Network Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    catch
+                    {
+                        UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid", "Invalid");
+                        UpdateStatusLabel(ConnectionStatusOutputLabel, "Connection Failed", "Failed");
+                        MessageBox.Show($"Access denied for user '{user}'. Please check your credentials.", "Invalid Credentials", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    UpdateStatusLabel(CredentialStatusOutputLabel, "Valid", "Valid");
+
+                    bool databasePresent = await IsDatabaseSchemaPresentAsync(conn, dbName);
+                    if (databasePresent)
+                    {
+                        UpdateStatusLabel(DatabaseStatusOutputLabel, "Present", "Present");
+                        MessageBox.Show("Successfully connected. The database is already present and linked.", "Database Ready", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        UpdateStatusLabel(DatabaseStatusOutputLabel, "Missing", "Missing");
+                        var schemaPrompt = MessageBox.Show(
+                            "Connection successful, but the database schema is missing. Would you like to initialize the required full database schema now?",
+                            "Initialize Schema",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question);
+
+                        if (schemaPrompt == DialogResult.Yes)
                         {
-                            Properties.Settings.Default.DbUsername = user;
-                            Properties.Settings.Default.DbPassword = pass;
-                            Properties.Settings.Default.RememberMe = true;
+                            DbConnection.ConnectionString = serverOnly + "Database=" + dbName + ";";
+                            var schemaResult = await Task.Run(() => TryCreateDatabaseAndSchema());
+                            if (!schemaResult.Item1)
+                            {
+                                UpdateStatusLabel(DatabaseStatusOutputLabel, "Missing", "Missing");
+                                MessageBox.Show("Schema initialization failed: " + schemaResult.Item2, "Schema Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            UpdateStatusLabel(DatabaseStatusOutputLabel, "Present", "Present");
                         }
                         else
                         {
-                            Properties.Settings.Default.DbUsername = "";
-                            Properties.Settings.Default.DbPassword = "";
-                            Properties.Settings.Default.RememberMe = false;
+                            return;
                         }
+                    }
+                }
+
+                DbConnection.ConnectionString = serverOnly + "Database=" + dbName + ";";
+                _hasVerifiedConnection = true;
+                UpdateStatusLabel(ConnectionStatusOutputLabel, "Connected", "Connected");
+
+                var savePrompt = MessageBox.Show(
+                    "Connection fully verified. Save this server configuration?",
+                    "Save Configuration",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (savePrompt == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Properties.Settings.Default.DbHost = host;
+                        Properties.Settings.Default.DbPort = port;
+                        Properties.Settings.Default.DbUsername = user;
+                        Properties.Settings.Default.DbPassword = pass;
+                        Properties.Settings.Default.RememberMe = true;
+                        Properties.Settings.Default.Setting = DbConnection.ConnectionString;
                         Properties.Settings.Default.Save();
+                        if (RememberCredentialsCheckBox != null) RememberCredentialsCheckBox.Checked = true;
+                        SaveConfig(Properties.Settings.Default.Setting);
+
+                        UpdateStatusLabel(ServerStatusOutputLabel, "Active", "Active");
+                        UpdateStatusLabel(CredentialStatusOutputLabel, "Valid", "Valid");
+                        UpdateStatusLabel(DatabaseStatusOutputLabel, "Present", "Present");
+                        UpdateStatusLabel(ConnectionStatusOutputLabel, "Connected", "Connected");
+                        UpdateStatusLabel(WindowsServiceStatusOutputLabel, "Verified", "Valid");
+
+                        MessageBox.Show(
+                            "Configuration saved successfully. You may now use the back arrow to return to the login screen.",
+                            "Configuration Saved",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
                     }
                     catch { }
                 }
-
-                DbConnection.DisableDemoMode();
-                FrmDashboard dashboard = new FrmDashboard();
-                dashboard.Show();
-                this.Hide();
+                else
+                {
+                    if (RememberCredentialsCheckBox != null) RememberCredentialsCheckBox.Checked = false;
+                    MessageBox.Show(
+                        "Connection verified. You may now use the back arrow to return to the login screen.",
+                        "Connection Verified",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception ex)
             {
                 UpdateStatusLabel(ConnectionStatusOutputLabel, "Connection Failed", "Failed");
-                UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid Credentials", "Failed");
-                MessageBox.Show(string.IsNullOrWhiteSpace(errorMessage) ? "Failed to connect to the database." : $"Failed to connect to the database.\n\n{errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed to connect to the database.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                SetProgressMarquee(false);
+                SetConnectInputsLocked(false);
             }
         }
 
-        private async Task CheckAllStatusesAsync()
+        private async void RefreshStatusButton_Click(object sender, EventArgs e)
         {
-            if (DemoHelper.InterceptAction("Check Status", "This button checks the database and service status. Disabled in Demo Mode.")) return;
+            if (DemoHelper.InterceptAction("Refresh Service Status", "This button refreshes the local MySQL Windows Service status. Disabled in Demo Mode.")) return;
 
             SetProgressMarquee(true);
             try
             {
-                UpdateStatusLabel(DatabaseStatusOutputLabel, "Checking...", "Checking...");
-                UpdateStatusLabel(ServerStatusOutputLabel, "Checking...", "Checking...");
                 UpdateStatusLabel(WindowsServiceStatusOutputLabel, "Checking...", "Checking...");
+                string serviceState = await GetLocalMySqlServiceStateAsync();
+                UpdateStatusLabel(WindowsServiceStatusOutputLabel, serviceState, serviceState);
 
-                string serviceStatus = await GetMySqlServiceStatusAsync();
-                UpdateStatusLabel(WindowsServiceStatusOutputLabel, serviceStatus, serviceStatus == "Running" ? "Running" : "Stopped");
-
-                bool dbConnected = await Task.Run(() => DbConnection.TestConnection());
-                UpdateStatusLabel(DatabaseStatusOutputLabel, dbConnected ? "Connected" : "Disconnected", dbConnected ? "Connected" : "Disconnected");
-                UpdateStatusLabel(ConnectionStatusOutputLabel, dbConnected ? "Connected" : "Disconnected", dbConnected ? "Connected" : "Disconnected");
-
-                bool hasUser = !string.IsNullOrWhiteSpace(UsernameTextBox?.Text);
-                bool hasPass = !string.IsNullOrWhiteSpace(PasswordTextBox?.Text);
-                UpdateStatusLabel(CredentialStatusOutputLabel, (hasUser && hasPass) ? "Credentials Present" : "Credentials Missing", (hasUser && hasPass) ? "Valid" : "Failed");
+                MessageBox.Show(
+                    "Service Status Updated.\n\nCurrent State: " + serviceState,
+                    "Service Status",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             catch
             {
-                UpdateStatusLabel(DatabaseStatusOutputLabel, "Failed", "Failed");
-                UpdateStatusLabel(ServerStatusOutputLabel, "Failed", "Failed");
                 UpdateStatusLabel(WindowsServiceStatusOutputLabel, "Failed", "Failed");
             }
             finally
@@ -342,22 +424,221 @@ namespace MachineProject3_TMS
             }
         }
 
-        private async Task<string> GetMySqlServiceStatusAsync()
+        private async void CheckStatusButton_Click(object sender, EventArgs e)
+        {
+            if (DemoHelper.InterceptAction("Check Status", "This button checks server, credentials, and database status. Disabled in Demo Mode.")) return;
+
+            SetProgressMarquee(true);
+            try
+            {
+                string user = (UsernameTextBox?.Text ?? string.Empty).Trim();
+                string pass = (PasswordTextBox?.Text ?? string.Empty).Trim();
+                string host = ReadConfiguredHost();
+                string port = ReadConfiguredPort();
+                string dbName = "task_management_db";
+
+                _currentHost = host;
+                _currentPort = port;
+                if (ServerDetailsOutputLabel != null) ServerDetailsOutputLabel.Text = host + ":" + port;
+
+                string serverState = "Unreachable";
+                string credentialState = "Invalid";
+                string databaseState = "Missing";
+
+                bool serverReachable = await TryPingServerAsync(host, port);
+                if (serverReachable)
+                {
+                    serverState = "Active";
+                    UpdateStatusLabel(ServerStatusOutputLabel, "Active", "Active");
+
+                    if (!string.IsNullOrWhiteSpace(user) && !string.IsNullOrWhiteSpace(pass))
+                    {
+                        string serverOnly = BuildServerConnectionString(host, port, user, pass);
+                        using (var conn = new MySqlConnection(serverOnly))
+                        {
+                            try
+                            {
+                                await conn.OpenAsync();
+                                credentialState = "Valid";
+                                UpdateStatusLabel(CredentialStatusOutputLabel, "Valid", "Valid");
+
+                                bool databasePresent = await IsDatabaseSchemaPresentAsync(conn, dbName);
+                                databaseState = databasePresent ? "Present" : "Missing";
+                                UpdateStatusLabel(DatabaseStatusOutputLabel, databaseState, databasePresent ? "Present" : "Missing");
+                            }
+                            catch
+                            {
+                                credentialState = "Invalid";
+                                UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid", "Invalid");
+                                UpdateStatusLabel(DatabaseStatusOutputLabel, "Missing", "Missing");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        credentialState = "Invalid";
+                        databaseState = "Missing";
+                        UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid", "Invalid");
+                        UpdateStatusLabel(DatabaseStatusOutputLabel, "Missing", "Missing");
+                    }
+                }
+                else
+                {
+                    UpdateStatusLabel(ServerStatusOutputLabel, "Failed", "Failed");
+                    UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid", "Invalid");
+                    UpdateStatusLabel(DatabaseStatusOutputLabel, "Missing", "Missing");
+                }
+
+                string summary =
+                    "Connection Test " + ((serverState == "Active" && credentialState == "Valid") ? "Successful" : "Failed") +
+                    ".\nServer: " + serverState +
+                    "\nCredentials: " + credentialState +
+                    "\nDatabase: " + databaseState;
+
+                MessageBox.Show(
+                    summary,
+                    "Connection Test",
+                    MessageBoxButtons.OK,
+                    (serverState == "Active" && credentialState == "Valid") ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to check current status.\n\n" + ex.Message, "Status Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                SetProgressMarquee(false);
+            }
+        }
+
+        private async Task UpdateServiceStatusAsync()
+        {
+            string serviceState = await GetLocalMySqlServiceStateAsync();
+            UpdateStatusLabel(WindowsServiceStatusOutputLabel, serviceState, serviceState);
+        }
+
+        private async Task<string> GetLocalMySqlServiceStateAsync()
         {
             return await Task.Run(() =>
             {
+                string[] serviceNames = { "MySQL", "MySQL80", "mysql" };
+
+                foreach (var serviceName in serviceNames)
+                {
+                    try
+                    {
+                        using (var service = new ServiceController(serviceName))
+                        {
+                            return service.Status == ServiceControllerStatus.Running ? "Running" : "Stopped";
+                        }
+                    }
+                    catch
+                    {
+                        // Try next known service name.
+                    }
+                }
+
+                return "Not Found";
+            });
+        }
+
+        private async Task RunSilentInitialStatusCheckAsync()
+        {
+            SetProgressMarquee(true);
+            try
+            {
+                await UpdateServiceStatusAsync();
+
+                string host = ReadConfiguredHost();
+                string port = ReadConfiguredPort();
+                string user = Properties.Settings.Default.DbUsername ?? string.Empty;
+                string pass = Properties.Settings.Default.DbPassword ?? string.Empty;
+                string dbName = "task_management_db";
+
+                if (ServerDetailsOutputLabel != null) ServerDetailsOutputLabel.Text = host + ":" + port;
+
+                bool serverReachable = await TryPingServerAsync(host, port);
+                UpdateStatusLabel(ServerStatusOutputLabel, serverReachable ? "Active" : "Failed", serverReachable ? "Active" : "Failed");
+
+                if (!serverReachable || string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
+                {
+                    UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid", "Invalid");
+                    UpdateStatusLabel(DatabaseStatusOutputLabel, "Missing", "Missing");
+                    UpdateStatusLabel(ConnectionStatusOutputLabel, "Disconnected", "Disconnected");
+                    _hasVerifiedConnection = false;
+                    return;
+                }
+
+                string serverOnly = BuildServerConnectionString(host, port, user, pass);
+                using (var conn = new MySqlConnection(serverOnly))
+                {
+                    try
+                    {
+                        await conn.OpenAsync();
+                        UpdateStatusLabel(CredentialStatusOutputLabel, "Valid", "Valid");
+
+                        bool dbPresent = await IsDatabaseSchemaPresentAsync(conn, dbName);
+                        UpdateStatusLabel(DatabaseStatusOutputLabel, dbPresent ? "Present" : "Missing", dbPresent ? "Present" : "Missing");
+
+                        if (dbPresent)
+                        {
+                            DbConnection.ConnectionString = serverOnly + "Database=" + dbName + ";";
+                            UpdateStatusLabel(ConnectionStatusOutputLabel, "Connected", "Connected");
+                            _hasVerifiedConnection = true;
+                        }
+                        else
+                        {
+                            UpdateStatusLabel(ConnectionStatusOutputLabel, "Disconnected", "Disconnected");
+                            _hasVerifiedConnection = false;
+                        }
+                    }
+                    catch
+                    {
+                        UpdateStatusLabel(CredentialStatusOutputLabel, "Invalid", "Invalid");
+                        UpdateStatusLabel(DatabaseStatusOutputLabel, "Missing", "Missing");
+                        UpdateStatusLabel(ConnectionStatusOutputLabel, "Disconnected", "Disconnected");
+                        _hasVerifiedConnection = false;
+                    }
+                }
+            }
+            finally
+            {
+                SetProgressMarquee(false);
+            }
+        }
+
+        private async Task<bool> TryPingServerAsync(string host, string port)
+        {
+            int parsedPort;
+            if (!int.TryParse(port, out parsedPort)) return false;
+
+            using (var client = new TcpClient())
+            {
+                var connectTask = client.ConnectAsync(host, parsedPort);
+                var timeoutTask = Task.Delay(3000);
+                var completed = await Task.WhenAny(connectTask, timeoutTask);
+                if (completed != connectTask) return false;
+
                 try
                 {
-                    using (var service = new ServiceController("mysql"))
-                    {
-                        return service.Status == ServiceControllerStatus.Running ? "Running" : "Stopped";
-                    }
+                    await connectTask;
+                    return true;
                 }
                 catch
                 {
-                    return "Stopped";
+                    return false;
                 }
-            });
+            }
+        }
+
+        private async Task<bool> IsDatabaseSchemaPresentAsync(MySqlConnection connection, string dbName)
+        {
+            using (var cmd = new MySqlCommand("SELECT COUNT(*) FROM information_schema.SCHEMATA WHERE SCHEMA_NAME = @db", connection))
+            {
+                cmd.Parameters.AddWithValue("@db", dbName);
+                var result = await cmd.ExecuteScalarAsync();
+                return Convert.ToInt32(result) > 0;
+            }
         }
 
         private void SetProgressMarquee(bool isMarquee)
@@ -386,14 +667,19 @@ namespace MachineProject3_TMS
                 case "Running":
                 case "Connected":
                 case "Valid":
+                case "Active":
+                case "Present":
                     label.ForeColor = Color.LimeGreen;
                     break;
                 case "Stopped":
                 case "Failed":
                 case "Disconnected":
+                case "Invalid":
                     label.ForeColor = Color.Red;
                     break;
                 case "Checking...":
+                case "Missing":
+                case "Not Found":
                     label.ForeColor = Color.Orange;
                     break;
                 default:
@@ -765,18 +1051,81 @@ namespace MachineProject3_TMS
         /// </summary>
         private void ReturnToDashboardButton_Click(object sender, EventArgs e)
         {
-            // Return to the Dashboard instead of exiting so user can navigate back
+            if (!_hasVerifiedConnection && !DemoHelper.IsDemoMode)
+            {
+                var prompt = MessageBox.Show(
+                    "No database is connected. The application will not function correctly. Are you sure you want to return?",
+                    "Connection Warning",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (prompt == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            NavigateBackToLogin();
+        }
+
+        private void SetConnectInputsLocked(bool isLocked)
+        {
+            if (LoginButton != null) LoginButton.Enabled = !isLocked;
+            if (UsernameTextBox != null) UsernameTextBox.Enabled = !isLocked;
+            if (PasswordTextBox != null) PasswordTextBox.Enabled = !isLocked;
+            if (RememberCredentialsCheckBox != null) RememberCredentialsCheckBox.Enabled = !isLocked;
+        }
+
+        private void NavigateBackToLogin()
+        {
             try
             {
-                FrmDashboard dashboard = new FrmDashboard();
-                dashboard.Show();
-                this.Hide();
+                AppController.SwitchTo(new FrmLogin());
             }
-            catch (Exception)
+            catch
             {
-                // Fallback to exit if something unexpected occurs
-                Application.Exit();
+                try
+                {
+                    var login = new FrmLogin();
+                    login.Show();
+                    this.Hide();
+                }
+                catch
+                {
+                    Application.Exit();
+                }
             }
+        }
+
+        private string ReadConfiguredHost()
+        {
+            try
+            {
+                var configured = Properties.Settings.Default.DbHost;
+                if (!string.IsNullOrWhiteSpace(configured)) return configured.Trim();
+            }
+            catch { }
+
+            return "127.0.0.1";
+        }
+
+        private string ReadConfiguredPort()
+        {
+            try
+            {
+                var configured = Properties.Settings.Default.DbPort;
+                if (!string.IsNullOrWhiteSpace(configured)) return configured.Trim();
+            }
+            catch { }
+
+            return "3306";
+        }
+
+        private string BuildServerConnectionString(string host, string port, string user, string pass)
+        {
+            string normalizedHost = string.IsNullOrWhiteSpace(host) ? "127.0.0.1" : host.Trim();
+            string normalizedPort = string.IsNullOrWhiteSpace(port) ? "3306" : port.Trim();
+            return $"Server={normalizedHost};Port={normalizedPort};Uid={user};Pwd={pass};";
         }
     }
 
@@ -808,6 +1157,22 @@ namespace MachineProject3_TMS.Properties
         {
             get { try { return (bool)this["RememberMe"]; } catch { return false; } }
             set { this["RememberMe"] = value; }
+        }
+
+        [System.Configuration.UserScopedSettingAttribute()]
+        [System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        public string DbHost
+        {
+            get { try { return (string)this["DbHost"]; } catch { return "127.0.0.1"; } }
+            set { this["DbHost"] = value; }
+        }
+
+        [System.Configuration.UserScopedSettingAttribute()]
+        [System.Configuration.DefaultSettingValueAttribute("3306")]
+        public string DbPort
+        {
+            get { try { return (string)this["DbPort"]; } catch { return "3306"; } }
+            set { this["DbPort"] = value; }
         }
     }
 }

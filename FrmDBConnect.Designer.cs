@@ -39,28 +39,27 @@
             this.ReturnToDashboardButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
             this.ServerCredentials = new System.Windows.Forms.GroupBox();
-            this.DBServerStatus = new System.Windows.Forms.GroupBox();
-            this.CredentialStatusLabel = new System.Windows.Forms.Label();
-            this.CredentialStatusOutputLabel = new System.Windows.Forms.Label();
-            this.ConnectionStatusOutputLabel = new System.Windows.Forms.Label();
-            this.ServerStatusLabel = new System.Windows.Forms.Label();
-            this.ConnectionStatusLabel = new System.Windows.Forms.Label();
             this.RememberCredentialsCheckBox = new System.Windows.Forms.CheckBox();
-            this.DatabaseStatusLabel = new System.Windows.Forms.Label();
-            this.CheckStatusButton = new System.Windows.Forms.Button();
+            this.DBServerStatus = new System.Windows.Forms.GroupBox();
             this.DemoModeButton = new System.Windows.Forms.Button();
-            this.ServerLookupButton = new System.Windows.Forms.Button();
-            this.WindowsServiceLabel = new System.Windows.Forms.Label();
-            this.WindowsServiceStatusOutputLabel = new System.Windows.Forms.Label();
-            this.ServerStatusOutputLabel = new System.Windows.Forms.Label();
-            this.DatabaseStatusOutputLabel = new System.Windows.Forms.Label();
-            this.StartServiceButton = new System.Windows.Forms.Button();
             this.StopServiceButton = new System.Windows.Forms.Button();
             this.RestartServiceButton = new System.Windows.Forms.Button();
+            this.StartServiceButton = new System.Windows.Forms.Button();
             this.RefreshStatusButton = new System.Windows.Forms.Button();
-            this.StatusProgressBar = new System.Windows.Forms.ProgressBar();
-            this.ServerDetailsLabel = new System.Windows.Forms.Label();
+            this.CheckStatusButton = new System.Windows.Forms.Button();
+            this.WindowsServiceStatusOutputLabel = new System.Windows.Forms.Label();
+            this.WindowsServiceLabel = new System.Windows.Forms.Label();
             this.ServerDetailsOutputLabel = new System.Windows.Forms.Label();
+            this.DatabaseStatusOutputLabel = new System.Windows.Forms.Label();
+            this.ServerDetailsLabel = new System.Windows.Forms.Label();
+            this.ConnectionStatusOutputLabel = new System.Windows.Forms.Label();
+            this.DatabaseStatusLabel = new System.Windows.Forms.Label();
+            this.ServerStatusOutputLabel = new System.Windows.Forms.Label();
+            this.CredentialStatusOutputLabel = new System.Windows.Forms.Label();
+            this.ServerStatusLabel = new System.Windows.Forms.Label();
+            this.ConnectionStatusLabel = new System.Windows.Forms.Label();
+            this.CredentialStatusLabel = new System.Windows.Forms.Label();
+            this.StatusProgressBar = new System.Windows.Forms.ProgressBar();
             BannerPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(BannerPictureBox)).BeginInit();
             this.ServerCredentials.SuspendLayout();
@@ -141,7 +140,6 @@
             // ServerCredentials
             // 
             this.ServerCredentials.Controls.Add(this.RememberCredentialsCheckBox);
-            this.ServerCredentials.Controls.Add(this.ServerLookupButton);
             this.ServerCredentials.Controls.Add(this.ConfigGuideLabel);
             this.ServerCredentials.Controls.Add(this.LoginButton);
             this.ServerCredentials.Controls.Add(this.UsernameLabel);
@@ -153,6 +151,13 @@
             this.ServerCredentials.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ServerCredentials.Name = "ServerCredentials";
             this.ServerCredentials.TabStop = false;
+            // 
+            // RememberCredentialsCheckBox
+            // 
+            resources.ApplyResources(this.RememberCredentialsCheckBox, "RememberCredentialsCheckBox");
+            this.RememberCredentialsCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RememberCredentialsCheckBox.Name = "RememberCredentialsCheckBox";
+            this.RememberCredentialsCheckBox.UseVisualStyleBackColor = true;
             // 
             // DBServerStatus
             // 
@@ -183,58 +188,6 @@
             this.DBServerStatus.TabStop = false;
             this.DBServerStatus.UseCompatibleTextRendering = true;
             // 
-            // CredentialStatusLabel
-            // 
-            resources.ApplyResources(this.CredentialStatusLabel, "CredentialStatusLabel");
-            this.CredentialStatusLabel.Name = "CredentialStatusLabel";
-            // 
-            // CredentialStatusOutputLabel
-            // 
-            this.CredentialStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.CredentialStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.CredentialStatusOutputLabel, "CredentialStatusOutputLabel");
-            this.CredentialStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CredentialStatusOutputLabel.Name = "CredentialStatusOutputLabel";
-            // 
-            // ConnectionStatusOutputLabel
-            // 
-            this.ConnectionStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.ConnectionStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.ConnectionStatusOutputLabel, "ConnectionStatusOutputLabel");
-            this.ConnectionStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ConnectionStatusOutputLabel.Name = "ConnectionStatusOutputLabel";
-            // 
-            // ServerStatusLabel
-            // 
-            resources.ApplyResources(this.ServerStatusLabel, "ServerStatusLabel");
-            this.ServerStatusLabel.Name = "ServerStatusLabel";
-            // 
-            // ConnectionStatusLabel
-            // 
-            resources.ApplyResources(this.ConnectionStatusLabel, "ConnectionStatusLabel");
-            this.ConnectionStatusLabel.Name = "ConnectionStatusLabel";
-            // 
-            // RememberCredentialsCheckBox
-            // 
-            resources.ApplyResources(this.RememberCredentialsCheckBox, "RememberCredentialsCheckBox");
-            this.RememberCredentialsCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RememberCredentialsCheckBox.Name = "RememberCredentialsCheckBox";
-            this.RememberCredentialsCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // DatabaseStatusLabel
-            // 
-            resources.ApplyResources(this.DatabaseStatusLabel, "DatabaseStatusLabel");
-            this.DatabaseStatusLabel.Name = "DatabaseStatusLabel";
-            // 
-            // CheckStatusButton
-            // 
-            this.CheckStatusButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CheckStatusButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.CheckStatusButton, "CheckStatusButton");
-            this.CheckStatusButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CheckStatusButton.Name = "CheckStatusButton";
-            this.CheckStatusButton.UseVisualStyleBackColor = true;
-            // 
             // DemoModeButton
             // 
             this.DemoModeButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -243,53 +196,6 @@
             this.DemoModeButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.DemoModeButton.Name = "DemoModeButton";
             this.DemoModeButton.UseVisualStyleBackColor = true;
-            // 
-            // ServerLookupButton
-            // 
-            this.ServerLookupButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ServerLookupButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.ServerLookupButton, "ServerLookupButton");
-            this.ServerLookupButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ServerLookupButton.Name = "ServerLookupButton";
-            this.ServerLookupButton.UseVisualStyleBackColor = true;
-            // 
-            // WindowsServiceLabel
-            // 
-            resources.ApplyResources(this.WindowsServiceLabel, "WindowsServiceLabel");
-            this.WindowsServiceLabel.Name = "WindowsServiceLabel";
-            // 
-            // WindowsServiceStatusOutputLabel
-            // 
-            this.WindowsServiceStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.WindowsServiceStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.WindowsServiceStatusOutputLabel, "WindowsServiceStatusOutputLabel");
-            this.WindowsServiceStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.WindowsServiceStatusOutputLabel.Name = "WindowsServiceStatusOutputLabel";
-            // 
-            // ServerStatusOutputLabel
-            // 
-            this.ServerStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.ServerStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.ServerStatusOutputLabel, "ServerStatusOutputLabel");
-            this.ServerStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ServerStatusOutputLabel.Name = "ServerStatusOutputLabel";
-            // 
-            // DatabaseStatusOutputLabel
-            // 
-            this.DatabaseStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.DatabaseStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.DatabaseStatusOutputLabel, "DatabaseStatusOutputLabel");
-            this.DatabaseStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DatabaseStatusOutputLabel.Name = "DatabaseStatusOutputLabel";
-            // 
-            // StartServiceButton
-            // 
-            this.StartServiceButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StartServiceButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.StartServiceButton, "StartServiceButton");
-            this.StartServiceButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.StartServiceButton.Name = "StartServiceButton";
-            this.StartServiceButton.UseVisualStyleBackColor = true;
             // 
             // StopServiceButton
             // 
@@ -309,6 +215,15 @@
             this.RestartServiceButton.Name = "RestartServiceButton";
             this.RestartServiceButton.UseVisualStyleBackColor = true;
             // 
+            // StartServiceButton
+            // 
+            this.StartServiceButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StartServiceButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.StartServiceButton, "StartServiceButton");
+            this.StartServiceButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.StartServiceButton.Name = "StartServiceButton";
+            this.StartServiceButton.UseVisualStyleBackColor = true;
+            // 
             // RefreshStatusButton
             // 
             this.RefreshStatusButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -318,16 +233,27 @@
             this.RefreshStatusButton.Name = "RefreshStatusButton";
             this.RefreshStatusButton.UseVisualStyleBackColor = true;
             // 
-            // StatusProgressBar
+            // CheckStatusButton
             // 
-            resources.ApplyResources(this.StatusProgressBar, "StatusProgressBar");
-            this.StatusProgressBar.MarqueeAnimationSpeed = 450;
-            this.StatusProgressBar.Name = "StatusProgressBar";
+            this.CheckStatusButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckStatusButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.CheckStatusButton, "CheckStatusButton");
+            this.CheckStatusButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CheckStatusButton.Name = "CheckStatusButton";
+            this.CheckStatusButton.UseVisualStyleBackColor = true;
             // 
-            // ServerDetailsLabel
+            // WindowsServiceStatusOutputLabel
             // 
-            resources.ApplyResources(this.ServerDetailsLabel, "ServerDetailsLabel");
-            this.ServerDetailsLabel.Name = "ServerDetailsLabel";
+            this.WindowsServiceStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.WindowsServiceStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.WindowsServiceStatusOutputLabel, "WindowsServiceStatusOutputLabel");
+            this.WindowsServiceStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.WindowsServiceStatusOutputLabel.Name = "WindowsServiceStatusOutputLabel";
+            // 
+            // WindowsServiceLabel
+            // 
+            resources.ApplyResources(this.WindowsServiceLabel, "WindowsServiceLabel");
+            this.WindowsServiceLabel.Name = "WindowsServiceLabel";
             // 
             // ServerDetailsOutputLabel
             // 
@@ -336,6 +262,69 @@
             resources.ApplyResources(this.ServerDetailsOutputLabel, "ServerDetailsOutputLabel");
             this.ServerDetailsOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ServerDetailsOutputLabel.Name = "ServerDetailsOutputLabel";
+            // 
+            // DatabaseStatusOutputLabel
+            // 
+            this.DatabaseStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.DatabaseStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.DatabaseStatusOutputLabel, "DatabaseStatusOutputLabel");
+            this.DatabaseStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DatabaseStatusOutputLabel.Name = "DatabaseStatusOutputLabel";
+            // 
+            // ServerDetailsLabel
+            // 
+            resources.ApplyResources(this.ServerDetailsLabel, "ServerDetailsLabel");
+            this.ServerDetailsLabel.Name = "ServerDetailsLabel";
+            // 
+            // ConnectionStatusOutputLabel
+            // 
+            this.ConnectionStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.ConnectionStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.ConnectionStatusOutputLabel, "ConnectionStatusOutputLabel");
+            this.ConnectionStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ConnectionStatusOutputLabel.Name = "ConnectionStatusOutputLabel";
+            // 
+            // DatabaseStatusLabel
+            // 
+            resources.ApplyResources(this.DatabaseStatusLabel, "DatabaseStatusLabel");
+            this.DatabaseStatusLabel.Name = "DatabaseStatusLabel";
+            // 
+            // ServerStatusOutputLabel
+            // 
+            this.ServerStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.ServerStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.ServerStatusOutputLabel, "ServerStatusOutputLabel");
+            this.ServerStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ServerStatusOutputLabel.Name = "ServerStatusOutputLabel";
+            // 
+            // CredentialStatusOutputLabel
+            // 
+            this.CredentialStatusOutputLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.CredentialStatusOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.CredentialStatusOutputLabel, "CredentialStatusOutputLabel");
+            this.CredentialStatusOutputLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CredentialStatusOutputLabel.Name = "CredentialStatusOutputLabel";
+            // 
+            // ServerStatusLabel
+            // 
+            resources.ApplyResources(this.ServerStatusLabel, "ServerStatusLabel");
+            this.ServerStatusLabel.Name = "ServerStatusLabel";
+            // 
+            // ConnectionStatusLabel
+            // 
+            resources.ApplyResources(this.ConnectionStatusLabel, "ConnectionStatusLabel");
+            this.ConnectionStatusLabel.Name = "ConnectionStatusLabel";
+            // 
+            // CredentialStatusLabel
+            // 
+            resources.ApplyResources(this.CredentialStatusLabel, "CredentialStatusLabel");
+            this.CredentialStatusLabel.Name = "CredentialStatusLabel";
+            // 
+            // StatusProgressBar
+            // 
+            resources.ApplyResources(this.StatusProgressBar, "StatusProgressBar");
+            this.StatusProgressBar.MarqueeAnimationSpeed = 450;
+            this.StatusProgressBar.Name = "StatusProgressBar";
             // 
             // FrmDBConnect
             // 
@@ -381,7 +370,6 @@
         private System.Windows.Forms.Button CheckStatusButton;
         private System.Windows.Forms.Label DatabaseStatusLabel;
         private System.Windows.Forms.Button DemoModeButton;
-        private System.Windows.Forms.Button ServerLookupButton;
         private System.Windows.Forms.Label WindowsServiceStatusOutputLabel;
         private System.Windows.Forms.Label WindowsServiceLabel;
         private System.Windows.Forms.Label DatabaseStatusOutputLabel;
